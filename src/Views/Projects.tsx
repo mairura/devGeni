@@ -11,9 +11,7 @@ function Projects() {
   const [tags, setTags] = useState<Array<string>>([]);
 
 const handleStack = (e:  any) => {
-  // setName(stack);
   e.preventDefault()
-
   let  tagList  =  [...tags, e.target.value ]
 
   if(!tags.includes(e.target.value)) {
@@ -21,7 +19,6 @@ const handleStack = (e:  any) => {
   }
   console.log(tags);
  }
-
 
   return (
     <>
@@ -31,7 +28,7 @@ const handleStack = (e:  any) => {
       </div>
       <div className="search-bar">
         {/* <input placeholder="Search projects and teams" value={name} onChange={(e) => setName(e.target.value)} /> */}
-        <select onChange={(e) => {handleStack(e)}} value={name}>
+        <select onChange={(e) => {handleStack(e)}}>
           <option value="">Choose Stack</option>
           <option value="ReactJS">ReactJS</option>
           <option value="JS">Javascript</option>
