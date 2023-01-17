@@ -8,9 +8,7 @@ import {ksh} from "../icons"
 import {Link} from "react-router-dom"
 
 function Projects() {
-  const [name, setName] = useState('');
   const [tags, setTags] = useState<Array<string>>([]);
-  const [search,setSearch] = useState(['']);
 
 const handleStack = (e:  any) => {
   // setName(stack);
