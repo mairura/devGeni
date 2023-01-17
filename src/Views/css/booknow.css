@@ -1,0 +1,14 @@
+.top-navigator{
+    align-items: left;
+    text-align: left;
+    width:80%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.top-title-desc *{
+    color:#fff;
+}
+.form-container input{
+    margin-bottom: 20px;
+}
