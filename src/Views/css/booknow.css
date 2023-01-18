@@ -9,6 +9,39 @@
 .top-title-desc *{
     color:#fff;
 }
-.form-container input{
-    margin-bottom: 20px;
+.form-container{
+    margin: 40px;
+}
+.form-container form{
+    display: inline-block;
+    max-width: 700px;
+}
+.form-container input, textarea{
+    margin-bottom: 30px;
+    width: 354px;
+    height: 50px;
+    background: #5c5b5b;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    padding: 10px;
+}
+.form-container input:nth-child(3){
+    height: 118px;
+    left: 22px;
+    top: 374px;
+}
+::placeholder:nth-child(3){
+    align-items: start;
+}
+.book-btn{
+    width: 235px;
+    height: 40px;
+    background: #F05E56;
+    border-radius: 30px;
+    border: none;
+    color: #fff;
+    margin: 20px;
+    font-size: large;
+    letter-spacing: 1.5px;
 }

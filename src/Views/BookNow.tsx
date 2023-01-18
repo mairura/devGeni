@@ -11,14 +11,19 @@ function BookNow() {
     </div>
     <div className='top-title-desc'>
         <h2>DEVGENI</h2>
-        <p>team and skills matching engine</p>
+        <p>Team and Skills Matching Engine</p>
     </div>
     <div className='form-container'>
         <form>
-            <input type="text"/>
-            <input type="text"/>
-            <input type="text"/>
+            <input type="text" placeholder='Full Name' />
+            <input type="date" placeholder='Pick Date' />
+            <input type="text"  />
+
+            {/* <textarea id="story" name="story">
+            Type Message...
+            </textarea> */}
         </form>
+        <button className='book-btn' >Book Now</button>
     </div>
     </>
   )
