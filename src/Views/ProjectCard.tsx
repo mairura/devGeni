@@ -1,4 +1,4 @@
-import React, { useContext, useState} from 'react';
+import React from 'react';
 import "./css/card.css"
 import lalo from "../assets/lalo.png"
 import TeamMember from './Components/TeamMember';
@@ -9,7 +9,7 @@ import axios from 'axios';
 
 function ProjectCard() {
   // const { projectData, setProjectData } = useContext(Context);
-  
+
   // for(let i=1; i <= projectData.length; i++){
   //   console.log("Project Data:", projectData[i]);
   // }
