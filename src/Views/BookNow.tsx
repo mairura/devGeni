@@ -23,7 +23,9 @@ function BookNow() {
             Type Message...
             </textarea> */}
         </form>
-        <button className='book-btn' >Book Now</button>
+        {/* <ReactWhatsapp number="+254702185556"> */}
+          <button className='book-btn' >Book Now</button>
+        {/* </ReactWhatsapp> */}
     </div>
     </>
   )

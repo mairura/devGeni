@@ -10,6 +10,7 @@
 }
 .card-main *{
     color:#fff;
+    text-decoration: none;
 }
 .btn-container{
     display: grid;

@@ -1,16 +1,19 @@
+.member-header{
+    color: #fff;
+}
 .member-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
 }
 .main-member{
-    width:7vw;
-    height:7vw;
+    /* width:7vw;
+    height:7vw; */
     border-radius: 50%;
-    max-width: 200px;
-    max-height: 200px;
-    min-width: 100px;
-    min-height: 100px;
+    max-width: 30px;
+    max-height: 30px;
+    min-width: 10px;
+    min-height: 10px;
     margin:auto;
     overflow:hidden;
 }
