@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext } from "react";
 import "./css/card.css";
 // import lalo from "../assets/lalo.png";
 import TeamMember from "./Components/TeamMember";

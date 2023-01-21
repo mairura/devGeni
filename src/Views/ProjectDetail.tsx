@@ -9,7 +9,7 @@ import axios from "axios";
 
 function ProjectDetail() {
   const location = useLocation();
-  const { description, team, techStack, projectName } = location.state;
+  const { description, techStack, projectName } = location.state;
 
   //Getting single project
   const singleProject = async () => {
