@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
 import "./css/card.css";
-import lalo from "../assets/lalo.png";
+// import lalo from "../assets/lalo.png";
 import TeamMember from "./Components/TeamMember";
 import { Link } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 import { ProjectContext } from "./Context";
 
 function ProjectCard() {
