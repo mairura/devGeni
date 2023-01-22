@@ -5,6 +5,7 @@ import TeamMember from "./Components/TeamMember";
 import { Link } from "react-router-dom";
 // import axios from "axios";
 import { ProjectContext } from "./Context";
+// import { Carousel } from "react-responsive-carousel";
 
 function ProjectCard() {
   const { projects } = useContext(ProjectContext);
@@ -12,7 +13,6 @@ function ProjectCard() {
   return (
     <>
       <div className="card-main">
-        {/* <Link to="project">      */}
         <div className="more">
           <div className="btn-container">
             {projects.map((project: any) => (
@@ -26,7 +26,6 @@ function ProjectCard() {
             <button>live project</button>
           </div>
         </div>
-        {/* </Link> */}
       </div>
 
       <br />
