@@ -3,6 +3,8 @@ import "../css/Member.css";
 import sample from "../../assets/sample.png";
 
 function teamMember() {
+  //Function to get team for a project
+
   return (
     <>
       <div className="member-container">
