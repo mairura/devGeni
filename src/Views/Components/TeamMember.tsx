@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "../css/Member.css";
-import axios, { Axios } from "axios";
+import axios from "axios";
 import { ISingleDev } from "../Context";
 
 function TeamMember(dev_name: any) {
