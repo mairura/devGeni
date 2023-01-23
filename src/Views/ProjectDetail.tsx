@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./css/Detail.css";
 import { prev, share, ksh, verified } from "../icons";
 import TeamMember from "./Components/TeamMember";
@@ -27,7 +27,7 @@ function ProjectDetail() {
     }
   };
 
-  console.log("Properties:", projectData?.description);
+  console.log("Properties:", projectData);
   let techStack: String[] | undefined = projectData?.tech_stack;
   let team: String[] | undefined = projectData?.team;
 

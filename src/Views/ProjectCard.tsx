@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import "./css/card.css";
 import TeamMember from "./Components/TeamMember";
 import { Link } from "react-router-dom";
@@ -20,7 +20,8 @@ function ProjectCard() {
                   <div className="more">
                     <div key={project.id}>
                       <Link to={`project/?projectId=${project.proj_name}`}>
-                        <p>{project.proj_name}</p>
+                        <b>{project.proj_name}</b>
+                        <p>{project.description}</p>
                         <div className="btn-container">
                           <button>Lines of code</button>
                           <button>
