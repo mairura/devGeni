@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./css/style.css";
 import Title from "../assets/title.png";
 import ProjectCard from "./ProjectCard";
@@ -83,10 +83,7 @@ function Projects() {
       ) : (
         <>
           <ProjectContext.Provider value={{ projects }}>
-            <Carousel className="project-cards" showStatus={false}>
-              <ProjectCard />
-              <ProjectCard />
-            </Carousel>
+            <ProjectCard />
           </ProjectContext.Provider>
           <Link to="book-now">
             <button className="booking-button">Book Now</button>
@@ -94,7 +91,7 @@ function Projects() {
           <br />
           <br />
           <button className="booking-button">
-            {ksh} Speak to dev team now
+            {ksh} Speak to Dev Team Now
           </button>
           <br />
           <br />
