@@ -14,6 +14,13 @@ function ProjectCard() {
         {projects.map((project: any) => {
           let team: String[] | undefined = project?.team;
           let stack: String[] | undefined = project?.tech_stack;
+          let desc: String[] | undefined = project?.description;
+
+          let trimDesc = function (string: any, length: any) {
+            return string.length > length
+              ? string.substring(0, length) + "..."
+              : string;
+          };
           return (
             <>
               <div className="card-main">
@@ -22,7 +29,7 @@ function ProjectCard() {
                     <div key={project.id}>
                       <Link to={`project/?projectId=${project.proj_name}`}>
                         <b>{project.proj_name}</b>
-                        <p className="card_desc">{project.description}</p>
+                        <p className="card_desc">{trimDesc(desc, 300)}</p>
                         <i className="card_stack">
                           {stack?.map((item: any) => (
                             <>{item} ,</>
