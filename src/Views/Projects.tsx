@@ -3,7 +3,6 @@ import "./css/style.css";
 import Title from "../assets/title.png";
 import ProjectCard from "./ProjectCard";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
 import { ksh } from "../icons";
 import { Link } from "react-router-dom";
 import axios from "axios";
