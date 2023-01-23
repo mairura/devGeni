@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import "./css/card.css";
 import TeamMember from "./Components/TeamMember";
 import { Link } from "react-router-dom";
@@ -11,28 +11,35 @@ function ProjectCard() {
   return (
     <>
       <Carousel className="project-cards" showStatus={false}>
-        {projects.map((project: any) => (
-          <>
-            <div className="card-main">
-              <Link to="project">
-                <div className="more">
-                  <div key={project.id}>
-                    <Link to={`project/?projectId=${project.proj_name}`}>
-                      <p>{project.proj_name}</p>
-                      <div className="btn-container">
-                        <button>Lines of code</button>
-                        <button>
-                          <Link to="">live project</Link>
-                        </button>
-                      </div>
-                    </Link>
+        {projects.map((project: any) => {
+          let team: String[] | undefined = project?.team;
+          return (
+            <>
+              <div className="card-main">
+                <Link to="project">
+                  <div className="more">
+                    <div key={project.id}>
+                      <Link to={`project/?projectId=${project.proj_name}`}>
+                        <p>{project.proj_name}</p>
+                        <div className="btn-container">
+                          <button>Lines of code</button>
+                          <button>
+                            <Link to="">live project</Link>
+                          </button>
+                        </div>
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            </div>
-            <TeamMember />
-          </>
-        ))}
+                </Link>
+              </div>
+              <div className="member-container">
+                {team?.map((member) => (
+                  <TeamMember dev_name={member} />
+                ))}
+              </div>
+            </>
+          );
+        })}
       </Carousel>
       <br />
       <br />

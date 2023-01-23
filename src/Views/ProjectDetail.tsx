@@ -1,27 +1,39 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import "./css/Detail.css";
 import { prev, share, ksh, verified } from "../icons";
 import TeamMember from "./Components/TeamMember";
 import linkPay from "../assets/linkpay.png";
 import linkpayui from "../assets/linkpayui.png";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
+import { IProjects } from "./Context";
 
 function ProjectDetail() {
-  const location = useLocation();
-  const { description, techStack, projectName } = location.state;
+  const [projectData, setProjectData] = useState<IProjects>();
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const proj_name = urlParams.get("projectId");
 
   //Getting single project
   const singleProject = async () => {
     try {
-      const data = await axios.get(
-        "http://127.0.0.1:8000/index/projects/:proj_name"
+      const data: any = await axios.get(
+        `http://127.0.0.1:8000/index/projects/${proj_name}`
       );
-      console.log("Single Project Data:", data);
+      // console.log("Single Project Data:", data);
+      setProjectData(data.data);
     } catch (error: any) {
       console.error("Error:", error.message);
     }
   };
+
+  console.log("Properties:", projectData?.description);
+  let techStack: String[] | undefined = projectData?.tech_stack;
+  let team: String[] | undefined = projectData?.team;
+
+  useEffect(() => {
+    singleProject();
+  }, []);
 
   return (
     <>
@@ -34,23 +46,30 @@ function ProjectDetail() {
         </div>
       </div>
       <div className="title_desc">
-        <img src={linkPay} alt="linkpay logo" /> <h3> &nbsp; {projectName}</h3>{" "}
+        <img src={linkPay} alt="linkpay logo" /> <h3>{proj_name} </h3>{" "}
         {verified}
       </div>
       <div className="body_desc">
-        <p>{description}</p>
+        <p>{projectData?.description}</p>
         <h4>
           Dev hours &nbsp; &nbsp; <span>700+</span>
         </h4>
         <h4>
-          Tech_Stack &nbsp; &nbsp; <span></span>
-          {techStack}
+          Tech_Stack &nbsp; &nbsp;{" "}
+          <span>
+            {techStack?.map((item) => (
+              <>{item}, </>
+            ))}
+          </span>
         </h4>
-        <button onClick={singleProject}>Get Project</button>
       </div>
       <div>
         {/* <h3 style={{color:"#fff"}}>team</h3> */}
-        <TeamMember />
+        <div className="member-container">
+          {team?.map((member) => (
+            <TeamMember dev_name={member} />
+          ))}
+        </div>
         <br />
         <Link to="book-now">
           <button className="booking-button">Book Now</button>

@@ -18,8 +18,14 @@ function BookNow() {
           <input type="text" placeholder="Full Name" />
           <input type="date" placeholder="Pick Date" />
           <input type="text" />
+
+          {/* <textarea id="story" name="story">
+            Type Message...
+            </textarea> */}
         </form>
+        {/* <ReactWhatsapp number="+254702185556"> */}
         <button className="book-btn">Book Now</button>
+        {/* </ReactWhatsapp> */}
       </div>
     </>
   );
