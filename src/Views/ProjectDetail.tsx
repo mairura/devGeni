@@ -7,19 +7,20 @@ import linkpayui from "../assets/linkpayui.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { IProjects } from "./Context";
+import { Config } from "../config/config";
 
 function ProjectDetail() {
   const [projectData, setProjectData] = useState<IProjects>();
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const proj_name = urlParams.get("projectId");
+  let url = Config.URL;
+  console.log("Config File:", url);
 
   //Getting single project
   const singleProject = async () => {
     try {
-      const data: any = await axios.get(
-        `http://127.0.0.1:8000/index/projects/${proj_name}`
-      );
+      const data: any = await axios.get(`${url}/index/projects/${proj_name}`);
       // console.log("Single Project Data:", data);
       setProjectData(data.data);
     } catch (error: any) {

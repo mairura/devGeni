@@ -8,16 +8,14 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { ProjectContext, IProjects } from "./Context";
 // import { InlineWidget } from "react-calendly";
-// import * as dotenv from "dotenv";
-// dotenv.config();
-// import { Config } from "../config/config";
+import { Config } from "../config/config";
 
 function Projects() {
   const [tags, setTags] = useState<Array<string>>([]);
   const [projects, setProjects] = useState<Array<IProjects>>([]);
   const [showPage, setShowPage] = useState(false);
-  // let url = Config.URL;
-  // console.log("Config File:", url);
+  let url = Config.URL;
+  console.log("Config File:", url);
 
   //Function to handle selected stack to be called
   const handleStack = (e: any) => {
@@ -35,7 +33,7 @@ function Projects() {
   //Function to submit choosen stack and find resp projects
   const getData = async (stackToSearch: string) => {
     setShowPage(false);
-    const endpoint: string = `http://127.0.0.1:8000/index/projects/tags/${stackToSearch}`;
+    const endpoint: string = `${url}/index/projects/tags/${stackToSearch}`;
     console.log("Endpoint:", endpoint);
     try {
       const { data } = await axios.get(endpoint);
