@@ -7,11 +7,17 @@ import { ksh } from "../icons";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { ProjectContext, IProjects } from "./Context";
+// import { InlineWidget } from "react-calendly";
+// import * as dotenv from "dotenv";
+// dotenv.config();
+// import { Config } from "../config/config";
 
 function Projects() {
   const [tags, setTags] = useState<Array<string>>([]);
   const [projects, setProjects] = useState<Array<IProjects>>([]);
   const [showPage, setShowPage] = useState(false);
+  // let url = Config.URL;
+  // console.log("Config File:", url);
 
   //Function to handle selected stack to be called
   const handleStack = (e: any) => {
@@ -41,6 +47,11 @@ function Projects() {
     }
   };
 
+  //PopupWidget for calendly
+  const popupComponent = () => {
+    return <div className="popup-widget"></div>;
+  };
+
   return (
     <div>
       <>
@@ -63,6 +74,10 @@ function Projects() {
               <option value="Solidity">Solidity</option>
               <option value="NodeJS">NodeJS</option>
               <option value="Rust">Rust</option>
+              <option value="MongoDB">MongoDB</option>
+              <option value="PHP">PHP</option>
+              <option value="Ethers">EthersJS</option>
+              <option value="NextJS">NextJS</option>
             </select>
             <button type="submit" className="select btn">
               Search Project
@@ -74,6 +89,9 @@ function Projects() {
                 </div>
               ))}
             </div>
+            <Link to="details">
+              <button>Switch Mode</button>
+            </Link>
           </form>
         </div>{" "}
       </>
@@ -84,9 +102,17 @@ function Projects() {
           <ProjectContext.Provider value={{ projects }}>
             <ProjectCard />
           </ProjectContext.Provider>
-          <Link to="book-now">
-            <button className="booking-button">Book Now</button>
-          </Link>
+          {/* <Link to="book-now"> */}
+          <button className="booking-button">
+            {/* <InlineWidget url="https://calendly.com/ngeni-info" /> */}
+            Book Now
+          </button>
+          {/* <PopupButton
+            url="https://calendly.com/brian-1641"
+            rootElement={document.getElementById("root")}
+            text="Click here to schedule!"
+          /> */}
+          {/* </Link> */}
           <br />
           <br />
           <button className="booking-button">
