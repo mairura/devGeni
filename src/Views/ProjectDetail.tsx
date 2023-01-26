@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./css/ProjectDetail.css";
+import "./css/ProjectDetails.css";
 import { prev, share, ksh, verified } from "../icons";
 import TeamMember from "./Components/TeamMember";
 import linkPay from "../assets/linkpay.png";
@@ -15,13 +15,11 @@ function ProjectDetail() {
   const urlParams = new URLSearchParams(queryString);
   const proj_name = urlParams.get("projectId");
   let url = Config.URL;
-  console.log("Config File:", url);
 
   //Getting single project
   const singleProject = async () => {
     try {
       const data: any = await axios.get(`${url}/index/projects/${proj_name}`);
-      // console.log("Single Project Data:", data);
       setProjectData(data.data);
     } catch (error: any) {
       console.error("Error:", error.message);
@@ -65,7 +63,6 @@ function ProjectDetail() {
         </h4>
       </div>
       <div>
-        {/* <h3 style={{color:"#fff"}}>team</h3> */}
         <div className="member-container">
           {team?.map((member) => (
             <TeamMember dev_name={member} />

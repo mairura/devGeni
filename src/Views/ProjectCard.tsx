@@ -7,6 +7,7 @@ import { Carousel } from "react-responsive-carousel";
 
 function ProjectCard() {
   const { projects } = useContext(ProjectContext);
+  console.log("Projects on Project Card:", projects);
 
   return (
     <>
@@ -38,7 +39,7 @@ function ProjectCard() {
                         <div className="btn-container">
                           <button>Lines of code</button>
                           <button>
-                            <Link to="">Live project</Link>
+                            <Link to="#">Live project</Link>
                           </button>
                         </div>
                       </Link>

@@ -4,18 +4,18 @@ import Title from "../assets/title.png";
 import ProjectCard from "./ProjectCard";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { ksh } from "../icons";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import { ProjectContext, IProjects } from "./Context";
-// import { InlineWidget } from "react-calendly";
 import { Config } from "../config/config";
+import { Tabs, TabPanel, Tab, TabList } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+import Details from "./Details";
 
 function Projects() {
   const [tags, setTags] = useState<Array<string>>([]);
   const [projects, setProjects] = useState<Array<IProjects>>([]);
   const [showPage, setShowPage] = useState(false);
   let url = Config.URL;
-  console.log("Config File:", url);
 
   //Function to handle selected stack to be called
   const handleStack = (e: any) => {
@@ -45,13 +45,8 @@ function Projects() {
     }
   };
 
-  //PopupWidget for calendly
-  const popupComponent = () => {
-    return <div className="popup-widget"></div>;
-  };
-
   return (
-    <div>
+    <div className="main_header">
       <>
         {" "}
         <div className="header">
@@ -87,9 +82,10 @@ function Projects() {
                 </div>
               ))}
             </div>
-            <Link to="details">
-              <button>Switch Mode</button>
-            </Link>
+            {/* <Link to="details"> */}
+
+            {/* <button>Switch Mode</button> */}
+            {/* </Link> */}
           </form>
         </div>{" "}
       </>
@@ -97,20 +93,25 @@ function Projects() {
         ""
       ) : (
         <>
-          <ProjectContext.Provider value={{ projects }}>
-            <ProjectCard />
-          </ProjectContext.Provider>
-          {/* <Link to="book-now"> */}
+          <Tabs>
+            <TabList>
+              <Tab>Slide</Tab>
+              <Tab>Click</Tab>
+            </TabList>
+            <TabPanel>
+              <ProjectContext.Provider value={{ projects }}>
+                <ProjectCard />
+              </ProjectContext.Provider>
+            </TabPanel>
+            <TabPanel>
+              <ProjectContext.Provider value={{ projects }}>
+                <Details />
+              </ProjectContext.Provider>
+            </TabPanel>
+          </Tabs>
           <button className="booking-button">
-            {/* <InlineWidget url="https://calendly.com/ngeni-info" /> */}
-            Book Now
+            <a href="https://calendly.com/ngeni-info">Book Now</a>
           </button>
-          {/* <PopupButton
-            url="https://calendly.com/brian-1641"
-            rootElement={document.getElementById("root")}
-            text="Click here to schedule!"
-          /> */}
-          {/* </Link> */}
           <br />
           <br />
           <button className="booking-button">
