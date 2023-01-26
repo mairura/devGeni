@@ -18,7 +18,7 @@ function TeamMember(dev_name: any) {
 
   useEffect(() => {
     getSingleDev(dev_name);
-  }, []);
+  });
 
   return (
     <>

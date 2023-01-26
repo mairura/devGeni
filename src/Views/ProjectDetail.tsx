@@ -33,7 +33,7 @@ function ProjectDetail() {
 
   useEffect(() => {
     singleProject();
-  }, []);
+  });
 
   return (
     <>
