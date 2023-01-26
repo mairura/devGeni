@@ -112,3 +112,10 @@ input::placeholder {
 .footer-text img {
   width: 40px;
 }
+.tabs {
+  margin-top: 10px;
+}
+.tablist {
+  color: #f05e56;
+  margin: 10px;
+}

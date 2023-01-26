@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./css/ProjectDetail.css";
+import "./css/ProjectDetails.css";
 import { prev, share, ksh, verified } from "../icons";
 import TeamMember from "./Components/TeamMember";
 import linkPay from "../assets/linkpay.png";
@@ -45,8 +45,8 @@ function ProjectDetail() {
         </div>
       </div>
       <div className="title_desc">
-        <img src={linkPay} alt="linkpay logo" /> <h3>{proj_name} </h3>{" "}
-        {verified}
+        <img src={linkPay} alt="linkpay logo" />
+        <h3>{proj_name} </h3> {verified}
       </div>
       <div className="body_desc">
         <p>{projectData?.description}</p>
@@ -54,12 +54,12 @@ function ProjectDetail() {
           Dev hours &nbsp; &nbsp; <span>700+</span>
         </h4>
         <h4>
-          Tech_Stack &nbsp; &nbsp;{" "}
-          <span>
+          Tech_Stack&nbsp;: &nbsp; &nbsp;{" "}
+          <i>
             {techStack?.map((item) => (
               <>{item}, </>
             ))}
-          </span>
+          </i>
         </h4>
       </div>
       <div>

@@ -10,7 +10,8 @@ import { Config } from "../config/config";
 import { Tabs, TabPanel, Tab, TabList } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import Details from "./Details";
-import { TypeAnimation } from "react-type-animation";
+import { ExternalLink } from "react-external-link";
+// import { TypeAnimation } from "react-type-animation";
 
 function Projects() {
   const [tags, setTags] = useState<Array<string>>([]);
@@ -52,13 +53,14 @@ function Projects() {
         {" "}
         <div className="header">
           <img src={Title} alt="title describe" />
-          <TypeAnimation
+          {/* <TypeAnimation
             sequence={["Team and Skill Matching Engine", 1000, () => {}]}
             wrapper="div"
             cursor={true}
             repeat={Infinity}
             style={{ fontSize: "1.5em", color: "#fff" }}
-          />
+          /> */}
+          <p style={{ color: "#fff" }}>Team and Skill Matching Engine</p>
         </div>
         <div className="search-bar">
           <form>
@@ -96,10 +98,10 @@ function Projects() {
         ""
       ) : (
         <>
-          <Tabs>
-            <TabList>
+          <Tabs className="tabs">
+            <TabList className="tablist">
               <Tab>Slide</Tab>
-              <Tab>Click</Tab>
+              <Tab>List</Tab>
             </TabList>
             <TabPanel>
               <ProjectContext.Provider value={{ projects }}>
@@ -112,11 +114,13 @@ function Projects() {
               </ProjectContext.Provider>
             </TabPanel>
           </Tabs>
-          <button className="booking-button">
-            <a href="https://calendly.com/ngeni-info" className="btn_link">
-              Book Now
-            </a>
-          </button>
+          <ExternalLink
+            href="https://calendly.com/ngeni-info"
+            className="btn_link"
+          >
+            <button className="booking-button">Book Now</button>
+          </ExternalLink>
+
           <br />
           <br />
           <button className="booking-button">
