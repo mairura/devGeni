@@ -11,7 +11,7 @@ import { Tabs, TabPanel, Tab, TabList } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import Details from "./Details";
 import { ExternalLink } from "react-external-link";
-// import { TypeAnimation } from "react-type-animation";
+import { TypeAnimation } from "react-type-animation";
 
 function Projects() {
   const [tags, setTags] = useState<Array<string>>([]);
@@ -53,14 +53,13 @@ function Projects() {
         {" "}
         <div className="header">
           <img src={Title} alt="title describe" />
-          {/* <TypeAnimation
+          <TypeAnimation
             sequence={["Team and Skill Matching Engine", 1000, () => {}]}
             wrapper="div"
             cursor={true}
             repeat={Infinity}
             style={{ fontSize: "1.5em", color: "#fff" }}
-          /> */}
-          <p style={{ color: "#fff" }}>Team and Skill Matching Engine</p>
+          />
         </div>
         <div className="search-bar">
           <form>
