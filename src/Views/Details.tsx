@@ -1,5 +1,4 @@
 import { useContext } from "react";
-// import { Link } from "react-router-dom";
 import "./css/details.css";
 import { greater, team, stack } from "../icons";
 import { ProjectContext } from "./Context";
@@ -28,11 +27,14 @@ const Details = () => {
             : string;
         };
         return (
-          <div className="details_container">
+          <Link
+            to={`project/?projectId=${project.proj_name}`}
+            className="details_container"
+          >
             <div className="details_projects">
               <div className="details_project">
                 <h3>{project.proj_name}</h3>
-                <p>{trimDesc(desc, 300)}</p>
+                <p>{trimDesc(desc, 200)}</p>
               </div>
               <div className="project_stack">
                 <div>
@@ -50,12 +52,12 @@ const Details = () => {
                 <div>
                   <p>+&nbsp;{stackNo}&nbsp;more</p>
                 </div>
-                <Link to="project">
+                <Link to={`project/?projectId=${project.proj_name}`}>
                   <span className="greater">{greater}</span>
                 </Link>
               </div>
             </div>
-          </div>
+          </Link>
         );
       })}
     </>
