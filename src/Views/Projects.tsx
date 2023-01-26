@@ -60,6 +60,7 @@ function Projects() {
             repeat={Infinity}
             style={{ fontSize: "1.5em", color: "#fff" }}
           />
+          {/* <p style={{ color: "#fff" }}>Team and Skill Matching Engine</p> */}
         </div>
         <div className="search-bar">
           <form>

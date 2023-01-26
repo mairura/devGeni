@@ -5,6 +5,8 @@
 }
 .details_container {
   margin: 20px;
+  text-decoration: none;
+  background: linear-gradient(192.05deg, #000000 0%, #09101f 100%);
 }
 .details_projects {
   display: grid;
@@ -13,6 +15,7 @@
   max-height: 250px;
   margin: 10px;
   padding: 10px;
+  border-radius: 20px;
 }
 .details_project {
   max-width: 350px;
@@ -27,6 +30,7 @@
 .details_project p {
   font-size: 11px;
   color: #a5a5a5;
+  text-align: left;
 }
 .project_stack {
   padding: 130px 0 0 50px;

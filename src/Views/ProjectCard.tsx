@@ -3,7 +3,9 @@ import "./css/card.css";
 import TeamMember from "./Components/TeamMember";
 import { Link } from "react-router-dom";
 import { ProjectContext } from "./Context";
-import { Carousel } from "react-responsive-carousel";
+// import { Carousel } from "react-responsive-carousel";
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
 
 function ProjectCard() {
   const { projects } = useContext(ProjectContext);
@@ -11,7 +13,17 @@ function ProjectCard() {
 
   return (
     <>
-      <Carousel className="project-cards" showStatus={false}>
+      <AliceCarousel
+        // showStatus={false}
+        disableButtonsControls
+        autoPlay
+        mouseTracking
+        infinite
+        autoPlayInterval={1000}
+        animationDuration={1500}
+        disableDotsControls
+        controlsStrategy="responsive"
+      >
         {projects.map((project: any) => {
           let team: String[] | undefined = project?.team;
           let stack: String[] | undefined = project?.tech_stack;
@@ -31,15 +43,15 @@ function ProjectCard() {
                       <Link to={`project/?projectId=${project.proj_name}`}>
                         <b>{project.proj_name}</b>
                         <p className="card_desc">{trimDesc(desc, 300)}</p>
-                        <i className="card_stack">
+                        <div className="stack_item">
                           {stack?.map((item: any) => (
-                            <>{item} ,</>
+                            <i>{item},</i>
                           ))}
-                        </i>
+                        </div>
                         <div className="btn-container">
                           <button>Lines of code</button>
                           <button>
-                            <Link to="#">Live project</Link>
+                            <Link to="">Live project</Link>
                           </button>
                         </div>
                       </Link>
@@ -55,7 +67,7 @@ function ProjectCard() {
             </>
           );
         })}
-      </Carousel>
+      </AliceCarousel>
       <br />
       <br />
     </>

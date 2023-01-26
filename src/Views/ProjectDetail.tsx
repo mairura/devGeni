@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { IProjects } from "./Context";
 import { Config } from "../config/config";
+import { ExternalLink } from "react-external-link";
 
 function ProjectDetail() {
   const [projectData, setProjectData] = useState<IProjects>();
@@ -69,9 +70,12 @@ function ProjectDetail() {
           ))}
         </div>
         <br />
-        <Link to="book-now">
+        <ExternalLink
+          href="https://calendly.com/ngeni-info"
+          className="btn_link"
+        >
           <button className="booking-button">Book Now</button>
-        </Link>
+        </ExternalLink>
         <br />
         <br />
         <button className="booking-button">
