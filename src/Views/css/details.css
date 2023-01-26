@@ -3,53 +3,46 @@
   margin: 0;
   box-sizing: border-box;
 }
-.details_header {
-  margin: 50px;
-}
-.search-bar {
-  margin-bottom: 50px;
-}
 .details_container {
-  color: #fff;
+  margin: 20px;
 }
 .details_projects {
-  margin: 20px 40px;
-  display: flex;
+  display: grid;
   background-color: #4b4b4b;
+  grid-template-columns: 1fr 1fr;
+  max-height: 250px;
+  margin: 10px;
+  padding: 10px;
 }
 .details_project {
-  max-width: 400px;
-  min-width: 200px;
+  max-width: 350px;
   padding: 10px;
   padding-right: 50px;
 }
 .details_project h3 {
   color: #f05e56;
+  padding: 5px;
+  display: flex;
 }
 .details_project p {
-  font-size: 10px;
-  padding-top: 10px;
-  color: #989898;
+  font-size: 11px;
+  color: #a5a5a5;
 }
 .project_stack {
-  padding-left: 150px;
+  padding: 130px 0 0 50px;
   display: flex;
 }
 .project_stack span {
-  padding: 70px 10px 0 0;
-  color: #989898;
-}
-.project_stack span:nth-child(3) {
-  padding-left: 12px;
-  padding-top: 68px;
-}
-.project_stack span:nth-child(5) {
-  padding-left: 12px;
+  padding-right: 7px;
+  font-size: 20px;
 }
 .project_stack p {
+  padding: 7px 25px 0 0;
   font-size: 10px;
-  padding-top: 5px;
+  color: #a5a5a5;
 }
 .greater {
-  padding: 38px 15px 0 0;
+  padding-left: 50px;
+  display: block;
+  margin: auto;
 }

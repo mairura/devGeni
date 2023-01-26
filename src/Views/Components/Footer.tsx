@@ -4,7 +4,7 @@ import ngeniLogo from "../../assets/ngenilogoAsset.png";
 
 function Footer() {
   return (
-    <div>
+    <div className="footer_container">
       <p className="footer-text">
         Powered by &nbsp; <img src={ngeniLogo} alt="footer-logo" />
       </p>

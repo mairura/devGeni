@@ -16,7 +16,7 @@
 }
 body {
   /* background: rgb(30,30,30);
-      background: radial-gradient(circle, rgba(30,30,30,1) 0%, rgba(128,128,128,1) 0%, rgba(30,30,30,1) 80%); */
+    background: radial-gradient(circle, rgba(30,30,30,1) 0%, rgba(128,128,128,1) 0%, rgba(30,30,30,1) 80%); */
   background-color: #1e1e1e;
   background-size: cover;
   background-repeat: no-repeat;
@@ -99,7 +99,13 @@ input::placeholder {
   text-transform: capitalize;
   font-weight: bold;
 }
-
+.btn_link {
+  text-decoration: none;
+  color: #fff;
+}
+.footer_container {
+  margin: 20px;
+}
 .footer-text {
   color: #fff;
 }

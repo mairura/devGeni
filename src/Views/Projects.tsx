@@ -82,10 +82,6 @@ function Projects() {
                 </div>
               ))}
             </div>
-            {/* <Link to="details"> */}
-
-            {/* <button>Switch Mode</button> */}
-            {/* </Link> */}
           </form>
         </div>{" "}
       </>
@@ -110,7 +106,9 @@ function Projects() {
             </TabPanel>
           </Tabs>
           <button className="booking-button">
-            <a href="https://calendly.com/ngeni-info">Book Now</a>
+            <a href="https://calendly.com/ngeni-info" className="btn_link">
+              Book Now
+            </a>
           </button>
           <br />
           <br />

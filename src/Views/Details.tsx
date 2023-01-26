@@ -1,8 +1,10 @@
 import { useContext } from "react";
+// import { Link } from "react-router-dom";
 import "./css/details.css";
 import { greater, team, stack } from "../icons";
 import { ProjectContext } from "./Context";
 import "react-tabs/style/react-tabs.css";
+import { Link } from "react-router-dom";
 
 const Details = () => {
   const { projects } = useContext(ProjectContext);
@@ -11,12 +13,13 @@ const Details = () => {
   return (
     <>
       {projects.map((project: any) => {
-        let desc: String[] | undefined = project?.description;
-        let teams: String[] | undefined = project?.team;
+        let desc: string[] | undefined = project?.description;
+        let teams: string[] | undefined = project?.team;
         let teamNo: number | undefined = teams?.length;
-        let stacks: String[] | undefined = project?.tech_stack;
+        let stacks: string[] | undefined = project?.tech_stack;
+        let stackName: string[] | undefined = project?.tech_stack[0];
         let stackNo: number | undefined = stacks?.length;
-        console.log("Descrp:", project.description);
+        // console.log("Descrp:", project.description);
 
         //Trim project description
         let trimDesc = function (string: any, length: any) {
@@ -33,23 +36,23 @@ const Details = () => {
               </div>
               <div className="project_stack">
                 <div>
-                  <p>{team}</p>
+                  <span className="image">{team}</span>
                 </div>
                 <div>
                   <p>{teamNo}</p>
                 </div>
                 <div>
-                  <p>{stack}</p>
+                  <span className="image1">{stack}</span>
                 </div>
                 <div>
-                  <p>{stackNo}</p>
+                  <p>{stackName}</p>
                 </div>
                 <div>
-                  <p>+&nbsp;{}&nbsp;more</p>
+                  <p>+&nbsp;{stackNo}&nbsp;more</p>
                 </div>
-                <div className="greater">
-                  <p>{greater}</p>
-                </div>
+                <Link to="project">
+                  <span className="greater">{greater}</span>
+                </Link>
               </div>
             </div>
           </div>
