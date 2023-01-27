@@ -3,7 +3,6 @@ import "./css/card.css";
 import TeamMember from "./Components/TeamMember";
 import { Link } from "react-router-dom";
 import { ProjectContext } from "./Context";
-// import { Carousel } from "react-responsive-carousel";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
@@ -14,7 +13,6 @@ function ProjectCard() {
   return (
     <>
       <AliceCarousel
-        // showStatus={false}
         disableButtonsControls
         autoPlay
         mouseTracking
@@ -51,7 +49,7 @@ function ProjectCard() {
                         <div className="btn-container">
                           <button>Lines of code</button>
                           <button>
-                            <Link to="">Live project</Link>
+                            <Link to="#">Live project</Link>
                           </button>
                         </div>
                       </Link>

@@ -26,9 +26,9 @@ function Projects() {
     if (!tags.includes(e.target.value)) {
       setTags(tagList);
       let newList: string = tagList.join();
-      console.log("NewList", newList);
+      // console.log("NewList", newList);
       getData(newList);
-      console.log("Tags:", tagList);
+      // console.log("Tags:", tagList);
     }
   };
 
@@ -36,11 +36,10 @@ function Projects() {
   const getData = async (stackToSearch: string) => {
     setShowPage(false);
     const endpoint: string = `${url}/index/projects/tags/${stackToSearch}`;
-    console.log("Endpoint:", endpoint);
     try {
       const { data } = await axios.get(endpoint);
       setProjects([...data]);
-      console.log("Projects", projects);
+      // console.log("Projects", data);
       setShowPage(true);
     } catch (error: any) {
       console.error("Error:", error.message);
@@ -60,7 +59,6 @@ function Projects() {
             repeat={Infinity}
             style={{ fontSize: "1.5em", color: "#fff" }}
           />
-          {/* <p style={{ color: "#fff" }}>Team and Skill Matching Engine</p> */}
         </div>
         <div className="search-bar">
           <form>
@@ -123,7 +121,6 @@ function Projects() {
           >
             <button className="booking-button">Book Now</button>
           </ExternalLink>
-
           <br />
           <br />
           <button className="booking-button">

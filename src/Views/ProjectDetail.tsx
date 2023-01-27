@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./css/ProjectDetail.css";
 import { prev, share, ksh, verified } from "../icons";
 import TeamMember from "./Components/TeamMember";

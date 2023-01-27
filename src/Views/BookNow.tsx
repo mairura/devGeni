@@ -1,8 +1,7 @@
-import React from "react";
 import { prev } from "../icons";
 import { Link } from "react-router-dom";
 import "./css/booknow.css";
-// import { InlineWidget } from "react-calendly";
+import { ExternalLink } from "react-external-link";
 
 function BookNow() {
   return (
@@ -20,7 +19,9 @@ function BookNow() {
           <input type="date" placeholder="Pick Date" />
           <input type="text" />
         </form>
-        <button className="book-btn">Book Now</button>
+        <ExternalLink href="https://calendly.com/ngeni-info">
+          <button className="book-btn">Book Now</button>
+        </ExternalLink>
       </div>
     </>
   );

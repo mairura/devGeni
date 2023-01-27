@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 
 const Details = () => {
   const { projects } = useContext(ProjectContext);
-  // console.log("Projects on New Page:", projects);
 
   return (
     <>
@@ -18,7 +17,6 @@ const Details = () => {
         let stacks: string[] | undefined = project?.tech_stack;
         let stackName: string[] | undefined = project?.tech_stack[0];
         let stackNo: number | undefined = stacks?.length;
-        // console.log("Descrp:", project.description);
 
         //Trim project description
         let trimDesc = function (string: any, length: any) {
