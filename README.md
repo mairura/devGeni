@@ -1,3 +1,5 @@
+# About Devgeni
+Devgeni is a project showcasing all developer and team skills based on previously tackled projects at Ngeni Labs. It takes into consideration how one is proficient in a specific tool. If a user wants to have a project implementation within an organization, they would first have the opportunity to have a glimpse of similar projects tackled by an experienced team. This allows one to have a clear way of how the process of development and the team involved. The platform also allows direct contact with a developer for instance call on google meets with a paid-friendly paid plan.
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
