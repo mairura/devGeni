@@ -13,7 +13,7 @@ const Profile = () => {
         <Link to="/">{prev}</Link> {share}
       </div>
       <div className="profile_desc">
-        <img src={dev} />
+        <img src={dev} alt="developer" />
         <div className="profile_name">Dauglous Omambia</div>
         <div className="profile_nickname">(Omambia.pyther)</div>
         <p>Backend Developer</p>
@@ -36,15 +36,15 @@ const Profile = () => {
         </div>
         <div className="profile_project">
           <div className="project">
-            <img src={minitrade} />
+            <img src={minitrade} alt="logo" />
             <p>Minitrade</p>
           </div>
           <div className="project">
-            <img src={linkpay} />
+            <img src={linkpay} alt="logo" />
             <p>Linkpay</p>
           </div>
           <div className="project">
-            <img src={linkpay} />
+            <img src={linkpay} alt="logo" />
             <p>Potara</p>
           </div>
         </div>
