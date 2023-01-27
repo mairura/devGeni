@@ -58,16 +58,20 @@ const Profile = () => {
           <div className="profile_links">
             <a href="#">dauglous@ngeni.io</a>
             <a href="https://github.com/domambia">www.github.com/domambia</a>
+            <a href="https://github.com/domambia">www.github.com/domambia</a>
+            <a href="https://github.com/domambia">www.github.com/domambia</a>
+            <a href="https://github.com/domambia">www.github.com/domambia</a>
             <a href="#">dauglous.twitter</a>
           </div>
-          <div className="vertival_line">line</div>
+          <div className="vertical_line"></div>
           <div className="profile_box">
-            <div>Profile</div>
-            <div>Profile</div>
+            <div className="profile_pic">Profile</div>
+            <div className="profile_pic">Profile</div>
+            <div className="profile_pic">Profile</div>
           </div>
         </div>
       </div>
-      <div className="footer">nGeni Labs</div>
+      <div className="ngeni_labs"></div>
     </div>
   );
 };
