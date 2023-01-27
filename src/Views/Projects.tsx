@@ -91,6 +91,9 @@ function Projects() {
                 </div>
               ))}
             </div>
+            <i className="project_number">
+              Found&nbsp;{projects.length}&nbsp;projects for stack&nbsp;{tags}
+            </i>
           </form>
         </div>{" "}
       </>

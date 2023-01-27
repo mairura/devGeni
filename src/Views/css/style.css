@@ -64,6 +64,9 @@ input::placeholder {
   flex-wrap: wrap;
   color: #989898;
 }
+.project_number {
+  color: #fff;
+}
 .tag {
   background-color: rgb(49, 49, 49);
   color: rgb(163, 156, 156);
