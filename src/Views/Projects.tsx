@@ -46,6 +46,8 @@ function Projects() {
     }
   };
 
+  //Function to delete a stack from list
+
   return (
     <div className="main_header">
       <>
