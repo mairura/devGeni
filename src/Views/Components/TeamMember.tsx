@@ -3,6 +3,7 @@ import "../css/Member.css";
 import axios from "axios";
 import { ISingleDev } from "../Context";
 import { Config } from "../../config/config";
+import { Link } from "react-router-dom";
 
 function TeamMember(dev_name: any) {
   const [singleDev, setSingleDev] = useState<ISingleDev>();
@@ -20,7 +21,7 @@ function TeamMember(dev_name: any) {
 
   return (
     <>
-      <div className="main-member">
+      <Link to="/profile" className="main-member">
         <ul>
           <li>
             <img src={singleDev?.profile_img_link} alt="sample-profile" />
@@ -29,7 +30,7 @@ function TeamMember(dev_name: any) {
             <p>{singleDev?.name}</p>
           </li>
         </ul>
-      </div>
+      </Link>
     </>
   );
 }
