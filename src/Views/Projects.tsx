@@ -123,9 +123,11 @@ function Projects() {
           </ExternalLink>
           <br />
           <br />
-          <button className="booking-button">
-            {ksh} Speak to Dev Team Now
-          </button>
+          <ExternalLink href="https://meet.google.com/fhu-xuhy-rzr">
+            <button className="booking-button">
+              {ksh} Speak to Dev Team Now
+            </button>
+          </ExternalLink>
           <br />
           <br />
         </>
