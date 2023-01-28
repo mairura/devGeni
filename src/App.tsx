@@ -8,6 +8,7 @@ import BookNow from "./Views/BookNow";
 import { useEffect, useState } from "react";
 import Details from "./Views/Details";
 import Profile from "./Views/Profile";
+import ProfileList from "./Views/ProfileList";
 // import  ngenilogoAsset from "../src/assets/ngenilogoAsset.png"
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
               <Route path="/book-now" element={<BookNow />} />
               <Route path="/details" element={<Details />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/profileList" element={<ProfileList />} />
             </Routes>
             <Footer />
           </div>
