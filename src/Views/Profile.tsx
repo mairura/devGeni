@@ -12,6 +12,7 @@ const Profile = () => {
   const imageProfile: any = params.get("profilePic");
   const nameProfile = params.get("name");
   const shortName: any = params.get("shortName");
+  const profileLink: any = params.get("profileLink");
 
   return (
     <div className="profile_container">
@@ -65,7 +66,7 @@ const Profile = () => {
         <div className="profile_data">
           <div className="profile_links">
             <a href="#">dauglous@ngeni.io</a>
-            <a href="https://github.com/domambia">www.github.com/domambia</a>
+            <a href={profileLink}>{profileLink}</a>
             <a href="https://github.com/domambia">www.github.com/domambia</a>
             <a href="https://github.com/domambia">www.github.com/domambia</a>
             <a href="https://github.com/domambia">www.github.com/domambia</a>

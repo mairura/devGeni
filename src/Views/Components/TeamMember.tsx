@@ -24,7 +24,7 @@ function TeamMember(dev_name: any) {
   return (
     <>
       <Link
-        to={`/profile/?profilePic=${singleDev?.profile_img_link}&name=${singleDev?.name}&shortName=${singleDev?.short_name}`}
+        to={`/profile/?profilePic=${singleDev?.profile_img_link}&name=${singleDev?.name}&shortName=${singleDev?.short_name}&profileLink=${singleDev?.profile_link}`}
         className="main-member"
       >
         <ul>
