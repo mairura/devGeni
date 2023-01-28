@@ -19,8 +19,6 @@ function TeamMember(dev_name: any) {
     getSingleDev(dev_name);
   });
 
-  console.log("Single Developer Data:", singleDev);
-
   return (
     <>
       <Link

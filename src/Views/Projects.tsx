@@ -26,11 +26,12 @@ function Projects() {
     if (!tags.includes(e.target.value)) {
       setTags(tagList);
       let newList: string = tagList.join();
-      // console.log("NewList", newList);
+      console.log("NewList", newList);
       getData(newList);
       // console.log("Tags:", tagList);
     }
   };
+  console.log("Tags:", tags);
 
   //Function to submit choosen stack and find resp projects
   const getData = async (stackToSearch: string) => {
@@ -47,6 +48,11 @@ function Projects() {
   };
 
   //Function to delete a stack from list on click
+  const deleteStack = () => {
+    let randomStack = Math.floor(Math.random() * tags?.length);
+    let removeStack = tags.splice(randomStack, 1);
+    console.log("Remove Stack:", removeStack);
+  };
 
   return (
     <div className="main_header">
@@ -87,7 +93,7 @@ function Projects() {
             <div className="current-tags">
               {tags.map((item, i) => (
                 <div key={i + 1} className="tag">
-                  <p>{item}</p>
+                  <p onClick={deleteStack}>{item}</p>
                 </div>
               ))}
             </div>

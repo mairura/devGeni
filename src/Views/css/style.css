@@ -63,6 +63,7 @@ input::placeholder {
   margin-top: 20px;
   flex-wrap: wrap;
   color: #989898;
+  cursor: pointer;
 }
 .project_number {
   color: #fff;
