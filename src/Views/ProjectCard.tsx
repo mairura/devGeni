@@ -8,7 +8,13 @@ import "react-alice-carousel/lib/alice-carousel.css";
 
 function ProjectCard() {
   const { projects } = useContext(ProjectContext);
-  // console.log("Projects on Project Card:", projects);
+  let projectStorage = JSON.stringify(projects);
+  console.log("Storage data in JSON:", projectStorage);
+  localStorage.setItem("projectStorage", projectStorage);
+
+  let getData: any = localStorage.getItem("projectStorage");
+  let getDataStorage = JSON.parse(getData);
+  console.log("Get data from storage:", getDataStorage);
 
   return (
     <>
