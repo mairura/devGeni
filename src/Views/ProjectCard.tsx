@@ -8,7 +8,7 @@ import "react-alice-carousel/lib/alice-carousel.css";
 
 function ProjectCard() {
   const { projects } = useContext(ProjectContext);
-  console.log("Projects on Project Card:", projects);
+  // console.log("Projects on Project Card:", projects);
 
   return (
     <>

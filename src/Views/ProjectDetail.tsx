@@ -27,7 +27,7 @@ function ProjectDetail() {
     }
   };
 
-  console.log("Properties:", projectData);
+  // console.log("Properties:", projectData);
   let techStack: String[] | undefined = projectData?.tech_stack;
   let team: String[] | undefined = projectData?.team;
 

@@ -3,6 +3,7 @@
 }
 .profile_desc img {
   padding-bottom: 10px;
+  border-radius: 50%;
 }
 .profile_name {
   color: #f05e56;
