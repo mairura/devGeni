@@ -4,6 +4,7 @@
 .profile_desc img {
   padding-bottom: 10px;
   border-radius: 50%;
+  height: 250px;
 }
 .profile_name {
   color: #f05e56;

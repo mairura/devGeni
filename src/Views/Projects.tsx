@@ -55,7 +55,7 @@ function Projects() {
         <div className="header">
           <img src={Title} alt="title describe" />
           <TypeAnimation
-            sequence={["Team and Skill Matching Engine", 1000, () => {}]}
+            sequence={[1000, "Team and Skill Matching Engine", 1000, () => {}]}
             wrapper="div"
             cursor={true}
             repeat={Infinity}

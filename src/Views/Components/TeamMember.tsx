@@ -19,12 +19,12 @@ function TeamMember(dev_name: any) {
     getSingleDev(dev_name);
   });
 
-  console.log(singleDev?.profile_img_link);
+  console.log("Single Developer Data:", singleDev);
 
   return (
     <>
       <Link
-        to={`/profile/?UserUrl=${singleDev?.profile_img_link}&name=${singleDev?.name}`}
+        to={`/profile/?profilePic=${singleDev?.profile_img_link}&name=${singleDev?.name}`}
         className="main-member"
       >
         <ul>

@@ -1,16 +1,17 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { prev, share } from "../icons";
 import { greater } from "../icons";
 import "./css/profile.css";
 import minitrade from "../assets/minitrade.png";
 import linkpay from "../assets/linkpay.png";
+import { ExternalLink } from "react-external-link";
 
 const Profile = () => {
-  const location = useLocation();
-  console.log("Location:", location);
-  const params = new URLSearchParams(location.search);
-  const imageProfile: any = params.get("UserUrl");
+  const queryString = window.location.search;
+  const params = new URLSearchParams(queryString);
+  const imageProfile: any = params.get("profilePic");
   const nameProfile = params.get("name");
+
   return (
     <div className="profile_container">
       <div className="options">
@@ -48,8 +49,10 @@ const Profile = () => {
             <p>Linkpay</p>
           </div>
           <div className="project">
-            <img src={linkpay} alt="logo" />
-            <p>Potara</p>
+            <ExternalLink href="https://github.com/devngeni/potara">
+              <img src={linkpay} alt="logo" />
+              <p>Potara</p>
+            </ExternalLink>
           </div>
         </div>
       </div>
