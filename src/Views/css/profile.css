@@ -42,7 +42,7 @@
   border: none;
   background: #2c2c2c;
   border-radius: 5px;
-  padding: 1px 9px;
+  padding: 2px 10px;
   font-size: 10px;
 }
 .profile_projects {
@@ -70,11 +70,15 @@
   border-radius: 10px;
   padding: 10px 25px;
 }
+.externalLink {
+  text-decoration: none;
+}
 .project p {
   color: #f05e56;
   font-weight: 400;
   font-size: 13px;
   text-transform: uppercase;
+  padding: 1px;
 }
 .profile_media {
   background: #1e1e1e;

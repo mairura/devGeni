@@ -51,7 +51,7 @@ const Profile = () => {
             <p>Linkpay</p>
           </div>
           <div className="project">
-            <ExternalLink href="https://github.com/devngeni/potara">
+            <ExternalLink href="https://github.com/devngeni/potara" className="externalLink">
               <img src={linkpay} alt="logo" />
               <p>Potara</p>
             </ExternalLink>

@@ -26,12 +26,9 @@ function Projects() {
     if (!tags.includes(e.target.value)) {
       setTags(tagList);
       let newList: string = tagList.join();
-      // console.log("NewList", newList);
       getData(newList);
-      // console.log("Tags:", tagList);
     }
   };
-  // console.log("Tags:", tags);
 
   //Function to submit choosen stack and find resp projects
   const getData = async (stackToSearch: string) => {
@@ -40,7 +37,6 @@ function Projects() {
     try {
       const { data } = await axios.get(endpoint);
       setProjects([...data]);
-      // console.log("Projects", data);
       setShowPage(true);
     } catch (error: any) {
       console.error("Error:", error.message);
@@ -50,9 +46,9 @@ function Projects() {
   //Function to delete a stack from list on click
   const deleteStack = (e: any) => {
     let randomStack = Math.floor(Math.random() * tags?.length);
-    console.log("Random Stack:", randomStack);
+    // console.log("Random Stack:", randomStack);
     let removeStack = tags.splice(randomStack, 1);
-    console.log("Remove Stack:", removeStack);
+    // console.log("Remove Stack:", removeStack);
   };
 
   return (
