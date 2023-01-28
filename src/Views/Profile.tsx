@@ -11,6 +11,7 @@ const Profile = () => {
   const params = new URLSearchParams(queryString);
   const imageProfile: any = params.get("profilePic");
   const nameProfile = params.get("name");
+  const shortName: any = params.get("shortName");
 
   return (
     <div className="profile_container">
@@ -20,7 +21,7 @@ const Profile = () => {
       <div className="profile_desc">
         <img src={imageProfile} alt="developer" />
         <div className="profile_name">{nameProfile}</div>
-        <div className="profile_nickname">(Omambia.pyther)</div>
+        <div className="profile_nickname">({shortName})</div>
         <p>Backend Developer</p>
       </div>
       <div className="profile_stack">
