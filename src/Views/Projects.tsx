@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./css/style.css";
 import Title from "../assets/title.png";
 import ProjectCard from "./ProjectCard";
@@ -14,6 +14,7 @@ import { ExternalLink } from "react-external-link";
 import { TypeAnimation } from "react-type-animation";
 
 function Projects() {
+  const [showCarousel, setShowCarousel] = useState(true);
   const [tags, setTags] = useState<Array<string>>([]);
   const [projects, setProjects] = useState<Array<IProjects>>([]);
   const [showPage, setShowPage] = useState(false);
@@ -50,6 +51,16 @@ function Projects() {
     let removeStack = tags.splice(randomStack, 1);
     // console.log("Remove Stack:", removeStack);
   };
+
+  useEffect(() => {
+    let data = window.localStorage.getItem("showCarousel");
+    console.log("Carousel data:", data);
+    if(data !== null ) setShowCarousel(JSON.parse(data));
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("showCarousel", JSON.stringify(showCarousel));
+  }, [showCarousel]);
 
   return (
     <div className="main_header">
@@ -104,37 +115,41 @@ function Projects() {
         ""
       ) : (
         <>
-          <Tabs className="tabs">
-            <TabList className="tablist">
-              <Tab>Slide</Tab>
-              <Tab>List</Tab>
-            </TabList>
-            <TabPanel>
-              <ProjectContext.Provider value={{ projects }}>
-                <ProjectCard />
-              </ProjectContext.Provider>
-            </TabPanel>
-            <TabPanel>
-              <ProjectContext.Provider value={{ projects }}>
-                <Details />
-              </ProjectContext.Provider>
-            </TabPanel>
-          </Tabs>
-          <ExternalLink
-            href="https://calendly.com/ngeni-info"
-            className="btn_link"
-          >
-            <button className="booking-button">Book Now</button>
-          </ExternalLink>
-          <br />
-          <br />
-          <ExternalLink href="https://meet.google.com/fhu-xuhy-rzr">
-            <button className="booking-button">
-              {ksh} Speak to Dev Team Now
-            </button>
-          </ExternalLink>
-          <br />
-          <br />
+          {showCarousel && (
+            <>
+              <Tabs className="tabs">
+                <TabList className="tablist">
+                  <Tab>Slide</Tab>
+                  <Tab>List</Tab>
+                </TabList>
+                <TabPanel>
+                  <ProjectContext.Provider value={{ projects }}>
+                    <ProjectCard />
+                  </ProjectContext.Provider>
+                </TabPanel>
+                <TabPanel>
+                  <ProjectContext.Provider value={{ projects }}>
+                    <Details />
+                  </ProjectContext.Provider>
+                </TabPanel>
+              </Tabs>
+              <ExternalLink
+                href="https://calendly.com/ngeni-info"
+                className="btn_link"
+              >
+                <button className="booking-button">Book Now</button>
+              </ExternalLink>
+              <br />
+              <br />
+              <ExternalLink href="https://meet.google.com/fhu-xuhy-rzr">
+                <button className="booking-button">
+                  {ksh} Speak to Dev Team Now
+                </button>
+              </ExternalLink>
+              <br />
+              <br />
+            </>
+          )}
         </>
       )}
     </div>
