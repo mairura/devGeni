@@ -8,6 +8,8 @@ import "react-alice-carousel/lib/alice-carousel.css";
 
 function ProjectCard() {
   const { projects } = useContext(ProjectContext);
+
+  //Finish up on this
   let projectStorage = JSON.stringify(projects);
   console.log("Storage data in JSON:", projectStorage);
   localStorage.setItem("projectStorage", projectStorage);

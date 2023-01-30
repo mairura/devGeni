@@ -44,6 +44,8 @@ function Projects() {
     }
   };
 
+  console.log("Print Tags:", tags);
+
   //Function to delete a stack from list on click
   const deleteStack = (e: any) => {
     let randomStack = Math.floor(Math.random() * tags?.length);
@@ -55,7 +57,7 @@ function Projects() {
   useEffect(() => {
     let data = window.localStorage.getItem("showCarousel");
     console.log("Carousel data:", data);
-    if(data !== null ) setShowCarousel(JSON.parse(data));
+    if (data !== null) setShowCarousel(JSON.parse(data));
   }, []);
 
   useEffect(() => {
@@ -75,6 +77,10 @@ function Projects() {
             repeat={Infinity}
             style={{ fontSize: "1.5em", color: "#fff" }}
           />
+        </div>
+        <div className="header_data">
+          <div className="class1">Projects</div>
+          <div>Developers</div>
         </div>
         <div className="search-bar">
           <form>
