@@ -51,7 +51,7 @@ function Projects() {
     let randomStack = Math.floor(Math.random() * tags?.length);
     // console.log("Random Stack:", randomStack);
     let removeStack = tags.splice(randomStack, 1);
-    // console.log("Remove Stack:", removeStack);
+    console.log("Remove Stack:", removeStack);
   };
 
   useEffect(() => {

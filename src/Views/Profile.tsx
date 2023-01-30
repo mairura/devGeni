@@ -51,7 +51,10 @@ const Profile = () => {
             <p>Linkpay</p>
           </div>
           <div className="project">
-            <ExternalLink href="https://github.com/devngeni/potara" className="externalLink">
+            <ExternalLink
+              href="https://github.com/devngeni/potara"
+              className="externalLink"
+            >
               <img src={linkpay} alt="logo" />
               <p>Potara</p>
             </ExternalLink>
@@ -65,12 +68,12 @@ const Profile = () => {
         </div>
         <div className="profile_data">
           <div className="profile_links">
-            <a href="#">dauglous@ngeni.io</a>
+            <a href="https://github.com/domambia">dauglous@ngeni.io</a>
             <a href={profileLink}>{profileLink}</a>
             <a href="https://github.com/domambia">www.github.com/domambia</a>
             <a href="https://github.com/domambia">www.github.com/domambia</a>
             <a href="https://github.com/domambia">www.github.com/domambia</a>
-            <a href="#">dauglous.twitter</a>
+            <a href="https://github.com/domambia">dauglous.twitter</a>
           </div>
           <div className="vertical_line"></div>
           <div className="profile_box">
