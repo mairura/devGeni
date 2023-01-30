@@ -1,0 +1,30 @@
+.devdata_container {
+  color: #fff;
+  padding: 5px 20px;
+}
+.devdata_details {
+  display: flex;
+  margin: 15px 20px;
+  padding: 10px;
+  background-color: #343950;
+}
+.devdata_container img {
+  padding-right: 30px;
+}
+.devdata_name {
+  text-align: left;
+  padding-top: 25px;
+  cursor: pointer;
+}
+.devdata_name h3 {
+  color: #f05e56;
+  font-weight: 400;
+  font-size: 14px;
+}
+.devdata_name span {
+  font-size: 8px;
+}
+.devdata_name p {
+  color: gray;
+  font-size: 13px;
+}
