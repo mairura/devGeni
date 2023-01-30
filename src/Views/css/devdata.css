@@ -4,22 +4,34 @@
 }
 .devdata_details {
   display: flex;
-  margin: 15px 20px;
+  margin: 5px 20px;
   padding: 10px;
   background-color: #343950;
+  border-radius: 10px;
+}
+.devdata_image {
+  width: 100px;
 }
 .devdata_container img {
-  padding-right: 30px;
+  padding-top: 3px;
+  border-radius: 50%;
+  width: 70px;
 }
 .devdata_name {
   text-align: left;
-  padding-top: 25px;
+  padding-top: 15px;
   cursor: pointer;
 }
 .devdata_name h3 {
   color: #f05e56;
   font-weight: 400;
   font-size: 14px;
+}
+.devdata_name i {
+  font-size: 10px;
+}
+.devdata_name i:hover {
+  color: #f05e56;
 }
 .devdata_name span {
   font-size: 8px;
