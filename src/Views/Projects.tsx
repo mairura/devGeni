@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./css/style.css";
 import Title from "../assets/title.png";
 import ProjectCard from "./ProjectCard";
@@ -12,9 +12,9 @@ import "react-tabs/style/react-tabs.css";
 import Details from "./Details";
 import { ExternalLink } from "react-external-link";
 import { TypeAnimation } from "react-type-animation";
+import { Link } from "react-router-dom";
 
 function Projects() {
-  const [showCarousel, setShowCarousel] = useState(true);
   const [tags, setTags] = useState<Array<string>>([]);
   const [projects, setProjects] = useState<Array<IProjects>>([]);
   const [showPage, setShowPage] = useState(false);
@@ -27,7 +27,9 @@ function Projects() {
     if (!tags.includes(e.target.value)) {
       setTags(tagList);
       let newList: string = tagList.join();
+      // console.log("NewList", newList);
       getData(newList);
+      // console.log("Tags:", tagList);
     }
   };
 
@@ -35,34 +37,17 @@ function Projects() {
   const getData = async (stackToSearch: string) => {
     setShowPage(false);
     const endpoint: string = `${url}/index/projects/tags/${stackToSearch}`;
+    // console.log("Endpoint:", endpoint);
     try {
       const { data } = await axios.get(endpoint);
       setProjects([...data]);
+      console.log("Projects", data);
+      console.log("Project Length:", data.length);
       setShowPage(true);
     } catch (error: any) {
       console.error("Error:", error.message);
     }
   };
-
-  console.log("Print Tags:", tags);
-
-  //Function to delete a stack from list on click
-  const deleteStack = (e: any) => {
-    let randomStack = Math.floor(Math.random() * tags?.length);
-    // console.log("Random Stack:", randomStack);
-    let removeStack = tags.splice(randomStack, 1);
-    console.log("Remove Stack:", removeStack);
-  };
-
-  useEffect(() => {
-    let data = window.localStorage.getItem("showCarousel");
-    console.log("Carousel data:", data);
-    if (data !== null) setShowCarousel(JSON.parse(data));
-  }, []);
-
-  useEffect(() => {
-    window.localStorage.setItem("showCarousel", JSON.stringify(showCarousel));
-  }, [showCarousel]);
 
   return (
     <div className="main_header">
@@ -71,16 +56,21 @@ function Projects() {
         <div className="header">
           <img src={Title} alt="title describe" />
           <TypeAnimation
-            sequence={[1000, "Team and Skill Matching Engine", 1000, () => {}]}
+            sequence={["Team and Skill Matching Engine", 1000, () => {}]}
             wrapper="div"
             cursor={true}
             repeat={Infinity}
             style={{ fontSize: "1.5em", color: "#fff" }}
           />
+          {/* <p style={{ color: "#fff" }}>Team and Skill Matching Engine</p> */}
         </div>
         <div className="header_data">
-          <div className="class1">Projects</div>
-          <div>Developers</div>
+          <Link to="/" className="devdata_link">
+            <p>Projects</p>
+          </Link>
+          <Link to="devdata" className="devdata_link">
+            <p>Developers</p>
+          </Link>
         </div>
         <div className="search-bar">
           <form>
@@ -107,7 +97,7 @@ function Projects() {
             <div className="current-tags">
               {tags.map((item, i) => (
                 <div key={i + 1} className="tag">
-                  <p onClick={deleteStack}>{item}</p>
+                  <p>{item}</p>
                 </div>
               ))}
             </div>
@@ -121,41 +111,36 @@ function Projects() {
         ""
       ) : (
         <>
-          {showCarousel && (
-            <>
-              <Tabs className="tabs">
-                <TabList className="tablist">
-                  <Tab>Slide</Tab>
-                  <Tab>List</Tab>
-                </TabList>
-                <TabPanel>
-                  <ProjectContext.Provider value={{ projects }}>
-                    <ProjectCard />
-                  </ProjectContext.Provider>
-                </TabPanel>
-                <TabPanel>
-                  <ProjectContext.Provider value={{ projects }}>
-                    <Details />
-                  </ProjectContext.Provider>
-                </TabPanel>
-              </Tabs>
-              <ExternalLink
-                href="https://calendly.com/ngeni-info"
-                className="btn_link"
-              >
-                <button className="booking-button">Book Now</button>
-              </ExternalLink>
-              <br />
-              <br />
-              <ExternalLink href="https://meet.google.com/fhu-xuhy-rzr">
-                <button className="booking-button">
-                  {ksh} Speak to Dev Team Now
-                </button>
-              </ExternalLink>
-              <br />
-              <br />
-            </>
-          )}
+          <Tabs className="tabs">
+            <TabList className="tablist">
+              <Tab>Slide</Tab>
+              <Tab>List</Tab>
+            </TabList>
+            <TabPanel>
+              <ProjectContext.Provider value={{ projects }}>
+                <ProjectCard />
+              </ProjectContext.Provider>
+            </TabPanel>
+            <TabPanel>
+              <ProjectContext.Provider value={{ projects }}>
+                <Details />
+              </ProjectContext.Provider>
+            </TabPanel>
+          </Tabs>
+          <ExternalLink
+            href="https://calendly.com/ngeni-info"
+            className="btn_link"
+          >
+            <button className="booking-button">Book Now</button>
+          </ExternalLink>
+
+          <br />
+          <br />
+          <button className="booking-button">
+            {ksh} Speak to Dev Team Now
+          </button>
+          <br />
+          <br />
         </>
       )}
     </div>
