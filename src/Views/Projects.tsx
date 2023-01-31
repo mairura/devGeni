@@ -82,7 +82,7 @@ function Projects() {
               wrapper="div"
               cursor={true}
               repeat={Infinity}
-              style={{ fontSize: "1.5em", color: "#fff" }}
+              style={{ fontSize: "1em", color: "lightgray" }}
             />
           </div>
           <div className="header_data">
@@ -110,14 +110,16 @@ function Projects() {
             </select>
           </form>
           <div className="current-tags">
-            {tags.map((item, i) => (
-              <div key={i + 1} className="tag">
-                <p>{item}</p>
-              </div>
-            ))}
+            {tags.map((item, i) => {
+              return (
+                <div key={i + 1} className="tag">
+                  <p>{item}</p>
+                </div>
+              );
+            })}
           </div>
           <i className="project_number">
-            Found&nbsp;{projects.length}&nbsp;projects for stack&nbsp;{tags}
+            Found&nbsp;{projects.length}&nbsp;projects
           </i>
         </div>
       </>
@@ -163,7 +165,7 @@ function Projects() {
               <br />
               <br />
               <button className="booking-button">
-                {ksh} Speak to Dev Team Now
+                {ksh} Speak Now
               </button>
               <br />
               <br />

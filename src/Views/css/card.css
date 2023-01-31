@@ -21,17 +21,20 @@
   font-weight: 500;
 }
 .card_desc {
-  margin: 25px;
+  margin: 10px;
+  padding: 10px;
+  border-top: 2px solid rgb(236, 91, 83, 0.2);
+  border-bottom: 2px solid rgb(236, 91, 83, 0.2);
 }
 .stack_item {
   display: flex;
   flex-wrap: wrap;
-  padding: 20px;
+  padding: 2px;
 }
 .btn-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 35px;
+  margin: 5px;
 }
 .btn-container button {
   border: 2px solid #7593cb;
@@ -41,5 +44,5 @@
   font-weight: bold;
   width: 80%;
   margin: auto;
-  min-height: 50px;
+  height: 30px;
 }

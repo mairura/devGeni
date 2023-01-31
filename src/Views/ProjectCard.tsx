@@ -37,6 +37,7 @@ function ProjectCard() {
           let stack: String[] | undefined = project?.tech_stack;
           let desc: String[] | undefined = project?.description;
           let match_rate: string | undefined = project?.match_rate;
+          let proj_title: string | undefined = project?.proj_name;
 
           let trimDesc = function (string: any, length: any) {
             return string.length > length
@@ -54,18 +55,20 @@ function ProjectCard() {
                       </div>
 
                       <Link to={`project/?projectId=${project._id}`}>
-                        <b>{project.proj_name}</b>
+                        <b>{trimDesc(proj_title, 20)}</b>
 
-                        <p className="card_desc">{trimDesc(desc, 300)}</p>
+                        <p className="card_desc">{trimDesc(desc, 150)}</p>
                         <div className="stack_item">
-                          {stack?.map((item: any) => (
-                            <i>{item},</i>
-                          ))}
+                          {stack?.map((item: any, i: any) => {
+                            while (i < 5) {
+                              return <i>{item},</i>;
+                            }
+                          })}
                         </div>
                         <div className="btn-container">
-                          <button>Lines of code</button>
+                          <button>Code</button>
                           <button>
-                            <Link to="#">Live project</Link>
+                            <Link to="#">Live</Link>
                           </button>
                         </div>
                       </Link>
