@@ -36,6 +36,7 @@ function ProjectCard() {
           let team: String[] | undefined = project?.team;
           let stack: String[] | undefined = project?.tech_stack;
           let desc: String[] | undefined = project?.description;
+          let match_rate: string | undefined = project?.match_rate;
 
           let trimDesc = function (string: any, length: any) {
             return string.length > length
@@ -50,6 +51,7 @@ function ProjectCard() {
                     <div key={project.id}>
                       <Link to={`project/?projectId=${project._id}`}>
                         <b>{project.proj_name}</b>
+                        <span>{match_rate}%</span>
                         <p className="card_desc">{trimDesc(desc, 300)}</p>
                         <div className="stack_item">
                           {stack?.map((item: any) => (

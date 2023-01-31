@@ -12,6 +12,11 @@
   color: #fff;
   text-decoration: none;
 }
+.more span {
+  padding-left: 20px;
+  color: #87f056;
+  font-weight: 500;
+}
 .card_desc {
   margin: 25px;
 }
