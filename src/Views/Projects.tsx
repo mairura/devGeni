@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import "./css/style.css";
 import Title from "../assets/title.png";
 import ProjectCard from "./ProjectCard";
@@ -12,15 +12,18 @@ import "react-tabs/style/react-tabs.css";
 import Details from "./Details";
 import { ExternalLink } from "react-external-link";
 import { TypeAnimation } from "react-type-animation";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import HashLoader from "react-spinners/HashLoader";
+// import ProfileList from "./ProfileList";
 
 function Projects() {
   const [tags, setTags] = useState<Array<string>>([]);
   const [projects, setProjects] = useState<Array<IProjects>>([]);
   const [showPage, setShowPage] = useState(false);
   const [loader, setLoader] = useState(true);
+  const [getStacks, setGetStacks] = useState([]);
   let url = Config.URL;
+  // console.log("Print this:", projects);
 
   //Function to handle selected stack to be called
   const handleStack = (e: any) => {
@@ -51,31 +54,46 @@ function Projects() {
     }
   };
 
+  //Function to get all stacks from all projects
+  const getStack = async () => {
+    const stack = await axios.get(`${url}/index/tags`);
+    console.log("Stack Listed:", stack.data);
+    let stacks = stack.data;
+    setGetStacks(stacks);
+  };
+
+  // console.log("All Stacks gotten:", getStacks);
+
   useEffect(() => {
     setTimeout(() => setLoader(false), 7000);
+  }, []);
+
+  useEffect(() => {
+    getStack();
   }, []);
 
   return (
     <div className="main_header">
       <>
-        {" "}
-        <div className="header">
-          <img src={Title} alt="title describe" />
-          <TypeAnimation
-            sequence={["Team and Skill Matching Engine", 1000, () => {}]}
-            wrapper="div"
-            cursor={true}
-            repeat={Infinity}
-            style={{ fontSize: "1.5em", color: "#fff" }}
-          />
-        </div>
-        <div className="header_data">
-          <Link to="/" className="devdata_link">
-            <p>Projects</p>
-          </Link>
-          <Link to="devdata" className="devdata_link">
-            <p>Developers</p>
-          </Link>
+        <div>
+          <div className="header">
+            <img src={Title} alt="title describe" />
+            <TypeAnimation
+              sequence={["Team and Skill Matching Engine", 1000, () => {}]}
+              wrapper="div"
+              cursor={true}
+              repeat={Infinity}
+              style={{ fontSize: "1.5em", color: "#fff" }}
+            />
+          </div>
+          <div className="header_data">
+            <NavLink className="devdata_link" to="/">
+              <p>Projects</p>
+            </NavLink>
+            <NavLink to="devdata" className="devdata_link">
+              <p>Developers</p>
+            </NavLink>
+          </div>
         </div>
         <div className="search-bar">
           <form>
@@ -84,33 +102,25 @@ function Projects() {
                 handleStack(e);
               }}
             >
-              <option value="">Choose Stack</option>
-              <option value="ReactJS">ReactJS</option>
-              <option value="Javascript">Javascript</option>
-              <option value="Typescript">Typescript</option>
-              <option value="Solidity">Solidity</option>
-              <option value="NodeJS">NodeJS</option>
-              <option value="Rust">Rust</option>
-              <option value="MongoDB">MongoDB</option>
-              <option value="PHP">PHP</option>
-              <option value="Ethers">EthersJS</option>
-              <option value="NextJS">NextJS</option>
-            </select>
-            <button type="submit" className="select btn">
-              Search Project
-            </button>
-            <div className="current-tags">
-              {tags.map((item, i) => (
-                <div key={i + 1} className="tag">
-                  <p>{item}</p>
-                </div>
+              <option>Choose Stack</option>
+              {getStacks.map((item: any, index) => (
+                <option key={index} value={item.name}>
+                  {item.name}
+                </option>
               ))}
-            </div>
-            <i className="project_number">
-              Found&nbsp;{projects.length}&nbsp;projects for stack&nbsp;{tags}
-            </i>
+            </select>
           </form>
-        </div>{" "}
+          <div className="current-tags">
+            {tags.map((item, i) => (
+              <div key={i + 1} className="tag">
+                <p>{item}</p>
+              </div>
+            ))}
+          </div>
+          <i className="project_number">
+            Found&nbsp;{projects.length}&nbsp;projects for stack&nbsp;{tags}
+          </i>
+        </div>
       </>
       {!showPage ? (
         ""

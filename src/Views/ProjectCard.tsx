@@ -5,9 +5,11 @@ import { Link } from "react-router-dom";
 import { ProjectContext } from "./Context";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
+import "./css/style.css";
 
 function ProjectCard() {
   const { projects } = useContext(ProjectContext);
+  console.log("Projects:", projects);
 
   //Finish up on this
   let projectStorage = JSON.stringify(projects);
@@ -46,7 +48,7 @@ function ProjectCard() {
                 <Link to="project">
                   <div className="more">
                     <div key={project.id}>
-                      <Link to={`project/?projectId=${project.proj_name}`}>
+                      <Link to={`project/?projectId=${project._id}`}>
                         <b>{project.proj_name}</b>
                         <p className="card_desc">{trimDesc(desc, 300)}</p>
                         <div className="stack_item">

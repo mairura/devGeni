@@ -16,7 +16,7 @@ const Devdata = () => {
     setDevs(devs.data);
   };
 
-  //   console.log("Names:", devs);
+  console.log("Names:", devs);
 
   useEffect(() => {
     devData();
@@ -45,6 +45,7 @@ const Devdata = () => {
             let shortName = dev.short_name;
             let pic = dev.profile_img_link;
             let gitLink = dev.profile_link;
+            let stack_name = dev.tech_stack;
 
             return (
               <div className="devdata_container">
@@ -56,7 +57,7 @@ const Devdata = () => {
                     <h3>
                       {name}&nbsp;<span>({shortName})</span>
                     </h3>
-                    <p>Backend Developer</p>
+                    <p>Stack will display here:{stack_name}</p>
                     <i>{gitLink}</i>
                   </div>
                 </div>

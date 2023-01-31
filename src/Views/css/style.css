@@ -151,3 +151,6 @@ input::placeholder {
   justify-content: center;
   align-items: center;
 }
+.header_data a.active {
+  border-bottom: 1px solid #f05e56;
+}
