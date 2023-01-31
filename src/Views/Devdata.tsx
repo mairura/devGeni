@@ -1,13 +1,15 @@
 import "./css/devdata.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Config } from "../config/config";
 
 const Devdata = () => {
   const [devs, setDevs] = useState([]);
+  let url = Config.URL;
 
   //Function to get all developers at NGeni Labs
   const devData = async () => {
-    const devs: any = await axios.get("http://localhost:8000/index/devs");
+    const devs: any = await axios.get(`${url}/index/devs`);
     // console.log("Developers:", devs.data);
     setDevs(devs.data);
   };
