@@ -36,8 +36,9 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/devdata" element={<Devdata />} />
             </Routes>
-            <Footer />
           </div>
+          <Footer />
+
         </>
       )}
     </>

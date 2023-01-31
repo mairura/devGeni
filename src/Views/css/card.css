@@ -12,6 +12,9 @@
   color: #fff;
   text-decoration: none;
 }
+.rate {
+  margin: 5px;
+}
 .more span {
   padding-left: 20px;
   color: #87f056;

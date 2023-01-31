@@ -49,9 +49,13 @@ function ProjectCard() {
                 <Link to="project">
                   <div className="more">
                     <div key={project.id}>
+                      <div className="rate">
+                        <span>Search Match Rate&nbsp;{match_rate}%</span>
+                      </div>
+
                       <Link to={`project/?projectId=${project._id}`}>
                         <b>{project.proj_name}</b>
-                        <span>{match_rate}%</span>
+
                         <p className="card_desc">{trimDesc(desc, 300)}</p>
                         <div className="stack_item">
                           {stack?.map((item: any) => (
