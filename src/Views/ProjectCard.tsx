@@ -9,7 +9,7 @@ import "./css/style.css";
 
 function ProjectCard() {
   const { projects } = useContext(ProjectContext);
-  console.log("Projects:", projects);
+  // console.log("Projects:", projects);
 
   //Finish up on this
   let projectStorage = JSON.stringify(projects);

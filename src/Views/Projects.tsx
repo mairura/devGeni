@@ -42,12 +42,11 @@ function Projects() {
   const getData = async (stackToSearch: string) => {
     setShowPage(false);
     const endpoint: string = `${url}/index/projects/tags/${stackToSearch}`;
-    // console.log("Endpoint:", endpoint);
     try {
       const { data } = await axios.get(endpoint);
       setProjects([...data]);
-      console.log("Projects", data);
-      console.log("Project Length:", data.length);
+      // console.log("Projects", data);
+      // console.log("Project Length:", data.length);
       setShowPage(true);
     } catch (error: any) {
       console.error("Error:", error.message);
@@ -57,7 +56,7 @@ function Projects() {
   //Function to get all stacks from all projects
   const getStack = async () => {
     const stack = await axios.get(`${url}/index/tags`);
-    console.log("Stack Listed:", stack.data);
+    // console.log("Stack Listed:", stack.data);
     let stacks = stack.data;
     setGetStacks(stacks);
   };

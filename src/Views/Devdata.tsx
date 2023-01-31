@@ -26,12 +26,12 @@ const Devdata = () => {
   //Function to get all stacks from all projects
   const getStack = async () => {
     const stack = await axios.get(`${url}/index/tags`);
-    console.log("Stack Listed:", stack.data);
+    // console.log("Stack Listed:", stack.data);
     let stacks = stack.data;
     setGetStacks(stacks);
   };
 
-  console.log("Received Projects:", projects);
+  // console.log("Received Projects:", projects);
 
   useEffect(() => {
     devData();

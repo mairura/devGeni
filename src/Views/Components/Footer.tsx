@@ -1,4 +1,3 @@
-import React from "react";
 import "../css/style.css";
 import ngeniLogo from "../../assets/ngenilogoAsset.png";
 

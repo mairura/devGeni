@@ -20,7 +20,7 @@
   text-decoration: none;
 }
 .header_data p {
-  padding: 2px 14px;
+  padding: 6px 17px;
   color: #fff;
 }
 .main {
@@ -121,7 +121,8 @@ input::placeholder {
   color: #fff;
 }
 .footer_container {
-  margin: 20px;
+  bottom: 0;
+  margin: 10px;
   /* background: linear-gradient(192.05deg, #000000 0%, #09101f 100%); */
 }
 .footer-text {
