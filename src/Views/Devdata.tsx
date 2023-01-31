@@ -61,7 +61,7 @@ const Devdata = () => {
     setGetStacks(stacks);
   };
 
-  console.log("Names:", devs);
+  // console.log("Names:", devs);
 
   useEffect(() => {
     devData();
@@ -121,7 +121,7 @@ const Devdata = () => {
             ))}
           </div>
           <i className="project_number">
-            Found&nbsp;{projects.length}&nbsp;projects for stack&nbsp;{tags}
+            Found&nbsp;{projects.length}&nbsp;developer(s) with stack&nbsp;{tags}
           </i>
         </div>
       </>
