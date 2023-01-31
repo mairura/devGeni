@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./css/style.css";
 import Title from "../assets/title.png";
 import ProjectCard from "./ProjectCard";
@@ -13,11 +13,13 @@ import Details from "./Details";
 import { ExternalLink } from "react-external-link";
 import { TypeAnimation } from "react-type-animation";
 import { Link } from "react-router-dom";
+import HashLoader from "react-spinners/HashLoader";
 
 function Projects() {
   const [tags, setTags] = useState<Array<string>>([]);
   const [projects, setProjects] = useState<Array<IProjects>>([]);
   const [showPage, setShowPage] = useState(false);
+  const [loader, setLoader] = useState(true);
   let url = Config.URL;
 
   //Function to handle selected stack to be called
@@ -49,6 +51,10 @@ function Projects() {
     }
   };
 
+  useEffect(() => {
+    setTimeout(() => setLoader(false), 7000);
+  }, []);
+
   return (
     <div className="main_header">
       <>
@@ -62,7 +68,6 @@ function Projects() {
             repeat={Infinity}
             style={{ fontSize: "1.5em", color: "#fff" }}
           />
-          {/* <p style={{ color: "#fff" }}>Team and Skill Matching Engine</p> */}
         </div>
         <div className="header_data">
           <Link to="/" className="devdata_link">
@@ -111,36 +116,50 @@ function Projects() {
         ""
       ) : (
         <>
-          <Tabs className="tabs">
-            <TabList className="tablist">
-              <Tab>Slide</Tab>
-              <Tab>List</Tab>
-            </TabList>
-            <TabPanel>
-              <ProjectContext.Provider value={{ projects }}>
-                <ProjectCard />
-              </ProjectContext.Provider>
-            </TabPanel>
-            <TabPanel>
-              <ProjectContext.Provider value={{ projects }}>
-                <Details />
-              </ProjectContext.Provider>
-            </TabPanel>
-          </Tabs>
-          <ExternalLink
-            href="https://calendly.com/ngeni-info"
-            className="btn_link"
-          >
-            <button className="booking-button">Book Now</button>
-          </ExternalLink>
+          {loader ? (
+            <div className={"item"}>
+              <HashLoader
+                color="#f05e56"
+                loading={loader}
+                size={100}
+                aria-label="Loading Spinner"
+                data-testid="loader"
+              />
+            </div>
+          ) : (
+            <>
+              <Tabs className="tabs">
+                <TabList className="tablist">
+                  <Tab>Slide</Tab>
+                  <Tab>List</Tab>
+                </TabList>
+                <TabPanel>
+                  <ProjectContext.Provider value={{ projects }}>
+                    <ProjectCard />
+                  </ProjectContext.Provider>
+                </TabPanel>
+                <TabPanel>
+                  <ProjectContext.Provider value={{ projects }}>
+                    <Details />
+                  </ProjectContext.Provider>
+                </TabPanel>
+              </Tabs>
+              <ExternalLink
+                href="https://calendly.com/ngeni-info"
+                className="btn_link"
+              >
+                <button className="booking-button">Book Now</button>
+              </ExternalLink>
 
-          <br />
-          <br />
-          <button className="booking-button">
-            {ksh} Speak to Dev Team Now
-          </button>
-          <br />
-          <br />
+              <br />
+              <br />
+              <button className="booking-button">
+                {ksh} Speak to Dev Team Now
+              </button>
+              <br />
+              <br />
+            </>
+          )}
         </>
       )}
     </div>
