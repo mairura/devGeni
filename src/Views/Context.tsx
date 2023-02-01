@@ -1,7 +1,7 @@
 import { createContext } from "react";
 
 export interface IProjects {
-  id: number;
+  _id: number;
   proj_name: String;
   description: String;
   team: String[];

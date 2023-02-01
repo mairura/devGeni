@@ -30,6 +30,7 @@ function ProjectDetail() {
   // console.log("Properties:", projectData);
   let techStack: String[] | undefined = projectData?.tech_stack;
   let team: String[] | undefined = projectData?.team;
+  let projectId: number | undefined = projectData?._id;
 
   useEffect(() => {
     singleProject();
@@ -56,11 +57,9 @@ function ProjectDetail() {
         </h4>
         <h4>
           Tech_Stack&nbsp;: &nbsp; &nbsp;{" "}
-          <i>
-            {techStack?.map((item) => (
-              <>{item}, </>
-            ))}
-          </i>
+          {techStack?.map((item) => (
+            <i>{item}, </i>
+          ))}
         </h4>
       </div>
       <div>
