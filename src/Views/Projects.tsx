@@ -8,7 +8,6 @@ import axios from "axios";
 import { ProjectContext, IProjects } from "./Context";
 import { Config } from "../config/config";
 import { Tabs, TabPanel, Tab, TabList } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
 import Details from "./Details";
 import { ExternalLink } from "react-external-link";
 import { TypeAnimation } from "react-type-animation";
@@ -83,10 +82,10 @@ function Projects() {
           </div>
           <div className="header_data">
             <NavLink className="devdata_link" to="/">
-              <p>Projects</p>
+              <p className="link">Projects</p>
             </NavLink>
             <NavLink to="devdata" className="devdata_link">
-              <p>Developers</p>
+              <p className="link">Developers</p>
             </NavLink>
           </div>
         </div>
@@ -132,10 +131,14 @@ function Projects() {
             </div>
           ) : (
             <>
-              <Tabs className="tabs">
+              <Tabs
+                className="tabs"
+                id="controlled-tabs"
+                selectedTabClassName="bg-orange"
+              >
                 <TabList className="tablist">
-                  <Tab className="tab">Slide</Tab>
-                  <Tab className="tab">List</Tab>
+                  <Tab>Slide</Tab>
+                  <Tab>List</Tab>
                 </TabList>
                 <TabPanel style={{ maxHeight: "55vh" }}>
                   <ProjectContext.Provider value={{ projects }}>

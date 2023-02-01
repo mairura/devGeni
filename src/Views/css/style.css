@@ -8,7 +8,6 @@ body {
 .header {
   margin: 20px;
   text-align: center;
-  /* margin-top: 3vh; */
 }
 .header img {
   padding-bottom: 10px;
@@ -24,12 +23,12 @@ body {
 }
 .devdata_link {
   text-decoration: none;
-}
-.devdata_link p {
-  text-decoration: none;
   width: 100%;
 }
-.header_data p {
+.link {
+  text-decoration: none;
+}
+.link {
   padding: 6px 17px;
   color: #fff;
 }
@@ -97,7 +96,6 @@ input::placeholder {
   border-radius: 15px;
   padding: 0 5px;
   width: auto;
-  /* margin-top: 5px; */
 }
 .tag p {
   margin: 5px;
@@ -154,14 +152,11 @@ input::placeholder {
 }
 .tablist {
   color: #ffff;
-  background-color: none;
-  margin: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-}
-.tab {
-  padding: 5px;
-  border-bottom: 1px solid red;
+  list-style: none;
+  position: relative;
+  margin-bottom: 10px;
 }
 .item {
   width: 200px;
