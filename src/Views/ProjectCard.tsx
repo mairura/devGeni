@@ -44,6 +44,8 @@ function ProjectCard() {
           let match_rate: string | undefined = project?.match_rate;
           let proj_title: string | undefined = project?.proj_name;
 
+          // console.log("Print header:", project);
+
           let trimDesc = function (string: any, length: any) {
             return string.length > length
               ? string.substring(0, length) + "..."
