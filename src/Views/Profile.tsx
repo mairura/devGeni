@@ -25,65 +25,76 @@ const Profile = () => {
         <div className="profile_nickname">({shortName})</div>
         <p>Backend Developer</p>
       </div>
-      <div className="profile_stack">
-        <h5>Tech Stack</h5>
-        <div className="dev_stack">
-          <div>Java</div>
-          <div>Golang</div>
-          <div>Python</div>
-          <div>Typescript</div>
-          <div>ReactJS</div>
-          <div>Javascript</div>
+      <div className="prof">
+        <div className="profile_stack">
+          <h5>Tech Stack</h5>
+          <div className="dev_stack">
+            <div>Java</div>
+            <div>Golang</div>
+            <div>Python</div>
+            <div>Typescript</div>
+            <div>ReactJS</div>
+            <div>Javascript</div>
+          </div>
         </div>
+        <div className="profile_projects">
+          <div className="profile_title">
+            <h5>Projects</h5>
+            <div className="see_all">
+              See All&nbsp;&nbsp;&nbsp;&nbsp;<span>{greater}</span>
+            </div>
+          </div>
+          <div className="profile_project">
+            <div className="project">
+              <img src={minitrade} alt="logo" />
+              <p>Minitrade</p>
+            </div>
+            <div className="project">
+              <ExternalLink
+                href="https://github.com/devngeni"
+                className="externalLink"
+              >
+                <img src={linkpay} alt="logo" />
+                <p>Linkpay</p>
+              </ExternalLink>
+            </div>
+            <div className="project">
+              <ExternalLink
+                href="https://github.com/devngeni/potara"
+                className="externalLink"
+              >
+                <img src={linkpay} alt="logo" />
+                <p>Potara</p>
+              </ExternalLink>
+            </div>
+          </div>
+        </div>
+        <div className="profile_media">
+          <div className="profile_title">
+            <h5>Media and Links</h5>
+            <div className="see_all">
+              See All&nbsp;&nbsp;&nbsp;&nbsp;{greater}
+            </div>
+          </div>
+          <div className="profile_data">
+            <div className="profile_links">
+              <a href="https://github.com/domambia">dauglous@ngeni.io</a>
+              <a href={profileLink}>{profileLink}</a>
+              <a href="https://github.com/domambia">www.github.com/domambia</a>
+              <a href="https://github.com/domambia">www.github.com/domambia</a>
+              <a href="https://github.com/domambia">www.github.com/domambia</a>
+              <a href="https://github.com/domambia">dauglous.twitter</a>
+            </div>
+            <div className="vertical_line"></div>
+            <div className="profile_box">
+              <div className="profile_pic">Profile</div>
+              <div className="profile_pic">Profile</div>
+              <div className="profile_pic">Profile</div>
+            </div>
+          </div>
+        </div>
+        <div className="ngeni_labs"></div>
       </div>
-      <div className="profile_projects">
-        <div className="profile_title">
-          <h5>Projects</h5>
-          <div>See All&nbsp;&nbsp;&nbsp;&nbsp;{greater}</div>
-        </div>
-        <div className="profile_project">
-          <div className="project">
-            <img src={minitrade} alt="logo" />
-            <p>Minitrade</p>
-          </div>
-          <div className="project">
-            <img src={linkpay} alt="logo" />
-            <p>Linkpay</p>
-          </div>
-          <div className="project">
-            <ExternalLink
-              href="https://github.com/devngeni/potara"
-              className="externalLink"
-            >
-              <img src={linkpay} alt="logo" />
-              <p>Potara</p>
-            </ExternalLink>
-          </div>
-        </div>
-      </div>
-      <div className="profile_media">
-        <div className="profile_title">
-          <h5>Media and Links</h5>
-          <div>See All&nbsp;&nbsp;&nbsp;&nbsp;{greater}</div>
-        </div>
-        <div className="profile_data">
-          <div className="profile_links">
-            <a href="https://github.com/domambia">dauglous@ngeni.io</a>
-            <a href={profileLink}>{profileLink}</a>
-            <a href="https://github.com/domambia">www.github.com/domambia</a>
-            <a href="https://github.com/domambia">www.github.com/domambia</a>
-            <a href="https://github.com/domambia">www.github.com/domambia</a>
-            <a href="https://github.com/domambia">dauglous.twitter</a>
-          </div>
-          <div className="vertical_line"></div>
-          <div className="profile_box">
-            <div className="profile_pic">Profile</div>
-            <div className="profile_pic">Profile</div>
-            <div className="profile_pic">Profile</div>
-          </div>
-        </div>
-      </div>
-      <div className="ngeni_labs"></div>
     </div>
   );
 };

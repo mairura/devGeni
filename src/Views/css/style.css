@@ -21,8 +21,9 @@ body {
   align-items: center;
   text-align: center;
   justify-content: space-around;
+  text-decoration: none;
 }
-.devdata_link {
+.devdata_link p {
   text-decoration: none;
   width: 100%;
 }
@@ -57,7 +58,7 @@ select {
   margin-top: 10px;
   height: 30px;
   border-radius: 13px;
-  border: none;
+  border: 1px solid #d1b6b5;
   padding: 0 10px;
   background-color: rgb(78, 75, 75);
   color: rgb(167, 161, 161);
@@ -150,8 +151,15 @@ input::placeholder {
   margin-top: 10px;
 }
 .tablist {
-  color: #f05e56;
+  color: #ffff;
+  background-color: none;
   margin: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.tab {
+  padding: 5px;
+  border-bottom: 1px solid red;
 }
 .item {
   width: 200px;

@@ -134,8 +134,8 @@ function Projects() {
             <>
               <Tabs className="tabs">
                 <TabList className="tablist">
-                  <Tab>Slide</Tab>
-                  <Tab>List</Tab>
+                  <Tab className="tab">Slide</Tab>
+                  <Tab className="tab">List</Tab>
                 </TabList>
                 <TabPanel style={{ maxHeight: "55vh" }}>
                   <ProjectContext.Provider value={{ projects }}>
