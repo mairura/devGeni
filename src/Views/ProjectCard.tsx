@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import "./css/card.css";
 import TeamMember from "./Components/TeamMember";
 import { Link } from "react-router-dom";
@@ -6,10 +6,11 @@ import { ProjectContext } from "./Context";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./css/style.css";
+import HashLoader from "react-spinners/HashLoader";
 
 function ProjectCard() {
   const { projects } = useContext(ProjectContext);
-  // console.log("Projects:", projects);
+  const [loader, setLoader] = useState(true);
 
   //Finish up on this
   let projectStorage = JSON.stringify(projects);
@@ -19,6 +20,10 @@ function ProjectCard() {
   let getData: any = localStorage.getItem("projectStorage");
   let getDataStorage = JSON.parse(getData);
   console.log("Get data from storage:", getDataStorage);
+
+  useEffect(() => {
+    setTimeout(() => setLoader(false), 7000);
+  }, []);
 
   return (
     <>
@@ -76,11 +81,27 @@ function ProjectCard() {
                   </div>
                 </Link>
               </div>
-              <div className="member-container">
-                {team?.map((member) => (
-                  <TeamMember dev_name={member} />
-                ))}
-              </div>
+              {loader ? (
+                <>
+                  <div className={"item"}>
+                    <HashLoader
+                      color="#f05e56"
+                      loading={loader}
+                      size={50}
+                      aria-label="Loading Spinner"
+                      data-testid="loader"
+                    />
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="member-container">
+                    {team?.map((member) => (
+                      <TeamMember dev_name={member} />
+                    ))}
+                  </div>
+                </>
+              )}
             </>
           );
         })}
