@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import "./css/style.css";
 import Title from "../assets/title.png";
 import ProjectCard from "./ProjectCard";
@@ -14,7 +14,6 @@ import { ExternalLink } from "react-external-link";
 import { TypeAnimation } from "react-type-animation";
 import { NavLink } from "react-router-dom";
 import HashLoader from "react-spinners/HashLoader";
-// import ProfileList from "./ProfileList";
 
 function Projects() {
   const [tags, setTags] = useState<Array<string>>([]);
@@ -23,7 +22,6 @@ function Projects() {
   const [loader, setLoader] = useState(true);
   const [getStacks, setGetStacks] = useState([]);
   let url = Config.URL;
-  // console.log("Print this:", projects);
 
   //Function to handle selected stack to be called
   const handleStack = (e: any) => {
@@ -32,9 +30,7 @@ function Projects() {
     if (!tags.includes(e.target.value)) {
       setTags(tagList);
       let newList: string = tagList.join();
-      // console.log("NewList", newList);
       getData(newList);
-      // console.log("Tags:", tagList);
     }
   };
 
@@ -69,14 +65,14 @@ function Projects() {
 
   useEffect(() => {
     getStack();
-  }, []);
+  }, [getStack]);
 
   return (
     <div className="main_header">
       <>
         <div>
           <div className="header">
-            <img src={Title} alt="title describe" />
+            <img src={Title} alt="title" />
             <TypeAnimation
               sequence={["Team and Skill Matching Engine", 1000, () => {}]}
               wrapper="div"
@@ -118,9 +114,6 @@ function Projects() {
               );
             })}
           </div>
-          <i className="project_number">
-            Found&nbsp;{projects.length}&nbsp;projects
-          </i>
         </div>
       </>
       {!showPage ? (
@@ -144,7 +137,7 @@ function Projects() {
                   <Tab>Slide</Tab>
                   <Tab>List</Tab>
                 </TabList>
-                <TabPanel>
+                <TabPanel style={{ maxHeight: "55vh" }}>
                   <ProjectContext.Provider value={{ projects }}>
                     <ProjectCard />
                   </ProjectContext.Provider>
@@ -155,20 +148,15 @@ function Projects() {
                   </ProjectContext.Provider>
                 </TabPanel>
               </Tabs>
-              <ExternalLink
-                href="https://calendly.com/ngeni-info"
-                className="btn_link"
-              >
-                <button className="booking-button">Book Now</button>
-              </ExternalLink>
-
-              <br />
-              <br />
-              <button className="booking-button">
-                {ksh} Speak Now
-              </button>
-              <br />
-              <br />
+              <div className="buttons">
+                <ExternalLink
+                  href="https://calendly.com/ngeni-info"
+                  className="btn_link"
+                >
+                  <button className="booking-button">Book Now</button>
+                </ExternalLink>
+                <button className="booking-button">{ksh} Speak Now</button>
+              </div>
             </>
           )}
         </>

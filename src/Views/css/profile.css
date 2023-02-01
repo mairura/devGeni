@@ -4,16 +4,16 @@
 .profile_desc img {
   padding-bottom: 10px;
   border-radius: 50%;
-  height: 250px;
+  height: 200px;
 }
 .profile_name {
   color: #f05e56;
-  font-size: 24px;
+  font-size: 17px;
   font-weight: 700;
 }
 .profile_nickname {
   color: #eb7872;
-  font-size: 15px;
+  font-size: 10px;
   font-weight: 500;
   padding: 5px;
 }
@@ -105,9 +105,8 @@
   border: 1px solid white;
 }
 .profile_box {
-  display: flex;
   justify-content: space-around;
-  margin-right: 50px;
+  margin-right: 10px;
   color: #fff;
 }
 .profile_pic {

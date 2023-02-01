@@ -51,7 +51,7 @@ function ProjectCard() {
                   <div className="more">
                     <div key={project.id}>
                       <div className="rate">
-                        <span>{match_rate}% &nbsp; Relevant</span>
+                        <span>{match_rate}% &nbsp; Search Relevance</span>
                       </div>
 
                       <Link to={`project/?projectId=${project._id}`}>

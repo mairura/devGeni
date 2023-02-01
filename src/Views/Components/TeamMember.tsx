@@ -27,7 +27,7 @@ function TeamMember(dev_name: any) {
       >
         <ul>
           <li>
-            <img src={singleDev?.profile_img_link} alt="sample-profile" />
+            <img src={singleDev?.profile_img_link} alt="pic" />
           </li>
           <li>
             <p>{singleDev?.name}</p>
