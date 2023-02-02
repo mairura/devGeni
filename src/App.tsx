@@ -9,22 +9,20 @@ import { useEffect, useState } from "react";
 import Details from "./Views/Details";
 import Profile from "./Views/Profile";
 import Devdata from "./Views/Devdata";
-// import  ngenilogoAsset from "../src/assets/ngenilogoAsset.png"
+import Preloader from "./Views/Components/Preloader.tsx/Preloader";
 
 function App() {
   //Set a loading page
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setIsLoading(false), 1000);
+    setTimeout(() => setIsLoading(false), 2000);
   }, []);
 
   return (
     <>
       {isLoading ? (
-        <div className="loading">
-          {/* <img src={ngenilogoAsset} alt="icon" width="100px" text-align="center" /> */}
-        </div>
+        <Preloader />
       ) : (
         <>
           <div className="main">
@@ -38,7 +36,6 @@ function App() {
             </Routes>
           </div>
           <Footer />
-
         </>
       )}
     </>

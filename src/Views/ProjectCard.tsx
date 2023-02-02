@@ -7,6 +7,7 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./css/style.css";
 import HashLoader from "react-spinners/HashLoader";
+import MemberContainer from "./Team/MemberContainer";
 
 function ProjectCard() {
   const { projects } = useContext(ProjectContext);
@@ -38,7 +39,7 @@ function ProjectCard() {
         controlsStrategy="responsive"
       >
         {projects.map((project: any) => {
-          let team: String[] | undefined = project?.team;
+          let team: {}[] | undefined = project?.team;
           let stack: String[] | undefined = project?.tech_stack;
           let desc: String[] | undefined = project?.description;
           let match_rate: string | undefined = project?.match_rate;
@@ -83,27 +84,7 @@ function ProjectCard() {
                   </div>
                 </Link>
               </div>
-              {loader ? (
-                <>
-                  <div className={"item"}>
-                    <HashLoader
-                      color="#f05e56"
-                      loading={loader}
-                      size={50}
-                      aria-label="Loading Spinner"
-                      data-testid="loader"
-                    />
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="member-container">
-                    {team?.map((member) => (
-                      <TeamMember dev_name={member} />
-                    ))}
-                  </div>
-                </>
-              )}
+              {/* <MemberContainer devData={team} /> */}
             </>
           );
         })}

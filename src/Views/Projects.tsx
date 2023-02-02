@@ -59,7 +59,11 @@ function Projects() {
 
   useEffect(() => {
     getStack();
-  }, [getStack]);
+  }, []);
+
+  // useEffect(() => {
+  //   getData();
+  // }, []);
 
   return (
     <div className="main_header">

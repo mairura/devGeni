@@ -29,12 +29,13 @@ function ProjectDetail() {
 
   // console.log("Properties:", projectData);
   let techStack: String[] | undefined = projectData?.tech_stack;
-  let team: String[] | undefined = projectData?.team;
+  let proj_name_get: String | undefined = projectData?.proj_name;
+  let team: {}[] | undefined = projectData?.team;
   let projectId: number | undefined = projectData?._id;
 
   useEffect(() => {
     singleProject();
-  }, [singleProject]);
+  }, []);
 
   return (
     <>
@@ -48,7 +49,7 @@ function ProjectDetail() {
       </div>
       <div className="title_desc">
         <img src={linkPay} alt="linkpay logo" />
-        <h3>{proj_name} </h3> {verified}
+        <h3>{proj_name_get} </h3> {verified}
       </div>
       <div className="body_desc">
         <p>{projectData?.description}</p>
@@ -64,9 +65,9 @@ function ProjectDetail() {
       </div>
       <div>
         <div className="member-container">
-          {team?.map((member) => (
-            <TeamMember dev_name={member} />
-          ))}
+          {/* {team?.map((member) => ( */}
+          {<TeamMember data={projectData} />}
+          {/* ))} */}
         </div>
         <br />
         <ExternalLink

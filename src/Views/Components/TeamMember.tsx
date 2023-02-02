@@ -5,35 +5,37 @@ import { ISingleDev } from "../Context";
 import { Config } from "../../config/config";
 import { Link } from "react-router-dom";
 
-function TeamMember(dev_name: any) {
-  const [singleDev, setSingleDev] = useState<ISingleDev>();
+function TeamMember(member: any) {
+  // const [singleDev, setSingleDev] = useState<ISingleDev>();
   let url = Config.URL;
 
   //Function endpoint to get team for a project
-  const getSingleDev = async (dev_name: any) => {
-    const data: any = await axios.get(`${url}/index/dev/${dev_name.dev_name}`);
-    setSingleDev(data.data);
-  };
+  // const getSingleDev = async (dev_name: any) => {
+  //   const data: any = await axios.get(`${url}/index/dev/${dev_name.dev_name}`);
+  //   setSingleDev(data.data);
+  // };
 
-  useEffect(() => {
-    getSingleDev(dev_name);
-  });
+  // useEffect(() => {
+  //   getSingleDev(dev_name);
+  console.log("Print TEAMMEMBER RESULTS DATA:", member);
+  // });
 
   return (
     <>
       <Link
-        to={`/profile/?profilePic=${singleDev?.profile_img_link}&name=${singleDev?.name}&shortName=${singleDev?.short_name}&profileLink=${singleDev?.profile_link}`}
+        to={`/profile/?dev_name=${member.short_name}`}
         className="main-member"
       >
         <ul>
           <li>
-            <img src={singleDev?.profile_img_link} alt="pic" />
+            <img src={member?.profile_img_link} alt="pic" />
           </li>
           <li>
-            <p>{singleDev?.name}</p>
+            <p>{member?.name}</p>
           </li>
         </ul>
       </Link>
+      <h3>TEAM MEMBERS</h3>
     </>
   );
 }
