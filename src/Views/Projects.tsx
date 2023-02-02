@@ -150,7 +150,7 @@ function Projects() {
                   </ProjectContext.Provider>
                 </TabPanel>
               </Tabs>
-              <div className="buttons">
+              {/* <div className="buttons">
                 <ExternalLink
                   href="https://calendly.com/ngeni-info"
                   className="btn_link"
@@ -158,7 +158,7 @@ function Projects() {
                   <button className="booking-button">Book Now</button>
                 </ExternalLink>
                 <button className="booking-button">{ksh} Speak Now</button>
-              </div>
+              </div> */}
             </>
           )}
         </>

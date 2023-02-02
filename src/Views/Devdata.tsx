@@ -82,10 +82,10 @@ const Devdata = () => {
           </div>
           <div className="header_data">
             <NavLink className="devdata_link" to="/">
-              <p>Projects</p>
+              <p className="link">Projects</p>
             </NavLink>
             <NavLink to="devdata" className="devdata_link">
-              <p>Developers</p>
+              <p className="link">Developers</p>
             </NavLink>
           </div>
         </div>

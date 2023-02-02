@@ -27,9 +27,7 @@ body {
 }
 .link {
   text-decoration: none;
-}
-.link {
-  padding: 6px 17px;
+   padding: 6px 17px;
   color: #fff;
 }
 .header_data a.active {

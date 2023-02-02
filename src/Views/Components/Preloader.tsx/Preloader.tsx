@@ -1,15 +1,14 @@
-import React from "react";
-import "./preloader.css"
+import "./preloader.css";
 
 const Preloader = () => {
   return (
     <>
       <div className="animate">
-        <h2 style={{ marginTop: "45vh" }}>
+        <h3 style={{ marginTop: "45vh" }}>
           {" "}
           <br />
           Team and Skill Matching Engine
-        </h2>
+        </h3>
       </div>
     </>
   );
