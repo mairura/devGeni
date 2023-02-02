@@ -15,8 +15,11 @@ function ProjectDetail() {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const proj_name = urlParams.get("projectId");
+  const proj_desc = urlParams.get("projectDesc");
+  // const proj_team = urlParams.get("projectTeam");
   let url = Config.URL;
 
+  console.log("Print Project Desc:", proj_desc);
   //Getting single project
   const singleProject = async () => {
     try {
@@ -52,7 +55,7 @@ function ProjectDetail() {
         <h3>{proj_name_get} </h3> {verified}
       </div>
       <div className="body_desc">
-        <p>{projectData?.description}</p>
+        <p>{proj_desc}</p>
         <h4>
           Dev hours &nbsp; &nbsp; <span>700+</span>
         </h4>
@@ -65,9 +68,9 @@ function ProjectDetail() {
       </div>
       <div>
         <div className="member-container">
-          {/* {team?.map((member) => ( */}
-          {<TeamMember data={projectData} />}
-          {/* ))} */}
+          {team?.map((member: any) => (
+            <TeamMember dev={member} />
+          ))}
         </div>
         <br />
         <ExternalLink

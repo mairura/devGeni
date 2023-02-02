@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import "./css/card.css";
 import TeamMember from "./Components/TeamMember";
 import { Link } from "react-router-dom";
@@ -6,7 +6,6 @@ import { ProjectContext } from "./Context";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./css/style.css";
-import HashLoader from "react-spinners/HashLoader";
 import { ExternalLink } from "react-external-link";
 import { ksh } from "../icons";
 
@@ -58,10 +57,10 @@ function ProjectCard() {
                         <div className="rate">
                           <span>{match_rate}% &nbsp; Search Relevance</span>
                         </div>
-
-                        <Link to={`project/?projectId=${project._id}`}>
+                        <Link
+                          to={`project/?projectId=${project._id}&projectDesc=${desc}&projectTeam=${team}`}
+                        >
                           <b>{trimDesc(proj_title, 20)}</b>
-
                           <p className="card_desc">{trimDesc(desc, 150)}</p>
                           <div className="stack_item">
                             {stack?.map((item: any, i: any) => {

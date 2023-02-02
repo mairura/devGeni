@@ -1,12 +1,8 @@
-import { useEffect, useState } from "react";
 import "../css/Member.css";
-import { Config } from "../../config/config";
 import { Link } from "react-router-dom";
 
 function TeamMember(dev: any) {
-  let url = Config.URL;
-
-  console.log("Print TEAMMEMBER RESULTS DATA:", dev.dev);
+  // console.log("Print TEAMMEMBER RESULTS DATA:", dev.dev);
   let devData: any = dev.dev;
 
   return (
