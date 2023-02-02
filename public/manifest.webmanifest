@@ -1,25 +1,28 @@
 {
-  "short_name": "React Pwa",
-  "name": "Create React Pwa Sample",
+  "short_name": "DevGeni",
+  "name": "DevGeni",
   "description": "light pwa usage sample",
   "theme_color": "#f69435",
   "background_color": "#f69435",
   "orientation": "portrait",
   "display": "standalone",
-  "start_url": "/",
-  "icons": [{
-    "src": "icons/favicon.ico",
-    "sizes": "64x64",
-    "type": "image/x-icon"
-  }, {
-    "src": "icons/logo192.png",
-    "type": "image/png",
-    "sizes": "192x192",
-    "purpose": "maskable"
-  }, {
-    "src": "icons/logo512.png",
-    "type": "image/png",
-    "sizes": "512x512",
-    "purpose": "any"
-  }]
+  "start_url": "./index.html",
+  "icons": [
+    {
+      "src": "maskable_icon_x48.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "maskable_icon_x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "maskable_icon_x192.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ]
 }
