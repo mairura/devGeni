@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import Details from "./Views/Details";
 import Profile from "./Views/Profile";
 import Devdata from "./Views/Devdata";
-import Preloader from "./Views/Components/Preloader.tsx/Preloader";
+import HashLoader from "react-spinners/HashLoader";
 
 function App() {
   //Set a loading page
@@ -22,7 +22,18 @@ function App() {
   return (
     <>
       {isLoading ? (
-        <Preloader />
+        <>
+          <h4 className="loader_title">Team and Skill Matching Engine</h4>
+          <div className={"item"}>
+            <HashLoader
+              color="#f05e56"
+              loading={isLoading}
+              size={50}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+          </div>
+        </>
       ) : (
         <>
           <div className="main">

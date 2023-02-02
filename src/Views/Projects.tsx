@@ -9,7 +9,7 @@ import { ProjectContext, IProjects } from "./Context";
 import { Config } from "../config/config";
 import { Tabs, TabPanel, Tab, TabList } from "react-tabs";
 import Details from "./Details";
-import { ExternalLink } from "react-external-link";
+// import { ExternalLink } from "react-external-link";
 import { TypeAnimation } from "react-type-animation";
 import { NavLink } from "react-router-dom";
 import HashLoader from "react-spinners/HashLoader";
@@ -54,16 +54,12 @@ function Projects() {
   };
 
   useEffect(() => {
-    setTimeout(() => setLoader(false), 7000);
+    setTimeout(() => setLoader(false), 3000);
   }, []);
 
   useEffect(() => {
     getStack();
   }, []);
-
-  // useEffect(() => {
-  //   getData();
-  // }, []);
 
   return (
     <div className="main_header">
@@ -71,13 +67,13 @@ function Projects() {
         <div>
           <div className="header">
             <img src={Title} alt="title" />
-            <TypeAnimation
+            {/* <TypeAnimation
               sequence={["Team and Skill Matching Engine", 1000, () => {}]}
               wrapper="div"
               cursor={true}
               repeat={Infinity}
               style={{ fontSize: "1em", color: "lightgray" }}
-            />
+            /> */}
           </div>
           <div className="header_data">
             <NavLink className="devdata_link" to="/">

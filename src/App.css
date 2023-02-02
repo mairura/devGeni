@@ -1,3 +1,7 @@
 /* *{
     background: linear-gradient(192.05deg, #000000 0%, #09101f 100%);
 } */
+.loader_title {
+  margin-top: 40vh;
+  color: #f05e56;
+}
