@@ -10,16 +10,8 @@ import { ExternalLink } from "react-external-link";
 import { ksh } from "../icons";
 
 function ProjectCard() {
-  const { projects } = useContext(ProjectContext);
-
-  //Finish up on this
-  let projectStorage = JSON.stringify(projects);
-  console.log("Storage data in JSON:", projectStorage);
-  localStorage.setItem("projectStorage", projectStorage);
-
-  let getData: any = localStorage.getItem("projectStorage");
-  let getDataStorage = JSON.parse(getData);
-  console.log("Get data from storage:", getDataStorage);
+  const { projects, devs } = useContext(ProjectContext);
+  const dev_data = devs;
 
   return (
     <>
@@ -40,8 +32,6 @@ function ProjectCard() {
             let desc: String[] | undefined = project?.description;
             let match_rate: string | undefined = project?.match_rate;
             let proj_title: string | undefined = project?.proj_name;
-
-            console.log("Print header:", team);
 
             let trimDesc = function (string: any, length: any) {
               return string.length > length
@@ -80,15 +70,15 @@ function ProjectCard() {
                     </div>
                   </Link>
                 </div>
-                <div className="member-container">
-                  {team?.map((member: any) => (
-                    <TeamMember dev={member} />
-                  ))}
-                </div>
               </>
             );
           })}
         </AliceCarousel>
+        <div className="member-container">
+          {dev_data?.map((member: any) => (
+            <TeamMember dev={member} />
+          ))}
+        </div>
         <div className="buttons">
           <ExternalLink
             href="https://calendly.com/ngeni-info"
@@ -99,8 +89,6 @@ function ProjectCard() {
           <button className="booking-button">{ksh} Speak Now</button>
         </div>
       </>
-      {/* <br />
-      <br /> */}
     </>
   );
 }

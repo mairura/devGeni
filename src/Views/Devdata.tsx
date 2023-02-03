@@ -119,7 +119,7 @@ const Devdata = () => {
             <HashLoader
               color="#f05e56"
               loading={loader}
-              size={150}
+              size={100}
               aria-label="Loading Spinner"
               data-testid="loader"
             />
@@ -143,7 +143,7 @@ const Devdata = () => {
                       <h3>
                         {name}&nbsp;<span>({shortName})</span>
                       </h3>
-                      <p>Stack will display here:{stack_name}</p>
+                      <p>Stack here:{stack_name}</p>
                       <i>{gitLink}</i>
                     </div>
                   </div>

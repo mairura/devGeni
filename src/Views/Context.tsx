@@ -20,5 +20,10 @@ export interface ISingleDev {
 
 export interface BaseContext {
   projects: Array<IProjects>;
+  devs: Array<ISingleDev>;
 }
-export const ProjectContext = createContext<BaseContext>({ projects: [] });
+
+export const ProjectContext = createContext<BaseContext>({
+  projects: [],
+  devs: [],
+});
