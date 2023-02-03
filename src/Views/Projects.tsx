@@ -3,7 +3,7 @@ import "./css/style.css";
 import Title from "../assets/title.png";
 import ProjectCard from "./ProjectCard";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { ksh } from "../icons";
+// import { ksh } from "../icons";
 import axios from "axios";
 import { ProjectContext, IProjects, ISingleDev } from "./Context";
 import { Config } from "../config/config";
