@@ -5,9 +5,9 @@ function TeamMember(dev: any) {
   let devData: any = dev.dev;
   let dev_nickname = devData?.short_name;
 
-  let trimDesc = function (string: any, length: any) {
-    return string.length > length ? string.substring(0, length) + ".." : string;
-  };
+  // let trimDesc = function (string: any, length: any) {
+  //   return string.length > length ? string.substring(0, length) + ".." : string;
+  // };
 
   return (
     <>
@@ -20,7 +20,7 @@ function TeamMember(dev: any) {
             <img src={devData?.profile_img_link} alt="pic" />
           </li>
           <li>
-            <p>{trimDesc(dev_nickname, 3)}</p>
+            <p>{dev_nickname}</p>
           </li>
         </ul>
       </Link>

@@ -104,7 +104,7 @@ function Projects() {
         </div>
       </>
       {!showPage ? (
-        <>""</>
+        <></>
       ) : (
         <>
           {loader ? (
