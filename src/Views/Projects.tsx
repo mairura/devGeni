@@ -3,7 +3,7 @@ import "./css/style.css";
 import Title from "../assets/title.png";
 import ProjectCard from "./ProjectCard";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { close } from "../icons";
+import close from "../assets/close .svg";
 import axios from "axios";
 import { ProjectContext, IProjects, ISingleDev } from "./Context";
 import { Config } from "../config/config";
@@ -58,7 +58,7 @@ function Projects() {
   };
 
   useEffect(() => {
-    setTimeout(() => setLoader(false), 3000);
+    setTimeout(() => setLoader(false), 2000);
   }, []);
 
   useEffect(() => {
@@ -75,18 +75,12 @@ function Projects() {
   //Function to clear stack
   const clearStack = () => {
     localStorage.clear();
-    setTagsFound([]);
+    setShowPage(false);
   };
-
-  //Function to get all stacks
-  const allStacks = getStacks.map((item: any) => ({
-    value: item.name,
-    label: item.name,
-  }));
 
   function checkLocalStorage() {
     if (!localStorage.length) {
-      return "LocalStorage is empty";
+      return "Empty cache:";
     } else {
       return localStorage.getItem("dataTags");
     }
@@ -157,16 +151,18 @@ function Projects() {
             {tagsFound ? (
               <>
                 <div className="founder">
-                  <p className="tags_found">{checkLocalStorage()}</p>
-                  {/* Icon to clear cache */}
-                  <p
-                    className="clear_btn"
-                    onClick={() => {
-                      clearStack();
-                    }}
-                  >
-                    {close}
+                  <p className="tags_found">
+                    {checkLocalStorage()}{" "}
+                    <p
+                      className="clear_btn"
+                      onClick={() => {
+                        clearStack();
+                      }}
+                    >
+                      <img src={close} alt="close" />
+                    </p>
                   </p>
+                  {/* Icon to clear cache */}
                 </div>
               </>
             ) : (
@@ -190,7 +186,7 @@ function Projects() {
       ) : (
         <>
           {loader ? (
-            <div className={"item"}>
+            <div className="item">
               <HashLoader
                 color="#f05e56"
                 loading={loader}
@@ -201,7 +197,7 @@ function Projects() {
             </div>
           ) : (
             <>
-              <div className="body_tabs">
+              <div>
                 <Tabs
                   className="tabs"
                   id="controlled-tabs"
@@ -216,7 +212,7 @@ function Projects() {
                       <ProjectCard />
                     </ProjectContext.Provider>
                   </TabPanel>
-                  <TabPanel>
+                  <TabPanel className="body_tabs">
                     <ProjectContext.Provider value={{ projects, devs }}>
                       <Details />
                     </ProjectContext.Provider>

@@ -17,9 +17,9 @@ function TeamMember(dev: any) {
       >
         {/* <ul>
           <li> */}
-            <img src={devData?.profile_img_link} alt="pic" />
-          {/* </li> */}
-          {/* <li>
+        <img src={devData?.profile_img_link} alt="pic" />
+        {/* </li> */}
+        {/* <li>
             <p>{dev_nickname}</p>
           </li> */}
         {/* </ul> */}

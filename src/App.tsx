@@ -19,7 +19,7 @@ function App() {
     useWallet();
 
   useEffect(() => {
-    setTimeout(() => setIsLoading(false), 4000);
+    setTimeout(() => setIsLoading(false), 1000);
   }, []);
 
   return (

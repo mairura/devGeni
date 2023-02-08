@@ -1,13 +1,18 @@
 .link {
   text-decoration: none;
 }
+/* .body_tabs::-webkit-scrollbar-track {
+  background-color: darkgrey;
+}
+.body_tabs::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px #f05e56;
+} */
 .devdata_container {
   color: #fff;
-  padding: 2px 20px;
 }
 .devdata_details {
   display: flex;
-  margin: 5px 20px;
+  margin: 1px 20px;
   padding: 3px;
   background-color: #343950;
   border-radius: 10px;
@@ -26,7 +31,11 @@
   padding-top: 10px;
   cursor: pointer;
   overflow: hidden;
-  width: 470px;
+  width: 500px;
+  overflow-wrap: break-word;
+}
+.devdata_name::-webkit-scrollbar {
+  width: 3px;
 }
 .devdata_name h3 {
   color: #f05e56;

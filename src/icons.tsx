@@ -125,7 +125,7 @@ export const verified = (
     />
   </svg>
 );
-export const team = (
+export const teams = (
   <svg
     width="16"
     height="16"
@@ -171,7 +171,7 @@ export const close = (
   <svg
     height="20"
     viewBox="0 0 32 32"
-    width="20"
+    width="0"
     xmlns="http://www.w3.org/2000/svg"
   >
     <g id="Layer_22" data-name="Layer 22">

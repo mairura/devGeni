@@ -12,7 +12,6 @@ import { ksh } from "../icons";
 function ProjectCard() {
   const { projects, devs } = useContext(ProjectContext);
   const dev_data = devs;
-  console.log("Get ALL PROJECTS DATA:", projects);
 
   return (
     <>
@@ -86,11 +85,9 @@ function ProjectCard() {
           })}
         </AliceCarousel>
         <div className="member-container">
-          {/* <ProjectContext.Provider value={{ projects, devs }}> */}
           {dev_data?.map((member: any) => (
             <TeamMember dev={member} />
           ))}
-          {/* </ProjectContext.Provider> */}
         </div>
         <div className="buttons">
           <ExternalLink

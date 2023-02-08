@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import "./css/ProjectDetail.css";
 import { prev, share, ksh, verified } from "../icons";
 import TeamMember from "./Components/TeamMember";
@@ -6,16 +6,14 @@ import linkPay from "../assets/linkpay.png";
 import linkpayui from "../assets/linkpayui.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { IProjects, ISingleDev, ProjectContext } from "./Context";
+import { IProjects, ISingleDev } from "./Context";
 import { Config } from "../config/config";
 import { ExternalLink } from "react-external-link";
 
 function ProjectDetail() {
-  // const { projects, devs } = useContext(ProjectContext);
-  // console.log("PRINT DEVELOPERSS:", devs);
-  // const [devs, setDevs] = useState<Array<ISingleDev>>([]);
-
+  const [devs, setDevs] = useState<Array<ISingleDev>>([]);
   const [projectData, setProjectData] = useState<IProjects>();
+
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const proj_name = urlParams.get("projectId");
@@ -24,17 +22,15 @@ function ProjectDetail() {
   let url = Config.URL;
 
   //Function to submit choosen stack and find resp projects
-  // let stackToSearch: string;
-  // const getData = async () => {
-  //   const endpoint: string = `${url}/index/projects/tags/${stackToSearch}`;
-  //   try {
-  //     const { data } = await axios.get(endpoint);
-  //     setDevs([...data.dev_data]);
-  //     console.log("PRINT DEV_DATA:", data);
-  //   } catch (error: any) {
-  //     console.error("Error:", error.message);
-  //   }
-  // };
+  const getDeveloper = async () => {
+    const endpoint: string = `${url}/index/devs/names/${proj_team}`;
+    try {
+      const { data } = await axios.get(endpoint);
+      setDevs(data);
+    } catch (error: any) {
+      console.error("Error:", error.message);
+    }
+  };
 
   //Getting single project
   const singleProject = async () => {
@@ -49,12 +45,16 @@ function ProjectDetail() {
   // console.log("Properties:", dev_data);
   let techStack: String[] | undefined = projectData?.tech_stack;
   let proj_name_get: String | undefined = projectData?.proj_name;
-  let team: {}[] | undefined = projectData?.team;
-  let projectId: number | undefined = projectData?._id;
+  // let team: {}[] | undefined = projectData?.team;
+  // let projectId: number | undefined = projectData?._id;
   // console.log("Print project Team:", proj_team);
 
   useEffect(() => {
     singleProject();
+  }, []);
+
+  useEffect(() => {
+    getDeveloper();
   }, []);
 
   return (
@@ -85,7 +85,7 @@ function ProjectDetail() {
       </div>
       <div>
         <div className="member-container">
-          {team?.map((member: any) => (
+          {devs?.map((member: any) => (
             <TeamMember dev={member} />
           ))}
         </div>

@@ -146,7 +146,7 @@ const Devdata = () => {
                           <h3>
                             {name}&nbsp;<span>({shortName})</span>
                           </h3>
-                          <p>{trimDesc(stackName, 100)}</p>
+                          <p>{trimDesc(stackName, 150)}</p>
                         </div>
                       </div>
                     </div>
