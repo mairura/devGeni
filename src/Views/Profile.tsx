@@ -5,14 +5,22 @@ import "./css/profile.css";
 import minitrade from "../assets/minitrade.png";
 import linkpay from "../assets/linkpay.png";
 import { ExternalLink } from "react-external-link";
+import { useEffect, useState } from "react";
 
 const Profile = () => {
+  const [stacks, setStacks] = useState([]);
   const queryString = window.location.search;
   const params = new URLSearchParams(queryString);
   const imageProfile: any = params.get("profilePic");
   const nameProfile = params.get("name");
   const shortName: any = params.get("shortName");
   const profileLink: any = params.get("profileLink");
+
+  useEffect(() => {
+    const dev_stack: any = params.get("devStack");
+    const itemsArray: any = dev_stack.split(",");
+    setStacks(itemsArray);
+  }, []);
 
   return (
     <div className="profile_container">
@@ -29,12 +37,9 @@ const Profile = () => {
         <div className="profile_stack">
           <h5>Tech Stack</h5>
           <div className="dev_stack">
-            <div>Java</div>
-            <div>Golang</div>
-            <div>Python</div>
-            <div>Typescript</div>
-            <div>ReactJS</div>
-            <div>Javascript</div>
+            {stacks.map((item: any) => {
+              return <div className="dev_stack_item">{item}</div>;
+            })}
           </div>
         </div>
         <div className="profile_projects">
@@ -78,12 +83,12 @@ const Profile = () => {
           </div>
           <div className="profile_data">
             <div className="profile_links">
-              <a href="https://github.com/domambia">dauglous@ngeni.io</a>
               <a href={profileLink}>{profileLink}</a>
-              <a href="https://github.com/domambia">www.github.com/domambia</a>
-              <a href="https://github.com/domambia">www.github.com/domambia</a>
-              <a href="https://github.com/domambia">www.github.com/domambia</a>
-              <a href="https://github.com/domambia">dauglous.twitter</a>
+              <a href="https://www.linkedin.com/company/ngenilabs/mycompany/">
+                nGeni Labs LinkedIn
+              </a>
+              <a href="https://ngeni.io/">nGeni Labs Website</a>
+              <a href="https://twitter.com/ngenilabs">nGeni Labs Twitter</a>
             </div>
             <div className="vertical_line"></div>
             <div className="profile_box">

@@ -68,8 +68,11 @@
   align-items: center;
 }
 .devdata_list {
-  height: 70vh;
+  height: 79vh;
   overflow-y: scroll;
+}
+.devdata_list::-webkit-scrollbar {
+  overflow-y: hidden;
 }
 .header_data {
   width: 80%;

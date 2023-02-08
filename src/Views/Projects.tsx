@@ -13,7 +13,7 @@ import { NavLink } from "react-router-dom";
 import HashLoader from "react-spinners/HashLoader";
 
 function Projects() {
-  const [tags, setTags] = useState<Array<string>>([]);
+  // const [tags, setTags] = useState<Array<string>>([]);
   const [projects, setProjects] = useState<Array<IProjects>>([]);
   const [devs, setDevs] = useState<Array<ISingleDev>>([]);
   const [showPage, setShowPage] = useState(false);
@@ -28,8 +28,8 @@ function Projects() {
   const handleStack = (e: any) => {
     e.preventDefault();
     let tagList: any = [...localData, e.target.value];
-    if (!tags.includes(e.target.value)) {
-      setTags(tagList);
+    if (!localData.includes(e.target.value)) {
+      // setTags(tagList);
       setLocalData(tagList);
       let newList: string = tagList.join();
       window.localStorage.setItem("dataTags", newList);
@@ -59,7 +59,7 @@ function Projects() {
   };
 
   useEffect(() => {
-    setTimeout(() => setLoader(false), 2000);
+    setTimeout(() => setLoader(false), 1000);
   }, []);
 
   useEffect(() => {
@@ -103,11 +103,7 @@ function Projects() {
       return (
         <div className="current-tags">
           {localData.map((item: any) => {
-            return (
-              <p className="tag" style={{ padding: "5px" }}>
-                {item}
-              </p>
-            );
+            return <p className="tag">{item}</p>;
           })}
         </div>
       );
@@ -177,9 +173,6 @@ function Projects() {
               </option>
             ))}
           </select> */}
-            {/* <div className="storageData">
-
-          </div> */}
 
             <>
               <div className="founder">
@@ -189,19 +182,7 @@ function Projects() {
                     <img src={close} alt="close" />
                   </p>
                 </div>
-
-                {/* Icon to clear cache */}
               </div>
-
-              {/* <div className="current-tags">
-                  {tags.map((item, i) => {
-                    return (
-                      <div key={i + 1} className="tag">
-                        <p>{item}</p>
-                      </div>
-                    );
-                  })}
-                </div> */}
             </>
           </div>
         </div>

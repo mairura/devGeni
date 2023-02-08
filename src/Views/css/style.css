@@ -80,11 +80,10 @@ input::placeholder {
   width: 80%;
   height: auto;
   padding: 10px;
-  margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 2px;
+  margin-top: 1px;
   flex-wrap: wrap;
   color: #989898;
 }
@@ -92,12 +91,9 @@ input::placeholder {
   background-color: rgb(49, 49, 49);
   color: rgb(163, 156, 156);
   border-radius: 15px;
-  padding: 0 5px;
+  padding: 3px 7px;
   width: auto;
-}
-.tag p {
-  margin: 5px;
-  font-size: small;
+  margin-top: 2px;
 }
 .more-btn {
   background: #090909;
@@ -192,11 +188,11 @@ input::placeholder {
   border-radius: 50px;
 }
 .tags_found {
-  font-size: 13px;
+  font-size: 11px;
   border-radius: 5px;
   width: 80%;
   height: auto;
-  padding: 10px;
+  /* padding: 10px; */
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -208,4 +204,5 @@ input::placeholder {
 .clear_btn {
   height: 20px;
   width: 20px;
+  padding-top: 8px;
 }

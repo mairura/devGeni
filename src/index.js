@@ -74,9 +74,7 @@ root.render(
         }}
       >
         <ErrorBoundary>
-          {/* <WalletProvider> */}
-            <App />
-          {/* </WalletProvider> */}
+          <App />
           <PWAPrompt
             promptOnVisit={2}
             timesToShow={300}

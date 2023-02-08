@@ -1,11 +1,10 @@
 import "./css/devdata.css";
 import Title from "../assets/title.png";
 import axios from "axios";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { Config } from "../config/config";
 import HashLoader from "react-spinners/HashLoader";
-import { TypeAnimation } from "react-type-animation";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { IProjects } from "./Context";
 import { ExternalLink } from "react-external-link";
 
