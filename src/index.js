@@ -7,7 +7,7 @@ import ReactPwa from "react-pwa-app";
 // import { CookiesProvider } from "react-cookie";
 import PWAPrompt from "react-ios-pwa-prompt";
 import * as serviceWorker from "./registerServiceWorker";
-import { WalletProvider } from "react-binance-wallet";
+// import { WalletProvider } from "react-binance-wallet";
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -74,9 +74,9 @@ root.render(
         }}
       >
         <ErrorBoundary>
-          <WalletProvider>
+          {/* <WalletProvider> */}
             <App />
-          </WalletProvider>
+          {/* </WalletProvider> */}
           <PWAPrompt
             promptOnVisit={2}
             timesToShow={300}

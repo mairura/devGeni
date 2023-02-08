@@ -10,13 +10,13 @@ import Details from "./Views/Details";
 import Profile from "./Views/Profile";
 import Devdata from "./Views/Devdata";
 import HashLoader from "react-spinners/HashLoader";
-import { useWallet } from "react-binance-wallet";
+// import { useWallet } from "react-binance-wallet";
 
 function App() {
   //Set a loading page
   const [isLoading, setIsLoading] = useState(true);
-  const { account, connect, reset, status, error, balance, chainId } =
-    useWallet();
+  // const { account, connect, reset, status, error, balance, chainId } =
+  //   useWallet();
 
   useEffect(() => {
     setTimeout(() => setIsLoading(false), 1000);
