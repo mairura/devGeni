@@ -1,11 +1,13 @@
 .member-container {
   display: flex;
-  flex-wrap: wrap;
+  /* grid-template-columns: 0.002fr 0.002fr; */
   flex-direction: row;
-  margin: 5px 0;
+  margin: 25px auto;
   height: auto;
-  width: auto;
-  justify-content: center;
+ justify-self: center;
+  width:auto;
+
+  /* justify-content: center; */
 }
 .main-member {
   max-width: 70px;
@@ -21,7 +23,7 @@
   height: 30px;
   border: 2px solid green;
 }
-.main-member ul li {
+/* .main-member ul li {
   list-style: none;
 }
 .main-member p {
@@ -29,4 +31,4 @@
   color: #fff;
   cursor: pointer;
   padding: 10px;
-}
+} */

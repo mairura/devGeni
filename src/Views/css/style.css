@@ -1,6 +1,6 @@
 body {
   max-height: 100vh;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 .main_header {
   margin-top: 10px;
@@ -14,7 +14,7 @@ body {
 }
 .header_data {
   width: 80%;
-  margin: auto;
+  margin: 10px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -27,7 +27,7 @@ body {
 }
 .link {
   text-decoration: none;
-   padding: 6px 17px;
+  padding: 6px 17px;
   color: #fff;
 }
 .header_data a.active {
@@ -169,4 +169,28 @@ input::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.clear_btn {
+  border: none;
+  /* background-color: #fff; */
+  border-radius: 50px;
+}
+.tags_found {
+  padding: 3px;
+  font-size: 13px;
+  border-radius: 5px;
+  width: 80%;
+  height: auto;
+  padding: 10px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 2px;
+  flex-wrap: wrap;
+  color: #989898;
+}
+.founder {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }

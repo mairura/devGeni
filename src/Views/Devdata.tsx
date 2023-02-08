@@ -1,12 +1,13 @@
 import "./css/devdata.css";
 import Title from "../assets/title.png";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Config } from "../config/config";
 import HashLoader from "react-spinners/HashLoader";
 import { TypeAnimation } from "react-type-animation";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { IProjects } from "./Context";
+import { ExternalLink } from "react-external-link";
 
 const Devdata = () => {
   const [tags, setTags] = useState<Array<string>>([]);
@@ -56,7 +57,7 @@ const Devdata = () => {
 
   useEffect(() => {
     devData();
-  });
+  }, []);
 
   useEffect(() => {
     getStack();
@@ -66,19 +67,18 @@ const Devdata = () => {
     setTimeout(() => setLoader(false), 2000);
   }, []);
 
+  let trimDesc = function (string: any, length: any) {
+    return string.length > length
+      ? string.substring(0, length) + "..."
+      : string;
+  };
+
   return (
     <>
       <>
         <div>
           <div className="header">
             <img src={Title} alt="title describe" />
-            <TypeAnimation
-              sequence={["Team and Skill Matching Engine", 1000, () => {}]}
-              wrapper="div"
-              cursor={true}
-              repeat={Infinity}
-              style={{ fontSize: "1em", color: "lightgray" }}
-            />
           </div>
           <div className="header_data">
             <NavLink className="devdata_link" to="/">
@@ -130,24 +130,28 @@ const Devdata = () => {
               let name = dev.name;
               let shortName = dev.short_name;
               let pic = dev.profile_img_link;
-              let gitLink = dev.profile_link;
+              let gitLink: any = dev.profile_link;
               let stack_name = dev.tech_stack;
+              let stackName = stack_name.join();
 
               return (
-                <div className="devdata_container">
-                  <div className="devdata_details">
-                    <div className="devdata_image">
-                      <img src={pic} />
+                <>
+                  <ExternalLink href={gitLink} className="link">
+                    <div className="devdata_container">
+                      <div className="devdata_details">
+                        <div className="devdata_image">
+                          <img src={pic} />
+                        </div>
+                        <div className="devdata_name">
+                          <h3>
+                            {name}&nbsp;<span>({shortName})</span>
+                          </h3>
+                          <p>{trimDesc(stackName, 100)}</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="devdata_name">
-                      <h3>
-                        {name}&nbsp;<span>({shortName})</span>
-                      </h3>
-                      <p>Stack here:{stack_name}</p>
-                      <i>{gitLink}</i>
-                    </div>
-                  </div>
-                </div>
+                  </ExternalLink>
+                </>
               );
             })}
           </>

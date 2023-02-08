@@ -27,33 +27,33 @@ const Details = () => {
         };
         return (
           <Link
-            to={`project/?projectId=${project.proj_name}`}
+            to={`project/?projectId=${project._id}&projectDesc=${desc}&projectTeam=${team}`}
             className="details_container"
           >
             <div className="details_projects">
               <div className="details_project">
-                <h3>{trimDesc(projectName, 20)}</h3>
-                <p>{trimDesc(desc, 100)}</p>
-              </div>
-              <div className="project_stack">
-                <div>
-                  <span>{team}</span>
+                <h3>{trimDesc(projectName, 100)}</h3>
+                <p>{trimDesc(desc, 200)}</p>
+                <div className="project_stack">
+                  <div>
+                    <span>{team}</span>
+                  </div>
+                  <div>
+                    <p>{teamNo}</p>
+                  </div>
+                  <div>
+                    <span>{stack}</span>
+                  </div>
+                  <div>
+                    <p>{stackName}</p>
+                  </div>
+                  <div>
+                    <p>+&nbsp;{stackNo}&nbsp;more</p>
+                  </div>
+                  {/* <Link to={`project/?projectId=${project.proj_name}`}>
+                    <span className="greater">{greater}</span>
+                  </Link> */}
                 </div>
-                <div>
-                  <p>{teamNo}</p>
-                </div>
-                <div>
-                  <span>{stack}</span>
-                </div>
-                <div>
-                  <p>{stackName}</p>
-                </div>
-                <div>
-                  <p>+&nbsp;{stackNo}&nbsp;more</p>
-                </div>
-                <Link to={`project/?projectId=${project.proj_name}`}>
-                  <span className="greater">{greater}</span>
-                </Link>
               </div>
             </div>
           </Link>

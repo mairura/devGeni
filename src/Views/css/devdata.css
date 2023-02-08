@@ -1,3 +1,6 @@
+.link {
+  text-decoration: none;
+}
 .devdata_container {
   color: #fff;
   padding: 2px 20px;
@@ -11,6 +14,7 @@
 }
 .devdata_image {
   width: 100px;
+  padding-right: 20px;
 }
 .devdata_container img {
   padding-top: 3px;
@@ -21,14 +25,13 @@
   text-align: left;
   padding-top: 10px;
   cursor: pointer;
+  overflow: hidden;
+  width: 470px;
 }
 .devdata_name h3 {
   color: #f05e56;
   font-weight: 400;
   font-size: 14px;
-}
-.devdata_name i {
-  font-size: 10px;
 }
 .devdata_name i:hover {
   color: #f05e56;

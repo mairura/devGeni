@@ -5,7 +5,7 @@ function TeamMember(dev: any) {
   let devData: any = dev.dev;
   let dev_nickname = devData?.short_name;
 
-  // let trimDesc = function (string: any, length: any) {
+  // let trimDesc: any = function (string: any, length: any) {
   //   return string.length > length ? string.substring(0, length) + ".." : string;
   // };
 
@@ -15,14 +15,14 @@ function TeamMember(dev: any) {
         to={`/profile/?name=${devData?.name}&shortName=${devData?.short_name}&profilePic=${devData?.profile_img_link}&profileLink=${devData?.profile_links}`}
         className="main-member"
       >
-        <ul>
-          <li>
+        {/* <ul>
+          <li> */}
             <img src={devData?.profile_img_link} alt="pic" />
-          </li>
-          <li>
+          {/* </li> */}
+          {/* <li>
             <p>{dev_nickname}</p>
-          </li>
-        </ul>
+          </li> */}
+        {/* </ul> */}
       </Link>
     </>
   );

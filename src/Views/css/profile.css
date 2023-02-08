@@ -2,7 +2,7 @@
   background: linear-gradient(192.05deg, #000000 0%, #09101f 100%);
 }
 .profile_desc img {
-  padding-bottom: 10px;
+  border: 2px solid greenyellow;
   border-radius: 50%;
   height: 200px;
 }

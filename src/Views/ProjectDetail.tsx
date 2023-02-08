@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import "./css/ProjectDetail.css";
 import { prev, share, ksh, verified } from "../icons";
 import TeamMember from "./Components/TeamMember";
@@ -6,20 +6,36 @@ import linkPay from "../assets/linkpay.png";
 import linkpayui from "../assets/linkpayui.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { IProjects } from "./Context";
+import { IProjects, ISingleDev, ProjectContext } from "./Context";
 import { Config } from "../config/config";
 import { ExternalLink } from "react-external-link";
 
 function ProjectDetail() {
+  // const { projects, devs } = useContext(ProjectContext);
+  // console.log("PRINT DEVELOPERSS:", devs);
+  // const [devs, setDevs] = useState<Array<ISingleDev>>([]);
+
   const [projectData, setProjectData] = useState<IProjects>();
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const proj_name = urlParams.get("projectId");
   const proj_desc = urlParams.get("projectDesc");
-  // const proj_team = urlParams.get("projectTeam");
+  const proj_team = urlParams.get("projectTeam");
   let url = Config.URL;
 
-  console.log("Print Project Desc:", proj_desc);
+  //Function to submit choosen stack and find resp projects
+  // let stackToSearch: string;
+  // const getData = async () => {
+  //   const endpoint: string = `${url}/index/projects/tags/${stackToSearch}`;
+  //   try {
+  //     const { data } = await axios.get(endpoint);
+  //     setDevs([...data.dev_data]);
+  //     console.log("PRINT DEV_DATA:", data);
+  //   } catch (error: any) {
+  //     console.error("Error:", error.message);
+  //   }
+  // };
+
   //Getting single project
   const singleProject = async () => {
     try {
@@ -30,11 +46,12 @@ function ProjectDetail() {
     }
   };
 
-  // console.log("Properties:", projectData);
+  // console.log("Properties:", dev_data);
   let techStack: String[] | undefined = projectData?.tech_stack;
   let proj_name_get: String | undefined = projectData?.proj_name;
   let team: {}[] | undefined = projectData?.team;
   let projectId: number | undefined = projectData?._id;
+  // console.log("Print project Team:", proj_team);
 
   useEffect(() => {
     singleProject();
@@ -86,7 +103,6 @@ function ProjectDetail() {
             {ksh} Speak to a dev team now
           </button>
         </ExternalLink>
-
         <br />
         <br />
       </div>

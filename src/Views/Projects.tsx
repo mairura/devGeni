@@ -3,7 +3,7 @@ import "./css/style.css";
 import Title from "../assets/title.png";
 import ProjectCard from "./ProjectCard";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-// import { ksh } from "../icons";
+import { close } from "../icons";
 import axios from "axios";
 import { ProjectContext, IProjects, ISingleDev } from "./Context";
 import { Config } from "../config/config";
@@ -15,19 +15,23 @@ import HashLoader from "react-spinners/HashLoader";
 function Projects() {
   const [tags, setTags] = useState<Array<string>>([]);
   const [projects, setProjects] = useState<Array<IProjects>>([]);
-  const [showPage, setShowPage] = useState(false);
   const [devs, setDevs] = useState<Array<ISingleDev>>([]);
+  const [showPage, setShowPage] = useState(false);
   const [loader, setLoader] = useState(true);
   const [getStacks, setGetStacks] = useState([]);
+
+  const [tagsFound, setTagsFound] = useState<Array<string>>([]);
+
   let url = Config.URL;
 
   //Function to handle selected stack to be called
   const handleStack = (e: any) => {
     e.preventDefault();
-    let tagList = [...tags, e.target.value];
+    let tagList: any = [...tags, e.target.value];
     if (!tags.includes(e.target.value)) {
       setTags(tagList);
       let newList: string = tagList.join();
+      window.localStorage.setItem("dataTags", newList);
       getData(newList);
     }
   };
@@ -59,12 +63,58 @@ function Projects() {
 
   useEffect(() => {
     getStack();
+
+    const foundTags: any = localStorage.getItem("dataTags");
+    setTagsFound(foundTags);
+    let tagsNewLocal: string | null = localStorage.getItem("dataTags");
+    if (tagsNewLocal !== null) {
+      getData(tagsNewLocal);
+    }
   }, []);
+
+  //Function to clear stack
+  const clearStack = () => {
+    localStorage.clear();
+    setTagsFound([]);
+  };
+
+  //Function to get all stacks
+  const allStacks = getStacks.map((item: any) => ({
+    value: item.name,
+    label: item.name,
+  }));
+
+  function checkLocalStorage() {
+    if (!localStorage.length) {
+      return "LocalStorage is empty";
+    } else {
+      return localStorage.getItem("dataTags");
+    }
+  }
+
+  // const [selectedOption, setSelectedOption] = useState(allStacks[0]);
+  // const [searchTerm, setSearchTerm] = useState("");
+
+  // const filteredOptions: any = allStacks.filter(
+  //   (option) =>
+  //     option.label.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
+  // );
+
+  // const handleChange = (event: any) => {
+  //   setSelectedOption(
+  //     filteredOptions.find((option: any) => option.value === event.target.value)
+  //   );
+  // };
+
+  // const handleSearch = (event: any) => {
+  //   setSearchTerm(event.target.value);
+  // };
+  // console.log("Print SELECTED OPTION CHANGE:", selectedOption);
 
   return (
     <div className="main_header">
       <>
-        <div>
+        <div className="main_container">
           <div className="header">
             <img src={Title} alt="title" />
           </div>
@@ -76,30 +126,62 @@ function Projects() {
               <p className="link">Developers</p>
             </NavLink>
           </div>
-        </div>
-        <div className="search-bar">
-          <form>
-            <select
-              onChange={(e) => {
-                handleStack(e);
-              }}
-            >
-              <option>Choose Stack</option>
-              {getStacks.map((item: any, index) => (
-                <option key={index} value={item.name}>
-                  {item.name}
-                </option>
-              ))}
-            </select>
-          </form>
-          <div className="current-tags">
-            {tags.map((item, i) => {
-              return (
-                <div key={i + 1} className="tag">
-                  <p>{item}</p>
+
+          <div className="search-bar">
+            <form>
+              <select
+                onChange={(e) => {
+                  handleStack(e);
+                }}
+              >
+                <option>Choose Stack</option>
+                {getStacks.map((item: any, index) => (
+                  <option key={index} value={item.name}>
+                    {item.name}
+                  </option>
+                ))}
+              </select>
+            </form>
+
+            {/* <input type="text" value={searchTerm} onChange={handleSearch} />
+          <select value={selectedOption.value} onChange={handleChange}>
+            {filteredOptions.map((option: any) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select> */}
+            {/* <div className="storageData">
+
+          </div> */}
+            {tagsFound ? (
+              <>
+                <div className="founder">
+                  <p className="tags_found">{checkLocalStorage()}</p>
+                  {/* Icon to clear cache */}
+                  <p
+                    className="clear_btn"
+                    onClick={() => {
+                      clearStack();
+                    }}
+                  >
+                    {close}
+                  </p>
                 </div>
-              );
-            })}
+              </>
+            ) : (
+              <>
+                <div className="current-tags">
+                  {tags.map((item, i) => {
+                    return (
+                      <div key={i + 1} className="tag">
+                        <p>{item}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </>
+            )}
           </div>
         </div>
       </>
@@ -112,42 +194,35 @@ function Projects() {
               <HashLoader
                 color="#f05e56"
                 loading={loader}
-                size={100}
+                size={80}
                 aria-label="Loading Spinner"
                 data-testid="loader"
               />
             </div>
           ) : (
             <>
-              <Tabs
-                className="tabs"
-                id="controlled-tabs"
-                selectedTabClassName="bg-orange"
-              >
-                <TabList className="tablist">
-                  <Tab>Slide</Tab>
-                  <Tab>List</Tab>
-                </TabList>
-                <TabPanel style={{ maxHeight: "55vh" }}>
-                  <ProjectContext.Provider value={{ projects, devs }}>
-                    <ProjectCard />
-                  </ProjectContext.Provider>
-                </TabPanel>
-                <TabPanel>
-                  <ProjectContext.Provider value={{ projects, devs }}>
-                    <Details />
-                  </ProjectContext.Provider>
-                </TabPanel>
-              </Tabs>
-              {/* <div className="buttons">
-                <ExternalLink
-                  href="https://calendly.com/ngeni-info"
-                  className="btn_link"
+              <div className="body_tabs">
+                <Tabs
+                  className="tabs"
+                  id="controlled-tabs"
+                  selectedTabClassName="bg-orange"
                 >
-                  <button className="booking-button">Book Now</button>
-                </ExternalLink>
-                <button className="booking-button">{ksh} Speak Now</button>
-              </div> */}
+                  <TabList className="tablist">
+                    <Tab>Slide</Tab>
+                    <Tab>List</Tab>
+                  </TabList>
+                  <TabPanel style={{ maxHeight: "55vh" }}>
+                    <ProjectContext.Provider value={{ projects, devs }}>
+                      <ProjectCard />
+                    </ProjectContext.Provider>
+                  </TabPanel>
+                  <TabPanel>
+                    <ProjectContext.Provider value={{ projects, devs }}>
+                      <Details />
+                    </ProjectContext.Provider>
+                  </TabPanel>
+                </Tabs>
+              </div>
             </>
           )}
         </>

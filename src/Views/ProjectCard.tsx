@@ -12,6 +12,7 @@ import { ksh } from "../icons";
 function ProjectCard() {
   const { projects, devs } = useContext(ProjectContext);
   const dev_data = devs;
+  console.log("Get ALL PROJECTS DATA:", projects);
 
   return (
     <>
@@ -38,20 +39,30 @@ function ProjectCard() {
                 ? string.substring(0, length) + "..."
                 : string;
             };
+
             return (
               <>
                 <div className="card-main">
                   <Link to="project">
                     <div className="more">
                       <div key={project.id}>
-                        <div className="rate">
-                          <span>{match_rate}% &nbsp; Search Relevance</span>
-                        </div>
                         <Link
                           to={`project/?projectId=${project._id}&projectDesc=${desc}&projectTeam=${team}`}
                         >
-                          <b>{trimDesc(proj_title, 20)}</b>
-                          <p className="card_desc">{trimDesc(desc, 150)}</p>
+                          <b style={{ textAlign: "left" }}>
+                            {trimDesc(proj_title, 20)}
+                          </b>
+                          <p
+                            className="card_desc"
+                            style={{ width: "100%", textAlign: "left" }}
+                          >
+                            {trimDesc(desc, 150)}
+                          </p>
+                          <div className="rate">
+                            <span style={{ width: "100%", textAlign: "left" }}>
+                              {match_rate}% &nbsp; Search Relevance
+                            </span>
+                          </div>
                           <div className="stack_item">
                             {stack?.map((item: any, i: any) => {
                               while (i < 5) {
@@ -75,9 +86,11 @@ function ProjectCard() {
           })}
         </AliceCarousel>
         <div className="member-container">
+          {/* <ProjectContext.Provider value={{ projects, devs }}> */}
           {dev_data?.map((member: any) => (
             <TeamMember dev={member} />
           ))}
+          {/* </ProjectContext.Provider> */}
         </div>
         <div className="buttons">
           <ExternalLink
