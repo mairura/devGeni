@@ -20,16 +20,17 @@ function Projects() {
   const [loader, setLoader] = useState(true);
   const [getStacks, setGetStacks] = useState([]);
 
-  const [tagsFound, setTagsFound] = useState<Array<string>>([]);
+  const [localData, setLocalData] = useState<Array<string>>([]);
 
   let url = Config.URL;
 
   //Function to handle selected stack to be called
   const handleStack = (e: any) => {
     e.preventDefault();
-    let tagList: any = [...tags, e.target.value];
+    let tagList: any = [...localData, e.target.value];
     if (!tags.includes(e.target.value)) {
       setTags(tagList);
+      setLocalData(tagList);
       let newList: string = tagList.join();
       window.localStorage.setItem("dataTags", newList);
       getData(newList);
@@ -64,8 +65,8 @@ function Projects() {
   useEffect(() => {
     getStack();
 
-    const foundTags: any = localStorage.getItem("dataTags");
-    setTagsFound(foundTags);
+    // const foundTags: any = localStorage.getItem("dataTags");
+    // setTagsFound(foundTags);
     let tagsNewLocal: string | null = localStorage.getItem("dataTags");
     if (tagsNewLocal !== null) {
       getData(tagsNewLocal);
@@ -76,15 +77,46 @@ function Projects() {
   const clearStack = () => {
     localStorage.clear();
     setShowPage(false);
+    setLocalData([]);
+  };
+
+  const SplitNames = (names: string) => {
+    const names_split = names.split(",");
+    return names_split;
   };
 
   function checkLocalStorage() {
     if (!localStorage.length) {
-      return "Empty cache:";
+      return null;
     } else {
-      return localStorage.getItem("dataTags");
+      let tag_string: string | null = localStorage.getItem("dataTags");
+      let results: any;
+      if (tag_string != null) {
+        results = SplitNames(tag_string);
+        setLocalData(results);
+      }
+      return results;
     }
   }
+  const TagsIdentified: any = () => {
+    if (localData !== undefined) {
+      return (
+        <div className="current-tags">
+          {localData.map((item: any) => {
+            return (
+              <p className="tag" style={{ padding: "5px" }}>
+                {item}
+              </p>
+            );
+          })}
+        </div>
+      );
+    }
+  };
+
+  useEffect(() => {
+    checkLocalStorage();
+  }, []);
 
   // const [selectedOption, setSelectedOption] = useState(allStacks[0]);
   // const [searchTerm, setSearchTerm] = useState("");
@@ -148,26 +180,20 @@ function Projects() {
             {/* <div className="storageData">
 
           </div> */}
-            {tagsFound ? (
-              <>
-                <div className="founder">
-                  <p className="tags_found">
-                    {checkLocalStorage()}{" "}
-                    <p
-                      className="clear_btn"
-                      onClick={() => {
-                        clearStack();
-                      }}
-                    >
-                      <img src={close} alt="close" />
-                    </p>
+
+            <>
+              <div className="founder">
+                <div className="tags_found">
+                  <TagsIdentified />
+                  <p className="clear_btn" onClick={clearStack}>
+                    <img src={close} alt="close" />
                   </p>
-                  {/* Icon to clear cache */}
                 </div>
-              </>
-            ) : (
-              <>
-                <div className="current-tags">
+
+                {/* Icon to clear cache */}
+              </div>
+
+              {/* <div className="current-tags">
                   {tags.map((item, i) => {
                     return (
                       <div key={i + 1} className="tag">
@@ -175,9 +201,8 @@ function Projects() {
                       </div>
                     );
                   })}
-                </div>
-              </>
-            )}
+                </div> */}
+            </>
           </div>
         </div>
       </>
