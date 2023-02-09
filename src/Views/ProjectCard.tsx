@@ -49,7 +49,7 @@ function ProjectCard() {
                           to={`project/?projectId=${project._id}&projectDesc=${desc}&projectTeam=${team}`}
                         >
                           <b style={{ textAlign: "left" }}>
-                            {trimDesc(proj_title, 20)}
+                            {trimDesc(proj_title, 25)}
                           </b>
                           <p
                             className="card_desc"

@@ -31,7 +31,7 @@
   border-radius: 10px;
 }
 .dev_stack {
-  overflow: hidden;
+  overflow-x: scroll;
 }
 .dev_stack_item {
   width: 100%;

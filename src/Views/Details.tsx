@@ -33,7 +33,7 @@ const Details = () => {
             <div className="details_projects">
               <div className="details_project">
                 <h3>{trimDesc(projectName, 100)}</h3>
-                <p>{trimDesc(desc, 200)}</p>
+                <p>{trimDesc(desc, 150)}</p>
                 <div className="project_stack">
                   <div>
                     <span>{teams}</span>

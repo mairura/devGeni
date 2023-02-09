@@ -1,10 +1,10 @@
 import "./css/devdata.css";
 import Title from "../assets/title.png";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Config } from "../config/config";
 import HashLoader from "react-spinners/HashLoader";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { IProjects } from "./Context";
 import { ExternalLink } from "react-external-link";
 
@@ -145,7 +145,7 @@ const Devdata = () => {
                           <h3>
                             {name}&nbsp;<span>({shortName})</span>
                           </h3>
-                          <p>{trimDesc(stackName, 150)}</p>
+                          <p>{trimDesc(stackName, 100)}</p>
                         </div>
                       </div>
                     </div>

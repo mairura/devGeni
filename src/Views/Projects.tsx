@@ -13,13 +13,11 @@ import { NavLink } from "react-router-dom";
 import HashLoader from "react-spinners/HashLoader";
 
 function Projects() {
-  // const [tags, setTags] = useState<Array<string>>([]);
   const [projects, setProjects] = useState<Array<IProjects>>([]);
   const [devs, setDevs] = useState<Array<ISingleDev>>([]);
   const [showPage, setShowPage] = useState(false);
   const [loader, setLoader] = useState(true);
   const [getStacks, setGetStacks] = useState([]);
-
   const [localData, setLocalData] = useState<Array<string>>([]);
 
   let url = Config.URL;
@@ -29,7 +27,6 @@ function Projects() {
     e.preventDefault();
     let tagList: any = [...localData, e.target.value];
     if (!localData.includes(e.target.value)) {
-      // setTags(tagList);
       setLocalData(tagList);
       let newList: string = tagList.join();
       window.localStorage.setItem("dataTags", newList);
@@ -65,15 +62,13 @@ function Projects() {
   useEffect(() => {
     getStack();
 
-    // const foundTags: any = localStorage.getItem("dataTags");
-    // setTagsFound(foundTags);
     let tagsNewLocal: string | null = localStorage.getItem("dataTags");
     if (tagsNewLocal !== null) {
       getData(tagsNewLocal);
     }
   }, []);
 
-  //Function to clear stack
+  //Function to clear stack in localStorage
   const clearStack = () => {
     localStorage.clear();
     setShowPage(false);
