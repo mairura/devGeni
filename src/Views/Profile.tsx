@@ -36,11 +36,11 @@ const Profile = () => {
       <div className="prof">
         <div className="profile_stack">
           <h5>Tech Stack</h5>
-          <div className="dev_stack">
+          <p className="dev_stack">
             {stacks.map((item: any) => {
               return <div className="dev_stack_item">{item}</div>;
             })}
-          </div>
+          </p>
         </div>
         <div className="profile_projects">
           <div className="profile_title">

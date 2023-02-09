@@ -77,7 +77,7 @@ const Devdata = () => {
       <>
         <div>
           <div className="header">
-            <img src={Title} alt="title describe" />
+            <h3>DEVGENI</h3>
           </div>
           <div className="header_data">
             <NavLink className="devdata_link" to="/">

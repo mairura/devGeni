@@ -133,7 +133,7 @@ function Projects() {
       <>
         <div className="main_container">
           <div className="header">
-            <img src={Title} alt="title" />
+            <h3>DEVGENI</h3>
           </div>
           <div className="header_data">
             <NavLink className="devdata_link" to="/">

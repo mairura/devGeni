@@ -31,11 +31,23 @@
   border-radius: 10px;
 }
 .dev_stack {
-  overflow-x: scroll;
+  display: flex;
+  flex-wrap: wrap;
+}
+.dev_stack::-webkit-scrollbar {
+  height: 4px;
+  margin-top: 5px;
+}
+.dev_stack::-webkit-scrollbar-track {
+  background-color: #f3efef;
+  border-radius: 10px;
+}
+.dev_stack::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px #f05e56;
+  border-radius: 10px;
 }
 .dev_stack_item {
-  width: 100%;
-  margin-right: 4px;
+  margin-bottom: 10px;
 }
 .profile_stack h5 {
   color: #fff;
@@ -59,6 +71,7 @@
   background: #1e1e1e;
   margin: 20px 0;
   padding: 10px 15px;
+  border-radius: 10px;
 }
 .profile_title {
   display: flex;
@@ -102,6 +115,7 @@
   background: #1e1e1e;
   margin: 20px 0;
   padding: 10px 15px;
+  border-radius: 10px;
 }
 .profile_data {
   display: flex;

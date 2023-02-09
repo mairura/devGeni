@@ -9,10 +9,12 @@ import axios from "axios";
 import { IProjects, ISingleDev } from "./Context";
 import { Config } from "../config/config";
 import { ExternalLink } from "react-external-link";
+import HashLoader from "react-spinners/HashLoader";
 
 function ProjectDetail() {
   const [devs, setDevs] = useState<Array<ISingleDev>>([]);
   const [projectData, setProjectData] = useState<IProjects>();
+  const [loader, setLoader] = useState(true);
 
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
@@ -57,6 +59,10 @@ function ProjectDetail() {
     getDeveloper();
   }, []);
 
+  useEffect(() => {
+    setTimeout(() => setLoader(false), 1000);
+  }, []);
+
   return (
     <>
       <div className="project_banner">
@@ -83,12 +89,25 @@ function ProjectDetail() {
           ))}
         </h4>
       </div>
-      <div>
+      <div className="loader_details">
+        {/* {loader ? (
+          <p className="item_details">
+            <HashLoader
+              color="#f05e56"
+              loading={loader}
+              size={30}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+          </p>
+        ) : ( */}
         <div className="member-container">
           {devs?.map((member: any) => (
             <TeamMember dev={member} />
           ))}
         </div>
+        {/* )} */}
+
         <br />
         <ExternalLink
           href="https://calendly.com/ngeni-info"
