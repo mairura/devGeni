@@ -116,16 +116,14 @@ select {
   position: absolute;
   height: 30px;
   bottom: 0;
-  height: 40px;
-  background-color: #090909;
-  padding-top: 14px;
+  padding-bottom: 40px;
   font-style: normal;
   font-weight: 300;
   font-size: 12px;
   line-height: 12px;
   color: #ffffff;
   font-family: "Poppins", sans-serif;
-  width:100vw;
+  width: 100vw;
 }
 .footer-text {
   color: #fff;
