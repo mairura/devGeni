@@ -115,15 +115,18 @@ select {
 }
 .footer_container {
   position: absolute;
-  height: 10px;
-  left: 141px;
-  top: 810px;
+  height: 30px;
+  bottom: 0;
+  height: 40px;
+  background-color: #090909;
+  padding-top: 14px;
   font-style: normal;
   font-weight: 300;
   font-size: 12px;
   line-height: 12px;
   color: #ffffff;
   font-family: "Poppins", sans-serif;
+  width:100vw;
 }
 .footer-text {
   color: #fff;
@@ -132,7 +135,7 @@ select {
   width: 40px;
 }
 .body_tab {
-  height: 50vh;
+  height: 65vh;
   background-color: #031926;
   overflow-y: scroll;
   overflow-x: hidden;
