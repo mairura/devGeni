@@ -1,4 +1,4 @@
-.main_header{
+.main_header {
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -117,7 +117,7 @@ select {
   position: absolute;
   height: 10px;
   left: 141px;
-  top: 810px;
+  top: 790px;
   font-style: normal;
   font-weight: 300;
   font-size: 12px;
