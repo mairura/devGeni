@@ -113,7 +113,7 @@ select {
   color: #fff;
 }
 .footer_container {
-  position: relative;
+  position: fixed;
   height: 30px;
   bottom: 0;
   padding-bottom: 40px;
@@ -124,6 +124,7 @@ select {
   color: #ffffff;
   font-family: "Poppins", sans-serif;
   width: 100vw;
+  /* margin-top: 80%; */
 }
 .footer-text {
   color: #fff;

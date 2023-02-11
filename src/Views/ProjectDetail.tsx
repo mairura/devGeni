@@ -12,7 +12,7 @@ import { ExternalLink } from "react-external-link";
 function ProjectDetail() {
   const [devs, setDevs] = useState<Array<ISingleDev>>([]);
   const [projectData, setProjectData] = useState<IProjects>();
-  const [loader, setLoader] = useState(true);
+  // const [loader, setLoader] = useState(true);
 
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
@@ -43,7 +43,7 @@ function ProjectDetail() {
   };
 
   // console.log("Properties:", dev_data);
-  let techStack: String[] | undefined = projectData?.tech_stack;
+  // let techStack: String[] | undefined = projectData?.tech_stack;
   let proj_name_get: String | undefined = projectData?.proj_name;
   // let team: {}[] | undefined = projectData?.team;
   // let projectId: number | undefined = projectData?._id;
@@ -57,9 +57,9 @@ function ProjectDetail() {
     getDeveloper();
   }, []);
 
-  useEffect(() => {
-    setTimeout(() => setLoader(false), 1000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => setLoader(false), 1000);
+  // }, []);
 
   let trimDesc = function (string: any, length: any) {
     return string.length > length
@@ -82,7 +82,7 @@ function ProjectDetail() {
         <h3>{proj_name_get} </h3> {verified}
       </div>
       <div className="body_desc">
-        <p>{trimDesc(proj_desc, 605)}</p>
+        <p>{trimDesc(proj_desc, 600)}</p>
         {/* <h4>
           Dev hours &nbsp; &nbsp; <span>700+</span>
         </h4>
