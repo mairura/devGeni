@@ -11,7 +11,7 @@
   width: 139px;
   height: 29px;
   left: 131px;
-  top: 271px;
+  top: 210px;
   font-family: "Orbitron", sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -73,10 +73,10 @@ select.mySelectArrow {
   width: 354px;
   height: 50px;
   margin-left: 20px;
-  margin-top: 25%;
+  margin-top: 10%;
 }
 .home_btn {
-  margin-top: 40%;
+  margin-top: 20%;
 }
 .home_btn button {
   box-sizing: border-box;
@@ -84,7 +84,7 @@ select.mySelectArrow {
   width: 270px;
   height: 45px;
   left: 66px;
-  top: 610px;
+  top: 530px;
   background: linear-gradient(
     180deg,
     rgba(82, 242, 226, 0.1) 0%,
