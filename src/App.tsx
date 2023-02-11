@@ -10,6 +10,8 @@ import Details from "./Views/Details";
 import Profile from "./Views/Profile";
 import Devdata from "./Views/Devdata";
 import HashLoader from "react-spinners/HashLoader";
+import Home from "./Views/Home";
+import NotFound from "./Views/Components/NotFound";
 // import { useWallet } from "react-binance-wallet";
 
 function App() {
@@ -66,12 +68,14 @@ function App() {
               {Number(balance) >= 0 && <p>{balance}</p>}
             </div> */}
             <Routes>
-              <Route path="/" element={<Projects />} />
-              <Route path="/project" element={<ProjectDetail />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/projectDetails" element={<ProjectDetail />} />
               <Route path="/book-now" element={<BookNow />} />
               <Route path="/details" element={<Details />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/devdata" element={<Devdata />} />
+              {/* <Route path="*" element={<NotFound />} /> */}
             </Routes>
           </div>
           <Footer />

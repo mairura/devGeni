@@ -1,34 +1,11 @@
-.member-container {
-  display: flex;
-  /* grid-template-columns: 0.002fr 0.002fr; */
-  flex-direction: row;
-  margin: 25px auto;
-  height: auto;
- justify-self: center;
-  width:auto;
-
-  /* justify-content: center; */
-}
 .main-member {
-  max-width: 70px;
-  max-height: 120px;
-  min-width: 20px;
-  min-height: 10px;
-  overflow: hidden;
   text-decoration: none;
+  position: relative;
 }
 .main-member img {
+  /* display: flex; */
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  border: 2px solid green;
+  width: 20px;
+  height: 20px;
+  /* border: 2px solid #fff; */
 }
-/* .main-member ul li {
-  list-style: none;
-}
-.main-member p {
-  font-size: 11px;
-  color: #fff;
-  cursor: pointer;
-  padding: 10px;
-} */

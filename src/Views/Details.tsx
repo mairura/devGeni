@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import "./css/details.css";
-import { teams, stack } from "../icons";
+import { teams, languages } from "../icons";
 import { ProjectContext } from "./Context";
 import "react-tabs/style/react-tabs.css";
 import { Link } from "react-router-dom";
@@ -42,7 +42,7 @@ const Details = () => {
                     <p>{teamNo}</p>
                   </div>
                   <div>
-                    <span>{stack}</span>
+                    <span>{languages}</span>
                   </div>
                   <div>
                     <p>{stackName}</p>

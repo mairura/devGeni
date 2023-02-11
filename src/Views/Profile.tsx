@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { prev, share } from "../icons";
-import { greater } from "../icons";
+// import { greater } from "../icons";
 import "./css/profile.css";
 import minitrade from "../assets/minitrade.png";
 import linkpay from "../assets/linkpay.png";

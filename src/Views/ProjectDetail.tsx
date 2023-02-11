@@ -3,13 +3,11 @@ import "./css/ProjectDetail.css";
 import { prev, share, ksh, verified } from "../icons";
 import TeamMember from "./Components/TeamMember";
 import linkPay from "../assets/linkpay.png";
-import linkpayui from "../assets/linkpayui.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { IProjects, ISingleDev } from "./Context";
 import { Config } from "../config/config";
 import { ExternalLink } from "react-external-link";
-import HashLoader from "react-spinners/HashLoader";
 
 function ProjectDetail() {
   const [devs, setDevs] = useState<Array<ISingleDev>>([]);
@@ -63,14 +61,20 @@ function ProjectDetail() {
     setTimeout(() => setLoader(false), 1000);
   }, []);
 
+  let trimDesc = function (string: any, length: any) {
+    return string.length > length
+      ? string.substring(0, length) + "..."
+      : string;
+  };
+
   return (
     <>
       <div className="project_banner">
         <div className="options">
-          <Link to="/">{prev}</Link> {share}
+          <Link to="/projects">{prev}</Link> {share}
         </div>
         <div className="preview_container">
-          <img src={linkpayui} alt="linkpay ui" />
+          {/* <img src={linkpayui} alt="linkpay ui" /> */}
         </div>
       </div>
       <div className="title_desc">
@@ -78,8 +82,8 @@ function ProjectDetail() {
         <h3>{proj_name_get} </h3> {verified}
       </div>
       <div className="body_desc">
-        <p>{proj_desc}</p>
-        <h4>
+        <p>{trimDesc(proj_desc, 605)}</p>
+        {/* <h4>
           Dev hours &nbsp; &nbsp; <span>700+</span>
         </h4>
         <h4>
@@ -87,8 +91,9 @@ function ProjectDetail() {
           {techStack?.map((item) => (
             <i>{item}, </i>
           ))}
-        </h4>
+        </h4> */}
       </div>
+      <div className="project_team">Team</div>
       <div className="loader_details">
         {/* {loader ? (
           <p className="item_details">

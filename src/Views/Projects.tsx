@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "./css/style.css";
-import Title from "../assets/title.png";
 import ProjectCard from "./ProjectCard";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import close from "../assets/close .svg";
@@ -8,8 +7,6 @@ import axios from "axios";
 import { ProjectContext, IProjects, ISingleDev } from "./Context";
 import { Config } from "../config/config";
 import { Tabs, TabPanel, Tab, TabList } from "react-tabs";
-import Details from "./Details";
-import { NavLink } from "react-router-dom";
 import HashLoader from "react-spinners/HashLoader";
 
 function Projects() {
@@ -69,11 +66,11 @@ function Projects() {
   }, []);
 
   //Function to clear stack in localStorage
-  const clearStack = () => {
-    localStorage.clear();
-    setShowPage(false);
-    setLocalData([]);
-  };
+  // const clearStack = () => {
+  //   localStorage.clear();
+  //   setShowPage(false);
+  //   setLocalData([]);
+  // };
 
   const SplitNames = (names: string) => {
     const names_split = names.split(",");
@@ -109,73 +106,34 @@ function Projects() {
     checkLocalStorage();
   }, []);
 
-  // const [selectedOption, setSelectedOption] = useState(allStacks[0]);
-  // const [searchTerm, setSearchTerm] = useState("");
-
-  // const filteredOptions: any = allStacks.filter(
-  //   (option) =>
-  //     option.label.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
-  // );
-
-  // const handleChange = (event: any) => {
-  //   setSelectedOption(
-  //     filteredOptions.find((option: any) => option.value === event.target.value)
-  //   );
-  // };
-
-  // const handleSearch = (event: any) => {
-  //   setSearchTerm(event.target.value);
-  // };
-  // console.log("Print SELECTED OPTION CHANGE:", selectedOption);
-
   return (
     <div className="main_header">
       <>
+        1
         <div className="main_container">
-          <div className="header">
-            <h3>DEVGENI</h3>
-          </div>
-          <div className="header_data">
-            <NavLink className="devdata_link" to="/">
-              <p className="link">Projects</p>
-            </NavLink>
-            <NavLink to="devdata" className="devdata_link">
-              <p className="link">Developers</p>
-            </NavLink>
-          </div>
-
           <div className="search-bar">
-            <form>
+            <div className="select1">
               <select
                 onChange={(e) => {
                   handleStack(e);
                 }}
+                className="mySelectArrow1"
               >
-                <option>Choose Stack</option>
+                <option>View Projects</option>
                 {getStacks.map((item: any, index) => (
-                  <option key={index} value={item.name}>
-                    {item.name}
+                  <option key={index} value={item.name} className="all_items1">
+                    <div>{item.name}</div>
                   </option>
                 ))}
               </select>
-            </form>
-
-            {/* <input type="text" value={searchTerm} onChange={handleSearch} />
-          <select value={selectedOption.value} onChange={handleChange}>
-            {filteredOptions.map((option: any) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select> */}
-
+            </div>
             <>
               <div className="founder">
                 <div className="tags_found">
                   <TagsIdentified />
-                  <p className="clear_btn" onClick={clearStack}>
+                  {/* <p className="clear_btn" onClick={clearStack}>
                     <img src={close} alt="close" />
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </>
@@ -205,25 +163,44 @@ function Projects() {
                   selectedTabClassName="bg-orange"
                 >
                   <TabList className="tablist">
-                    <Tab>Slide</Tab>
-                    <Tab>List</Tab>
+                    {/* <Tab>Slide</Tab> */}
+                    {/* <Tab>List</Tab> */}
                   </TabList>
-                  <TabPanel style={{ maxHeight: "55vh" }}>
+                  <TabPanel
+                    className="body_tab"
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "1fr 1fr",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      // margin: "20px",
+                      // maxWidth: "700px",
+                    }}
+                  >
                     <ProjectContext.Provider value={{ projects, devs }}>
                       <ProjectCard />
                     </ProjectContext.Provider>
                   </TabPanel>
-                  <TabPanel className="body_tabs">
+                  {/* <TabPanel className="body_tabs">
                     <ProjectContext.Provider value={{ projects, devs }}>
                       <Details />
                     </ProjectContext.Provider>
-                  </TabPanel>
+                  </TabPanel> */}
                 </Tabs>
               </div>
             </>
           )}
         </>
       )}
+      {/* <div className="buttons">
+        <ExternalLink
+          href="https://calendly.com/ngeni-info"
+          className="btn_link"
+        >
+          <button className="booking-button">Book Now</button>
+        </ExternalLink>
+        <button className="booking-button">{ksh} Speak Now</button>
+      </div> */}
     </div>
   );
 }

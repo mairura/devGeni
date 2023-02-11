@@ -1,47 +1,51 @@
 import "./css/devdata.css";
-import Title from "../assets/title.png";
+// import Title from "../assets/title.png";
+import close from "../assets/close .svg";
 import axios from "axios";
 import { useEffect, useState, useContext } from "react";
 import { Config } from "../config/config";
 import HashLoader from "react-spinners/HashLoader";
 import { Link, NavLink } from "react-router-dom";
-import { IProjects } from "./Context";
+import { IProjects, ISingleDev } from "./Context";
 import { ExternalLink } from "react-external-link";
 
 const Devdata = () => {
-  const [tags, setTags] = useState<Array<string>>([]);
-  const [projects, setProjects] = useState<Array<IProjects>>([]);
-  const [devs, setDevs] = useState([]);
+  const [devs, setDevs] = useState<Array<ISingleDev>>([]);
+
   const [getStacks, setGetStacks] = useState([]);
-  const [showPage, setShowPage] = useState(false);
   const [loader, setLoader] = useState(true);
+  const [localData, setLocalData] = useState<Array<string>>([]);
   let url = Config.URL;
 
   //Function to get all developers at NGeni Labs
-  const devData = async () => {
-    const devs: any = await axios.get(`${url}/index/devs`);
-    setDevs(devs.data);
-  };
+  // const devData = async () => {
+  //   const devs: any = await axios.get(`${url}/index/devs`);
+  //   setAllDevs(devs.data);
+  // };
 
   //Function to handle selected stack to be called
   const handleStack = (e: any) => {
     e.preventDefault();
-    let tagList = [...tags, e.target.value];
-    if (!tags.includes(e.target.value)) {
-      setTags(tagList);
+    let tagList: any = [...localData, e.target.value];
+    if (!localData.includes(e.target.value)) {
+      setLocalData(tagList);
       let newList: string = tagList.join();
+      window.localStorage.setItem("dataTags", newList);
       getData(newList);
     }
   };
 
   //Function to submit choosen stack and find resp projects
   const getData = async (stackToSearch: string) => {
-    setShowPage(false);
-    const endpoint: string = `${url}/index/projects/tags/${stackToSearch}`;
+    let endpoint: string;
+    if (!localStorage.length) {
+      endpoint = `${url}/index/devs`;
+    } else {
+      endpoint = `${url}/index/devs/tags/${stackToSearch}`;
+    }
     try {
       const { data } = await axios.get(endpoint);
-      setProjects([...data]);
-      setShowPage(true);
+      setDevs([...data]);
     } catch (error: any) {
       console.error("Error:", error.message);
     }
@@ -54,12 +58,59 @@ const Devdata = () => {
     setGetStacks(stacks);
   };
 
-  useEffect(() => {
-    devData();
-  }, []);
+  // useEffect(() => {
+  //   devData();
+  // }, []);
 
   useEffect(() => {
     getStack();
+
+    let tagsNewLocal: string | null = localStorage.getItem("dataTags");
+    if (tagsNewLocal !== null) {
+      getData(tagsNewLocal);
+    }
+  }, []);
+
+  //Function to clear stack in localStorage
+  const clearStack = () => {
+    localStorage.clear();
+    setLocalData([]);
+    setDevs([]);
+  };
+
+  const SplitNames = (names: string) => {
+    const names_split = names.split(",");
+    return names_split;
+  };
+
+  function checkLocalStorage() {
+    if (!localStorage.length) {
+      return null;
+    } else {
+      let tag_string: string | null = localStorage.getItem("dataTags");
+      let results: any;
+      if (tag_string != null) {
+        results = SplitNames(tag_string);
+        setLocalData(results);
+      }
+      return results;
+    }
+  }
+
+  const TagsIdentified: any = () => {
+    if (localData !== undefined) {
+      return (
+        <div className="current-tags">
+          {localData.map((item: any) => {
+            return <p className="tag">{item}</p>;
+          })}
+        </div>
+      );
+    }
+  };
+
+  useEffect(() => {
+    checkLocalStorage();
   }, []);
 
   useEffect(() => {
@@ -104,11 +155,12 @@ const Devdata = () => {
             </select>
           </form>
           <div className="current-tags">
-            {tags.map((item, i) => (
-              <div key={i + 1} className="tag">
-                <p>{item}</p>
-              </div>
-            ))}
+            <div className="tags_found">
+              <TagsIdentified />
+              <p className="clear_btn" onClick={clearStack}>
+                <img src={close} alt="close" />
+              </p>
+            </div>
           </div>
         </div>
       </>
