@@ -60,7 +60,7 @@ function ProjectCard() {
                         <div>
                           <p className="card_devs">
                             {dev_data?.slice(0, 3).map((member: any) => (
-                              <TeamMember dev={member} />
+                              <TeamMember dev={member} className="developer"/>
                             ))}
                             <span>+{diff}</span>
                           </p>
