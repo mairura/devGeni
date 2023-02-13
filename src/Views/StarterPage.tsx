@@ -8,9 +8,15 @@ const StarterPage = () => {
   return (
     <div className="home_container">
       <div className="gradient" />
+      <div className="home_header">
+        <p>DEVGENI</p>
+      </div>
+      <div className="home_subheader">
+        <p>DESIGN.DEVELOP.DELIVER</p>
+      </div>
       <div className="carousel_page">
         <Carousel>
-          <div>
+          <div className="carousel_data">
             <p>
               {" "}
               Searching for a skilled developer or team to work on your next
@@ -18,10 +24,11 @@ const StarterPage = () => {
             </p>
           </div>
           <div>
-            <p> Carousel/Animation For devGeni</p>
-          </div>
-          <div>
-            <p> Carousel/Animation For devGeni</p>
+            <p>
+              Empower your project with experienced DevGeni software developers
+              specializing in front-end to back-end, Web3, and blockchain
+              technologies.
+            </p>
           </div>
         </Carousel>
       </div>

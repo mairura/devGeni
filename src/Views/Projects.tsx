@@ -143,7 +143,7 @@ function Projects() {
                 }}
                 className="mySelectArrow1"
               >
-                <option>View Projects</option>
+                <option>Completed projects</option>
                 {getStacks.map((item: any, index) => (
                   <option key={index} value={item.name} className="all_items1">
                     <div>{item.name}</div>
