@@ -10,10 +10,11 @@
 .profile_dev {
   text-decoration: none;
   position: relative;
-  border:1px solid red;
+  /* border: 1px solid red; */
 }
 .profile_dev img {
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 65px;
+  height: 65px;
+  padding: 3px;
 }

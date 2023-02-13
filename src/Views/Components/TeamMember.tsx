@@ -6,15 +6,14 @@ function TeamMember(dev: any) {
   let devStack = devData?.tech_stack;
 
   const location = useLocation();
-  console.log("Location Data", location.pathname);
+  // console.log("Location Data", location.pathname);
   let mystyle = "";
 
-  if(location.pathname == "/projectDetails/"){
-    mystyle="profile_dev"
+  if (location.pathname == "/projectDetails/") {
+    mystyle = "profile_dev";
   } else {
-    mystyle = "main-member"
+    mystyle = "main-member";
   }
-
 
   return (
     <>

@@ -8,6 +8,7 @@ import { ProjectContext, IProjects, ISingleDev } from "./Context";
 import { Config } from "../config/config";
 import { Tabs, TabPanel, Tab, TabList } from "react-tabs";
 import HashLoader from "react-spinners/HashLoader";
+import TeamMember from "./Components/TeamMember";
 
 function Projects() {
   const [projects, setProjects] = useState<Array<IProjects>>([]);
@@ -65,12 +66,12 @@ function Projects() {
     }
   }, []);
 
-  //Function to clear stack in localStorage
-  // const clearStack = () => {
-  //   localStorage.clear();
-  //   setShowPage(false);
-  //   setLocalData([]);
-  // };
+  // Function to clear stack in localStorage
+  const clearStack = () => {
+    localStorage.clear();
+    setShowPage(false);
+    setLocalData([]);
+  };
 
   const SplitNames = (names: string) => {
     const names_split = names.split(",");
@@ -109,7 +110,6 @@ function Projects() {
   return (
     <div className="main_header">
       <>
-        
         <div className="main_container">
           <div className="search-bar">
             <div className="select1">
@@ -131,9 +131,9 @@ function Projects() {
               <div className="founder">
                 <div className="tags_found">
                   <TagsIdentified />
-                  {/* <p className="clear_btn" onClick={clearStack}>
+                  <p className="clear_btn" onClick={clearStack}>
                     <img src={close} alt="close" />
-                  </p> */}
+                  </p>
                 </div>
               </div>
             </>
@@ -157,23 +157,14 @@ function Projects() {
           ) : (
             <>
               <div>
-                    <ProjectContext.Provider value={{ projects, devs }}>
-                      <ProjectCard/>
-                    </ProjectContext.Provider>
+                <ProjectContext.Provider value={{ projects, devs }}>
+                  <ProjectCard />
+                </ProjectContext.Provider>
               </div>
             </>
           )}
         </>
       )}
-      {/* <div className="buttons">
-        <ExternalLink
-          href="https://calendly.com/ngeni-info"
-          className="btn_link"
-        >
-          <button className="booking-button">Book Now</button>
-        </ExternalLink>
-        <button className="booking-button">{ksh} Speak Now</button>
-      </div> */}
     </div>
   );
 }

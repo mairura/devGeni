@@ -1,18 +1,7 @@
-/* .projectDetail_container {
-  height: 60vh;
-} */
-/* .item_details {
-  text-align: center;
-  margin-left: 320px;
-  position: fixed;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
 .projectDetail_container {
   width: 100%;
-  height: 100%;
-  height: 70vh;
+  height: 100vh;
+  border: 1px solid red;
 }
 .project_banner {
   width: 100%;
@@ -65,11 +54,20 @@
   text-align: left;
   margin: auto;
   color: #fff;
+  overflow: scroll;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  height: 50x;
+  padding-top: 10px;
 }
 .project_team {
   font-size: 20px;
   letter-spacing: 1px;
   color: #fff;
   font-family: "Orbitron", sans-serif;
-  padding-top: 10px;
+  padding: 10px;
+}
+.carousel_page {
+  display: flex;
+  justify-content: center;
 }

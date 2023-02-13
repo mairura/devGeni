@@ -1,39 +1,34 @@
-body{
+body {
   overflow-x: hidden;
 }
-
 .main_header {
-  /* position: absolute; */
   width: 100%;
-  height: 90vh;
-  
-  /* height: 100vh; */
+  height: 100%;
 }
-
 .main_container {
   max-height: 100vh;
   background-color: #031926;
-  /* align-items: center; */
   position: absolute;
-  width:100%;
+  width: 100%;
   max-width: 500px;
 }
 .search-bar {
   padding-top: 5%;
   width: 100%;
-  max-width:500px;
-  position:fixed;
+  max-width: 500px;
+  position: fixed;
   background-color: #031926;
   z-index: 1000;
-  top:0;
+  top: 0;
 }
 body {
   background-color: #031926;
   background-size: cover;
   background-repeat: no-repeat;
-  max-height: 70vh;
-  height: auto;
-  align-items: center;
+  /* max-height: 70vh; */
+  height: 100%;
+  /* height: auto; */
+  /* align-items: center; */
   text-align: center;
   justify-content: center;
   max-width: 100vw;
@@ -131,7 +126,7 @@ select {
 }
 .footer_container {
   position: fixed;
-  bottom:0;
+  bottom: 0;
   /* height: 30px; */
   /* bottom: 10px; */
   background-color: #031926;
@@ -153,7 +148,7 @@ select {
 .footer-text img {
   width: 40px;
 }
-.body_tab {
+/* .body_tab {
   height: 65vh;
   background-color: #031926;
   overflow-y: scroll;
@@ -179,7 +174,7 @@ select {
   list-style: none;
   position: relative;
   margin-bottom: 10px;
-}
+} */
 .item {
   height: 50vh;
   top: 50%;
@@ -213,4 +208,9 @@ select {
   height: 20px;
   width: 20px;
   padding-top: 8px;
+}
+/* height: 70vh; */
+.team_stack {
+  display: flex;
+  justify-content: center;
 }

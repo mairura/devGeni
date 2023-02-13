@@ -8,6 +8,8 @@ import axios from "axios";
 import { IProjects, ISingleDev } from "./Context";
 import { Config } from "../config/config";
 import { ExternalLink } from "react-external-link";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 
 function ProjectDetail() {
   const [devs, setDevs] = useState<Array<ISingleDev>>([]);
@@ -82,19 +84,11 @@ function ProjectDetail() {
           <h3>{proj_name_get} </h3> {verified}
         </div>
         <div className="body_desc">
-          <p>{trimDesc(proj_desc, 600)}</p>
-          {/* <h4>
-          Dev hours &nbsp; &nbsp; <span>700+</span>
-        </h4>
-        <h4>
-          Tech_Stack&nbsp;: &nbsp; &nbsp;{" "}
-          {techStack?.map((item) => (
-            <i>{item}, </i>
-          ))}
-        </h4> */}
+          <p>{proj_desc}</p>
         </div>
-        <div className="project_team">Team</div>
         <div className="loader_details">
+          <div className="project_team">Team</div>
+
           {/* {loader ? (
           <p className="item_details">
             <HashLoader
@@ -107,9 +101,11 @@ function ProjectDetail() {
           </p>
         ) : ( */}
           <div className="member-container">
+            {/* <Carousel> */}
             {devs?.map((member: any) => (
-              <TeamMember dev={member}/>
+              <TeamMember dev={member} />
             ))}
+            {/* </Carousel> */}
           </div>
           {/* )} */}
 

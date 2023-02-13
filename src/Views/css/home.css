@@ -1,11 +1,9 @@
 .home_container {
   height: 100vh;
   background: #031926;
-  padding-top: 60%;
 }
 @media screen {
 }
-
 .home_header p {
   position: absolute;
   width: 139px;
@@ -61,8 +59,7 @@ select.mySelectArrow {
   right: 0;
   bottom: 0;
   font-size: 20px;
-  /* border: 1px solid #565656; */
-  /* background: transparent; */
+
   color: #52f2e2;
   padding: 15px;
   pointer-events: none;
@@ -75,8 +72,14 @@ select.mySelectArrow {
   margin-left: 20px;
   margin-top: 10%;
 }
+.carousel_page {
+  padding-top: 10%;
+  height: 65vh;
+  display: flex;
+  justify-content: center;
+}
 .home_btn {
-  margin-top: 80%;
+  padding-top: 20%;
 }
 .home_btn button {
   box-sizing: border-box;
@@ -84,7 +87,7 @@ select.mySelectArrow {
   width: 270px;
   height: 45px;
   left: 66px;
-  top: 530px;
+  /* top: 530px; */
   background: linear-gradient(
     180deg,
     rgba(82, 242, 226, 0.1) 0%,
