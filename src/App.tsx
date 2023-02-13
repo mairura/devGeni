@@ -45,34 +45,9 @@ function App() {
           <div className="container">
             <div className="main_container">
               <div className="main">
-                {/* <div>
-              <h1>Binance Chain Connector</h1>
-              {status === "disconnected" ? (
-                <>
-                  <button
-                    style={{ display: "block", marginBottom: 16 }}
-                    onClick={() => connect("injected")}
-                  >
-                    Connect Metamask
-                  </button>
-                  <button
-                    style={{ display: "block" }}
-                    onClick={() => connect("bsc")}
-                  >
-                    Connect Binance Chain Wallet
-                  </button>
-                </>
-              ) : (
-                <button onClick={() => reset()}>Disconnect</button>
-              )}
-              {error?.message}
-              {chainId != null && <p>chainId: {chainId}</p>}
-              {account && <p>Connected as {account}</p>}
-              {Number(balance) >= 0 && <p>{balance}</p>}
-            </div> */}
                 <Routes>
                   <Route path="/" element={<StarterPage />} />
-                  <Route path="/home" element={<Home />} />
+                  <Route path="/home" element={<Projects />} />
                   <Route path="/projects" element={<Projects />} />
                   <Route path="/projectDetails" element={<ProjectDetail />} />
                   <Route path="/book-now" element={<BookNow />} />
@@ -82,9 +57,10 @@ function App() {
                   {/* <Route path="*" element={<NotFound />} /> */}
                 </Routes>
               </div>
-              <Footer />
+             
             </div>
           </div>
+          <Footer />
         </>
       )}
     </>

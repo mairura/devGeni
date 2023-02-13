@@ -28,7 +28,7 @@ function ProjectCard() {
 
   return (
     <>
-      <>
+      <div style={{ marginTop:"200px", display:"grid", gridTemplateColumns:"1fr 1fr"}}>
         {projects.map((project: any) => {
           let team: {}[] | undefined = project?.team;
           let stack: String[] | undefined = project?.tech_stack;
@@ -105,7 +105,7 @@ function ProjectCard() {
             </>
           );
         })}
-      </>
+      </div>
     </>
   );
 }

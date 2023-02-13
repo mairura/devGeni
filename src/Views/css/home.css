@@ -1,13 +1,9 @@
 .home_container {
   height: 100vh;
-  /* position: absolute; */
   background: #031926;
   padding-top: 60%;
-  /* left: 50%; */
-  /* transform: translateX(50%); */
 }
 @media screen {
-  
 }
 
 .home_header p {
@@ -80,11 +76,11 @@ select.mySelectArrow {
   margin-top: 10%;
 }
 .home_btn {
-  margin-top: 20%;
+  margin-top: 80%;
 }
 .home_btn button {
   box-sizing: border-box;
-  position: absolute;
+  /* position: absolute; */
   width: 270px;
   height: 45px;
   left: 66px;

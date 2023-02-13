@@ -3,9 +3,17 @@
   position: relative;
 }
 .main-member img {
-  /* display: flex; */
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  /* border: 2px solid #fff; */
+}
+.profile_dev {
+  text-decoration: none;
+  position: relative;
+  border:1px solid red;
+}
+.profile_dev img {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
 }

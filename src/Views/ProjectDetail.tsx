@@ -3,7 +3,7 @@ import "./css/ProjectDetail.css";
 import { prev, share, ksh, verified } from "../icons";
 import TeamMember from "./Components/TeamMember";
 import linkPay from "../assets/linkpay.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import { IProjects, ISingleDev } from "./Context";
 import { Config } from "../config/config";
@@ -13,7 +13,6 @@ function ProjectDetail() {
   const [devs, setDevs] = useState<Array<ISingleDev>>([]);
   const [projectData, setProjectData] = useState<IProjects>();
   // const [loader, setLoader] = useState(true);
-
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const proj_name = urlParams.get("projectId");
@@ -109,7 +108,7 @@ function ProjectDetail() {
         ) : ( */}
           <div className="member-container">
             {devs?.map((member: any) => (
-              <TeamMember dev={member} />
+              <TeamMember dev={member}/>
             ))}
           </div>
           {/* )} */}

@@ -109,7 +109,7 @@ function Projects() {
   return (
     <div className="main_header">
       <>
-        1
+        
         <div className="main_container">
           <div className="search-bar">
             <div className="select1">
@@ -157,36 +157,9 @@ function Projects() {
           ) : (
             <>
               <div>
-                <Tabs
-                  className="tabs"
-                  id="controlled-tabs"
-                  selectedTabClassName="bg-orange"
-                >
-                  <TabList className="tablist">
-                    {/* <Tab>Slide</Tab> */}
-                    {/* <Tab>List</Tab> */}
-                  </TabList>
-                  <TabPanel
-                    className="body_tab"
-                    style={{
-                      display: "grid",
-                      gridTemplateColumns: "1fr 1fr",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      // margin: "20px",
-                      // maxWidth: "700px",
-                    }}
-                  >
                     <ProjectContext.Provider value={{ projects, devs }}>
-                      <ProjectCard />
+                      <ProjectCard/>
                     </ProjectContext.Provider>
-                  </TabPanel>
-                  {/* <TabPanel className="body_tabs">
-                    <ProjectContext.Provider value={{ projects, devs }}>
-                      <Details />
-                    </ProjectContext.Provider>
-                  </TabPanel> */}
-                </Tabs>
               </div>
             </>
           )}
