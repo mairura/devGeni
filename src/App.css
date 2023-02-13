@@ -1,16 +1,24 @@
 /* *{
     background: linear-gradient(192.05deg, #000000 0%, #09101f 100%);
 } */
-/* .container {
-  left: 40%;
+.container {
+  /* left: 40%; */
+  position: relative;
+  /* transform: translateX(50%); */
+  /* margin: auto; */
+}
+/* .main_container {
+  width: 60%;
+  max-width: 800px;
+  height: 500px;
   position: absolute;
-  transform: translateX(50%);
-  margin: auto;
-} */
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .loader_title {
   margin-top: 40vh;
   color: #f05e56;
-}
+} */
 * {
   max-width: 500px;
   /* margin: auto; */

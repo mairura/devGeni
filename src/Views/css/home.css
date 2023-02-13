@@ -6,6 +6,10 @@
   /* left: 50%; */
   /* transform: translateX(50%); */
 }
+@media screen {
+  
+}
+
 .home_header p {
   position: absolute;
   width: 139px;

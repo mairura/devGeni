@@ -5,10 +5,12 @@
 }
 
 .main_container {
-  padding-top: 5%;
   max-height: 100vh;
   background-color: #031926;
   /* align-items: center; */
+}
+.search-bar {
+  padding-top: 5%;
 }
 body {
   background-color: #031926;
