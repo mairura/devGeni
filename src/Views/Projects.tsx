@@ -18,6 +18,13 @@ function Projects() {
   const [getStacks, setGetStacks] = useState([]);
   const [localData, setLocalData] = useState<Array<string>>([]);
 
+  //For our dropdown suggestion
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInputChange = (event: any) => {
+    setInputValue(event.target.value);
+  };
+
   let url = Config.URL;
 
   //Function to handle selected stack to be called
@@ -113,6 +120,23 @@ function Projects() {
         <div className="main_container">
           <div className="search-bar">
             <div className="select1">
+              {/* <label htmlFor="browser">Completed Projects</label>
+              <input
+                list="getStacks"
+                name="browser"
+                id="browser"
+                value={inputValue}
+                onChange={handleInputChange}
+              />
+              <datalist id="browsers">
+                {getStacks
+                  .filter((browser: any) =>
+                    browser.toLowerCase().startsWith(inputValue.toLowerCase())
+                  )
+                  .map((browser: any) => (
+                    <option value={browser} />
+                  ))}
+              </datalist> */}
               <select
                 onChange={(e) => {
                   handleStack(e);
