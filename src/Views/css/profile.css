@@ -4,7 +4,8 @@
 .profile_desc img {
   border-radius: 50%;
   height: 200px;
-  /* border: 2px solid greenyellow; */
+  mix-blend-mode: luminosity;
+  border: 1px solid #f05e56;
 }
 .profile_name {
   color: #f05e56;
@@ -176,6 +177,7 @@
 .profile_data {
   display: flex;
   justify-content: space-between;
+  /* font-family: "Poppins", sans-serif; */
 }
 .profile_links {
   display: flex;
@@ -184,7 +186,7 @@
 .profile_links a {
   text-decoration: none;
   color: #fff;
-  font-size: 10px;
+  font-size: 12px;
   text-align: left;
   padding: 3px;
 }

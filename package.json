@@ -16,6 +16,7 @@
     "react-cookie": "^4.1.1",
     "react-dom": "^18.2.0",
     "react-external-link": "^2.0.1",
+    "react-icons": "^4.7.1",
     "react-ios-pwa-prompt": "^1.8.4",
     "react-loader-spinner": "^5.3.4",
     "react-pwa-app": "^2.2.3",
