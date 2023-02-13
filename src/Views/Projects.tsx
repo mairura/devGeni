@@ -8,6 +8,7 @@ import { ProjectContext, IProjects, ISingleDev } from "./Context";
 import { Config } from "../config/config";
 import { Tabs, TabPanel, Tab, TabList } from "react-tabs";
 import HashLoader from "react-spinners/HashLoader";
+import TeamMember from "./Components/TeamMember";
 
 function Projects() {
   const [projects, setProjects] = useState<Array<IProjects>>([]);
@@ -16,6 +17,13 @@ function Projects() {
   const [loader, setLoader] = useState(true);
   const [getStacks, setGetStacks] = useState([]);
   const [localData, setLocalData] = useState<Array<string>>([]);
+
+  //For our dropdown suggestion
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInputChange = (event: any) => {
+    setInputValue(event.target.value);
+  };
 
   let url = Config.URL;
 
@@ -65,12 +73,12 @@ function Projects() {
     }
   }, []);
 
-  //Function to clear stack in localStorage
-  // const clearStack = () => {
-  //   localStorage.clear();
-  //   setShowPage(false);
-  //   setLocalData([]);
-  // };
+  // Function to clear stack in localStorage
+  const clearStack = () => {
+    localStorage.clear();
+    setShowPage(false);
+    setLocalData([]);
+  };
 
   const SplitNames = (names: string) => {
     const names_split = names.split(",");
@@ -109,17 +117,33 @@ function Projects() {
   return (
     <div className="main_header">
       <>
-        1
         <div className="main_container">
           <div className="search-bar">
             <div className="select1">
+              {/* <label htmlFor="browser">Completed Projects</label>
+              <input
+                list="getStacks"
+                name="browser"
+                id="browser"
+                value={inputValue}
+                onChange={handleInputChange}
+              />
+              <datalist id="browsers">
+                {getStacks
+                  .filter((browser: any) =>
+                    browser.toLowerCase().startsWith(inputValue.toLowerCase())
+                  )
+                  .map((browser: any) => (
+                    <option value={browser} />
+                  ))}
+              </datalist> */}
               <select
                 onChange={(e) => {
                   handleStack(e);
                 }}
                 className="mySelectArrow1"
               >
-                <option>View Projects</option>
+                <option>Completed projects</option>
                 {getStacks.map((item: any, index) => (
                   <option key={index} value={item.name} className="all_items1">
                     <div>{item.name}</div>
@@ -131,9 +155,9 @@ function Projects() {
               <div className="founder">
                 <div className="tags_found">
                   <TagsIdentified />
-                  {/* <p className="clear_btn" onClick={clearStack}>
+                  <p className="clear_btn" onClick={clearStack}>
                     <img src={close} alt="close" />
-                  </p> */}
+                  </p>
                 </div>
               </div>
             </>
@@ -157,50 +181,14 @@ function Projects() {
           ) : (
             <>
               <div>
-                <Tabs
-                  className="tabs"
-                  id="controlled-tabs"
-                  selectedTabClassName="bg-orange"
-                >
-                  <TabList className="tablist">
-                    {/* <Tab>Slide</Tab> */}
-                    {/* <Tab>List</Tab> */}
-                  </TabList>
-                  <TabPanel
-                    className="body_tab"
-                    style={{
-                      display: "grid",
-                      gridTemplateColumns: "1fr 1fr",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      // margin: "20px",
-                      // maxWidth: "700px",
-                    }}
-                  >
-                    <ProjectContext.Provider value={{ projects, devs }}>
-                      <ProjectCard />
-                    </ProjectContext.Provider>
-                  </TabPanel>
-                  {/* <TabPanel className="body_tabs">
-                    <ProjectContext.Provider value={{ projects, devs }}>
-                      <Details />
-                    </ProjectContext.Provider>
-                  </TabPanel> */}
-                </Tabs>
+                <ProjectContext.Provider value={{ projects, devs }}>
+                  <ProjectCard />
+                </ProjectContext.Provider>
               </div>
             </>
           )}
         </>
       )}
-      {/* <div className="buttons">
-        <ExternalLink
-          href="https://calendly.com/ngeni-info"
-          className="btn_link"
-        >
-          <button className="booking-button">Book Now</button>
-        </ExternalLink>
-        <button className="booking-button">{ksh} Speak Now</button>
-      </div> */}
     </div>
   );
 }

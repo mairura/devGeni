@@ -1,26 +1,14 @@
-/* *{
-    background: linear-gradient(192.05deg, #000000 0%, #09101f 100%);
-} */
-/* .container {
-  left: 50%;
-  position: absolute;
-  transform: translateX(50%);
-  margin: auto;
-} */
-.loader_title {
-  margin-top: 40vh;
-  color: #f05e56;
-}
-* {
+.container {
   max-width: 500px;
-  /* margin: auto; */
+  /* border: 1px solid red; */
+  margin: 0 auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
-
-@media screen and (min-width: 500px) {
+/* @media screen and (min-width: 500px) {
   * {
-    max-width: 400px;
     margin-left: 40%;
     justify-content: center;
     align-items: center;
   }
-}
+} */

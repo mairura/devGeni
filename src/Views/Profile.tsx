@@ -6,6 +6,9 @@ import minitrade from "../assets/minitrade.png";
 import linkpay from "../assets/linkpay.png";
 import { ExternalLink } from "react-external-link";
 import { useEffect, useState } from "react";
+import { BsGithub } from "react-icons/bs";
+import { BsTwitter } from "react-icons/bs";
+import { BsLinkedin } from "react-icons/bs";
 
 const Profile = () => {
   const [stacks, setStacks] = useState([]);
@@ -83,12 +86,20 @@ const Profile = () => {
           </div>
           <div className="profile_data">
             <div className="profile_links">
-              <a href={profileLink}>{profileLink}</a>
+              <a href={profileLink}>
+                <BsGithub />
+                &nbsp;&nbsp;
+                {profileLink}
+              </a>
               <a href="https://www.linkedin.com/company/ngenilabs/mycompany/">
-                nGeni Labs LinkedIn
+                <BsLinkedin />
+                &nbsp;&nbsp; nGeni Labs LinkedIn
               </a>
               <a href="https://ngeni.io/">nGeni Labs Website</a>
-              <a href="https://twitter.com/ngenilabs">nGeni Labs Twitter</a>
+              <a href="https://twitter.com/ngenilabs">
+                <BsTwitter />
+                &nbsp;&nbsp; nGeni Labs Twitter
+              </a>
             </div>
             <div className="vertical_line"></div>
             <div className="profile_box">

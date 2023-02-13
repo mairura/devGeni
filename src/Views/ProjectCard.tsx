@@ -3,11 +3,10 @@ import "./css/card.css";
 import TeamMember from "./Components/TeamMember";
 import { Link } from "react-router-dom";
 import { ProjectContext } from "./Context";
-import "react-alice-carousel/lib/alice-carousel.css";
 import "./css/style.css";
 import linkPay from "../assets/linkpay.png";
 import { languages, teams } from "../icons";
-import axios from "axios";
+// import axios from "axios";
 import { Config } from "../config/config";
 // import { ExternalLink } from "react-external-link";
 // import { ksh } from "../icons";
@@ -21,14 +20,15 @@ function ProjectCard() {
 
   let url = Config.URL;
 
-  //Funtion to call dev by tag
-  // const getDevBtTag = async (devByTags: string) => {
-  //   const data = await axios.get(`${url}/index/devs/tags/${devByTags}`);
-  // };
-
   return (
     <>
-      <>
+      <div
+        style={{
+          marginTop: "200px",
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+        }}
+      >
         {projects.map((project: any) => {
           let team: {}[] | undefined = project?.team;
           let stack: String[] | undefined = project?.tech_stack;
@@ -60,7 +60,7 @@ function ProjectCard() {
                         <div>
                           <p className="card_devs">
                             {dev_data?.slice(0, 3).map((member: any) => (
-                              <TeamMember dev={member} />
+                              <TeamMember dev={member} className="developer" />
                             ))}
                             <span>+{diff}</span>
                           </p>
@@ -105,7 +105,7 @@ function ProjectCard() {
             </>
           );
         })}
-      </>
+      </div>
     </>
   );
 }

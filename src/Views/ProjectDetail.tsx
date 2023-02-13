@@ -3,17 +3,18 @@ import "./css/ProjectDetail.css";
 import { prev, share, ksh, verified } from "../icons";
 import TeamMember from "./Components/TeamMember";
 import linkPay from "../assets/linkpay.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import { IProjects, ISingleDev } from "./Context";
 import { Config } from "../config/config";
 import { ExternalLink } from "react-external-link";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 
 function ProjectDetail() {
   const [devs, setDevs] = useState<Array<ISingleDev>>([]);
   const [projectData, setProjectData] = useState<IProjects>();
   // const [loader, setLoader] = useState(true);
-
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const proj_name = urlParams.get("projectId");
@@ -69,33 +70,26 @@ function ProjectDetail() {
 
   return (
     <>
-      <div className="project_banner">
-        <div className="options">
-          <Link to="/projects">{prev}</Link> {share}
+      <div className="projectDetail_container">
+        <div className="project_banner">
+          <div className="options">
+            <Link to="/projects">{prev}</Link> {share}
+          </div>
+          <div className="preview_container">
+            {/* <img src={linkpayui} alt="linkpay ui" /> */}
+          </div>
         </div>
-        <div className="preview_container">
-          {/* <img src={linkpayui} alt="linkpay ui" /> */}
+        <div className="title_desc">
+          <img src={linkPay} alt="linkpay logo" />
+          <h3>{proj_name_get} </h3> {verified}
         </div>
-      </div>
-      <div className="title_desc">
-        <img src={linkPay} alt="linkpay logo" />
-        <h3>{proj_name_get} </h3> {verified}
-      </div>
-      <div className="body_desc">
-        <p>{trimDesc(proj_desc, 600)}</p>
-        {/* <h4>
-          Dev hours &nbsp; &nbsp; <span>700+</span>
-        </h4>
-        <h4>
-          Tech_Stack&nbsp;: &nbsp; &nbsp;{" "}
-          {techStack?.map((item) => (
-            <i>{item}, </i>
-          ))}
-        </h4> */}
-      </div>
-      <div className="project_team">Team</div>
-      <div className="loader_details">
-        {/* {loader ? (
+        <div className="body_desc">
+          <p>{proj_desc}</p>
+        </div>
+        <div className="loader_details">
+          <div className="project_team">Team</div>
+
+          {/* {loader ? (
           <p className="item_details">
             <HashLoader
               color="#f05e56"
@@ -106,29 +100,32 @@ function ProjectDetail() {
             />
           </p>
         ) : ( */}
-        <div className="member-container">
-          {devs?.map((member: any) => (
-            <TeamMember dev={member} />
-          ))}
-        </div>
-        {/* )} */}
+          <div className="member-container">
+            {/* <Carousel> */}
+            {devs?.map((member: any) => (
+              <TeamMember dev={member} />
+            ))}
+            {/* </Carousel> */}
+          </div>
+          {/* )} */}
 
-        <br />
-        <ExternalLink
-          href="https://calendly.com/ngeni-info"
-          className="btn_link"
-        >
-          <button className="booking-button">Book Now</button>
-        </ExternalLink>
-        <br />
-        <br />
-        <ExternalLink href="https://meet.google.com/fhu-xuhy-rzr">
-          <button className="booking-button">
-            {ksh} Speak to a dev team now
-          </button>
-        </ExternalLink>
-        <br />
-        <br />
+          <br />
+          <ExternalLink
+            href="https://calendly.com/ngeni-info"
+            className="btn_link"
+          >
+            <button className="booking-button">Book Now</button>
+          </ExternalLink>
+          <br />
+          <br />
+          <ExternalLink href="https://meet.google.com/fhu-xuhy-rzr">
+            <button className="booking-button">
+              {ksh} Speak to a dev team now
+            </button>
+          </ExternalLink>
+          <br />
+          <br />
+        </div>
       </div>
     </>
   );

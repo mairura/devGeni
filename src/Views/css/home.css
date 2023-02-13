@@ -1,24 +1,34 @@
 .home_container {
   height: 100vh;
-  /* position: absolute; */
   background: #031926;
-  padding-top: 60%;
-  /* left: 50%; */
-  /* transform: translateX(50%); */
 }
 .home_header p {
   position: absolute;
   width: 139px;
   height: 29px;
-  left: 131px;
-  top: 210px;
+  left: 32%;
+  top: 45%;
   font-family: "Orbitron", sans-serif;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 800;
   font-size: 28px;
   line-height: 29px;
   color: #fff;
-  letter-spacing: 1px;
+  letter-spacing: 4px;
+}
+.home_subheader {
+  position: absolute;
+  width: 202px;
+  height: 28px;
+  left: 25%;
+  top: 50%;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  font-family: "Orbitron", sans-serif;
+  color: #ffffff;
+  letter-spacing: 3px;
 }
 .gradient {
   position: absolute;
@@ -61,8 +71,7 @@ select.mySelectArrow {
   right: 0;
   bottom: 0;
   font-size: 20px;
-  /* border: 1px solid #565656; */
-  /* background: transparent; */
+
   color: #52f2e2;
   padding: 15px;
   pointer-events: none;
@@ -75,16 +84,35 @@ select.mySelectArrow {
   margin-left: 20px;
   margin-top: 10%;
 }
+.carousel_page {
+  padding-top: 10%;
+  height: 65vh;
+  padding-top: 80%;
+  color: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+}
+.carousel_data p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+}
 .home_btn {
-  margin-top: 20%;
+  padding-top: 20%;
 }
 .home_btn button {
   box-sizing: border-box;
-  position: absolute;
+  /* position: absolute; */
   width: 270px;
   height: 45px;
   left: 66px;
-  top: 530px;
+  /* top: 530px; */
   background: linear-gradient(
     180deg,
     rgba(82, 242, 226, 0.1) 0%,
