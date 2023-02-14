@@ -98,11 +98,11 @@ function ProjectCard() {
                           <motion.p
                             className="card_title"
                             whileHover={{
-                              scale: 1.1,
+                              scale: 1.05,
                               originX: 0,
                               color: "#52f2e2",
                             }}
-                            transition={{ type: "spring", stiffness: 300 }}
+                            transition={{ type: "spring", stiffness: 500 }}
                           >
                             <img
                               src={linkPay}
@@ -113,9 +113,9 @@ function ProjectCard() {
                                 paddingRight: 4,
                               }}
                             />
-                            {trimDesc(proj_title, 16)}
+                            {trimDesc(proj_title, 15)}
                           </motion.p>
-                          <p className="card_desc">{trimDesc(desc, 200)}</p>
+                          <p className="card_desc">{trimDesc(desc, 150)}</p>
                           <div className="rate">
                             <span
                               className="lengths"
