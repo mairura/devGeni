@@ -81,7 +81,7 @@ select option:checked {
   color: #52f2e2;
   pointer-events: none;
   position: absolute;
-  padding: 17px 20px 17px 0;
+  padding: 15px 23px 17px 0;
 }
 .select1 {
   width: 354px;
@@ -161,12 +161,9 @@ select::-webkit-scrollbar-thumb {
 .footer_container {
   position: fixed;
   bottom: 0;
-  /* height: 30px; */
-  /* bottom: 10px; */
   background-color: #031926;
   padding-bottom: 20px;
   padding-top: 20px;
-  /* margin-bottom: 20%; */
   font-style: normal;
   font-weight: 300;
   font-size: 12px;
@@ -174,7 +171,6 @@ select::-webkit-scrollbar-thumb {
   color: #ffffff;
   font-family: "Poppins", sans-serif;
   width: 100%;
-  /* margin-top: 80%; */
 }
 .footer_italic {
   font-size: 10px;
@@ -186,33 +182,6 @@ select::-webkit-scrollbar-thumb {
 .footer-text img {
   width: 60px;
 }
-/* .body_tab {
-  height: 65vh;
-  background-color: #031926;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-.body_tabs::-webkit-scrollbar {
-  width: 3px;
-  display: none;
-}
-.body_tabs::-webkit-scrollbar-track {
-  background-color: darkgrey;
-}
-.body_tabs::-webkit-scrollbar-thumb {
-  box-shadow: inset 0 0 6px #f05e56;
-}
-.tabs {
-  margin-top: 10px;
-}
-.tablist {
-  color: #ffff;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  list-style: none;
-  position: relative;
-  margin-bottom: 10px;
-} */
 .item {
   height: 50vh;
   top: 50%;
