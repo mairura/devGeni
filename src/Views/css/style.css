@@ -18,16 +18,17 @@ body {
   background-color: #031926;
   position: absolute;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
 }
 .search-bar {
   padding-top: 2%;
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   position: fixed;
   background-color: #031926;
   z-index: 1000;
   top: 0;
+  /* border: 1px solid red; */
 }
 body {
   background-color: #031926;
@@ -162,7 +163,7 @@ select::-webkit-scrollbar-thumb {
   position: fixed;
   bottom: 0;
   background-color: #031926;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   padding-top: 20px;
   font-style: normal;
   font-weight: 300;
@@ -179,9 +180,9 @@ select::-webkit-scrollbar-thumb {
 .footer-text {
   color: #fff;
 }
-.footer-text img {
+/* .footer-text img {
   width: 60px;
-}
+} */
 .item {
   height: 50vh;
   top: 50%;
