@@ -1,5 +1,5 @@
 import "../css/style.css";
-import ngeniLogo from "../../assets/ngeniLogo.png";
+import ngeniLogo from "../../assets/LOGO.svg";
 
 function Footer() {
   return (

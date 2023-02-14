@@ -186,9 +186,10 @@
 .profile_links a {
   text-decoration: none;
   color: #fff;
-  font-size: 12px;
+  font-size: 10px;
   text-align: left;
   padding: 3px;
+  font-family: "Poppins", sans-serif;
 }
 .profile_links img {
   height: 15px;

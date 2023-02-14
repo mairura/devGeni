@@ -34,14 +34,11 @@ function App() {
           <h4 className="loader_title">Team and Skill Matching Engine</h4>
           <motion.div
             className="item"
-            animate={{ rotate: 180 }}
-            transition={{
-              repeat: 1,
-              repeatType: "reverse",
-              duration: 2,
-            }}
+            initial={{ y: -250 }}
+            animate={{ y: 30 }}
+            transition={{ delay: 0.2, type: "spring", stiffness: 350 }}
           >
-            <img src={Logo} alt="Alt" />
+            <img src={Logo} alt="Alt" style={{ height: "150px" }} />
           </motion.div>
         </>
       ) : (
