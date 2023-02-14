@@ -52,7 +52,8 @@ const StarterPage = () => {
           autoPlay={true}
           showArrows={false}
           transitionTime={1000}
-          interval={1000}
+          infiniteLoop={true}
+          interval={4000}
           showStatus={false}
         >
           <div className="carousel_data">
