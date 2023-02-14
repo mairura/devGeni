@@ -12,7 +12,44 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 // import { Carousel } from "react-responsive-carousel";
 import { motion } from "framer-motion";
 
-const buttonVariants = {
+const buttonVariants = {};
+
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    x: "100vw",
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring",
+      delay: 0.5,
+    },
+  },
+  exit: {
+    x: "-100vw",
+    transition: { ease: "easeInOut" },
+  },
+};
+
+const containerVariantsY = {
+  hidden: {
+    opacity: 0,
+    x: "-100vw",
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring",
+      delay: 0.5,
+    },
+  },
+  exit: {
+    x: "100vw",
+    transition: { ease: "easeInOut" },
+  },
   hover: {
     scale: 1.03,
     textShadow: "0px 0px 8px rgb(255, 255, 255",
@@ -136,8 +173,11 @@ function ProjectDetail() {
           >
             <motion.button
               className="booking-button"
-              variants={buttonVariants}
+              variants={containerVariantsY}
+              initial="hidden"
+              animate="visible"
               whileHover="hover"
+              exit="exit"
             >
               Book Now
             </motion.button>
@@ -145,9 +185,15 @@ function ProjectDetail() {
           <br />
           <br />
           <ExternalLink href="https://meet.google.com/fhu-xuhy-rzr">
-            <button className="booking-button">
+            <motion.button
+              className="booking-button"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+            >
               {ksh} Speak to a dev team now
-            </button>
+            </motion.button>
           </ExternalLink>
           <br />
           <br />

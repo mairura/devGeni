@@ -1,11 +1,9 @@
 .projectDetail_container {
   width: 100%;
   height: 100vh;
-  /* border: 1px solid red; */
 }
 .project_banner {
   width: 100%;
-  /* width: 390px; */
   height: 241px;
   left: 0px;
   top: 0px;
@@ -57,7 +55,7 @@
   overflow: scroll;
   overflow-y: hidden;
   overflow-x: hidden;
-  height: 50x;
+  height: 50px;
   padding-top: 10px;
 }
 .project_team {
