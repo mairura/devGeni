@@ -7,6 +7,7 @@ import ReactPwa from "react-pwa-app";
 // import { CookiesProvider } from "react-cookie";
 import PWAPrompt from "react-ios-pwa-prompt";
 import * as serviceWorker from "./registerServiceWorker";
+import "./search.scss";
 // import { WalletProvider } from "react-binance-wallet";
 
 class ErrorBoundary extends React.Component {

@@ -103,9 +103,9 @@ select.mySelectArrow {
   font-family: "Poppins", sans-serif;
   color: #ffffff;
 }
-.home_btn {
+/* .home_btn {
   padding-top: 20%;
-}
+} */
 .home_btn button {
   box-sizing: border-box;
   /* position: absolute; */
@@ -128,4 +128,11 @@ select.mySelectArrow {
   font-weight: 600;
   font-size: 16px;
   line-height: 19px;
+}
+.loader {
+  width: 10px;
+  height: 10px;
+  margin: 40px auto;
+  border-radius: 50%;
+  background: #fff;
 }

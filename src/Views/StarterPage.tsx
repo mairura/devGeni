@@ -3,14 +3,33 @@ import { Link } from "react-router-dom";
 import "./css/home.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import { motion } from "framer-motion";
+import Loader from "./Components/Loader";
+
+const buttonVariants = {
+  hover: {
+    scale: 1.1,
+    textShadow: "0px 0px 8px rgb(255, 255, 255",
+    boxShadow: "0px 0px 8px rgb(255, 255, 255",
+    transition: {
+      duration: 0.4,
+      yoyo: Infinity,
+    },
+  },
+};
 
 const StarterPage = () => {
   return (
     <div className="home_container">
       <div className="gradient" />
-      <div className="home_header">
+      <motion.div
+        className="home_header"
+        initial={{ y: -250 }}
+        animate={{ y: 300 }}
+        transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
+      >
         <p>DEVGENI</p>
-      </div>
+      </motion.div>
       <div className="home_subheader">
         <p>DESIGN.DEVELOP.DELIVER</p>
       </div>
@@ -32,9 +51,12 @@ const StarterPage = () => {
           </div>
         </Carousel>
       </div>
+      <Loader />
       <Link to="/home">
         <div className="home_btn">
-          <button>Explore</button>
+          <motion.button variants={buttonVariants} whileHover="hover">
+            Explore
+          </motion.button>
         </div>
       </Link>
     </div>

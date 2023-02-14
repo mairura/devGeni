@@ -9,6 +9,7 @@ import { Config } from "../config/config";
 import { Tabs, TabPanel, Tab, TabList } from "react-tabs";
 import HashLoader from "react-spinners/HashLoader";
 import TeamMember from "./Components/TeamMember";
+import SearchStack from "./Components/SearchStack/SearchStack";
 
 function Projects() {
   const [projects, setProjects] = useState<Array<IProjects>>([]);
@@ -137,7 +138,9 @@ function Projects() {
                     <option value={browser} />
                   ))}
               </datalist> */}
-              <select
+
+              <SearchStack />
+              {/* <select
                 onChange={(e) => {
                   handleStack(e);
                 }}
@@ -149,7 +152,7 @@ function Projects() {
                     <div>{item.name}</div>
                   </option>
                 ))}
-              </select>
+              </select> */}
             </div>
             <>
               <div className="founder">
