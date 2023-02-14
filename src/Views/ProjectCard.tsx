@@ -59,7 +59,7 @@ function ProjectCard() {
           let teamLength: number | undefined = team?.length;
           let stackLength: number | undefined = stack?.length;
           let splitStack: string | undefined = stack?.join();
-          console.log("PRINT PROJECTS DEVELOPERS BY TAGS", splitStack);
+          // console.log("PRINT PROJECTS DEVELOPERS BY TAGS", splitStack);
 
           let trimDesc = function (string: any, length: any) {
             return string.length > length
@@ -75,6 +75,8 @@ function ProjectCard() {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
+                whileHover={{ scale: 1.03, originX: 0, color: "#f8e112" }}
+                transition={{ type: "spring", stiffness: 500 }}
               >
                 <Link
                   to={`/projectDetails/?projectId=${project._id}&projectDesc=${desc}&projectTeam=${team}`}

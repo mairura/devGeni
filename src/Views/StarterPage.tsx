@@ -5,10 +5,12 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import { motion } from "framer-motion";
 import Loader from "./Components/Loader";
+// import gif from "../assets/logo-4_1.gif";
+import Logo from "../assets/Logo.png";
 
 const buttonVariants = {
   hover: {
-    scale: 1.1,
+    scale: 1.03,
     textShadow: "0px 0px 8px rgb(255, 255, 255",
     boxShadow: "0px 0px 8px rgb(255, 255, 255",
     transition: {
@@ -22,10 +24,18 @@ const StarterPage = () => {
   return (
     <div className="home_container">
       <div className="gradient" />
+      <motion.div
+        className="main_logo"
+        initial={{ y: -250 }}
+        animate={{ y: 0 }}
+        transition={{ ease: "easeOut", duration: 2 }}
+      >
+        <img src={Logo} alt="logo" />
+      </motion.div>
       <div className="homeHead">
         <motion.div
           className="home_header"
-          initial={{ y: -250 }}
+          initial={{ y: 250 }}
           animate={{ y: 60 }}
           transition={{ delay: 0.2, type: "spring", stiffness: 150 }}
           style={{ position: "relative" }}
@@ -60,6 +70,7 @@ const StarterPage = () => {
         </Carousel>
       </div>
       {/* <Loader /> */}
+      {/* <img src={gif} alt="logo" /> */}
       <Link to="/home" style={{ width: "100%" }}>
         <div className="home_btn">
           <motion.button variants={buttonVariants} whileHover="hover">

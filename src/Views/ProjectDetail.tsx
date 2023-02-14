@@ -9,7 +9,20 @@ import { IProjects, ISingleDev } from "./Context";
 import { Config } from "../config/config";
 import { ExternalLink } from "react-external-link";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
+// import { Carousel } from "react-responsive-carousel";
+import { motion } from "framer-motion";
+
+const buttonVariants = {
+  hover: {
+    scale: 1.03,
+    textShadow: "0px 0px 8px rgb(255, 255, 255",
+    boxShadow: "0px 0px 8px rgb(255, 255, 255",
+    transition: {
+      duration: 0.5,
+      repeat: Infinity,
+    },
+  },
+};
 
 function ProjectDetail() {
   const [devs, setDevs] = useState<Array<ISingleDev>>([]);
@@ -114,7 +127,13 @@ function ProjectDetail() {
             href="https://calendly.com/ngeni-info"
             className="btn_link"
           >
-            <button className="booking-button">Book Now</button>
+            <motion.button
+              className="booking-button"
+              variants={buttonVariants}
+              whileHover="hover"
+            >
+              Book Now
+            </motion.button>
           </ExternalLink>
           <br />
           <br />

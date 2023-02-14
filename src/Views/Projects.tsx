@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./css/style.css";
 import ProjectCard from "./ProjectCard";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import close from "../assets/close .svg";
+import close from "../assets/close.svg";
 import axios from "axios";
 import { ProjectContext, IProjects, ISingleDev } from "./Context";
 import { Config } from "../config/config";
@@ -10,6 +11,7 @@ import { Tabs, TabPanel, Tab, TabList } from "react-tabs";
 import HashLoader from "react-spinners/HashLoader";
 import TeamMember from "./Components/TeamMember";
 import SearchStack from "./Components/SearchStack/SearchStack";
+import { prev } from "../icons";
 
 function Projects() {
   const [projects, setProjects] = useState<Array<IProjects>>([]);
@@ -115,11 +117,41 @@ function Projects() {
     checkLocalStorage();
   }, []);
 
+  // const filterStacks = (filterData: string) => {
+  //   console.log("Log: {}", filterData);
+  //   let stacks = [...getStacks];
+
+  //   if (filterData) {
+  //     console.log("Reached 1");
+  //     let newStacks: any = stacks
+  //       .map((item: any) => {
+  //         if (item.name?.toLowerCase().includes(filterData.toLowerCase())) {
+  //           return item;
+  //         } else {
+  //           return null;
+  //         }
+  //       })
+  //       .filter((i) => i);
+
+  //     setGetStacks(newStacks);
+  //   }
+
+  //   if (filterData == "") {
+  //     console.log("Reached 2:  ''");
+  //     getStack();
+  //     setGetStacks([...getStacks]);
+  //   }
+  // };
+
   return (
     <div className="main_header">
       <>
         <div className="main_container">
           <div className="search-bar">
+            <div className="options1">
+              <Link to="/">{prev}</Link>
+            </div>
+
             <div className="select1">
               {/* <label htmlFor="browser">Completed Projects</label>
               <input
@@ -138,9 +170,8 @@ function Projects() {
                     <option value={browser} />
                   ))}
               </datalist> */}
-
-              <SearchStack />
-              {/* <select
+              {/* <SearchStack stacks={getStacks} filter={filterStacks} /> */}
+              <select
                 onChange={(e) => {
                   handleStack(e);
                 }}
@@ -149,10 +180,10 @@ function Projects() {
                 <option>Completed projects</option>
                 {getStacks.map((item: any, index) => (
                   <option key={index} value={item.name} className="all_items1">
-                    <div>{item.name}</div>
+                    {item.name}
                   </option>
                 ))}
-              </select> */}
+              </select>
             </div>
             <>
               <div className="founder">

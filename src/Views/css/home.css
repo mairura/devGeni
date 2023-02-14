@@ -2,6 +2,9 @@
   height: 100vh;
   background: #031926;
 }
+.main_logo {
+  height: 35vh;
+}
 .homeHead {
   height: auto;
 }
