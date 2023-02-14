@@ -176,6 +176,10 @@ select::-webkit-scrollbar-thumb {
   width: 100%;
   /* margin-top: 80%; */
 }
+.footer_italic {
+  font-size: 10px;
+  color: #52f2e2;
+}
 .footer-text {
   color: #fff;
 }
