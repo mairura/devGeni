@@ -44,10 +44,7 @@ root.render(
         test //is to install in localhost, not required
         suspense={
           <>
-            a preloader to load the service worker in the application is the
-            best way to not overload with component calls. this ensures that the
-            rest of the application only loads after the sw is checked default
-            is children
+      
           </>
         }
         config={{
