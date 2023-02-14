@@ -10,7 +10,8 @@
   text-align: left;
   margin: 10px;
   /* position: relative; */
-  width: 250px;
+  width: 200px;
+  border: 1px solid blue;
 }
 .card-main * {
   color: #fff;

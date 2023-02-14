@@ -9,8 +9,8 @@ body {
   display: flex;
   flex-direction: row;
   /* justify-content: space-between; */
-  padding-bottom: 10px;
-  padding-left: 12px;
+  /* padding-bottom: 10px; */
+  padding-left: 30px;
   color: #52f2e2;
 }
 .main_container {
@@ -18,17 +18,16 @@ body {
   background-color: #031926;
   position: absolute;
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
 }
 .search-bar {
   padding-top: 2%;
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
   position: fixed;
   background-color: #031926;
   z-index: 1000;
   top: 0;
-  /* border: 1px solid red; */
 }
 body {
   background-color: #031926;
