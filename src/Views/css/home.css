@@ -2,12 +2,18 @@
   height: 100vh;
   background: #031926;
 }
+.homeHead {
+  height: auto;
+}
+.home_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 .home_header p {
-  position: absolute;
   width: 139px;
   height: 29px;
-  left: 32%;
-  top: 45%;
   font-family: "Orbitron", sans-serif;
   font-style: normal;
   font-weight: 800;
@@ -17,18 +23,17 @@
   letter-spacing: 4px;
 }
 .home_subheader {
-  position: absolute;
-  width: 202px;
-  height: 28px;
-  left: 25%;
-  top: 50%;
+  margin-top: 100px;
+  height: 8vh;
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
   line-height: 14px;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #ffffff;
   letter-spacing: 3px;
+  text-align: center;
+  width: 100%;
 }
 .gradient {
   position: absolute;
@@ -85,14 +90,17 @@ select.mySelectArrow {
   margin-top: 10%;
 }
 .carousel_page {
-  padding-top: 10%;
-  height: 65vh;
-  padding-top: 80%;
+  height: auto;
   color: #fff;
-  width: 100%;
+  width: 90%;
+  margin: auto;
   display: flex;
   justify-content: center;
   text-align: left;
+  margin-bottom: 5vh;
+}
+.carousel_data {
+  /* padding-top: 30%; */
 }
 .carousel_data p {
   font-style: normal;
@@ -103,16 +111,11 @@ select.mySelectArrow {
   font-family: "Poppins", sans-serif;
   color: #ffffff;
 }
-/* .home_btn {
-  padding-top: 20%;
-} */
 .home_btn button {
   box-sizing: border-box;
-  /* position: absolute; */
   width: 270px;
   height: 45px;
-  left: 66px;
-  /* top: 530px; */
+  margin: auto;
   background: linear-gradient(
     180deg,
     rgba(82, 242, 226, 0.1) 0%,

@@ -1,7 +1,7 @@
 {
   "short_name": "DevGeni",
   "name": "DevGeni",
-  "description": "light pwa usage sample",
+  "description": "DevGeni",
   "theme_color": "#f69435",
   "background_color": "#f69435",
   "orientation": "portrait",
@@ -9,17 +9,17 @@
   "start_url": "./index.html",
   "icons": [
     {
-      "src": "maskable_icon_x48.png",
+      "src": "Logo.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "maskable_icon_x192.png",
+      "src": "Logo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "maskable_icon_x192.png",
+      "src": "Logo.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "maskable"
