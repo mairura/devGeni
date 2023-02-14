@@ -6,6 +6,11 @@
   border-radius: 50%;
   width: 20px;
   height: 20px;
+  border: 1px solid white;
+  opacity: 0.8;
+}
+.main-member:not(:nth-child(1)) {
+  margin-left: -0.8rem;
 }
 .profile_dev {
   text-decoration: none;

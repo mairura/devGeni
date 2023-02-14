@@ -8,8 +8,29 @@ import linkPay from "../assets/linkpay.png";
 import { languages, teams } from "../icons";
 // import axios from "axios";
 import { Config } from "../config/config";
+import { motion } from "framer-motion";
 // import { ExternalLink } from "react-external-link";
 // import { ksh } from "../icons";
+
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    y: "-100vh",
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      delay: 0.2,
+      stiffness: 200,
+    },
+  },
+  exit: {
+    y: "100vh",
+    transition: { ease: "easeInOut" },
+  },
+};
 
 function ProjectCard() {
   const { projects, devs } = useContext(ProjectContext);
@@ -48,7 +69,13 @@ function ProjectCard() {
 
           return (
             <>
-              <div className="card-main">
+              <motion.div
+                className="card-main"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+              >
                 <Link
                   to={`/projectDetails/?projectId=${project._id}&projectDesc=${desc}&projectTeam=${team}`}
                 >
@@ -62,11 +89,19 @@ function ProjectCard() {
                             {dev_data?.slice(0, 3).map((member: any) => (
                               <TeamMember dev={member} className="developer" />
                             ))}
-                            <span>+{diff}</span>
+                            <span className="main-member">+{diff}</span>
                           </p>
                         </div>
                         <div className="card_details">
-                          <p className="card_title">
+                          <motion.p
+                            className="card_title"
+                            whileHover={{
+                              scale: 1.1,
+                              originX: 0,
+                              color: "#52f2e2",
+                            }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                          >
                             <img
                               src={linkPay}
                               alt="linkpay logo"
@@ -77,7 +112,7 @@ function ProjectCard() {
                               }}
                             />
                             {trimDesc(proj_title, 10)}
-                          </p>
+                          </motion.p>
                           <p className="card_desc">{trimDesc(desc, 85)}</p>
                           <div className="rate">
                             <span
@@ -101,7 +136,7 @@ function ProjectCard() {
                     </div>
                   </div>
                 </Link>
-              </div>
+              </motion.div>
             </>
           );
         })}

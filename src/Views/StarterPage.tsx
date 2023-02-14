@@ -26,8 +26,8 @@ const StarterPage = () => {
         <motion.div
           className="home_header"
           initial={{ y: -250 }}
-          animate={{ y: 50 }}
-          transition={{ delay: 0.2, type: "spring", stiffness: 120 }}
+          animate={{ y: 60 }}
+          transition={{ delay: 0.2, type: "spring", stiffness: 150 }}
           style={{ position: "relative" }}
         >
           <p>DEVGENI</p>
