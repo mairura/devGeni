@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { BsGithub } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
+import Logo from "../assets/Logo.png";
 
 const Profile = () => {
   const [stacks, setStacks] = useState([]);
@@ -95,18 +96,27 @@ const Profile = () => {
                 <BsLinkedin />
                 &nbsp;&nbsp; nGeni Labs LinkedIn
               </a>
-              <a href="https://ngeni.io/">nGeni Labs Website</a>
+              <a href="https://ngeni.io/">
+                <img src={Logo} />
+                &nbsp;&nbsp;nGeni Labs Website
+              </a>
               <a href="https://twitter.com/ngenilabs">
                 <BsTwitter />
                 &nbsp;&nbsp; nGeni Labs Twitter
               </a>
             </div>
-            <div className="vertical_line"></div>
+            {/* <div className="vertical_line"></div> */}
+            {/* 
             <div className="profile_box">
+              <p className="dev_stack">
+                {stacks.map((item: any) => {
+                  return <div className="profile_pic">{item}</div>;
+                })}
+              </p>
               <div className="profile_pic">Profile</div>
               <div className="profile_pic">Profile</div>
               <div className="profile_pic">Profile</div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="ngeni_labs"></div>
