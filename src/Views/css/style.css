@@ -10,24 +10,27 @@ body {
   flex-direction: row;
   /* justify-content: space-between; */
   /* padding-bottom: 10px; */
-  padding-left: 30px;
+  padding-left: 10px;
   color: #52f2e2;
+  /* border: 1px solid yellow; */
 }
 .main_container {
   max-height: 100vh;
   background-color: #031926;
   position: absolute;
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
+  /* border: 1px solid red; */
 }
 .search-bar {
   padding-top: 2%;
   width: 100%;
-  max-width: 500px;
+  max-width: 400px;
   position: fixed;
   background-color: #031926;
   z-index: 1000;
   top: 0;
+  /* border: 1px solid green; */
 }
 body {
   background-color: #031926;
