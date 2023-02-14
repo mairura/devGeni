@@ -10,7 +10,7 @@
 }
 .main_logo img {
   height: 200px;
-  margin-top: 40%;
+  margin-top: 20%;
 }
 .homeHead {
   height: auto;
@@ -33,7 +33,7 @@
   letter-spacing: 4px;
 }
 .home_subheader {
-  margin-top: 100px;
+  margin-top: 30px;
   height: 8vh;
   font-style: normal;
   font-weight: 600;
