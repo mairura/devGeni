@@ -4,6 +4,13 @@
 }
 .main_logo {
   height: 35vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main_logo img {
+  height: 200px;
+  margin-top: 40%;
 }
 .homeHead {
   height: auto;

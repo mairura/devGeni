@@ -181,6 +181,7 @@ select::-webkit-scrollbar-thumb {
 }
 .footer-text img {
   width: 40px;
+  height: 10px;
 }
 /* .body_tab {
   height: 65vh;
