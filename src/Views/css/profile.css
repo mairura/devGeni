@@ -190,6 +190,9 @@
   text-align: left;
   padding: 3px;
 }
+.profile_links img {
+  height: 15px;
+}
 .vertical_line {
   height: 150px;
   border: 1px solid white;

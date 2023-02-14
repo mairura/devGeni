@@ -9,7 +9,7 @@ body {
   display: flex;
   flex-direction: row;
   /* justify-content: space-between; */
-  /* padding-top: 10px; */
+  padding-bottom: 10px;
   padding-left: 12px;
   color: #52f2e2;
 }
@@ -50,9 +50,10 @@ select {
   appearance: none;
   color: #fff;
   letter-spacing: 1px;
-  width: 354px;
+  width: 324px;
   height: 45px;
   top: 142px;
+  /* left: 10px; */
   border: 1px solid #52f2e2;
   border-radius: 10px;
   outline: none;
@@ -80,7 +81,7 @@ select option:checked {
   color: #52f2e2;
   pointer-events: none;
   position: absolute;
-  padding: 13px;
+  padding: 17px 20px 17px 0;
 }
 .select1 {
   width: 354px;

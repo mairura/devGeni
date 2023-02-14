@@ -14,6 +14,8 @@ import Home from "./Views/Home";
 import NotFound from "./Views/Components/NotFound";
 import StarterPage from "./Views/StarterPage";
 // import { useWallet } from "react-binance-wallet";
+import Logo from "./assets/Logo.png";
+import { motion } from "framer-motion";
 
 function App() {
   //Set a loading page
@@ -30,15 +32,17 @@ function App() {
       {isLoading ? (
         <>
           <h4 className="loader_title">Team and Skill Matching Engine</h4>
-          <div className={"item"}>
-            <HashLoader
-              color="#f05e56"
-              loading={isLoading}
-              size={50}
-              aria-label="Loading Spinner"
-              data-testid="loader"
-            />
-          </div>
+          <motion.div
+            className="item"
+            animate={{ rotate: 180 }}
+            transition={{
+              repeat: 1,
+              repeatType: "reverse",
+              duration: 2,
+            }}
+          >
+            <img src={Logo} alt="Alt" />
+          </motion.div>
         </>
       ) : (
         <>
@@ -57,7 +61,6 @@ function App() {
                   {/* <Route path="*" element={<NotFound />} /> */}
                 </Routes>
               </div>
-             
             </div>
           </div>
           <Footer />

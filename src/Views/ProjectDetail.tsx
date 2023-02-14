@@ -94,7 +94,14 @@ function ProjectDetail() {
         </div>
         <div className="title_desc">
           <img src={linkPay} alt="linkpay logo" />
-          <h3>{proj_name_get} </h3> {verified}
+          <motion.h3
+            initial={{ y: -250 }}
+            animate={{ y: 0 }}
+            transition={{ delay: 0.4, type: "spring", stiffness: 150 }}
+          >
+            {proj_name_get}{" "}
+          </motion.h3>{" "}
+          {verified}
         </div>
         <div className="body_desc">
           <p>{proj_desc}</p>

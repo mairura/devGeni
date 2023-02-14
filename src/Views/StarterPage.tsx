@@ -48,7 +48,13 @@ const StarterPage = () => {
       </div>
 
       <div className="carousel_page">
-        <Carousel>
+        <Carousel
+          autoPlay={true}
+          showArrows={false}
+          transitionTime={1000}
+          interval={1000}
+          showStatus={false}
+        >
           <div className="carousel_data">
             <p>
               {" "}

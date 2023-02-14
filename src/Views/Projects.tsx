@@ -148,10 +148,9 @@ function Projects() {
       <>
         <div className="main_container">
           <div className="search-bar">
-            <div className="options1">
-              <Link to="/">{prev}</Link>
-            </div>
-
+            <Link to="/" className="options1">
+              {prev}
+            </Link>
             <div className="select1">
               {/* <label htmlFor="browser">Completed Projects</label>
               <input
