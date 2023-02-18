@@ -42,7 +42,15 @@ root.render(
     <React.StrictMode>
       <ReactPwa
         test //is to install in localhost, not required
+<<<<<<< HEAD
         suspense={<></>}
+=======
+        suspense={
+          <>
+      
+          </>
+        }
+>>>>>>> 1028e06e009c4cb72cedc52f6cde499e3591d406
         config={{
           swUrl: "/service-worker.js", // sw file in public default is service-worker.js
           onUpdate: (reg) => {
