@@ -1,5 +1,4 @@
 import "../css/style.css";
-// import ngeniLogo from "../../assets/LOGO.svg";
 
 function Footer() {
   const getYear = () => {
@@ -13,7 +12,6 @@ function Footer() {
       <p className="footer-text">
         <br />
         Powered by NGENI LABs&nbsp; &#169;&nbsp; {getYear()}
-        {/* <img src={ngeniLogo} alt="footer-logo" /> */}
       </p>
     </div>
   );

@@ -8,11 +8,8 @@ body {
 .options1 {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
-  /* padding-bottom: 10px; */
   padding-left: 10px;
   color: #52f2e2;
-  /* border: 1px solid yellow; */
 }
 .main_container {
   max-height: 100vh;
@@ -20,7 +17,6 @@ body {
   position: absolute;
   width: 100%;
   max-width: 400px;
-  /* border: 1px solid red; */
 }
 .search-bar {
   padding-top: 2%;
@@ -30,7 +26,6 @@ body {
   background-color: #031926;
   z-index: 1000;
   top: 0;
-  /* border: 1px solid green; */
 }
 body {
   background-color: #031926;
@@ -56,7 +51,6 @@ select {
   width: 334px;
   height: 45px;
   top: 142px;
-  /* left: 10px; */
   border: 1px solid #52f2e2;
   border-radius: 10px;
   outline: none;
