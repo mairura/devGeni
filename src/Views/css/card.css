@@ -9,9 +9,7 @@
   padding: 10px;
   text-align: left;
   margin: 10px;
-  /* position: relative; */
-  width: 180px;
-  /* border: 1px solid blue; */
+  width: 170px;
 }
 .card-main * {
   color: #fff;
