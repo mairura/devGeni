@@ -1,5 +1,12 @@
 body {
   overflow-x: hidden;
+  background-color: #031926;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  max-width: 100%;
 }
 .main_header {
   width: 100%;
@@ -8,11 +15,8 @@ body {
 .options1 {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
-  /* padding-bottom: 10px; */
   padding-left: 10px;
   color: #52f2e2;
-  /* border: 1px solid yellow; */
 }
 .main_container {
   max-height: 100vh;
@@ -20,7 +24,6 @@ body {
   position: absolute;
   width: 100%;
   max-width: 400px;
-  /* border: 1px solid red; */
 }
 .search-bar {
   padding-top: 2%;
@@ -30,19 +33,6 @@ body {
   background-color: #031926;
   z-index: 1000;
   top: 0;
-  /* border: 1px solid green; */
-}
-body {
-  background-color: #031926;
-  background-size: cover;
-  background-repeat: no-repeat;
-  /* max-height: 70vh; */
-  height: 100%;
-  /* height: auto; */
-  /* align-items: center; */
-  text-align: center;
-  justify-content: center;
-  max-width: 100vw;
 }
 select {
   width: 80%;
@@ -174,6 +164,8 @@ select::-webkit-scrollbar-thumb {
   color: #ffffff;
   font-family: "Poppins", sans-serif;
   width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 .footer_italic {
   font-size: 10px;
@@ -182,9 +174,6 @@ select::-webkit-scrollbar-thumb {
 .footer-text {
   color: #fff;
 }
-/* .footer-text img {
-  width: 60px;
-} */
 .item {
   height: 50vh;
   top: 50%;

@@ -3,4 +3,7 @@
   margin: 0 auto;
   overflow-x: hidden;
   overflow-y: hidden;
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
