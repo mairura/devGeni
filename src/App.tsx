@@ -55,7 +55,7 @@ function App() {
                   <Route path="/details" element={<Details />} />
                   <Route path="/profile" element={<Profile />} />
                   <Route path="/devdata" element={<Devdata />} />
-                  {/* <Route path="*" element={<NotFound />} /> */}
+                  <Route path="*" element={<NotFound />} />
                 </Routes>
               </div>
             </div>
