@@ -163,6 +163,8 @@ select::-webkit-scrollbar-thumb {
   color: #ffffff;
   font-family: "Poppins", sans-serif;
   width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 .footer_italic {
   font-size: 10px;
@@ -171,9 +173,6 @@ select::-webkit-scrollbar-thumb {
 .footer-text {
   color: #fff;
 }
-/* .footer-text img {
-  width: 60px;
-} */
 .item {
   height: 50vh;
   top: 50%;
