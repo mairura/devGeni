@@ -7,11 +7,9 @@ import close from "../assets/close.svg";
 import axios from "axios";
 import { ProjectContext, IProjects, ISingleDev } from "./Context";
 import { Config } from "../config/config";
-import { Tabs, TabPanel, Tab, TabList } from "react-tabs";
 import HashLoader from "react-spinners/HashLoader";
-import TeamMember from "./Components/TeamMember";
-import SearchStack from "./Components/SearchStack/SearchStack";
 import { prev } from "../icons";
+import Logo from "../assets/Logo.png";
 
 function Projects() {
   const [projects, setProjects] = useState<Array<IProjects>>([]);
@@ -148,9 +146,20 @@ function Projects() {
       <>
         <div className="main_container">
           <div className="search-bar">
-            <Link to="/" className="options1">
-              {prev}
-            </Link>
+            <div className="search_barTop">
+              <div>
+                {/* <Link to="/" className="options1">
+                  {prev}
+                </Link> */}
+              </div>
+              <div>
+                <img src={Logo} alt="logo" />
+              </div>
+              {/* <div>🍔 </div> */}
+            </div>
+            <div className="searchTitle">
+              <i>Project highlights and dev team</i>
+            </div>
             <div className="select1">
               {/* <label htmlFor="browser">Completed Projects</label>
               <input
