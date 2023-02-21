@@ -29,7 +29,7 @@ const Profile = () => {
   return (
     <div className="profile_container">
       <div className="options">
-        <Link to="/">{prev}</Link> {share}
+        <Link to="/projects">{prev}</Link> {share}
       </div>
       <div className="profile_desc">
         <img src={imageProfile} alt="developer" />

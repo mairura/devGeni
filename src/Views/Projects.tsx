@@ -10,7 +10,7 @@ import { Config } from "../config/config";
 import HashLoader from "react-spinners/HashLoader";
 import { prev } from "../icons";
 import Logo from "../assets/Logo.png";
-import Hambuger from "../assets/Hambuger.png";
+import Hambuger from "../assets/ham.svg";
 
 function Projects() {
   const [projects, setProjects] = useState<Array<IProjects>>([]);
@@ -130,15 +130,16 @@ function Projects() {
                   {prev}
                 </Link>
               </div>
-              <div>
+
+              <div className="top_logo">
                 <img src={Logo} alt="logo" />
               </div>
-              <div>
-                <img src={Hambuger} alt="logo" className="hambuger" />
+              <div className="hambuger">
+                <img src={Hambuger} alt="logo" />
               </div>
             </div>
             <div className="searchTitle">
-              <i>Project highlights and dev team</i>
+              <p>Project highlights and dev team</p>
             </div>
             <div className="select1">
               <select

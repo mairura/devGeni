@@ -1,6 +1,6 @@
 import "./css/devdata.css";
 // import Title from "../assets/title.png";
-import close from "../assets/close .svg";
+import close from "../assets/close.svg";
 import axios from "axios";
 import { useEffect, useState, useContext } from "react";
 import { Config } from "../config/config";
