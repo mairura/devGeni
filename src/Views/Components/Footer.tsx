@@ -1,5 +1,5 @@
 import "../css/style.css";
-import Logo from "../../assets/newLogo.svg";
+import Logo from "../../assets/mainLogo.svg";
 
 function Footer() {
   const getYear = () => {
@@ -13,7 +13,8 @@ function Footer() {
       <p className="footer-text">
         <br />
         Powered by <img src={Logo} alt="logo" />
-        &nbsp;&#169;&nbsp; {getYear()}
+        &nbsp;
+        <i>&#169;&nbsp; {getYear()}</i>
       </p>
     </div>
   );

@@ -188,6 +188,9 @@ select::-webkit-scrollbar-thumb {
 .footer-text {
   color: #fff;
 }
+.footer-text i {
+  font-size: 10px;
+}
 .item {
   height: 50vh;
   top: 50%;
