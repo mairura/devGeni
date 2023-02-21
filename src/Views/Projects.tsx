@@ -10,6 +10,7 @@ import { Config } from "../config/config";
 import HashLoader from "react-spinners/HashLoader";
 import { prev } from "../icons";
 import Logo from "../assets/Logo.png";
+import Hambuger from "../assets/Hambuger.png";
 
 function Projects() {
   const [projects, setProjects] = useState<Array<IProjects>>([]);
@@ -109,37 +110,14 @@ function Projects() {
         </div>
       );
     }
+    <Link to="/" className="options1">
+      {prev}
+    </Link>;
   };
 
   useEffect(() => {
     checkLocalStorage();
   }, []);
-
-  // const filterStacks = (filterData: string) => {
-  //   console.log("Log: {}", filterData);
-  //   let stacks = [...getStacks];
-
-  //   if (filterData) {
-  //     console.log("Reached 1");
-  //     let newStacks: any = stacks
-  //       .map((item: any) => {
-  //         if (item.name?.toLowerCase().includes(filterData.toLowerCase())) {
-  //           return item;
-  //         } else {
-  //           return null;
-  //         }
-  //       })
-  //       .filter((i) => i);
-
-  //     setGetStacks(newStacks);
-  //   }
-
-  //   if (filterData == "") {
-  //     console.log("Reached 2:  ''");
-  //     getStack();
-  //     setGetStacks([...getStacks]);
-  //   }
-  // };
 
   return (
     <div className="main_header">
@@ -148,37 +126,21 @@ function Projects() {
           <div className="search-bar">
             <div className="search_barTop">
               <div>
-                {/* <Link to="/" className="options1">
+                <Link to="/" className="options1">
                   {prev}
-                </Link> */}
+                </Link>
               </div>
               <div>
                 <img src={Logo} alt="logo" />
               </div>
-              {/* <div>🍔 </div> */}
+              <div>
+                <img src={Hambuger} alt="logo" className="hambuger" />
+              </div>
             </div>
             <div className="searchTitle">
               <i>Project highlights and dev team</i>
             </div>
             <div className="select1">
-              {/* <label htmlFor="browser">Completed Projects</label>
-              <input
-                list="getStacks"
-                name="browser"
-                id="browser"
-                value={inputValue}
-                onChange={handleInputChange}
-              />
-              <datalist id="browsers">
-                {getStacks
-                  .filter((browser: any) =>
-                    browser.toLowerCase().startsWith(inputValue.toLowerCase())
-                  )
-                  .map((browser: any) => (
-                    <option value={browser} />
-                  ))}
-              </datalist> */}
-              {/* <SearchStack stacks={getStacks} filter={filterStacks} /> */}
               <select
                 onChange={(e) => {
                   handleStack(e);
