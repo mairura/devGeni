@@ -7,10 +7,7 @@ import close from "../assets/close.svg";
 import axios from "axios";
 import { ProjectContext, IProjects, ISingleDev } from "./Context";
 import { Config } from "../config/config";
-import { Tabs, TabPanel, Tab, TabList } from "react-tabs";
 import HashLoader from "react-spinners/HashLoader";
-import TeamMember from "./Components/TeamMember";
-import SearchStack from "./Components/SearchStack/SearchStack";
 import { prev } from "../icons";
 
 function Projects() {

@@ -5,7 +5,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import { motion } from "framer-motion";
 import Loader from "./Components/Loader";
-// import gif from "../assets/logo-4_1.gif";
 import Logo from "../assets/Logo.png";
 
 const buttonVariants = {
