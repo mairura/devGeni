@@ -11,6 +11,9 @@ import HashLoader from "react-spinners/HashLoader";
 import { prev } from "../icons";
 import Logo from "../assets/Logo.png";
 import Hambuger from "../assets/ham.svg";
+// import Drawer from "react-modern-drawer";
+import "react-modern-drawer/dist/index.css";
+import ContactUs from "./Components/ContactUs";
 
 function Projects() {
   const [projects, setProjects] = useState<Array<IProjects>>([]);
@@ -19,6 +22,8 @@ function Projects() {
   const [loader, setLoader] = useState(true);
   const [getStacks, setGetStacks] = useState([]);
   const [localData, setLocalData] = useState<Array<string>>([]);
+
+  const [isOpen, setIsOpen] = useState(false);
 
   //For our dropdown suggestion
   const [inputValue, setInputValue] = useState("");
@@ -135,9 +140,18 @@ function Projects() {
                 <img src={Logo} alt="logo" />
               </div>
               <div className="hambuger">
-                <img src={Hambuger} alt="logo" />
+                {isOpen ? (
+                  <img src={close} alt="close" onClick={() => isOpen} />
+                ) : (
+                  <img
+                    src={Hambuger}
+                    alt="logo"
+                    onClick={() => setIsOpen(!isOpen)}
+                  />
+                )}
               </div>
             </div>
+            {isOpen && <ContactUs />}
             <div className="searchTitle">
               <p>Project highlights and dev team</p>
             </div>

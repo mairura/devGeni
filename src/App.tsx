@@ -9,13 +9,13 @@ import { useEffect, useState } from "react";
 import Details from "./Views/Details";
 import Profile from "./Views/Profile";
 import Devdata from "./Views/Devdata";
-import HashLoader from "react-spinners/HashLoader";
 import Home from "./Views/Home";
 import NotFound from "./Views/Components/NotFound";
 import StarterPage from "./Views/StarterPage";
 // import { useWallet } from "react-binance-wallet";
 import Logo from "./assets/Logo.png";
 import { motion } from "framer-motion";
+import ContactUs from "./Views/Components/ContactUs";
 
 function App() {
   //Set a loading page
@@ -55,6 +55,7 @@ function App() {
                   <Route path="/details" element={<Details />} />
                   <Route path="/profile" element={<Profile />} />
                   <Route path="/devdata" element={<Devdata />} />
+                  <Route path="/contact" element={<ContactUs />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </div>

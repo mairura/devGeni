@@ -59,7 +59,6 @@ function ProjectCard() {
           let teamLength: number | undefined = team?.length;
           let stackLength: number | undefined = stack?.length;
           let splitStack: string | undefined = stack?.join();
-          // console.log("PRINT PROJECTS DEVELOPERS BY TAGS", splitStack);
 
           let trimDesc = function (string: any, length: any) {
             return string.length > length
