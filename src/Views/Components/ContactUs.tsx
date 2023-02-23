@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../css/style.css";
 
 const ContactUs = () => {
@@ -6,10 +7,18 @@ const ContactUs = () => {
     <div className="contactUsContainer">
       <nav>
         <ul>
-          <li>Menu</li>
-          <li>About</li>
-          <li>FAQS</li>
-          <li>CONTACT US</li>
+          <Link to="/projects">
+            <li>Menu</li>
+          </Link>
+          <Link to="/projects">
+            <li>About</li>
+          </Link>
+          <Link to="/projects">
+            <li>FAQS</li>
+          </Link>
+          <Link to="/projects">
+            <li>CONTACT US</li>
+          </Link>
         </ul>
       </nav>
     </div>

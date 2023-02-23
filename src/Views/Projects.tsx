@@ -44,7 +44,8 @@ function Projects() {
       .then((data) => {
         let newData = data.projects_data;
         setProjects(data.projects_data);
-        window.localStorage.setItem("dataTags", newData);
+        setDevs(data.dev_data);
+        // window.localStorage.setItem("dataTags", newData);
         setShowPage(true);
       })
       .catch((error) => {
@@ -70,9 +71,7 @@ function Projects() {
   //   const endpoint: string = `${url}/index/projects/tags/${stackToSearch}`;
   //   try {
   //     const { data } = await axios.get(endpoint);
-  //     setProjects([...data.projects_data]);
   //     setDevs([...data.dev_data]);
-  //     setShowPage(true);
   //   } catch (error: any) {
   //     console.error("Error:", error.message);
   //   }
@@ -89,12 +88,16 @@ function Projects() {
     setTimeout(() => setLoader(false), 1000);
   }, []);
 
-  useEffect(() => {
-    let tagsNewLocal: string | null = localStorage.getItem("dataTags");
-    if (tagsNewLocal !== null) {
-      setDescription(tagsNewLocal);
-    }
-  }, []);
+  // useEffect(() => {
+  //   getData();
+  // }, []);
+
+  // useEffect(() => {
+  //   let tagsNewLocal: string | null = localStorage.getItem("dataTags");
+  //   if (tagsNewLocal !== null) {
+  //     setDescription(tagsNewLocal);
+  //   }
+  // }, []);
 
   // Function to clear stack in localStorage
   // const clearStack = () => {
