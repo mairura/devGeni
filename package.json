@@ -20,6 +20,7 @@
     "react-icons": "^4.7.1",
     "react-ios-pwa-prompt": "^1.8.4",
     "react-loader-spinner": "^5.3.4",
+    "react-modern-drawer": "^1.2.0",
     "react-pwa-app": "^2.2.3",
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.5.0",
