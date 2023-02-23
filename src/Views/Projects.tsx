@@ -4,14 +4,14 @@ import "./css/style.css";
 import ProjectCard from "./ProjectCard";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import close from "../assets/close.svg";
-import axios from "axios";
+// import axios from "axios";
 import { ProjectContext, IProjects, ISingleDev } from "./Context";
 import { Config } from "../config/config";
 import HashLoader from "react-spinners/HashLoader";
 import { prev } from "../icons";
 import Logo from "../assets/Logo.png";
 import Hambuger from "../assets/ham.svg";
-import "react-modern-drawer/dist/index.css";
+// import "react-modern-drawer/dist/index.css";
 import ContactUs from "./Components/ContactUs";
 
 function Projects() {
