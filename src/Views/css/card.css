@@ -42,9 +42,13 @@
 }
 .card_desc {
   width: 100%;
+  height: 80px;
   text-align: left;
   font-size: 11px;
   font-family: "Poppins", sans-serif;
+  overflow: scroll;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 .lengths {
   font-family: "Orbitron", sans-serif;
