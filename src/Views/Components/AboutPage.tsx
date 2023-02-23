@@ -2,6 +2,7 @@ import React from "react";
 import "../css/about.css";
 import Logo from "../../assets/Logo.png";
 import { TypeAnimation } from "react-type-animation";
+import { Link } from "react-router-dom";
 
 const AboutPage = () => {
   return (
@@ -31,7 +32,9 @@ const AboutPage = () => {
         platforms, and Cryptocurrency projects.
       </i>
       <div className="btn_about">
-        <button>Get Back</button>
+        <Link to="/contact">
+          <button>Get Back</button>
+        </Link>
       </div>
     </div>
   );
