@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { prev, share } from "../icons";
-// import { greater } from "../icons";
 import "./css/profile.css";
 import minitrade from "../assets/minitrade.png";
 import linkpay from "../assets/linkpay.png";
@@ -29,7 +28,7 @@ const Profile = () => {
   return (
     <div className="profile_container">
       <div className="options">
-        <Link to="/">{prev}</Link> {share}
+        <Link to="/projects">{prev}</Link> {share}
       </div>
       <div className="profile_desc">
         <img src={imageProfile} alt="developer" />

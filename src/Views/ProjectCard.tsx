@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./css/card.css";
 import TeamMember from "./Components/TeamMember";
 import { Link } from "react-router-dom";
@@ -39,6 +39,8 @@ function ProjectCard() {
   const dev_dataSlice = dev_data.slice(0, 3).length;
   const diff = dev_length - dev_dataSlice;
 
+  console.log("GET PROJECT DATA ON CARD PAGE:", projects);
+
   let url = Config.URL;
 
   return (
@@ -50,7 +52,7 @@ function ProjectCard() {
           gridTemplateColumns: "1fr 1fr",
         }}
       >
-        {projects.map((project: any) => {
+        {projects.map((project: any, index: any) => {
           let team: {}[] | undefined = project?.team;
           let stack: String[] | undefined = project?.tech_stack;
           let desc: String[] | undefined = project?.description;
@@ -59,7 +61,6 @@ function ProjectCard() {
           let teamLength: number | undefined = team?.length;
           let stackLength: number | undefined = stack?.length;
           let splitStack: string | undefined = stack?.join();
-          // console.log("PRINT PROJECTS DEVELOPERS BY TAGS", splitStack);
 
           let trimDesc = function (string: any, length: any) {
             return string.length > length
@@ -115,7 +116,7 @@ function ProjectCard() {
                             />
                             {trimDesc(proj_title, 15)}
                           </motion.p>
-                          <p className="card_desc">{trimDesc(desc, 150)}</p>
+                          <p className="card_desc">{desc}</p>
                           <div className="rate">
                             <span
                               className="lengths"

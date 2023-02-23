@@ -153,20 +153,6 @@ export const languages = (
     />
   </svg>
 );
-export const greater = (
-  <svg
-    width="9"
-    height="14"
-    viewBox="0 0 9 14"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M1.35008 13.3333L0.166748 12.15L5.65008 6.66667L0.166748 1.18333L1.35008 0L8.01675 6.66667L1.35008 13.3333Z"
-      fill="#989898"
-    />
-  </svg>
-);
 export const close = (
   <svg
     height="20"
