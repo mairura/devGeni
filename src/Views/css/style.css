@@ -204,7 +204,7 @@ body {
 .contactUsContainer ul {
   display: block;
 }
-.contactUsContainer ul li {
+.my_links {
   padding-left: 40px;
   top: 30px;
   width: 390px;
@@ -214,8 +214,11 @@ body {
   display: flex;
   align-items: center;
   margin: 35px 0;
+  color: #fff;
+  text-decoration: none;
+  list-style: none;
 }
-.contactUsContainer ul li:hover {
+.my_links:hover {
   background-color: #0b524b;
   border-width: 1px 0px;
   border-style: solid;

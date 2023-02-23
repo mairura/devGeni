@@ -1,0 +1,40 @@
+.aboutContainer {
+  color: #fff;
+  margin-top: 10%;
+}
+.aboutLogo img {
+  height: 60px;
+}
+.aboutContainer h5 {
+  color: #52f2e2;
+  font-size: 20px;
+}
+.aboutContainer p {
+  font-family: "Orbitron", sans-serif;
+  font-size: 12px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+.aboutContainer i {
+  font: 100;
+  font-size: 12px;
+}
+.btn_about {
+  margin-top: 15%;
+}
+.btn_about button {
+  padding: 10px 40px;
+  border-radius: 10px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #52f2e2;
+  cursor: pointer;
+}
+.btn_about button:hover {
+  background-color: #52f2e2;
+  color: #fff;
+}

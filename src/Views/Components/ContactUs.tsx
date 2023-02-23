@@ -7,16 +7,16 @@ const ContactUs = () => {
     <div className="contactUsContainer">
       <nav>
         <ul>
-          <Link to="/projects">
+          <Link to="/projects" className="my_links">
             <li>Menu</li>
           </Link>
-          <Link to="/projects">
+          <Link to="/about" className="my_links">
             <li>About</li>
           </Link>
-          <Link to="/projects">
+          <Link to="/projects" className="my_links">
             <li>FAQS</li>
           </Link>
-          <Link to="/projects">
+          <Link to="/projects" className="my_links">
             <li>CONTACT US</li>
           </Link>
         </ul>
