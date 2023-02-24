@@ -13,10 +13,10 @@ const ContactUs = () => {
           <Link to="/about" className="my_links">
             <li>About</li>
           </Link>
-          <Link to="/projects" className="my_links">
+          <Link to="/faqs" className="my_links">
             <li>FAQS</li>
           </Link>
-          <Link to="/projects" className="my_links">
+          <Link to="/contactus" className="my_links">
             <li>CONTACT US</li>
           </Link>
         </ul>

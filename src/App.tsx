@@ -17,6 +17,8 @@ import Logo from "./assets/Logo.png";
 import { motion } from "framer-motion";
 import ContactUs from "./Views/Components/ContactUs";
 import AboutPage from "./Views/Components/AboutPage";
+import FAQsPage from "./Views/Components/FAQsPage";
+import ContactUsPage from "./Views/Components/ContactUsPage";
 
 function App() {
   //Set a loading page
@@ -57,7 +59,9 @@ function App() {
                   <Route path="/profile" element={<Profile />} />
                   <Route path="/devdata" element={<Devdata />} />
                   <Route path="/contact" element={<ContactUs />} />
+                  <Route path="/contactus" element={<ContactUsPage />} />
                   <Route path="/about" element={<AboutPage />} />
+                  <Route path="/faqs" element={<FAQsPage />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </div>

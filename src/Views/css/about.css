@@ -38,3 +38,57 @@
   background-color: #52f2e2;
   color: #fff;
 }
+/*---------- ContactUsPage -------------*/
+.contactPage {
+  background: transparent;
+  color: #fff;
+  margin-top: 50%;
+}
+.contactPage h5 {
+  font-size: 24px;
+  color: #52f2e2;
+  font-family: "Orbitron", sans-serif;
+  padding-bottom: 20px;
+}
+.contactPage p {
+  font-family: "Poppins";
+  font-weight: 300;
+}
+.contactPageData {
+  margin-top: 10px;
+  cursor: pointer;
+  height: 50px;
+}
+.contactPage p:hover {
+  color: #52f2e2;
+}
+.contactUsSocials {
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+}
+.twitter_icon {
+  margin-right: 25px;
+  height: 30px;
+  width: 30px;
+  padding: 5px;
+}
+.twitter_icon:hover {
+  border: 1px solid #52f2e2;
+  border-radius: 50%;
+}
+.btn_contactPage {
+  margin-top: 15%;
+}
+.btn_contactPage button {
+  padding: 10px 40px;
+  border-radius: 10px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #52f2e2;
+  cursor: pointer;
+}
+.btn_contactPage button:hover {
+  background-color: #52f2e2;
+  color: #fff;
+}
