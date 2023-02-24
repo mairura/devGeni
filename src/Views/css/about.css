@@ -92,3 +92,12 @@
   background-color: #52f2e2;
   color: #fff;
 }
+/*---------------------FAQS---------------------*/
+.faqsContainer {
+  color: #fff;
+}
+.faqsHeader {
+  background-image: url("../../assets/FAQS.jpg");
+  width: 100%;
+  height: 100px;
+}
