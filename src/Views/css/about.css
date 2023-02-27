@@ -25,7 +25,6 @@
   justify-content: center;
   text-align: center;
   padding: 5px 20px;
-  /* border: 1px solid red; */
 }
 .btn_about {
   margin-top: 15%;
@@ -104,16 +103,24 @@
 }
 .faqsHeader {
   width: 100%;
-  height: 200px;
-  /* position: relative; */
+  height: 230px;
+  position: relative;
 }
-.faqsHeader img {
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
-  opacity: 0.5;
+  /* background-color: #52f2e2cc; */
+}
+video {
+  width: 100%;
+  height: 30vh;
+  object-fit: contain;
 }
 .faqsHeader h4 {
-  position: absolute;
+  /* position: absolute; */
   padding-top: 20px;
 }
 .faqsBox {
@@ -122,7 +129,7 @@
 .faqsQuiz {
   border-bottom: 1px solid #52f2e2;
   font-family: "Poppins";
-  margin: 5px;
+  margin-top: 25px;
 }
 faqsForm {
   /* background: #0b524b; */

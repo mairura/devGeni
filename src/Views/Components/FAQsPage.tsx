@@ -1,22 +1,27 @@
 import React, { useRef, useEffect } from "react";
 import "../css/about.css";
-import pic from "../../assets/FAQS.jpg";
+// import pic from "../../assets/FAQS.jpg";
 import Collapsible from "react-collapsible";
-import { BsChevronDown } from "react-icons/bs";
+import { BiChevronDown } from "react-icons/bi";
+import { BiChevronUp } from "react-icons/bi";
+// @ts-ignore
+import bgVideo from "../../assets/VID-20230224-WA0022.mp4";
+import pic from "../../assets/unsplash1.jpg";
 
 const FAQsPage = () => {
   return (
     <div className="faqsContainer">
-      {/* <video src="../../assets/WhatsAppVideo.mp4" muted loop autoPlay /> */}
       <div className="faqsHeader">
-        <img src={pic} />
-        {/* <BsChevronDown /> */}
+        <div className="overlay"></div>
+        {/* <video src={bgVideo} loop autoPlay muted /> */}
+
+        <img src={pic} alt="bgImg" height="200px" width="100%" />
         <h4>Faqs</h4>
       </div>
       <div className="faqsBox">
         <div className="faqsQuiz">
           <Collapsible
-            trigger="How Does DevGeni work?"
+            trigger={"How Does DevGeni work?"}
             triggerTagName="faqsForm"
             transitionTime={500}
             easing="ease-in-out"
