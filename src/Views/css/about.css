@@ -82,18 +82,19 @@
 }
 .btn_contactPage {
   margin-top: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.btn_contactPage button {
-  padding: 10px 40px;
-  border-radius: 10px;
+.button {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  border-radius: 50%;
   background: transparent;
   color: #fff;
   border: 1px solid #52f2e2;
   cursor: pointer;
-}
-.btn_contactPage button:hover {
-  background-color: #52f2e2;
-  color: #fff;
 }
 /*---------------------FAQS---------------------*/
 .faqsContainer {
