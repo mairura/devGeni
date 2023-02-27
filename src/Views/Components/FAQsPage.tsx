@@ -4,9 +4,11 @@ import "../css/about.css";
 import Collapsible from "react-collapsible";
 import { BiChevronDown } from "react-icons/bi";
 import { BiChevronUp } from "react-icons/bi";
+import { BiChevronLeft } from "react-icons/bi";
 // @ts-ignore
 import bgVideo from "../../assets/VID-20230224-WA0022.mp4";
 import pic from "../../assets/unsplash1.jpg";
+import { Link } from "react-router-dom";
 
 const FAQsPage = () => {
   return (
@@ -90,6 +92,12 @@ const FAQsPage = () => {
             </p>
           </Collapsible>
         </div>
+      </div>
+      <div className="btn_contactPage">
+        <Link to="/contact">
+          {" "}
+          <div className="button">{<BiChevronLeft color="#52f2e2" />}</div>{" "}
+        </Link>
       </div>
     </div>
   );

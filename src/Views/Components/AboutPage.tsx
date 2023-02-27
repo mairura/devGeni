@@ -3,6 +3,7 @@ import "../css/about.css";
 import Logo from "../../assets/Logo.png";
 import { TypeAnimation } from "react-type-animation";
 import { Link } from "react-router-dom";
+import { BiChevronLeft } from "react-icons/bi";
 
 const AboutPage = () => {
   return (
@@ -31,16 +32,17 @@ const AboutPage = () => {
         services that are tailored to meet your specific needs. 🔥
       </p>
       <TypeAnimation
-        sequence={["CODE 🙂 CODE 🖥", 5000, "CODE 💻 ", 5000]}
+        sequence={["CODE 🙂 CODE 🖥", 5000]}
         wrapper="h5"
         cursor={true}
         repeat={Infinity}
         style={{ fontSize: "1.5em" }}
       />
 
-      <div className="btn_about">
+      <div className="btn_contactPage">
         <Link to="/contact">
-          <button>Get Back</button>
+          {" "}
+          <div className="button">{<BiChevronLeft color="#52f2e2" />}</div>{" "}
         </Link>
       </div>
     </div>
