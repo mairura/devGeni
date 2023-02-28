@@ -4,7 +4,6 @@ import "./css/home.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import { motion } from "framer-motion";
-import Loader from "./Components/Loader";
 import Logo from "../assets/Logo.png";
 
 const buttonVariants = {

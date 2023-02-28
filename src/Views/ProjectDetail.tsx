@@ -9,11 +9,8 @@ import { IProjects, ISingleDev } from "./Context";
 import { Config } from "../config/config";
 import { ExternalLink } from "react-external-link";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-// import { Carousel } from "react-responsive-carousel";
+import { Carousel } from "react-responsive-carousel";
 import { motion } from "framer-motion";
-import Hambuger from "../assets/ham.svg";
-import close from "../assets/close.svg";
-import ContactUs from "./Components/ContactUs";
 import TopBar from "./Components/TopBar";
 
 const containerVariants = {
@@ -120,9 +117,6 @@ function ProjectDetail() {
       <div className="projectDetail_container">
         <div className="project_banner">
           <TopBar />
-          <div className="preview_container">
-            {/* <img src={linkpayui} alt="linkpay ui" /> */}
-          </div>
         </div>
         <div className="detailsPage">
           <div className="title_desc">
@@ -152,9 +146,16 @@ function ProjectDetail() {
                 </p>
               ) : ( */}
           <div className="member-container">
-            {/* <Carousel> */}
+            {/* <Carousel
+              autoPlay={true}
+              showArrows={true}
+              transitionTime={1000}
+              infiniteLoop={true}
+              interval={4000}
+              showStatus={false}
+            > */}
             {devs?.map((member: any) => (
-              <TeamMember dev={member} />
+              <TeamMember dev={member} className="member_carousel" />
             ))}
             {/* </Carousel> */}
           </div>

@@ -22,6 +22,10 @@
   justify-content: space-between;
   padding: 30px;
 }
+.detailsPage {
+  position: fixed;
+  width: 390px;
+}
 .title_desc {
   display: grid;
   margin: auto;
@@ -68,7 +72,16 @@
   font-family: "Orbitron", sans-serif;
   padding: 10px;
 }
-.carousel_page {
+.member-container {
+  /* border: 1px solid red; */
+  width: 50px;
   display: flex;
+  flex-direction: row;
+}
+.member_carousel {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
+  /* border: 1px solid greenyellow; */
 }

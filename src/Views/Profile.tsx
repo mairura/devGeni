@@ -9,6 +9,7 @@ import { BsGithub } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import Logo from "../assets/Logo.png";
+import TopBar from "./Components/TopBar";
 
 const Profile = () => {
   const [stacks, setStacks] = useState([]);
@@ -27,8 +28,9 @@ const Profile = () => {
 
   return (
     <div className="profile_container">
-      <div className="options">
-        <Link to="/projects">{prev}</Link> {share}
+      <div className="optionsProfile">
+        {/* <Link to="/projects">{prev}</Link> {share} */}
+        <TopBar />
       </div>
       <div className="profile_desc">
         <img src={imageProfile} alt="developer" />
