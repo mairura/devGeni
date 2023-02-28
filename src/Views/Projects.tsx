@@ -161,12 +161,14 @@ function Projects() {
               </button>
             </div>
             <>
-              <div className="tag_box">
-                <p>Choose from Tags</p>
-                <div className="tag_boxData">
-                  {params.map((param: any) => {
-                    return <p>{param}</p>;
-                  })}
+              <div className="tagBox">
+                <div className="tag_box">
+                  <p>Choose from Tags</p>
+                  <div className="tag_boxData">
+                    {params.map((param: any) => {
+                      return <p>{param}</p>;
+                    })}
+                  </div>
                 </div>
               </div>
             </>
