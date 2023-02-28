@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../css/topBar.css";
 import Logo from "../../assets/Logo.png";
 import Hambuger from "../../assets/ham.svg";
@@ -8,6 +8,7 @@ import { prev } from "../../icons";
 import ContactUs from "./ContactUs";
 
 const TopBar = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleIcon = () => {
@@ -21,9 +22,10 @@ const TopBar = () => {
     <div className="top_bar">
       <div className="search_barTop">
         <div>
-          <Link to="/" className="options1">
-            {prev}
-          </Link>
+          <button onClick={() => navigate(-1)} className="btn_navigate">
+            {" "}
+            {prev}{" "}
+          </button>
         </div>
 
         <div className="top_logo">

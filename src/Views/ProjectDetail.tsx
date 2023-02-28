@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import "./css/ProjectDetail.css";
-import { prev, ksh } from "../icons";
+import { ksh } from "../icons";
 import TeamMember from "./Components/TeamMember";
 import linkPay from "../assets/linkpay.png";
-import { Link, useLocation } from "react-router-dom";
+// import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import { IProjects, ISingleDev } from "./Context";
 import { Config } from "../config/config";
 import { ExternalLink } from "react-external-link";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
+// import { Carousel } from "react-responsive-carousel";
 import { motion } from "framer-motion";
 import TopBar from "./Components/TopBar";
 
@@ -106,11 +106,11 @@ function ProjectDetail() {
   //   setTimeout(() => setLoader(false), 1000);
   // }, []);
 
-  let trimDesc = function (string: any, length: any) {
-    return string.length > length
-      ? string.substring(0, length) + "..."
-      : string;
-  };
+  // let trimDesc = function (string: any, length: any) {
+  //   return string.length > length
+  //     ? string.substring(0, length) + "..."
+  //     : string;
+  // };
 
   return (
     <>
