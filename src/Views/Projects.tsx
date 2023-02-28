@@ -157,18 +157,10 @@ function Projects() {
                 className="searchBox"
               />
               <button onClick={handleAPICall} className="btnSearch">
-                Search
+                Go
               </button>
             </div>
             <>
-              {/* <div className="founder">
-                <div className="tags_found">
-                  <TagsIdentified />
-                  <p className="clear_btn" onClick={clearStack}>
-                    <img src={close} alt="close" />
-                  </p>
-                </div>
-              </div> */}
               <div className="tag_box">
                 <p>Choose from Tags</p>
                 <div className="tag_boxData">
