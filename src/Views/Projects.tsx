@@ -27,6 +27,14 @@ function Projects() {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  const toggleIcon = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   const handleInput = (event: any) => {
     setDescription(event.target.value);
   };
@@ -160,13 +168,9 @@ function Projects() {
               </div>
               <div className="hambuger">
                 {isOpen ? (
-                  <img src={close} alt="close" onClick={() => isOpen} />
+                  <img src={close} alt="close" onClick={closeMenu} />
                 ) : (
-                  <img
-                    src={Hambuger}
-                    alt="logo"
-                    onClick={() => setIsOpen(!isOpen)}
-                  />
+                  <img src={Hambuger} alt="logo" onClick={toggleIcon} />
                 )}
               </div>
             </div>

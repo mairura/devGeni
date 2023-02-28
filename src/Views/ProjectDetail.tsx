@@ -11,6 +11,9 @@ import { ExternalLink } from "react-external-link";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 // import { Carousel } from "react-responsive-carousel";
 import { motion } from "framer-motion";
+import Hambuger from "../assets/ham.svg";
+import close from "../assets/close.svg";
+import ContactUs from "./Components/ContactUs";
 
 const buttonVariants = {};
 
@@ -72,6 +75,8 @@ function ProjectDetail() {
   const proj_team = urlParams.get("projectTeam");
   let url = Config.URL;
 
+  const [isOpen, setIsOpen] = useState(false);
+
   //Function to submit choosen stack and find resp projects
   const getDeveloper = async () => {
     const endpoint: string = `${url}/index/devs/names/${proj_team}`;
@@ -123,12 +128,22 @@ function ProjectDetail() {
       <div className="projectDetail_container">
         <div className="project_banner">
           <div className="options">
-            <Link to="/projects">{prev}</Link> {share}
+            <Link to="/projects">{prev}</Link>{" "}
+            {isOpen ? (
+              <img src={close} alt="close" onClick={() => isOpen} />
+            ) : (
+              <img
+                src={Hambuger}
+                alt="logo"
+                onClick={() => setIsOpen(!isOpen)}
+              />
+            )}
           </div>
           <div className="preview_container">
             {/* <img src={linkpayui} alt="linkpay ui" /> */}
           </div>
         </div>
+        {isOpen && <ContactUs />}
         <div className="title_desc">
           <img src={linkPay} alt="linkpay logo" />
           <motion.h3

@@ -34,7 +34,9 @@ function App() {
     <>
       {isLoading ? (
         <>
-          <h4 className="loader_title">Team and Skill Matching Engine</h4>
+          <h4 className="loader_title" color="#52f2e2">
+            Team and Skill Matching Engine
+          </h4>
           <motion.div
             className="item"
             initial={{ y: -250 }}
