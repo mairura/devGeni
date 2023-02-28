@@ -21,7 +21,6 @@ body {
 }
 .main_search {
   height: 30px;
-  /* background-color: red; */
   display: flex;
   align-items: center;
   text-align: left;
@@ -30,6 +29,9 @@ body {
   color: #fff;
   line-height: 12px;
   font-family: "Poppins";
+}
+.main_search p {
+  margin-left: 20px;
 }
 .select1 {
   display: flex;
