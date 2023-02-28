@@ -9,6 +9,10 @@ export interface IProjects {
   link: String;
 }
 
+export interface IParams {
+  tech_stack: String[];
+}
+
 export interface ISingleDev {
   name: string;
   short_name: string;
@@ -21,9 +25,11 @@ export interface ISingleDev {
 export interface BaseContext {
   projects: Array<IProjects>;
   devs: Array<ISingleDev>;
+  params: Array<IParams>;
 }
 
 export const ProjectContext = createContext<BaseContext>({
   projects: [],
   devs: [],
+  params: [],
 });

@@ -6,11 +6,8 @@ import { ProjectContext } from "./Context";
 import "./css/style.css";
 import linkPay from "../assets/linkpay.png";
 import { languages, teams } from "../icons";
-// import axios from "axios";
 import { Config } from "../config/config";
 import { motion } from "framer-motion";
-// import { ExternalLink } from "react-external-link";
-// import { ksh } from "../icons";
 
 const containerVariants = {
   hidden: {
@@ -33,13 +30,13 @@ const containerVariants = {
 };
 
 function ProjectCard() {
-  const { projects, devs } = useContext(ProjectContext);
+  const { projects, devs, params } = useContext(ProjectContext);
   const dev_data = devs;
   const dev_length = dev_data.length;
   const dev_dataSlice = dev_data.slice(0, 3).length;
   const diff = dev_length - dev_dataSlice;
 
-  console.log("GET PROJECT DATA ON CARD PAGE:", projects);
+  console.log("GET PROJECT DATA ON CARD PAGE:", params);
 
   let url = Config.URL;
 
@@ -47,7 +44,7 @@ function ProjectCard() {
     <>
       <div
         style={{
-          marginTop: "200px",
+          marginTop: "250px",
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
         }}

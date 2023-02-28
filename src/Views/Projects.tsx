@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCard";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 // import axios from "axios";
-import { ProjectContext, IProjects, ISingleDev } from "./Context";
+import { ProjectContext, IProjects, ISingleDev, IParams } from "./Context";
 import { Config } from "../config/config";
 import HashLoader from "react-spinners/HashLoader";
 import TopBar from "./Components/TopBar";
@@ -14,6 +14,7 @@ function Projects() {
   let url = Config.URL;
   const [projects, setProjects] = useState<Array<IProjects>>([]);
   const [devs, setDevs] = useState<Array<ISingleDev>>([]);
+  const [params, setParams] = useState<Array<IParams>>([]);
   const [showPage, setShowPage] = useState(false);
   const [loader, setLoader] = useState(true);
   const [getStacks, setGetStacks] = useState([]);
@@ -39,6 +40,8 @@ function Projects() {
         let newData = data.projects_data;
         setProjects(data.projects_data);
         setDevs(data.dev_data);
+        console.log("Print Params:", data.params);
+        setParams(data.params);
         // window.localStorage.setItem("dataTags", newData);
         setShowPage(true);
       })
@@ -142,29 +145,10 @@ function Projects() {
       <>
         <div className="main_container">
           <div className="search-bar">
-            {/* <div className="search_barTop">
-              <div>
-                <Link to="/" className="options1">
-                  {prev}
-                </Link>
-              </div>
-
-              <div className="top_logo">
-                <img src={Logo} alt="logo" />
-              </div>
-              <div className="hambuger">
-                {isOpen ? (
-                  <img src={close} alt="close" onClick={closeMenu} />
-                ) : (
-                  <img src={Hambuger} alt="logo" onClick={toggleIcon} />
-                )}
-              </div>
-            </div>
-            {isOpen && <ContactUs />}
-            <div className="searchTitle">
-              <p>Project highlights and dev team</p>
-            </div> */}
             <TopBar />
+            <div className="main_search">
+              <p>What would you like to do?</p>
+            </div>
             <div className="select1">
               <input
                 type="text"
@@ -185,6 +169,14 @@ function Projects() {
                   </p>
                 </div>
               </div> */}
+              <div className="tag_box">
+                <p>Choose from Tags</p>
+                <div className="tag_boxData">
+                  {params.map((param: any) => {
+                    return <p>{param}</p>;
+                  })}
+                </div>
+              </div>
             </>
           </div>
         </div>
@@ -206,7 +198,7 @@ function Projects() {
           ) : (
             <>
               <div>
-                <ProjectContext.Provider value={{ projects, devs }}>
+                <ProjectContext.Provider value={{ projects, devs, params }}>
                   <ProjectCard />
                 </ProjectContext.Provider>
               </div>

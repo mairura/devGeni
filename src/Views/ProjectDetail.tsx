@@ -3,7 +3,6 @@ import "./css/ProjectDetail.css";
 import { ksh } from "../icons";
 import TeamMember from "./Components/TeamMember";
 import linkPay from "../assets/linkpay.png";
-// import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import { IProjects, ISingleDev } from "./Context";
 import { Config } from "../config/config";
@@ -101,16 +100,6 @@ function ProjectDetail() {
   useEffect(() => {
     getDeveloper();
   }, []);
-
-  // useEffect(() => {
-  //   setTimeout(() => setLoader(false), 1000);
-  // }, []);
-
-  // let trimDesc = function (string: any, length: any) {
-  //   return string.length > length
-  //     ? string.substring(0, length) + "..."
-  //     : string;
-  // };
 
   return (
     <>
