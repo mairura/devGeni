@@ -1,18 +1,14 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import "./css/style.css";
 import ProjectCard from "./ProjectCard";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import close from "../assets/close.svg";
+
 // import axios from "axios";
 import { ProjectContext, IProjects, ISingleDev } from "./Context";
 import { Config } from "../config/config";
 import HashLoader from "react-spinners/HashLoader";
-import { prev } from "../icons";
-import Logo from "../assets/Logo.png";
-import Hambuger from "../assets/ham.svg";
+import TopBar from "./Components/TopBar";
 // import "react-modern-drawer/dist/index.css";
-import ContactUs from "./Components/ContactUs";
 
 function Projects() {
   let url = Config.URL;
@@ -24,16 +20,6 @@ function Projects() {
   const [localData, setLocalData] = useState<Array<string>>([]);
 
   const [description, setDescription] = useState("");
-
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleIcon = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
 
   const handleInput = (event: any) => {
     setDescription(event.target.value);
@@ -156,7 +142,7 @@ function Projects() {
       <>
         <div className="main_container">
           <div className="search-bar">
-            <div className="search_barTop">
+            {/* <div className="search_barTop">
               <div>
                 <Link to="/" className="options1">
                   {prev}
@@ -177,7 +163,8 @@ function Projects() {
             {isOpen && <ContactUs />}
             <div className="searchTitle">
               <p>Project highlights and dev team</p>
-            </div>
+            </div> */}
+            <TopBar />
             <div className="select1">
               <input
                 type="text"

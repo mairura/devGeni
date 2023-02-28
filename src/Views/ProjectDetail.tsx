@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./css/ProjectDetail.css";
-import { prev, share, ksh, verified } from "../icons";
+import { prev, ksh } from "../icons";
 import TeamMember from "./Components/TeamMember";
 import linkPay from "../assets/linkpay.png";
 import { Link, useLocation } from "react-router-dom";
@@ -14,8 +14,7 @@ import { motion } from "framer-motion";
 import Hambuger from "../assets/ham.svg";
 import close from "../assets/close.svg";
 import ContactUs from "./Components/ContactUs";
-
-const buttonVariants = {};
+import TopBar from "./Components/TopBar";
 
 const containerVariants = {
   hidden: {
@@ -75,8 +74,6 @@ function ProjectDetail() {
   const proj_team = urlParams.get("projectTeam");
   let url = Config.URL;
 
-  const [isOpen, setIsOpen] = useState(false);
-
   //Function to submit choosen stack and find resp projects
   const getDeveloper = async () => {
     const endpoint: string = `${url}/index/devs/names/${proj_team}`;
@@ -98,12 +95,7 @@ function ProjectDetail() {
     }
   };
 
-  // console.log("Properties:", dev_data);
-  // let techStack: String[] | undefined = projectData?.tech_stack;
   let proj_name_get: String | undefined = projectData?.proj_name;
-  // let team: {}[] | undefined = projectData?.team;
-  // let projectId: number | undefined = projectData?._id;
-  // console.log("Print project Team:", proj_team);
 
   useEffect(() => {
     singleProject();
@@ -127,51 +119,38 @@ function ProjectDetail() {
     <>
       <div className="projectDetail_container">
         <div className="project_banner">
-          <div className="options">
-            <Link to="/projects">{prev}</Link>{" "}
-            {isOpen ? (
-              <img src={close} alt="close" onClick={() => isOpen} />
-            ) : (
-              <img
-                src={Hambuger}
-                alt="logo"
-                onClick={() => setIsOpen(!isOpen)}
-              />
-            )}
-          </div>
+          <TopBar />
           <div className="preview_container">
             {/* <img src={linkpayui} alt="linkpay ui" /> */}
           </div>
         </div>
-        {isOpen && <ContactUs />}
-        <div className="title_desc">
-          <img src={linkPay} alt="linkpay logo" />
-          <motion.h3
-            initial={{ y: -250 }}
-            animate={{ y: 0 }}
-            transition={{ delay: 0.4, type: "spring", stiffness: 150 }}
-          >
-            {proj_name_get}{" "}
-          </motion.h3>{" "}
-          {verified}
-        </div>
-        <div className="body_desc">
-          <p>{proj_desc}</p>
-        </div>
-        <div className="loader_details">
+        <div className="detailsPage">
+          <div className="title_desc">
+            <img src={linkPay} alt="linkpay logo" />
+            <motion.h3
+              initial={{ y: -250 }}
+              animate={{ y: 0 }}
+              transition={{ delay: 0.4, type: "spring", stiffness: 150 }}
+            >
+              {proj_name_get}{" "}
+            </motion.h3>{" "}
+          </div>
+          <div className="body_desc">
+            <p>{proj_desc}</p>
+          </div>
           <div className="project_team">Team</div>
 
           {/* {loader ? (
-          <p className="item_details">
-            <HashLoader
-              color="#f05e56"
-              loading={loader}
-              size={30}
-              aria-label="Loading Spinner"
-              data-testid="loader"
-            />
-          </p>
-        ) : ( */}
+                <p className="item_details">
+                  <HashLoader
+                    color="#f05e56"
+                    loading={loader}
+                    size={30}
+                    aria-label="Loading Spinner"
+                    data-testid="loader"
+                  />
+                </p>
+              ) : ( */}
           <div className="member-container">
             {/* <Carousel> */}
             {devs?.map((member: any) => (
