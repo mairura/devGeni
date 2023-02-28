@@ -85,7 +85,7 @@ body {
 }
 @media (max-width: 768px) {
   .tag_box {
-    margin-left: 28px;
+    margin-left: 30px;
   }
 }
 .tag_box p {
