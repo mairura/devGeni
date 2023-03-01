@@ -23,7 +23,7 @@ function Projects() {
 
   // const [description, setDescription] = useState("");
 
-  const requests = ["I want...", "Design me a...", "Build me an app..."];
+  const requests = ["I want...", "Design me a...", "Build me a mobile app..."];
 
   const handleClick = (request: any) => {
     setInputValue(request);

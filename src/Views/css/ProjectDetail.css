@@ -64,7 +64,6 @@
   height: 80px;
   padding-top: 10px;
 }
-
 .project_team {
   font-size: 20px;
   letter-spacing: 1px;
@@ -72,11 +71,15 @@
   font-family: "Orbitron", sans-serif;
   padding: 10px;
 }
+.memberContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
 .member-container {
-  /* border: 1px solid red; */
   width: 50px;
   display: flex;
-  flex-direction: row;
 }
 .member_carousel {
   display: flex;

@@ -134,8 +134,9 @@ function ProjectDetail() {
                   />
                 </p>
               ) : ( */}
-          <div className="member-container">
-            {/* <Carousel
+          <div className="memberContainer">
+            <div className="member-container">
+              {/* <Carousel
               autoPlay={true}
               showArrows={true}
               transitionTime={1000}
@@ -143,11 +144,13 @@ function ProjectDetail() {
               interval={4000}
               showStatus={false}
             > */}
-            {devs?.map((member: any) => (
-              <TeamMember dev={member} className="member_carousel" />
-            ))}
-            {/* </Carousel> */}
+              {devs?.map((member: any) => (
+                <TeamMember dev={member} className="member_carousel" />
+              ))}
+              {/* </Carousel> */}
+            </div>
           </div>
+
           {/* )} */}
 
           <br />
