@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "./css/style.css";
 import ProjectCard from "./ProjectCard";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-
 // import axios from "axios";
 import { ProjectContext, IProjects, ISingleDev, IParams } from "./Context";
 import { Config } from "../config/config";
@@ -17,13 +16,21 @@ function Projects() {
   const [params, setParams] = useState<Array<IParams>>([]);
   const [showPage, setShowPage] = useState(false);
   const [loader, setLoader] = useState(true);
-  const [getStacks, setGetStacks] = useState([]);
-  const [localData, setLocalData] = useState<Array<string>>([]);
+  const [inputValue, setInputValue] = useState("");
+  // const [getStacks, setGetStacks] = useState([]);
+  // const [localData, setLocalData] = useState<Array<string>>([]);
+  // const [numProjects, setNumProjects] = useState(0);
 
-  const [description, setDescription] = useState("");
+  // const [description, setDescription] = useState("");
 
-  const handleInput = (event: any) => {
-    setDescription(event.target.value);
+  const requests = ["I want...", "Design me a...", "Build me an app..."];
+
+  const handleClick = (request: any) => {
+    setInputValue(request);
+  };
+
+  const handleInputChange = (event: any) => {
+    setInputValue(event.target.value);
   };
 
   //Function takes in user description
@@ -33,14 +40,14 @@ function Projects() {
     fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ description: description }),
+      body: JSON.stringify({ description: inputValue }),
     })
       .then((response) => response.json())
       .then((data) => {
-        let newData = data.projects_data;
+        let data_length = data.length;
         setProjects(data.projects_data);
         setDevs(data.dev_data);
-        console.log("Print Params:", data.params);
+        console.log("Print Params:", data.projects_data.length);
         setParams(data.params);
         // window.localStorage.setItem("dataTags", newData);
         setShowPage(true);
@@ -148,12 +155,21 @@ function Projects() {
             <TopBar />
             <div className="main_search">
               <p>What would you like to do?</p>
+              <div className="main_request">
+                {requests.map((request: any, index: any) => {
+                  return (
+                    <button key={index} onClick={() => handleClick(request)}>
+                      {request}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
             <div className="select1">
               <input
                 type="text"
-                value={description}
-                onChange={handleInput}
+                value={inputValue}
+                onChange={handleInputChange}
                 className="searchBox"
               />
               <button onClick={handleAPICall} className="btnSearch">
@@ -171,6 +187,7 @@ function Projects() {
                   </div>
                 </div>
               </div>
+              <div></div>
             </>
           </div>
         </div>

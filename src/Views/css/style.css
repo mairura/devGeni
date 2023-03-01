@@ -22,16 +22,18 @@ body {
 .main_search {
   height: 30px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: left;
   text-align: left;
   padding-left: 22px;
   font-size: 9px;
   color: #fff;
   line-height: 12px;
   font-family: "Poppins";
+  margin: 25px 20px;
 }
-.main_search p {
-  margin-left: 20px;
+.main_request {
+  margin: 10px 1px;
 }
 .select1 {
   display: flex;
