@@ -19,7 +19,7 @@ function Projects() {
   const [inputValue, setInputValue] = useState("");
   // const [getStacks, setGetStacks] = useState([]);
   // const [localData, setLocalData] = useState<Array<string>>([]);
-  // const [numProjects, setNumProjects] = useState(0);
+  const [numProjects, setNumProjects] = useState("0");
 
   // const [description, setDescription] = useState("");
 
@@ -47,7 +47,8 @@ function Projects() {
         let data_length = data.length;
         setProjects(data.projects_data);
         setDevs(data.dev_data);
-        console.log("Print Params:", data.projects_data.length);
+        console.log("Print Params:", data.projects_data);
+        setNumProjects(data.projects_data.length);
         setParams(data.params);
         // window.localStorage.setItem("dataTags", newData);
         setShowPage(true);
@@ -187,7 +188,14 @@ function Projects() {
                   </div>
                 </div>
               </div>
-              <div></div>
+              <div className="matchRateData">
+                <p>We found {numProjects} projects matching your search</p>
+                {/* <p>
+                  {projects.map((project: any) => {
+                    return <p>{project?.match_rate}</p>;
+                  })}
+                </p> */}
+              </div>
             </>
           </div>
         </div>
