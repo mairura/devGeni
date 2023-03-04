@@ -2,12 +2,9 @@ import { useEffect, useState } from "react";
 import "./css/style.css";
 import ProjectCard from "./ProjectCard";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-// import axios from "axios";
 import { ProjectContext, IProjects, ISingleDev, IParams } from "./Context";
 import { Config } from "../config/config";
-import HashLoader from "react-spinners/HashLoader";
 import TopBar from "./Components/TopBar";
-// import "react-modern-drawer/dist/index.css";
 
 function Projects() {
   let url = Config.URL;
@@ -190,30 +187,21 @@ function Projects() {
               </div>
               <div className="matchRateData">
                 <p>We found {numProjects} projects matching your search</p>
-                {/* <p>
-                  {projects.map((project: any) => {
-                    return <p>{project?.match_rate}</p>;
-                  })}
-                </p> */}
               </div>
             </>
           </div>
         </div>
       </>
       {!showPage ? (
-        <></>
+        <>
+          {/* To-do */}
+          {/* Design the logo animation */}
+          <div className="item">Fetching...</div>
+        </>
       ) : (
         <>
           {loader ? (
-            <div className="item">
-              <HashLoader
-                color="#f05e56"
-                loading={loader}
-                size={80}
-                aria-label="Loading Spinner"
-                data-testid="loader"
-              />
-            </div>
+            <div className="item">Loading...</div>
           ) : (
             <>
               <div>
