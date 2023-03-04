@@ -1,13 +1,11 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import "../css/about.css";
-// import pic from "../../assets/FAQS.jpg";
 import Collapsible from "react-collapsible";
 import { BiChevronDown } from "react-icons/bi";
 import { BiChevronUp } from "react-icons/bi";
 // @ts-ignore
 import bgVideo from "../../assets/VID-20230224-WA0022.mp4";
 import pic from "../../assets/unsplash1.jpg";
-import { Link } from "react-router-dom";
 import TopBar from "./TopBar";
 
 const FAQsPage = () => {

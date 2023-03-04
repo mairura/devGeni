@@ -104,9 +104,7 @@ function ProjectDetail() {
   return (
     <>
       <div className="projectDetail_container">
-        <div className="project_banner">
-          <TopBar />
-        </div>
+        <TopBar />
         <div className="detailsPage">
           <div className="title_desc">
             <img src={linkPay} alt="linkpay logo" />
