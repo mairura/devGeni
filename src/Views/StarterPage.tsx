@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import "./css/home.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -74,8 +73,6 @@ const StarterPage = () => {
           </div>
         </Carousel>
       </div>
-      {/* <Loader /> */}
-      {/* <img src={gif} alt="logo" /> */}
       <Link to="/home" style={{ width: "100%" }}>
         <div className="home_btn">
           <motion.button variants={buttonVariants} whileHover="hover">

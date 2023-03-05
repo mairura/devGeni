@@ -33,7 +33,7 @@ const Profile = () => {
         <img src={imageProfile} alt="developer" />
         <div className="profile_name">{nameProfile}</div>
         <div className="profile_nickname">({shortName})</div>
-        <p>Software Developer</p>
+        <p>Software Engineer</p>
       </div>
       <div className="prof">
         <div className="profile_stack">
@@ -47,9 +47,6 @@ const Profile = () => {
         <div className="profile_projects">
           <div className="profile_title">
             <h5>Projects</h5>
-            {/* <div className="see_all">
-              See All&nbsp;&nbsp;&nbsp;&nbsp;<span>{greater}</span>
-            </div> */}
           </div>
           <div className="profile_project">
             <div className="project">
@@ -79,9 +76,6 @@ const Profile = () => {
         <div className="profile_media">
           <div className="profile_title">
             <h5>Media and Links</h5>
-            {/* <div className="see_all">
-              See All&nbsp;&nbsp;&nbsp;&nbsp;{greater}
-            </div> */}
           </div>
           <div className="profile_data">
             <div className="profile_links">

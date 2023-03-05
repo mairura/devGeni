@@ -1,11 +1,11 @@
-import { useContext, useEffect, useState } from "react";
-import "./css/card.css";
-import TeamMember from "./Components/TeamMember";
-import { Link } from "react-router-dom";
-import { ProjectContext } from "./Context";
 import "./css/style.css";
+import "./css/card.css";
+import { useContext } from "react";
+import TeamMember from "./Components/TeamMember";
 import linkPay from "../assets/linkpay.png";
 import { languages, teams } from "../icons";
+import { Link } from "react-router-dom";
+import { ProjectContext } from "./Context";
 import { Config } from "../config/config";
 import { motion } from "framer-motion";
 

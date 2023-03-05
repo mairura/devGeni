@@ -14,8 +14,6 @@ function Projects() {
   const [showPage, setShowPage] = useState(false);
   const [loader, setLoader] = useState(true);
   const [inputValue, setInputValue] = useState("");
-  // const [getStacks, setGetStacks] = useState([]);
-  // const [localData, setLocalData] = useState<Array<string>>([]);
   const [numProjects, setNumProjects] = useState("0");
 
   // const [description, setDescription] = useState("");
@@ -47,7 +45,6 @@ function Projects() {
         console.log("Print Params:", data.projects_data);
         setNumProjects(data.projects_data.length);
         setParams(data.params);
-        // window.localStorage.setItem("dataTags", newData);
         setShowPage(true);
       })
       .catch((error) => {
@@ -89,61 +86,6 @@ function Projects() {
   useEffect(() => {
     setTimeout(() => setLoader(false), 1000);
   }, []);
-
-  // useEffect(() => {
-  //   getData();
-  // }, []);
-
-  // useEffect(() => {
-  //   let tagsNewLocal: string | null = localStorage.getItem("dataTags");
-  //   if (tagsNewLocal !== null) {
-  //     setDescription(tagsNewLocal);
-  //   }
-  // }, []);
-
-  // Function to clear stack in localStorage
-  // const clearStack = () => {
-  //   localStorage.clear();
-  //   setShowPage(false);
-  //   setLocalData([]);
-  // };
-
-  // const SplitNames = (names: string) => {
-  //   const names_split = names.split(",");
-  //   return names_split;
-  // };
-
-  // function checkLocalStorage() {
-  //   if (!localStorage.length) {
-  //     return null;
-  //   } else {
-  //     let tag_string: string | null = localStorage.getItem("dataTags");
-  //     let results: any;
-  //     if (tag_string != null) {
-  //       results = SplitNames(tag_string);
-  //       setLocalData(results);
-  //     }
-  //     return results;
-  //   }
-  // }
-  // const TagsIdentified: any = () => {
-  //   if (localData !== undefined) {
-  //     return (
-  //       <div className="current-tags">
-  //         {localData.map((item: any) => {
-  //           return <p className="tag">{item}</p>;
-  //         })}
-  //       </div>
-  //     );
-  //   }
-  //   <Link to="/" className="options1">
-  //     {prev}
-  //   </Link>;
-  // };
-
-  // useEffect(() => {
-  //   checkLocalStorage();
-  // }, []);
 
   return (
     <div className="main_header">

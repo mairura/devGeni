@@ -121,6 +121,8 @@ function ProjectDetail() {
           </div>
           <div className="project_team">Team</div>
 
+          {/* ToDo */}
+
           {/* {loader ? (
                 <p className="item_details">
                   <HashLoader

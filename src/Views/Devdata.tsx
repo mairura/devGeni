@@ -1,5 +1,4 @@
 import "./css/devdata.css";
-// import Title from "../assets/title.png";
 import close from "../assets/close.svg";
 import axios from "axios";
 import { useEffect, useState, useContext } from "react";
@@ -16,12 +15,6 @@ const Devdata = () => {
   const [loader, setLoader] = useState(true);
   const [localData, setLocalData] = useState<Array<string>>([]);
   let url = Config.URL;
-
-  //Function to get all developers at NGeni Labs
-  // const devData = async () => {
-  //   const devs: any = await axios.get(`${url}/index/devs`);
-  //   setAllDevs(devs.data);
-  // };
 
   //Function to handle selected stack to be called
   const handleStack = (e: any) => {
@@ -57,10 +50,6 @@ const Devdata = () => {
     let stacks = stack.data;
     setGetStacks(stacks);
   };
-
-  // useEffect(() => {
-  //   devData();
-  // }, []);
 
   useEffect(() => {
     getStack();
