@@ -17,6 +17,10 @@ import AboutPage from "./Views/Components/AboutPage";
 import FAQsPage from "./Views/Components/FAQsPage";
 import ContactUsPage from "./Views/Components/ContactUsPage";
 import ScreenView from "./Views/ScreenView";
+import AllProjects from "./Views/AllProjects";
+import TagsPage from "./Views/TagsPage";
+import SearchBar from "./Views/SearchBar";
+import SearchAttributes from "./Views/SearchAttributes";
 
 function App() {
   //Set a loading page
@@ -28,23 +32,7 @@ function App() {
     setTimeout(() => setIsLoading(false), 1000);
   }, []);
 
-  return (
-    <>
-      {/* {isLoading ? (
-        <>
-          <h4 className="loader_title" color="#52f2e2">
-            Team and Skill Matching Engine
-          </h4>
-          <motion.div
-            className="item"
-            initial={{ y: -250 }}
-            animate={{ y: 30 }}
-            transition={{ delay: 0.2, type: "spring", stiffness: 350 }}
-          >
-            <img src={Logo} alt="Alt" style={{ height: "150px" }} />
-          </motion.div>
-        </>
-      ) : ( */}
+  return (   
         <>
           <div className="container">
             <div className="main_container">
@@ -52,6 +40,9 @@ function App() {
                 <Routes>
                   <Route path='/' element={<ScreenView />} />
                   <Route path="/starterpage" element={<StarterPage />} />
+                  <Route path='/tagspage' element={<TagsPage />} />
+                  <Route path="/searchbar" element={<SearchBar />} />
+                  <Route path="/searchattributes" element={<SearchAttributes />} />
                   <Route path="/home" element={<Projects />} />
                   <Route path="/projects" element={<Projects />} />
                   <Route path="/projectDetails" element={<ProjectDetail />} />
@@ -59,6 +50,7 @@ function App() {
                   <Route path="/details" element={<Details />} />
                   <Route path="/profile" element={<Profile />} />
                   <Route path="/devdata" element={<Devdata />} />
+                  <Route path="/allprojects" element={<AllProjects />} />
                   <Route path="/contact" element={<ContactUs />} />
                   <Route path="/contactus" element={<ContactUsPage />} />
                   <Route path="/about" element={<AboutPage />} />
@@ -70,8 +62,6 @@ function App() {
             <Footer />
           </div>
         </>
-      {/* )} */}
-    </>
   );
 }
 

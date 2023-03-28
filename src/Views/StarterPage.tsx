@@ -63,14 +63,16 @@ const StarterPage = () => {
           </div>
         </Carousel>
       </div>
-      <Link to="/home" style={{ width: "100%" }}>
+      <Link to="/tagspage" style={{ width: "100%" }}>
         <div className="home_btn">
           <motion.button variants={buttonVariants} whileHover="hover">
             Build a Project
           </motion.button>
         </div>
       </Link>
-      <div className="explore"><p>Explore Projects</p> <img src={LeftChevron} alt="leftchevron" /> </div>
+      <Link to="/allprojects" style={{ width: "100%" }} className="rightChevron">
+        <div className="explore"><p>Explore Projects</p> <img src={LeftChevron} alt="leftchevron" /> </div>
+      </Link>
     </div>
   );
 };
