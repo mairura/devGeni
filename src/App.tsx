@@ -20,7 +20,6 @@ import ScreenView from "./Views/ScreenView";
 import AllProjects from "./Views/AllProjects";
 import TagsPage from "./Views/TagsPage";
 import SearchBar from "./Views/SearchBar";
-import SearchAttributes from "./Views/SearchAttributes";
 
 function App() {
   //Set a loading page
@@ -42,7 +41,6 @@ function App() {
                   <Route path="/starterpage" element={<StarterPage />} />
                   <Route path='/tagspage' element={<TagsPage />} />
                   <Route path="/searchbar" element={<SearchBar />} />
-                  <Route path="/searchattributes" element={<SearchAttributes />} />
                   <Route path="/home" element={<Projects />} />
                   <Route path="/projects" element={<Projects />} />
                   <Route path="/projectDetails" element={<ProjectDetail />} />

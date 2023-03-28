@@ -177,4 +177,142 @@ select.mySelectArrow {
     opacity: 1;
   }
 }
-
+/* Tags Page */
+.tags_container, .searchbar_container, .searchAtt_container{
+  font-family: "Orbitron", sans-serif;
+}
+.tags_header{
+  display: flex;
+  flex-direction: row;
+  color: #fff;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  margin-top: 10px;
+}
+.tags_header img{
+  height: 30px;
+  width: 30px;
+}
+.tags_header p {
+  padding-top: 8px;;
+}
+.category{
+  margin-top: 10px;
+}
+.category, .actions, .searchbar, .search_attr h5{
+  color: #fff;
+  text-align: left;
+  margin: 3em 0;
+}
+.main_request {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.main_request button {
+  border: 0.2px solid #52f2e2;
+  border-radius: 30px;
+  height: 20px;
+  margin: 5px 10px 20px 0;
+  padding: 4px 8px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 10px;
+  cursor: pointer;
+}
+.main_request button:hover {
+  background-color: #52f2e2;
+  font-weight: 500;
+}
+.tagspage{
+  margin-top: 10em;
+}
+/* Search Bar Page */
+.tagBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 20px ;
+}
+.searchBox {
+  width: 354px;
+  height: 49px;
+  background: #0f3f46;
+  border: 1px solid #52f2e2;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 1px 5px;
+}
+.tagBox input{
+  color: #fff;
+  padding-left: 10px;
+}
+.tag_box{
+  width: 354px;
+  height: 204px;
+  background: #0F3F46;
+  border: 0.5px solid #52F2E2;
+  border-radius: 10px;
+}
+.tag_boxData {
+  display: flex;
+  flex-direction: row;
+}
+/* Search Attributes */
+.search_attr{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.chooseTags{
+  width: 354px;
+  height: 138px;
+  left: 22px;
+  top: 172px;
+  background: #0F3F46;
+  border: 1px solid #52F2E2;
+  border-radius: 10px;
+  text-align: left;
+}
+.chooseTags p {
+  font-size: 10px;
+  line-height: 12px;
+  text-decoration-line: underline;
+  color: #FFFFFF;
+  padding: 6px;
+}
+.searchAttributes button {
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  color: #fff;
+  font-size: 10px;
+  text-align: left;
+  padding: 7px 5px;
+  cursor: pointer;
+}
+.searchAttrBox {
+  margin: 20px;
+}
+.search_box{
+  width: 354px;
+  background: #0F3F46;
+  border: 0.5px solid #52F2E2;
+  border-radius: 10px;
+  height: 77px;
+}
+.search_box p{
+  font-size: 10px;
+  line-height: 12px;
+  text-decoration-line: underline;
+  color: #FFFFFF;
+  padding: 6px;
+  text-align: left;
+}

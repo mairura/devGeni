@@ -1,7 +1,9 @@
 import { useContext, useState } from "react";
-import { ProjectContext } from "./Context";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import Logo from "../assets/Logo.png"
+import { Config } from "../config/config";
+import { ProjectContext, IProjects, ISingleDev, IParams } from "./Context";
 
 const buttonVariants = {
     hover: {
@@ -15,30 +17,61 @@ const buttonVariants = {
     },
   };
 
+
 const SearchBar = () => {
-    const { projects, devs, params } = useContext(ProjectContext);
     const [inputValue, setInputValue] = useState("");
+    const [inputData, setInputData] = useState("");
+    const [projects, setProjects] = useState<Array<IProjects>>([]);
+    const [params, setParams] = useState<Array<IParams>>([]);
+    let url = Config.URL;
 
     const handleInputChange = (event: any) => {
         setInputValue(event.target.value);
+    };
+
+    const handleInputChangeData = (event: any) => {
+    setInputData(event.target.value);
+    };
+
+
+    //Function takes in user description
+    const handleAPICall = () => {
+        const endpoint: string = `${url}/index/search_projects`;
+        fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ description: inputData }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            setProjects(data.projects_data);
+            console.log("Print Params:", data.projects_data);
+            setParams(data.params);
+          })
+          .catch((error) => {
+            console.error(error.message);
+          });
       };
   return (
     <div className='searchbar_container'>
-        <div className='searchbar_header'>DEVGENI</div>
-        <div>
-            <h4>Tell Us what you would like to build</h4>
-            <div className="select1">
-              <input
-                type="text"
-                value={inputValue}
-                onChange={handleInputChange}
-                className="searchBox"
-                placeholder="Project Title"
-              />
-            </div>
+        <div className='tags_header'><img src={Logo} alt="logo" /><p>DEVGENI</p></div>
+        <div className="searchbar">
+            <h5>Tell Us in Detail what You'd Like Us To Build</h5>
             <div className="tagBox">
-                <div className="tag_box">
-                  <p>Description</p>
+                <input
+                    type="text"
+                    value={inputData}
+                    onChange={handleInputChangeData}
+                    className="tag_box"
+                    // placeholder="Describe your project"
+                />
+                <button onClick={handleAPICall} className="btnSearch">
+                    Go
+                </button>
+            </div>
+            <div className="searchAttrBox">
+                <div className="search_box">
+                  <p>Tags</p>
                   <div className="tag_boxData">
                     {params.map((param: any) => {
                       return <p>{param}</p>;
@@ -47,8 +80,8 @@ const SearchBar = () => {
                 </div>
             </div>
         </div>
-        <Link to="/searchattributes" style={{ width: "100%" }}>
-        <div className="home_btn">
+        <Link to="/projects" style={{ width: "100%" }}>
+        <div className="home_btn tagspage">
           <motion.button variants={buttonVariants} whileHover="hover">
             Next
           </motion.button>
