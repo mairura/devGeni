@@ -94,12 +94,11 @@ function Projects() {
         <div className="main_container">
           <div className="search-bar">
             <TopBar />
-            
-                  <div className="tag_boxData">
-                    {params.map((param: any) => {
-                      return <p>{param}</p>;
-                    })}
-                  </div>
+              <div className="tag_boxData">
+                {params.map((param: any) => {
+                  return <p>{param}</p>;
+                })}
+              </div>
              
             {/* <div className="main_search">
               <p>What would you like to do?</p>

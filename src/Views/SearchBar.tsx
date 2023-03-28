@@ -58,16 +58,10 @@ const SearchBar = () => {
         <div className="searchbar">
             <h5>Tell Us in Detail what You'd Like Us To Build</h5>
             <div className="tagBox">
-                <input
-                    type="text"
-                    value={inputData}
-                    onChange={handleInputChangeData}
-                    className="tag_box"
-                    // placeholder="Describe your project"
-                />
-                <button onClick={handleAPICall} className="btnSearch">
+                <textarea className="tag_box" rows={12} cols={4} value={inputData} onChange={handleInputChangeData}></textarea>
+                <p onClick={handleAPICall} className="btnSearch">
                     Go
-                </button>
+                </p>
             </div>
             <div className="searchAttrBox">
                 <div className="search_box">
