@@ -5,6 +5,7 @@ import axios from "axios"
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import linkPay from "../assets/linkpay.png";
+import TopBar from './Components/TopBar';
 
 const containerVariants = {
   hidden: {
@@ -29,6 +30,8 @@ const containerVariants = {
 
 const AllProjects = () => {
   const [projects, setProjects] = useState<Array<IProjects>>([]);
+  const [numProjects, setNumProjects] = useState("0");
+
     let url = Config.URL;
     //Function to handle all projects
     const allProjects = async () => {
@@ -37,6 +40,8 @@ const AllProjects = () => {
             const { data } = await axios.get(endpoint);
             console.log("Projects from All projects:", data)
             setProjects(data)
+            console.log("Print Params Length:", data.length);
+            setNumProjects(data.length);
         } catch (error: any) {
             console.error("Error:", error.message)
         }
@@ -48,9 +53,13 @@ const AllProjects = () => {
     }, [])
   return (
     <>
+    <TopBar />
+    <div className="matchRateData">
+        <p>We found {numProjects} projects matching your search</p>
+    </div>
     <div
       style={{
-        marginTop: "350px",
+        marginTop: "5px",
         display: "grid",
         gridTemplateColumns: "1fr 1fr",
       }}

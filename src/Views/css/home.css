@@ -1,7 +1,13 @@
 .home_container {
   height: 100vh;
   background: #031926;
+  animation: slide-up 1.5s ease-in-out;
 }
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
 .main_logo {
   height: 30vh;
   display: flex;
