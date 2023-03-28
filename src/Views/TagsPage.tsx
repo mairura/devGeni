@@ -43,7 +43,7 @@ const TagsPage = () => {
                 })}
               </div>
         </div>
-        <Link to="/home" style={{ width: "100%" }}>
+        <Link to="/searchbar" style={{ width: "100%" }}>
         <div className="home_btn">
           <motion.button variants={buttonVariants} whileHover="hover">
             Next

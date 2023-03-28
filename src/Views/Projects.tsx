@@ -93,7 +93,12 @@ function Projects() {
         <div className="main_container">
           <div className="search-bar">
             <TopBar />
-            <div className="main_search">
+            <div className="tag_boxData">
+                    {params.map((param: any) => {
+                      return <p>{param}</p>;
+                    })}
+                  </div>
+            {/* <div className="main_search">
               <p>What would you like to do?</p>
               <div className="main_request">
                 {requests.map((request: any, index: any) => {
@@ -120,17 +125,13 @@ function Projects() {
               <div className="tagBox">
                 <div className="tag_box">
                   <p>Choose from Tags</p>
-                  <div className="tag_boxData">
-                    {params.map((param: any) => {
-                      return <p>{param}</p>;
-                    })}
-                  </div>
+                  
                 </div>
-              </div>
+              </div> */}
               <div className="matchRateData">
                 <p>We found {numProjects} projects matching your search</p>
               </div>
-            </>
+            {/* </> */}
           </div>
         </div>
       </>
