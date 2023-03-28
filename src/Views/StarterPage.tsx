@@ -4,6 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import { motion } from "framer-motion";
 import Logo from "../assets/Logo.png";
+import LeftChevron from "../assets/LeftChevron.svg"
 
 const buttonVariants = {
   hover: {
@@ -21,24 +22,13 @@ const StarterPage = () => {
   return (
     <div className="home_container">
       <div className="gradient" />
-      <motion.div
-        className="main_logo"
-        initial={{ y: -250 }}
-        animate={{ y: 0 }}
-        transition={{ ease: "easeOut", duration: 2 }}
-      >
+      <div className="main_logo">
         <img src={Logo} alt="logo" />
-      </motion.div>
+      </div>
       <div className="homeHead">
-        <motion.div
-          className="home_header"
-          initial={{ y: 250 }}
-          animate={{ y: 10 }}
-          transition={{ delay: 0.2, type: "spring", stiffness: 150 }}
-          style={{ position: "relative" }}
-        >
+        <div className="home_header">
           <p>DEVGENI</p>
-        </motion.div>
+        </div>
         <div className="home_subheader">
           <p>DesiGn.DeVelop.DeLiver</p>
         </div>
@@ -76,10 +66,11 @@ const StarterPage = () => {
       <Link to="/home" style={{ width: "100%" }}>
         <div className="home_btn">
           <motion.button variants={buttonVariants} whileHover="hover">
-            Explore
+            Build a Project
           </motion.button>
         </div>
       </Link>
+      <div className="explore"><p>Explore Projects</p> <img src={LeftChevron} alt="leftchevron" /> </div>
     </div>
   );
 };

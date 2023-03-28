@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route, Link, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Projects from "./Views/Projects";
 import "./Views/css/style.css";
 import Footer from "./Views/Components/Footer";
@@ -9,16 +9,14 @@ import { useEffect, useState } from "react";
 import Details from "./Views/Details";
 import Profile from "./Views/Profile";
 import Devdata from "./Views/Devdata";
-import Home from "./Views/Home";
 import NotFound from "./Views/Components/NotFound";
 import StarterPage from "./Views/StarterPage";
 // import { useWallet } from "react-binance-wallet";
-import Logo from "./assets/Logo.png";
-import { motion } from "framer-motion";
 import ContactUs from "./Views/Components/ContactUs";
 import AboutPage from "./Views/Components/AboutPage";
 import FAQsPage from "./Views/Components/FAQsPage";
 import ContactUsPage from "./Views/Components/ContactUsPage";
+import ScreenView from "./Views/ScreenView";
 
 function App() {
   //Set a loading page
@@ -32,7 +30,7 @@ function App() {
 
   return (
     <>
-      {isLoading ? (
+      {/* {isLoading ? (
         <>
           <h4 className="loader_title" color="#52f2e2">
             Team and Skill Matching Engine
@@ -46,13 +44,14 @@ function App() {
             <img src={Logo} alt="Alt" style={{ height: "150px" }} />
           </motion.div>
         </>
-      ) : (
+      ) : ( */}
         <>
           <div className="container">
             <div className="main_container">
               <div className="main">
                 <Routes>
-                  <Route path="/" element={<StarterPage />} />
+                  <Route path='/' element={<ScreenView />} />
+                  <Route path="/starterpage" element={<StarterPage />} />
                   <Route path="/home" element={<Projects />} />
                   <Route path="/projects" element={<Projects />} />
                   <Route path="/projectDetails" element={<ProjectDetail />} />
@@ -71,7 +70,7 @@ function App() {
             <Footer />
           </div>
         </>
-      )}
+      {/* )} */}
     </>
   );
 }
