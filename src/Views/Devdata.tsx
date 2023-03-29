@@ -58,7 +58,7 @@ const Devdata = () => {
     if (tagsNewLocal !== null) {
       getData(tagsNewLocal);
     }
-  });
+  }, []);
 
   //Function to clear stack in localStorage
   const clearStack = () => {
@@ -100,11 +100,11 @@ const Devdata = () => {
 
   useEffect(() => {
     checkLocalStorage();
-  });
+  }, []);
 
   useEffect(() => {
     setTimeout(() => setLoader(false), 2000);
-  });
+  }, []);
 
   let trimDesc = function (string: any, length: any) {
     return string.length > length
