@@ -69,8 +69,6 @@ const SearchBar = () => {
         return null;
     } else {
         let tag_string: any = localStorage.getItem("dataParams");
-        const tagCopy = tag_string.split()
-        console.log("Print All params in all:", tagCopy)
         let results: any;
         if (tag_string != null) {
         results = SplitNames(tag_string);
