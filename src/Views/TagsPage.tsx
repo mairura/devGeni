@@ -15,13 +15,14 @@ const buttonVariants = {
   };
 
 const TagsPage = () => {
-    const actions = ["I want...", "Design me a...", "Build me a mobile app...", "Design me a...", "Design me a...", "Design me a..."];
-    const requests = ["App Development", "Web3 Design", "Trading Bots", "Wallet", "NFT Marketplace", "Web3 Social", "DAO", "AI Chatbots", "Gateways/CEX", "DEFI", "Games"]
+  const actions = ["I want...", "Design me a...", "Build me a mobile app...", "Design me a...", "Design me a...", "Design me a..."];
+  const requests = ["App Development", "Web3 Design", "Trading Bots", "Wallet", "NFT Marketplace", "Web3 Social", "DAO", "AI Chatbots", "Gateways/CEX", "DEFI", "Games"];
+
   return (
     <div className='tags_container'>
         <div className='tags_header'><img src={Logo} alt="logo"/><p>DEVGENI</p></div>
         <div className='category'>
-            <h5>Choose what you're interested in.</h5>
+            <h4>Choose what you're interested in.</h4>
             <div className="main_request">
                 {requests.map((request: any, index: any) => {
                   return (
@@ -33,7 +34,7 @@ const TagsPage = () => {
             </div>
         </div>
         <div className='actions'>
-            <h5>Choose Your Actions</h5>
+            <h4>Choose Your Actions</h4>
             <div className="main_request">
                 {actions.map((request: any, index: any) => {
                   return (
@@ -42,7 +43,7 @@ const TagsPage = () => {
                     </button>
                   );
                 })}
-              </div>
+            </div>
         </div>
         <Link to="/searchbar" style={{ width: "100%" }}>
           <div className="home_btn tagspage">

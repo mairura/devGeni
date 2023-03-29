@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import linkPay from "../assets/linkpay.png";
 import TopBar from './Components/TopBar';
+import { languages, teams } from "../icons";
 
 const containerVariants = {
   hidden: {
@@ -141,10 +142,10 @@ const AllProjects = () => {
                           >
                             {match_rate}%{" "}
                           </span>
-                          {/* <span>{teams}</span>
+                          <span>{teams}</span>
                           <p className="lengths">{teamLength}</p>
                           <span>{languages}</span>
-                          <p className="lengths">{stackLength}</p> */}
+                          <p className="lengths">{stackLength}</p>
                         </div>
                       </div>
                     </Link>

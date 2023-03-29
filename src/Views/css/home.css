@@ -165,7 +165,6 @@ select.mySelectArrow {
 .screen-container.fade-out {
   opacity: 0;
 }
-
 @keyframes fade-out {
   from {
     opacity: 1;
@@ -174,7 +173,6 @@ select.mySelectArrow {
     opacity: 0;
   }
 }
-
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -207,7 +205,7 @@ select.mySelectArrow {
 .category{
   margin-top: 10px;
 }
-.category, .actions, .searchbar, .search_attr h5{
+.category, .actions, .searchbar, .search_attr h4{
   color: #fff;
   text-align: left;
   margin: 3em 0;
@@ -220,12 +218,12 @@ select.mySelectArrow {
 .main_request button {
   border: 0.2px solid #52f2e2;
   border-radius: 30px;
-  height: 20px;
+  height: 30px;
   margin: 5px 10px 20px 0;
-  padding: 4px 8px;
+  padding: 8px 8px;
   background-color: transparent;
   color: #fff;
-  font-size: 10px;
+  font-size: 12px;
   cursor: pointer;
 }
 .main_request button:hover {
@@ -279,6 +277,7 @@ select.mySelectArrow {
 .tag_boxData {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 /* Search Attributes */
 .search_attr{
@@ -324,13 +323,18 @@ select.mySelectArrow {
   background: #0F3F46;
   border: 0.5px solid #52F2E2;
   border-radius: 10px;
-  height: 77px;
+  max-height: 250px;
+  padding: 6px 0;
 }
 .search_box p{
-  font-size: 10px;
+  font-size: 12px;
   line-height: 12px;
   text-decoration-line: underline;
   color: #FFFFFF;
   padding: 6px;
   text-align: left;
+}
+.tag_boxData p{
+  text-decoration: none;
+  
 }

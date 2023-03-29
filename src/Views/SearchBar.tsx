@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Logo from "../assets/Logo.png"
 import { Config } from "../config/config";
-import { IProjects, IParams, ProjectContext, ISingleDev } from "./Context";
-import axios from "axios"
+import { IProjects, IParams, ISingleDev } from "./Context";
 
 const buttonVariants = {
     hover: {
@@ -37,19 +36,6 @@ const SearchBar = () => {
     setInputData(event.target.value);
     };
 
-
-    //Function to handle selected stack to be called
-    // const handleStack = (e: any) => {
-    //     e.preventDefault();
-    //     let tagList: any = [...localData, e.target.value];
-    //     if (!localData.includes(e.target.value)) {
-    //     setLocalData(tagList);
-    //     let newList: string = tagList.join();
-    //     window.localStorage.setItem("dataTags", newList);
-    //     getData(newList);
-    //     }
-    // };
-
     //Function takes in user description
     const handleAPICall = () => {
         const endpoint: string = `${url}/index/search_projects`;
@@ -60,16 +46,18 @@ const SearchBar = () => {
         })
           .then((response) => response.json())
           .then((data) => {
+              console.log(data)
+            localStorage.setItem("data_projects_searched",JSON.stringify(data))
             setProjects(data.projects_data);
             // console.log("Print Params:", data.params);
             const projectParams = data.params;
             setParams(projectParams);
-            window.localStorage.setItem("dataParams", projectParams)
+            localStorage.setItem("dataParams", projectParams)
           })
           .catch((error) => {
             console.error(error.message);
           });
-      };
+    };
 
     const SplitNames = (names: string) => {
     const names_split = names.split(",");
@@ -86,10 +74,10 @@ const SearchBar = () => {
         let results: any;
         if (tag_string != null) {
         results = SplitNames(tag_string);
-        setParams(tagCopy)
+        setParams(results)
         }
         return results;
-    }
+        }
     }
 
     useEffect(() => {
@@ -100,27 +88,24 @@ const SearchBar = () => {
     <div className='searchbar_container'>
         <div className='tags_header'><img src={Logo} alt="logo" /><p>DEVGENI</p></div>
         <div className="searchbar">
-            <h5>Tell Us in Detail what You'd Like Us To Build</h5>
+            <h4>Tell Us in Detail What You'd Like Us To Build</h4>
             <div className="tagBox">
-                <textarea  className="tag_box" rows={12} cols={4} value={inputData} onChange={handleInputChangeData}></textarea>
-                <p onClick={handleAPICall} className="btnSearch">
-                    Go
-                </p>
+            <textarea onKeyDown={(event) => {
+            event.key === "Enter" && handleAPICall();
+            }} className="tag_box" rows={12} cols={4} value={inputData} onChange={handleInputChangeData}></textarea>
             </div>
             <div className="searchAttrBox">
                 <div className="search_box">
                   <p>Tags</p>
-                  <ProjectContext.Provider value={{projects, params, devs}}>
                   <div className="tag_boxData">
                     {params.map((param: any) => {
                       return <p>{param}</p>;
                     })}
                   </div>
-                  </ProjectContext.Provider>
                 </div>
             </div>
         </div>
-        <Link to="/projects" style={{ width: "100%" }}>
+        <Link  to='/projects' style={{ width: "100%" }}>
         <div className="home_btn tagspage">
           <motion.button variants={buttonVariants} whileHover="hover">
             Next
@@ -130,5 +115,4 @@ const SearchBar = () => {
     </div>
   )
 }
-
 export default SearchBar

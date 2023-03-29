@@ -1,6 +1,5 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import Projects from "./Views/Projects";
 import "./Views/css/style.css";
 import Footer from "./Views/Components/Footer";
 import ProjectDetail from "./Views/ProjectDetail";
@@ -20,6 +19,7 @@ import ScreenView from "./Views/ScreenView";
 import AllProjects from "./Views/AllProjects";
 import TagsPage from "./Views/TagsPage";
 import SearchBar from "./Views/SearchBar";
+import ProjectCard from "./Views/ProjectCard";
 
 function App() {
   //Set a loading page
@@ -41,8 +41,7 @@ function App() {
                   <Route path="/starterpage" element={<StarterPage />} />
                   <Route path='/tagspage' element={<TagsPage />} />
                   <Route path="/searchbar" element={<SearchBar />} />
-                  <Route path="/home" element={<Projects />} />
-                  <Route path="/projects" element={<Projects />} />
+                  <Route path="/projects" element={<ProjectCard />} />
                   <Route path="/projectDetails" element={<ProjectDetail />} />
                   <Route path="/book-now" element={<BookNow />} />
                   <Route path="/details" element={<Details />} />

@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { ProjectContext } from "./Context";
 import { Config } from "../config/config";
 import { motion } from "framer-motion";
+import TopBar from "./Components/TopBar";
 
 const containerVariants = {
   hidden: {
@@ -30,26 +31,32 @@ const containerVariants = {
 };
 
 function ProjectCard() {
-  const { projects, devs, params } = useContext(ProjectContext);
-  const dev_data = devs;
-  const dev_length = dev_data.length;
-  const dev_dataSlice = dev_data.slice(0, 3).length;
-  const diff = dev_length - dev_dataSlice;
+  let projects_only:any[] = []
+  if(localStorage.getItem('data_projects_searched')){
+    const data_projects_searched:any = localStorage.getItem('data_projects_searched')
+    projects_only = JSON.parse(data_projects_searched).projects_data
+  }
 
-  console.log("GET PROJECT DATA ON CARD PAGE:", params);
+  let params_only:any[] = []
+  if(localStorage.getItem('dataParams')){
+    const dataParams:any = localStorage.getItem('dataParams')
+    params_only = dataParams.split();
+    console.log("=======>",params_only)
+  }
+  
+
 
   let url = Config.URL;
-
   return (
     <>
       <div
         style={{
-          marginTop: "30px",
+          marginTop: "150px",
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
         }}
       >
-        {projects.map((project: any, index: any) => {
+        {projects_only.map((project: any, index: any) => {
           let team: {}[] | undefined = project?.team;
           let stack: String[] | undefined = project?.tech_stack;
           let desc: String[] | undefined = project?.description;
@@ -67,6 +74,21 @@ function ProjectCard() {
 
           return (
             <>
+            <div className="main_container">
+            <div className="search-bar">
+              <TopBar />
+                <div className="tag_boxData" >
+                  {params_only?.map((param: any) => {
+                    return <p style={{ color: "white"}}>{param}</p>;
+                  })}
+                </div>
+              <>
+                <div className="matchRateData">
+                  <p>We found 0 projects matching your search</p>
+                </div>
+              </>
+            </div>
+          </div>
               <motion.div
                 className="card-main"
                 variants={containerVariants}
@@ -86,7 +108,7 @@ function ProjectCard() {
                       >
                         <div>
                           <p className="card_devs">
-                            {dev_data?.slice(0, 3).map((member: any) => (
+                            {team?.slice(0, 3).map((member: any) => (
                               <TeamMember dev={member} className="developer" />
                             ))}
                             {/* <span className="main-member">+{diff}</span> */}
@@ -139,7 +161,7 @@ function ProjectCard() {
               </motion.div>
             </>
           );
-        })}
+         })} 
       </div>
     </>
   );
