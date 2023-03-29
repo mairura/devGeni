@@ -59,7 +59,7 @@ const AllProjects = () => {
     </div>
     <div
       style={{
-        marginTop: "5px",
+        marginTop: "15px",
         display: "grid",
         gridTemplateColumns: "1fr 1fr",
       }}

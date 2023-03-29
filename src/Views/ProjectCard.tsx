@@ -44,7 +44,7 @@ function ProjectCard() {
     <>
       <div
         style={{
-          marginTop: "350px",
+          marginTop: "30px",
           display: "grid",
           gridTemplateColumns: "1fr 1fr",
         }}

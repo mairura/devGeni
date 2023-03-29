@@ -1,9 +1,10 @@
-import { useContext, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Logo from "../assets/Logo.png"
 import { Config } from "../config/config";
-import { ProjectContext, IProjects, ISingleDev, IParams } from "./Context";
+import { IProjects, IParams, ProjectContext, ISingleDev } from "./Context";
+import axios from "axios"
 
 const buttonVariants = {
     hover: {
@@ -23,6 +24,9 @@ const SearchBar = () => {
     const [inputData, setInputData] = useState("");
     const [projects, setProjects] = useState<Array<IProjects>>([]);
     const [params, setParams] = useState<Array<IParams>>([]);
+    const [devs, setDevs] = useState<Array<ISingleDev>>([]);
+    const [localData, setLocalData] = useState<Array<string>>([]);
+
     let url = Config.URL;
 
     const handleInputChange = (event: any) => {
@@ -33,6 +37,18 @@ const SearchBar = () => {
     setInputData(event.target.value);
     };
 
+
+    //Function to handle selected stack to be called
+    // const handleStack = (e: any) => {
+    //     e.preventDefault();
+    //     let tagList: any = [...localData, e.target.value];
+    //     if (!localData.includes(e.target.value)) {
+    //     setLocalData(tagList);
+    //     let newList: string = tagList.join();
+    //     window.localStorage.setItem("dataTags", newList);
+    //     getData(newList);
+    //     }
+    // };
 
     //Function takes in user description
     const handleAPICall = () => {
@@ -45,20 +61,48 @@ const SearchBar = () => {
           .then((response) => response.json())
           .then((data) => {
             setProjects(data.projects_data);
-            console.log("Print Params:", data.projects_data);
-            setParams(data.params);
+            // console.log("Print Params:", data.params);
+            const projectParams = data.params;
+            setParams(projectParams);
+            window.localStorage.setItem("dataParams", projectParams)
           })
           .catch((error) => {
             console.error(error.message);
           });
       };
+
+    const SplitNames = (names: string) => {
+    const names_split = names.split(",");
+    return names_split;
+    };
+
+    function checkLocalStorage() {
+    if (!localStorage.length) {
+        return null;
+    } else {
+        let tag_string: any = localStorage.getItem("dataParams");
+        const tagCopy = tag_string.split()
+        console.log("Print All params in all:", tagCopy)
+        let results: any;
+        if (tag_string != null) {
+        results = SplitNames(tag_string);
+        setParams(tagCopy)
+        }
+        return results;
+    }
+    }
+
+    useEffect(() => {
+        checkLocalStorage();
+    }, []);
+
   return (
     <div className='searchbar_container'>
         <div className='tags_header'><img src={Logo} alt="logo" /><p>DEVGENI</p></div>
         <div className="searchbar">
             <h5>Tell Us in Detail what You'd Like Us To Build</h5>
             <div className="tagBox">
-                <textarea className="tag_box" rows={12} cols={4} value={inputData} onChange={handleInputChangeData}></textarea>
+                <textarea  className="tag_box" rows={12} cols={4} value={inputData} onChange={handleInputChangeData}></textarea>
                 <p onClick={handleAPICall} className="btnSearch">
                     Go
                 </p>
@@ -66,11 +110,13 @@ const SearchBar = () => {
             <div className="searchAttrBox">
                 <div className="search_box">
                   <p>Tags</p>
+                  <ProjectContext.Provider value={{projects, params, devs}}>
                   <div className="tag_boxData">
                     {params.map((param: any) => {
                       return <p>{param}</p>;
                     })}
                   </div>
+                  </ProjectContext.Provider>
                 </div>
             </div>
         </div>

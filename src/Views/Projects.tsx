@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import "./css/style.css";
 import ProjectCard from "./ProjectCard";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { ProjectContext, IProjects, ISingleDev, IParams } from "./Context";
+import { ProjectContext } from "./Context";
 import { Config } from "../config/config";
 import TopBar from "./Components/TopBar";
 
@@ -16,18 +16,19 @@ function Projects() {
   const [inputValue, setInputValue] = useState("");
   const [numProjects, setNumProjects] = useState("0");
   const { projects, devs, params } = useContext(ProjectContext);
+  console.log("Print Params:", params)
 
   // const [description, setDescription] = useState("");
 
-  const requests = ["I want...", "Design me a...", "Build me a mobile app..."];
+  // const requests = ["I want...", "Design me a...", "Build me a mobile app..."];
 
-  const handleClick = (request: any) => {
-    setInputValue(request);
-  };
+  // const handleClick = (request: any) => {
+  //   setInputValue(request);
+  // };
 
-  const handleInputChange = (event: any) => {
-    setInputValue(event.target.value);
-  };
+  // const handleInputChange = (event: any) => {
+  //   setInputValue(event.target.value);
+  // };
 
   //Function takes in user description
   // const handleAPICall = () => {
@@ -94,9 +95,9 @@ function Projects() {
         <div className="main_container">
           <div className="search-bar">
             <TopBar />
-              <div className="tag_boxData">
+              <div className="tag_boxData" >
                 {params.map((param: any) => {
-                  return <p>{param}</p>;
+                  return <p style={{ color: "white"}}>{param}</p>;
                 })}
               </div>
              
