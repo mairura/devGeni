@@ -4,7 +4,6 @@ import "./css/card.css";
 import linkPay from "../assets/linkpay.png";
 import { languages, teams } from "../icons";
 import { Link } from "react-router-dom";
-import { Config } from "../config/config";
 import { motion } from "framer-motion";
 import TopBar from "./Components/TopBar";
 
@@ -44,7 +43,6 @@ function ProjectCard() {
   }
   console.log("Print All Projects Data", params_only)
   
-  let url = Config.URL;
   return (
     <>
       <div
@@ -62,7 +60,7 @@ function ProjectCard() {
           let proj_title: string | undefined = project?.proj_name;
           let teamLength: number | undefined = team?.length;
           let stackLength: number | undefined = stack?.length;
-          let splitStack: string | undefined = stack?.join();
+          // let splitStack: string | undefined = stack?.join();
 
           let trimDesc = function (string: any, length: any) {
             return string.length > length
@@ -76,8 +74,8 @@ function ProjectCard() {
             <div className="search-bar">
               <TopBar />
                 <div className="tag_boxData" >
-                  {params_only.map((param: any) => {
-                    return <p style={{ color: "white"}}>{param}</p>;
+                  {params_only.map((param: any, index: any) => {
+                    return <p key={index} style={{ color: "white"}}>{param}</p>;
                   })}
                 </div>
               <>

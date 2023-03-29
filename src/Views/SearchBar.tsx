@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Logo from "../assets/Logo.png"
 import { Config } from "../config/config";
-import { IProjects, IParams, ISingleDev } from "./Context";
+import { IParams } from "./Context";
 import close from "../assets/close.svg";
+import ContactUs from "./Components/ContactUs";
+import Hambuger from "../assets/ham.svg";
 
 const buttonVariants = {
     hover: {
@@ -20,21 +22,30 @@ const buttonVariants = {
 
 
 const SearchBar = () => {
-    const [inputValue, setInputValue] = useState("");
+    // const [inputValue, setInputValue] = useState("");
     const [inputData, setInputData] = useState("");
-    const [projects, setProjects] = useState<Array<IProjects>>([]);
     const [params, setParams] = useState<Array<IParams>>([]);
-    const [devs, setDevs] = useState<Array<ISingleDev>>([]);
-    const [localData, setLocalData] = useState<Array<string>>([]);
+    // const [devs, setDevs] = useState<Array<ISingleDev>>([]);
+    // const [localData, setLocalData] = useState<Array<string>>([]);
 
     let url = Config.URL;
 
-    const handleInputChange = (event: any) => {
-        setInputValue(event.target.value);
-    };
+    // const handleInputChange = (event: any) => {
+    //     setInputValue(event.target.value);
+    // };
 
     const handleInputChangeData = (event: any) => {
     setInputData(event.target.value);
+    };
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleIcon = () => {
+      setIsOpen(!isOpen);
+    };
+  
+    const closeMenu = () => {
+      setIsOpen(false);
     };
 
     //Function takes in user description
@@ -49,7 +60,6 @@ const SearchBar = () => {
           .then((data) => {
             
             localStorage.setItem("data_projects_searched",JSON.stringify(data))
-            setProjects(data.projects_data);
             const projectParams = data.params;
             setParams(projectParams);
             localStorage.setItem("dataParams", projectParams);
@@ -90,7 +100,17 @@ const SearchBar = () => {
 
   return (
     <div className='searchbar_container'>
+      <div>
         <div className='tags_header'><img src={Logo} alt="logo" /><p>DEVGENI</p></div>
+          <div className="hambuger">
+            {isOpen ? (
+              <img src={close} alt="close" onClick={closeMenu} />
+            ) : (
+              <img src={Hambuger} alt="logo" onClick={toggleIcon} />
+            )}
+          </div>
+      {isOpen && <ContactUs />}
+      </div>
         <div className="searchbar">
             <h4>Tell Us in Detail What You'd Like Us To Build</h4>
             <div className="tagBox">
@@ -102,8 +122,8 @@ const SearchBar = () => {
                 <div className="search_box">
                   <p>Tags</p>
                   <div className="tag_boxData">
-                    {params.map((param: any) => {
-                      return <p>{param}</p>;
+                    {params.map((param: any, index: any) => {
+                      return <p key={index}>{param}</p>;
                     })}
                     <img src={close} alt="close" onClick={clearStack} />
                   </div>
