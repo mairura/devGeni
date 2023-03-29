@@ -17,8 +17,8 @@ import ContactUsPage from "./Views/Components/ContactUsPage";
 import ScreenView from "./Views/ScreenView";
 import AllProjects from "./Views/AllProjects";
 import TagsPage from "./Views/TagsPage";
-// import SearchBar from "./Views/SearchBar";
-// import ProjectCard from "./Views/ProjectCard";
+import SearchBar from "./Views/SearchBar";
+import ProjectCard from "./Views/ProjectCard";
 
 function App() {
   //Set a loading page
@@ -39,8 +39,8 @@ function App() {
                   <Route path='/' element={<ScreenView />} />
                   <Route path="/starterpage" element={<StarterPage />} />
                   <Route path='/tagspage' element={<TagsPage />} />
-                  {/* <Route path="/searchbar" element={<SearchBar />} /> */}
-                  {/* <Route path="/projects" element={<ProjectCard />} /> */}
+                  <Route path="/searchbar" element={<SearchBar />} />
+                  <Route path="/projects" element={<ProjectCard />} />
                   <Route path="/projectDetails" element={<ProjectDetail />} />
                   <Route path="/book-now" element={<BookNow />} />
                   <Route path="/details" element={<Details />} />

@@ -1,4 +1,4 @@
-body {
+/* body {
   overflow-x: hidden;
   background-color: #031926;
   background-size: cover;
@@ -171,9 +171,9 @@ body {
 .team_stack {
   display: flex;
   justify-content: center;
-}
+} */
 /*---------Contact Us Page---------*/
-.contactUsContainer {
+/* .contactUsContainer {
   height: 100vh;
   width: 100%;
   background: #031926;
@@ -204,4 +204,4 @@ body {
   border-width: 1px 0px;
   border-style: solid;
   border: 1px solid #52f2e2;
-}
+} */
