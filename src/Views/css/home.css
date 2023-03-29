@@ -1,4 +1,4 @@
-/* .home_container {
+.home_container {
   height: 100vh;
   background: #031926;
   animation: slide-up 1.5s ease-in-out;
@@ -151,10 +151,10 @@ select.mySelectArrow {
   margin: 40px auto;
   border-radius: 50%;
   background: #fff;
-} */
+}
 
 /* Screen View Page */
-/* .screen_container{
+.screen_container{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -180,9 +180,9 @@ select.mySelectArrow {
   to {
     opacity: 1;
   }
-} */
+}
 /* Tags Page */
-/* .tags_container, .searchbar_container, .searchAtt_container{
+.tags_container, .searchbar_container, .searchAtt_container{
   font-family: "Orbitron", sans-serif;
 }
 .tags_header{
@@ -232,9 +232,9 @@ select.mySelectArrow {
 }
 .tagspage{
   margin-top: 10em;
-} */
+}
 /* Search Bar Page */
-/* .tagBox {
+.tagBox {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -264,23 +264,23 @@ select.mySelectArrow {
   max-height: 450px;
   min-width: 300px;
   min-height: 205px;
-} */
-/* .btnSearch { */
+}
+.btnSearch {
   /* border: 1px solid red; */
-  /* background: transparent; */
+  background: transparent;
   /* padding: 2px 10px; */
-  /* color: #fff; */
-  /* font-size: 10px; */
-  /* height: 204px; */
+  color: #fff;
+  font-size: 10px;
+  height: 204px;
   /* border-radius: 0 10px 10px 0; */
-/* } */
-/* .tag_boxData {
+}
+.tag_boxData {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 /* Search Attributes */
-/* .search_attr{
+.search_attr{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -337,4 +337,4 @@ select.mySelectArrow {
 }
 .tag_boxData p{
   text-decoration: none;
-}  */
+}
