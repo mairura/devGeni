@@ -72,7 +72,7 @@ const StarterPage = () => {
         </div>
       </Link>
       <Link to="/allprojects" style={{ width: "100%" }} className="rightChevron">
-        <div className="explore"><p>Explore Projects</p> <img src={LeftChevron} alt="leftchevron" /> </div>
+        <div className="explore"><p>Explore Projects</p><img src={LeftChevron} alt="leftchevron" /></div>
       </Link>
     </div>
   );
