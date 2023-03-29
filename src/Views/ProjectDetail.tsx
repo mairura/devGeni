@@ -144,7 +144,7 @@ function ProjectDetail() {
               interval={4000}
               showStatus={false}
             > */}
-              {devs?.map((member: any) => (
+              {devs?.map((member: any, index: any) => (
                 <TeamMember dev={member} className="member_carousel" />
               ))}
               {/* </Carousel> */}
