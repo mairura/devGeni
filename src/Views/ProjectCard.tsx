@@ -1,11 +1,9 @@
 import "./css/style.css";
 import "./css/card.css";
-import { useContext } from "react";
 import TeamMember from "./Components/TeamMember";
 import linkPay from "../assets/linkpay.png";
 import { languages, teams } from "../icons";
 import { Link } from "react-router-dom";
-import { ProjectContext } from "./Context";
 import { Config } from "../config/config";
 import { motion } from "framer-motion";
 import TopBar from "./Components/TopBar";
@@ -36,12 +34,12 @@ function ProjectCard() {
     const data_projects_searched:any = localStorage.getItem('data_projects_searched')
     projects_only = JSON.parse(data_projects_searched).projects_data
   }
+  const projectLength = projects_only.length;
 
   let params_only:any[] = []
   if(localStorage.getItem('dataParams')){
     const dataParams:any = localStorage.getItem('dataParams')
     params_only = dataParams.split();
-    console.log("=======>",params_only)
   }
   
 
@@ -84,7 +82,7 @@ function ProjectCard() {
                 </div>
               <>
                 <div className="matchRateData">
-                  <p>We found 0 projects matching your search</p>
+                  <p>We found {projectLength} projects matching your search</p>
                 </div>
               </>
             </div>
@@ -111,7 +109,6 @@ function ProjectCard() {
                             {team?.slice(0, 3).map((member: any) => (
                               <TeamMember dev={member} className="developer" />
                             ))}
-                            {/* <span className="main-member">+{diff}</span> */}
                           </p>
                         </div>
                         <div className="card_details">
