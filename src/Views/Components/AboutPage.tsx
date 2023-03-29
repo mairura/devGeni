@@ -1,16 +1,11 @@
-import React from "react";
 import "../css/about.css";
-import Logo from "../../assets/Logo.png";
 import { TypeAnimation } from "react-type-animation";
-import { Link } from "react-router-dom";
-import { BiChevronLeft } from "react-icons/bi";
 import TopBar from "./TopBar";
 
 const AboutPage = () => {
   return (
     <div className="aboutContainer">
       <div className="aboutLogo">
-        {/* <img src={Logo} alt="logo" />{" "} */}
         <TopBar />
       </div>
       <div className="aboutPage">
@@ -26,13 +21,6 @@ const AboutPage = () => {
           style={{ fontSize: "12px" }}
         />
       </div>
-
-      {/* <div className="btn_contactPage">
-        <Link to="/contact">
-          {" "}
-          <div className="button">{<BiChevronLeft color="#52f2e2" />}</div>{" "}
-        </Link>
-      </div> */}
     </div>
   );
 };

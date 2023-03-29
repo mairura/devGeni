@@ -4,7 +4,6 @@ import "./Views/css/style.css";
 import Footer from "./Views/Components/Footer";
 import ProjectDetail from "./Views/ProjectDetail";
 import BookNow from "./Views/BookNow";
-import { useEffect, useState } from "react";
 import Details from "./Views/Details";
 import Profile from "./Views/Profile";
 import Devdata from "./Views/Devdata";
@@ -23,13 +22,13 @@ import ProjectCard from "./Views/ProjectCard";
 
 function App() {
   //Set a loading page
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
   // const { account, connect, reset, status, error, balance, chainId } =
   //   useWallet();
 
-  useEffect(() => {
-    setTimeout(() => setIsLoading(false), 1000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => setIsLoading(false), 1000);
+  // }, []);
 
   return (   
         <>

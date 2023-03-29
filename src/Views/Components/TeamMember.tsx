@@ -8,7 +8,7 @@ function TeamMember(dev: any) {
   const location = useLocation();
   let mystyle = "";
 
-  if (location.pathname == "/projectDetails/") {
+  if (location.pathname === "/projectDetails/") {
     mystyle = "profile_dev";
   } else {
     mystyle = "main-member";

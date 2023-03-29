@@ -1,11 +1,11 @@
 import "./css/devdata.css";
 import close from "../assets/close.svg";
 import axios from "axios";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { Config } from "../config/config";
 import HashLoader from "react-spinners/HashLoader";
-import { Link, NavLink } from "react-router-dom";
-import { IProjects, ISingleDev } from "./Context";
+import { NavLink } from "react-router-dom";
+import { ISingleDev } from "./Context";
 import { ExternalLink } from "react-external-link";
 
 const Devdata = () => {
@@ -58,7 +58,7 @@ const Devdata = () => {
     if (tagsNewLocal !== null) {
       getData(tagsNewLocal);
     }
-  }, []);
+  });
 
   //Function to clear stack in localStorage
   const clearStack = () => {
@@ -100,11 +100,11 @@ const Devdata = () => {
 
   useEffect(() => {
     checkLocalStorage();
-  }, []);
+  });
 
   useEffect(() => {
     setTimeout(() => setLoader(false), 2000);
-  }, []);
+  });
 
   let trimDesc = function (string: any, length: any) {
     return string.length > length
@@ -180,7 +180,7 @@ const Devdata = () => {
                     <div className="devdata_container">
                       <div className="devdata_details">
                         <div className="devdata_image">
-                          <img src={pic} />
+                          <img src={pic} alt="pic" />
                         </div>
                         <div className="devdata_name">
                           <h3>

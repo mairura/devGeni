@@ -95,11 +95,11 @@ function ProjectDetail() {
 
   useEffect(() => {
     singleProject();
-  }, []);
+  });
 
   useEffect(() => {
     getDeveloper();
-  }, []);
+  });
 
   return (
     <>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Config } from "../config/config";
 import { IProjects } from "./Context";
 import axios from "axios"
@@ -51,7 +51,7 @@ const AllProjects = () => {
 
     useEffect(() => {
       allProjects()
-    }, [])
+    })
   return (
     <>
     <TopBar />
@@ -73,7 +73,6 @@ const AllProjects = () => {
         let proj_title: string | undefined = project?.proj_name;
         let teamLength: number | undefined = team?.length;
         let stackLength: number | undefined = stack?.length;
-        let splitStack: string | undefined = stack?.join();
 
         let trimDesc = function (string: any, length: any) {
           return string.length > length

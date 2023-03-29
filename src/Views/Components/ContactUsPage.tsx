@@ -1,4 +1,3 @@
-import React from "react";
 import "../css/about.css";
 import { ExternalLink } from "react-external-link";
 import { GoLocation } from "react-icons/go";
@@ -6,7 +5,6 @@ import { BsTelephoneOutboundFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { BsTwitter } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
-import { BiChevronLeft } from "react-icons/bi";
 import TopBar from "./TopBar";
 
 const ContactUsPage = () => {
@@ -53,13 +51,6 @@ const ContactUsPage = () => {
           </ExternalLink>
         </div>
       </div>
-
-      {/* <div className="btn_contactPage">
-        <Link to="/contact">
-          {" "}
-          <div className="button">{<BiChevronLeft color="#52f2e2" />}</div>{" "}
-        </Link>
-      </div> */}
     </div>
   );
 };

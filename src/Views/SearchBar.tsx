@@ -96,7 +96,7 @@ const SearchBar = () => {
 
     useEffect(() => {
         checkLocalStorage();
-    }, []);
+    });
 
   return (
     <div className='searchbar_container'>

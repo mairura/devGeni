@@ -89,7 +89,7 @@ const Profile = () => {
                 &nbsp;&nbsp; nGeni Labs LinkedIn
               </a>
               <a href="https://ngeni.io/">
-                <img src={Logo} />
+                <img src={Logo} alt="logo" />
                 &nbsp;&nbsp;nGeni Labs Website
               </a>
               <a href="https://twitter.com/ngenilabs">
