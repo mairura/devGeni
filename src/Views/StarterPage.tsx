@@ -42,6 +42,7 @@ const StarterPage = () => {
           infiniteLoop={true}
           interval={4000}
           showStatus={false}
+          showThumbs={false} 
         >
           <div className="carousel_data">
             <p>

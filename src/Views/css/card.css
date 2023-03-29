@@ -67,3 +67,11 @@
   font-size: 10px;
   color: #a5a5a5;
 }
+.tag_boxData{
+  display: flex;
+  justify-content: center;
+}
+.tag_boxData p {
+  padding: 8px;
+  font-size: 12px;
+}

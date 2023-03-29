@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Logo from "../assets/Logo.png"
 import { Config } from "../config/config";
 import { IProjects, IParams, ISingleDev } from "./Context";
+import close from "../assets/close.svg";
 
 const buttonVariants = {
     hover: {
@@ -46,13 +47,12 @@ const SearchBar = () => {
         })
           .then((response) => response.json())
           .then((data) => {
-              console.log(data)
+            
             localStorage.setItem("data_projects_searched",JSON.stringify(data))
             setProjects(data.projects_data);
-            // console.log("Print Params:", data.params);
             const projectParams = data.params;
             setParams(projectParams);
-            localStorage.setItem("dataParams", projectParams)
+            localStorage.setItem("dataParams", projectParams);
           })
           .catch((error) => {
             console.error(error.message);
@@ -78,6 +78,12 @@ const SearchBar = () => {
         }
     }
 
+     //Function to clear stack in localStorage
+        const clearStack = () => {
+            localStorage.clear();
+            setParams([]);
+        };
+
     useEffect(() => {
         checkLocalStorage();
     }, []);
@@ -99,6 +105,7 @@ const SearchBar = () => {
                     {params.map((param: any) => {
                       return <p>{param}</p>;
                     })}
+                    <img src={close} alt="close" onClick={clearStack} />
                   </div>
                 </div>
             </div>
@@ -113,4 +120,4 @@ const SearchBar = () => {
     </div>
   )
 }
-export default SearchBar
+export default SearchBar 

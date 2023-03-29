@@ -1,6 +1,6 @@
 import "./css/style.css";
 import "./css/card.css";
-import TeamMember from "./Components/TeamMember";
+// import TeamMember from "./Components/TeamMember";
 import linkPay from "../assets/linkpay.png";
 import { languages, teams } from "../icons";
 import { Link } from "react-router-dom";
@@ -35,15 +35,15 @@ function ProjectCard() {
     projects_only = JSON.parse(data_projects_searched).projects_data
   }
   const projectLength = projects_only.length;
+ 
 
   let params_only:any[] = []
   if(localStorage.getItem('dataParams')){
     const dataParams:any = localStorage.getItem('dataParams')
     params_only = dataParams.split();
   }
+  console.log("Print All Projects Data", params_only)
   
-
-
   let url = Config.URL;
   return (
     <>
@@ -76,7 +76,7 @@ function ProjectCard() {
             <div className="search-bar">
               <TopBar />
                 <div className="tag_boxData" >
-                  {params_only?.map((param: any) => {
+                  {params_only.map((param: any) => {
                     return <p style={{ color: "white"}}>{param}</p>;
                   })}
                 </div>
@@ -104,13 +104,13 @@ function ProjectCard() {
                       <Link
                         to={`/projectDetails/?projectId=${project._id}&projectDesc=${desc}&projectTeam=${team}`}
                       >
-                        <div>
+                        {/* <div>
                           <p className="card_devs">
                             {team?.slice(0, 3).map((member: any) => (
                               <TeamMember dev={member} className="developer" />
                             ))}
                           </p>
-                        </div>
+                        </div> */}
                         <div className="card_details">
                           <motion.p
                             className="card_title"

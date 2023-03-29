@@ -18,6 +18,11 @@ const TagsPage = () => {
   const actions = ["I want...", "Design me a...", "Build me a mobile app...", "Design me a...", "Design me a...", "Design me a..."];
   const requests = ["App Development", "Web3 Design", "Trading Bots", "Wallet", "NFT Marketplace", "Web3 Social", "DAO", "AI Chatbots", "Gateways/CEX", "DEFI", "Games"];
 
+  // const handleButtonClick = () => {
+  //   // Call a function in InputField component to set the input value
+  //   InputField.setInputValue("Hello, World!");
+  // };
+
   return (
     <div className='tags_container'>
         <div className='tags_header'><img src={Logo} alt="logo"/><p>DEVGENI</p></div>

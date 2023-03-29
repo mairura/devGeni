@@ -324,6 +324,7 @@ select.mySelectArrow {
   border: 0.5px solid #52F2E2;
   border-radius: 10px;
   max-height: 250px;
+  min-height: 100px;
   padding: 6px 0;
 }
 .search_box p{
@@ -336,5 +337,4 @@ select.mySelectArrow {
 }
 .tag_boxData p{
   text-decoration: none;
-  
 }
