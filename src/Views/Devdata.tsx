@@ -23,7 +23,7 @@ const Devdata = () => {
     if (!localData.includes(e.target.value)) {
       setLocalData(tagList);
       let newList: string = tagList.join();
-      window.localStorage.setItem("dataTags", newList);
+      localStorage.setItem("dataTags", newList);
       getData(newList);
     }
   };
@@ -90,8 +90,8 @@ const Devdata = () => {
     if (localData !== undefined) {
       return (
         <div className="current-tags">
-          {localData.map((item: any) => {
-            return <p className="tag">{item}</p>;
+          {localData.map((item: any, index: any) => {
+            return <p className="tag" key={index}>{item}</p>;
           })}
         </div>
       );
@@ -114,45 +114,79 @@ const Devdata = () => {
 
   return (
     <>
-      <>
-        <div>
-          <div className="header">
-            <h3>DEVGENI</h3>
-          </div>
-          <div className="header_data">
-            <NavLink className="devdata_link" to="/">
-              <p className="link">Projects</p>
-            </NavLink>
-            <NavLink to="devdata" className="devdata_link">
-              <p className="link">Developers</p>
-            </NavLink>
-          </div>
+      <div>
+        <div className="header">
+          <h3>DEVGENI</h3>
         </div>
-        <div className="search-bar">
-          <form>
-            <select
-              onChange={(e) => {
-                handleStack(e);
-              }}
-            >
-              <option>Choose Stack</option>
-              {getStacks.map((item: any, index) => (
-                <option key={index} value={item.name}>
-                  {item.name}
-                </option>
-              ))}
-            </select>
-          </form>
-          <div className="current-tags">
-            <div className="tags_found">
-              <TagsIdentified />
-              <p className="clear_btn" onClick={clearStack}>
-                <img src={close} alt="close" />
-              </p>
+        <div className="header_data">
+          <NavLink className="devdata_link" to="/">
+            <p className="link">Projects</p>
+          </NavLink>
+          <NavLink to="devdata" className="devdata_link">
+            <p className="link">Developers</p>
+          </NavLink>
+        </div>
+      </div>
+      <div className="search-bar">
+        <form>
+          <select
+            onChange={(e) => {
+              handleStack(e);
+            }}
+          >
+            <option>Choose Stack</option>
+            {getStacks.map((item: any, index: any) => (
+              <option key={index} value={item.name}>
+                {item.name}
+              </option>
+            ))}<div>
+            <div className="header">
+              <h3>DEVGENI</h3>
+            </div>
+            <div className="header_data">
+              <NavLink className="devdata_link" to="/">
+                <p className="link">Projects</p>
+              </NavLink>
+              <NavLink to="devdata" className="devdata_link">
+                <p className="link">Developers</p>
+              </NavLink>
             </div>
           </div>
+          <div className="search-bar">
+            <form>
+              <select
+                onChange={(e) => {
+                  handleStack(e);
+                }}
+              >
+                <option>Choose Stack</option>
+                {getStacks.map((item: any, index) => (
+                  <option key={index} value={item.name}>
+                    {item.name}
+                  </option>
+                ))}
+              </select>
+            </form>
+            <div className="current-tags">
+              <div className="tags_found">
+                <TagsIdentified />
+                <p className="clear_btn" onClick={clearStack}>
+                  <img src={close} alt="close" />
+                </p>
+              </div>
+            </div>
+          </div>
+          </select>
+        </form>
+        <div className="current-tags">
+          <div className="tags_found">
+            <TagsIdentified />
+            <p className="clear_btn" onClick={clearStack}>
+              <img src={close} alt="close" />
+            </p>
+          </div>
         </div>
-      </>
+      </div>
       <div className="devdata_list">
         {loader ? (
           <div className="item">
@@ -164,7 +198,7 @@ const Devdata = () => {
               data-testid="loader"
             />
           </div>
-        ) : (
+          ) : (
           <>
             {devs.map((dev: any) => {
               let name = dev.name;

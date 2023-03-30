@@ -63,7 +63,6 @@ const Home = () => {
       </div>
       <div className="gradient" />
       <div className="select">
-        {/* <form> */}
         <select className="mySelectArrow">
           <option>View Projects</option>
           {getStacks.map((item: any, index) => (
@@ -72,7 +71,6 @@ const Home = () => {
             </option>
           ))}
         </select>
-        {/* </form> */}
         <div className="founder">
           <div className="tags_found">
             <TagsIdentified />

@@ -22,18 +22,18 @@ const ScreenView = () => {
                 <img src={Logo} alt="logo" />
                 </motion.div>
                 <div className="homeHead">
-                <motion.div
-                    className="home_header"
-                    initial={{ y: 450 }}
-                    animate={{ y: 10 }}
-                    transition={{ delay: 0.2, type: "spring", stiffness: 150 }}
-                    style={{ position: "relative" }}
-                >
-                    <p>DEVGENI</p>
-                </motion.div>
-                <div className="home_subheader">
-                    <p>DesiGn.DeVelop.DeLiver</p>
-                </div>
+                    <motion.div
+                        className="home_header"
+                        initial={{ y: 450 }}
+                        animate={{ y: 10 }}
+                        transition={{ delay: 0.2, type: "spring", stiffness: 150 }}
+                        style={{ position: "relative" }}
+                    >
+                        <p>DEVGENI</p>
+                    </motion.div>
+                    <div className="home_subheader">
+                        <p>DesiGn.DeVelop.DeLiver</p>
+                    </div>
                 </div>
             </div>
         </>

@@ -97,18 +97,6 @@ const Profile = () => {
                 &nbsp;&nbsp; nGeni Labs Twitter
               </a>
             </div>
-            {/* <div className="vertical_line"></div> */}
-            {/* 
-            <div className="profile_box">
-              <p className="dev_stack">
-                {stacks.map((item: any) => {
-                  return <div className="profile_pic">{item}</div>;
-                })}
-              </p>
-              <div className="profile_pic">Profile</div>
-              <div className="profile_pic">Profile</div>
-              <div className="profile_pic">Profile</div>
-            </div> */}
           </div>
         </div>
         <div className="ngeni_labs"></div>

@@ -338,3 +338,7 @@ select.mySelectArrow {
 .tag_boxData p{
   text-decoration: none;
 }
+.searchbar_menu{
+  display: flex;
+  justify-content: space-between;
+}

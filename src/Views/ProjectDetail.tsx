@@ -62,7 +62,6 @@ const containerVariantsY = {
 function ProjectDetail() {
   const [devs, setDevs] = useState<Array<ISingleDev>>([]);
   const [projectData, setProjectData] = useState<IProjects>();
-  // const [loader, setLoader] = useState(true);
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const proj_name = urlParams.get("projectId");
@@ -95,11 +94,11 @@ function ProjectDetail() {
 
   useEffect(() => {
     singleProject();
-  });
+  }, []);
 
   useEffect(() => {
     getDeveloper();
-  });
+  }, []);
 
   return (
     <>

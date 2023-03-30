@@ -7,6 +7,7 @@ import { IParams } from "./Context";
 import close from "../assets/close.svg";
 import ContactUs from "./Components/ContactUs";
 import Hambuger from "../assets/ham.svg";
+import "./css/home.css";
 
 const buttonVariants = {
     hover: {
@@ -22,17 +23,10 @@ const buttonVariants = {
 
 
 const SearchBar = () => {
-    // const [inputValue, setInputValue] = useState("");
     const [inputData, setInputData] = useState("");
     const [params, setParams] = useState<Array<IParams>>([]);
-    // const [devs, setDevs] = useState<Array<ISingleDev>>([]);
-    // const [localData, setLocalData] = useState<Array<string>>([]);
 
     let url = Config.URL;
-
-    // const handleInputChange = (event: any) => {
-    //     setInputValue(event.target.value);
-    // };
 
     const handleInputChangeData = (event: any) => {
     setInputData(event.target.value);
@@ -95,12 +89,12 @@ const SearchBar = () => {
         };
 
     useEffect(() => {
-        checkLocalStorage();
-    });
+      checkLocalStorage();
+    }, []);
 
   return (
     <div className='searchbar_container'>
-      <div>
+      <div className="searchbar_menu">
         <div className='tags_header'><img src={Logo} alt="logo" /><p>DEVGENI</p></div>
           <div className="hambuger">
             {isOpen ? (
