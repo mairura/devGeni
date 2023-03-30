@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "./css/ProjectDetail.css";
 import { ksh } from "../icons";
-import TeamMember from "./Components/TeamMember";
 import linkPay from "../assets/linkpay.png";
 import axios from "axios";
 import { IProjects, ISingleDev } from "./Context";
@@ -103,7 +102,9 @@ function ProjectDetail() {
   return (
     <>
       <div className="projectDetail_container">
-        <TopBar />
+        <div className="projectTop">
+          <TopBar />
+        </div>
         <div className="detailsPage">
           <div className="title_desc">
             <img src={linkPay} alt="linkpay logo" />
@@ -134,7 +135,7 @@ function ProjectDetail() {
                 </p>
               ) : ( */}
           <div className="memberContainer">
-            <div className="member-container">
+            {/* <div className="member-container"> */}
               {/* <Carousel
               autoPlay={true}
               showArrows={true}
@@ -143,11 +144,11 @@ function ProjectDetail() {
               interval={4000}
               showStatus={false}
             > */}
-              {devs?.map((member: any, index: any) => (
+              {/* {devs?.map((member: any, index: any) => (
                 <TeamMember dev={member} className="member_carousel" key={index} />
-              ))}
+              ))} */}
               {/* </Carousel> */}
-            </div>
+            {/* </div> */}
           </div>
 
           {/* )} */}

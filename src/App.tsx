@@ -21,14 +21,6 @@ import SearchBar from "./Views/SearchBar";
 import ProjectCard from "./Views/ProjectCard";
 
 function App() {
-  //Set a loading page
-  // const [isLoading, setIsLoading] = useState(true);
-  // const { account, connect, reset, status, error, balance, chainId } =
-  //   useWallet();
-
-  // useEffect(() => {
-  //   setTimeout(() => setIsLoading(false), 1000);
-  // }, []);
 
   return (   
         <>
@@ -36,8 +28,8 @@ function App() {
             <div className="main_container">
               <div className="main">
                 <Routes>
-                  <Route path='/' element={<ScreenView />} />
-                  <Route path="/starterpage" element={<StarterPage />} />
+                  {/* <Route path='/' element={<ScreenView />} /> */}
+                  <Route path="/" element={<StarterPage />} />
                   <Route path='/tagspage' element={<TagsPage />} />
                   <Route path="/searchbar" element={<SearchBar />} />
                   <Route path="/projects" element={<ProjectCard />} />

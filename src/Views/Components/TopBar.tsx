@@ -6,10 +6,12 @@ import Hambuger from "../../assets/ham.svg";
 import close from "../../assets/close.svg";
 import { prev } from "../../icons";
 import ContactUs from "./ContactUs";
+import { IParams } from "../Context";
 
 const TopBar = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+  const [params, setParams] = useState<Array<IParams>>([]);
 
   const toggleIcon = () => {
     setIsOpen(!isOpen);
@@ -18,6 +20,12 @@ const TopBar = () => {
   const closeMenu = () => {
     setIsOpen(false);
   };
+
+  //Function to clear stack in localStorage
+  const clearStack = () => {
+    localStorage.clear();
+    setParams([]);
+};
   return (
     <div className="top_bar">
       <div className="search_barTop">
