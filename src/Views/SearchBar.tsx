@@ -103,8 +103,8 @@ const SearchBar = () => {
               <img src={Hambuger} alt="logo" onClick={toggleIcon} />
             )}
           </div>
-      {isOpen && <ContactUs />}
       </div>
+      {isOpen && <ContactUs />}
         <div className="searchbar">
             <h4>Tell Us in Detail What You'd Like Us To Build</h4>
             <div className="tagBox">

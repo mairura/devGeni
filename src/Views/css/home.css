@@ -162,7 +162,7 @@ select.mySelectArrow {
   opacity: 1;
   transition: opacity 1s ease-in-out;
 }
-.screen-container.fade-out {
+.screen-container .fade-out {
   opacity: 0;
 }
 @keyframes fade-out {
@@ -341,4 +341,8 @@ select.mySelectArrow {
 .searchbar_menu{
   display: flex;
   justify-content: space-between;
+}
+.hambuger img {
+  display: flex;
+  justify-content: flex-end;
 }
