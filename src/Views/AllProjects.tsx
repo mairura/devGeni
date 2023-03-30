@@ -62,7 +62,7 @@ const AllProjects = () => {
       style={{
         marginTop: "15px",
         display: "grid",
-        gridTemplateColumns: "1fr 1fr",
+        gridTemplateColumns: "1fr",
       }}
     >
       {projects.map((project: any, index: any) => {
@@ -97,9 +97,6 @@ const AllProjects = () => {
               >
                 <div className="more">
                   <div key={project.id}>
-                    <Link
-                      to={`/projectDetails/?projectId=${project._id}&projectDesc=${desc}&projectTeam=${team}`}
-                    >
                       <div>
                         {/* <p className="card_devs">
                           {dev_data?.slice(0, 3).map((member: any) => (
@@ -148,7 +145,6 @@ const AllProjects = () => {
                           <p className="lengths">{stackLength}</p>
                         </div>
                       </div>
-                    </Link>
                   </div>
                 </div>
               </Link>

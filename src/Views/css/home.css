@@ -7,7 +7,6 @@
   from { transform: translateY(100%); }
   to { transform: translateY(0); }
 }
-
 .main_logo {
   height: 30vh;
   display: flex;
@@ -104,10 +103,6 @@ select.mySelectArrow {
   font-family: "Poppins", sans-serif;
   color: #ffffff;
 }
-.home_btn{
-  display: flex;
-  justify-content: center;
-}
 .home_btn button {
   box-sizing: border-box;
   width: 354px;
@@ -128,8 +123,17 @@ select.mySelectArrow {
   font-size: 16px;
   line-height: 19px;
 }
-.home_btn .search{
-  width: 200px;
+@media (max-width: 768px){
+  .home_btn{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+  .home_btn .search{
+    width: 100px;
+    font-size: 8px;
+    height: 30px;
+  }
 }
 .rightChevron{
   text-decoration: none;
@@ -210,10 +214,20 @@ select.mySelectArrow {
 .category{
   margin-top: 10px;
 }
+@media (max-width: 768px){
+  .category {
+    padding: 10px;
+  }
+}
 .category, .actions, .searchbar, .search_attr h4{
   color: #fff;
   text-align: left;
-  margin: 3em 0;
+}
+@media (max-width: 768px){
+  .searchbar h4 {
+    font-size: 10px;
+    text-align: center;
+  }
 }
 .main_request {
   margin: 20px 0;
@@ -239,23 +253,6 @@ select.mySelectArrow {
   margin-top: 5em;
 }
 /* Search Bar Page */
-.tagBox {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 20px;
-}
-.searchBox {
-  width: 354px;
-  height: 49px;
-  background: #0f3f46;
-  border: 1px solid #52f2e2;
-  border-radius: 10px;
-  color: #fff;
-  font-size: 12px;
-  cursor: pointer;
-  padding: 1px 5px;
-}
 .search_box img{
   display: flex;
   flex-direction: column-reverse;
@@ -281,8 +278,30 @@ select.mySelectArrow {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.tag_boxData p{
+.tagBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+}
+.tag_boxData p {
   text-decoration: none !important;
+  text-transform: capitalize;
+  border: 0.2px solid #52f2e2;
+  border-radius: 20px;
+  margin: 13px 6px 0 6px;
+  padding: 2px 5px;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 12px;
+  font-family: "Poppins";
+}
+@media (max-width: 768px){
+  .tag_boxData p{
+    padding: 1px;
+    margin: 2px;
+    font-size: 5px;
+  }
 }
 /* Search Attributes */
 .search_attr{
@@ -340,6 +359,17 @@ select.mySelectArrow {
   padding: 6px;
   text-align: left;
 }
+@media (max-width: 768px){
+  .searchAttrBox{
+    margin: 0 20px;
+  }
+  .search_box{
+    min-height: 90px;
+  }
+  .search_box p{
+    padding: 2px;
+  }
+}
 .search_box img{
   padding-left: 20em;
   height: 15px;
@@ -348,6 +378,11 @@ select.mySelectArrow {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media (max-width: 768px){
+  .searchbar_menu{
+    padding: 20px;
+  }
 }
 .hambuger img {
   display: flex;

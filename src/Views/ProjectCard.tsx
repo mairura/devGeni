@@ -1,5 +1,6 @@
 import "./css/style.css";
 import "./css/card.css";
+import "./css/home.css"
 // import TeamMember from "./Components/TeamMember";
 import linkPay from "../assets/linkpay.png";
 import { languages, teams } from "../icons";
@@ -39,7 +40,7 @@ function ProjectCard() {
   let params_only: any[] = []
   if(localStorage.getItem('dataParams')){
     const dataParams:any = localStorage.getItem('dataParams')
-    params_only = dataParams.split();
+    params_only = JSON.parse(dataParams);
   }
   console.log("Print All Projects Data", params_only)
   

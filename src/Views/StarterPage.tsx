@@ -64,8 +64,8 @@ const StarterPage = () => {
           </div>
         </Carousel>
       </div>
-      <Link to="/tagspage" style={{ width: "100%" }}>
-        <div className="home_btn">
+      <Link to="/tagspage" style={{ width: "100%" }} className="home_btn">
+        <div>
           <motion.button variants={buttonVariants} whileHover="hover">
             Build a Project
           </motion.button>

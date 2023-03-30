@@ -59,9 +59,13 @@
   padding: 10px;
 }
 .memberContainer {
+  width: 100vw;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-left: 60px;
+  /* justify-content: space-around; */
+  /* padding: 7px; */
+  gap: 0.2rem;
+  /* border: 1px solid red; */
 }
 .member-container {
   width: 50px;

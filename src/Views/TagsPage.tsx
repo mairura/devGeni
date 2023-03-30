@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Logo from "../assets/Logo.png"
+import { useState } from "react";
 
 const buttonVariants = {
     hover: {
@@ -14,8 +15,9 @@ const buttonVariants = {
     },
   };
 
-const TagsPage = () => {
-  const requests = ["App Development", "Design me a Web3 App", "Build me a trading bot for...", "Create me a Wallet", "Build me an NFT Marketplace", "Design me a Web3 Social App for...", "Create a DAO...", "Build AI Chatbot that...", "I want a Gateways/CEX that...", "Build a DEFI", "I need a Gaming App that..."];
+const TagsPage = (props: any) => {
+  const requests = ["App Development", "Design me a Web3 App", "Build me a trading bot for...", "Create me a Web3 Wallet", "Build me an NFT Marketplace", "Design me a Web3 Social App for...", "Create a DAO...", "Build AI Chatbot that...", "I want a Gateways/CEX that...", "Build a DEFI", "I need a Gaming App that..."];
+  // const [message, setMessage] = useState("");
 
   return (
     <div className='tags_container'>
@@ -24,28 +26,19 @@ const TagsPage = () => {
             <h4>Choose what you're interested in.</h4>
             <div className="main_request">
                 {requests.map((request: any, index: any) => {
+                  const clickEvent = () => {
+                    localStorage.setItem("params", request);
+                  }
                   return (
-                    <button key={index}>
+                    <button key={index} onClick={clickEvent}>
                       {request}
                     </button>
                   );
                 })}
             </div>
         </div>
-        {/* <div className='actions'>
-            <h4>Choose Your Actions</h4>
-            <div className="main_request">
-                {actions.map((request: any, index: any) => {
-                  return (
-                    <button key={index}>
-                      {request}
-                    </button>
-                  );
-                })}
-            </div>
-        </div> */}
-        <Link to="/searchbar" style={{ width: "100%" }}>
-          <div className="home_btn tagspage">
+        <Link to="/searchbar" style={{ width: "100%" }} className="home_btn">
+          <div className="tagspage">
             <motion.button variants={buttonVariants} whileHover="hover">
               Next
             </motion.button>

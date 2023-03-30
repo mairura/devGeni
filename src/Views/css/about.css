@@ -11,7 +11,6 @@
   text-transform: uppercase;
   padding-bottom: 5px;
   font-family: "Poppins", sans-serif;
-  /* font-family: "Orbitron", sans-serif; */
   color: #52f2e2;
 }
 .aboutContainer h5 {
@@ -128,15 +127,8 @@
   left: 0;
   height: 100%;
   width: 100%;
-  /* background-color: #52f2e2cc; */
 }
-/* video {
-  width: 100%;
-  height: 30vh;
-  object-fit: contain;
-} */
 .faqsHeader h4 {
-  /* position: absolute; */
   padding-top: 20px;
 }
 .faqsBox {
@@ -148,7 +140,6 @@
   margin-top: 25px;
 }
 faqsForm {
-  /* background: #0b524b; */
   display: flex;
   text-align: left;
   font-family: "Orbitron", sans-serif;

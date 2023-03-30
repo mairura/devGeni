@@ -34,6 +34,7 @@
 .card_details p{
   overflow: scroll;
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 .card_title {
   font-family: "Orbitron", sans-serif;

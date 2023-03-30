@@ -22,12 +22,14 @@ const buttonVariants = {
   };
 
 
-const SearchBar = () => {
-    const [inputData, setInputData] = useState("");
+const SearchBar = (props: any) => {
+  const localParams: any = localStorage.getItem("params");
+    const [inputData, setInputData] = useState(localParams);
     const [params, setParams] = useState<Array<IParams>>([]);
 
     let url = Config.URL;
 
+    let only_params: string;
     const handleInputChangeData = (event: any) => {
     setInputData(event.target.value);
     };
@@ -56,7 +58,8 @@ const SearchBar = () => {
             localStorage.setItem("data_projects_searched",JSON.stringify(data))
             const projectParams = data.params;
             setParams(projectParams);
-            localStorage.setItem("dataParams", projectParams);
+            localStorage.setItem("dataParams", JSON.stringify(projectParams));
+            console.log("Print Params:", projectParams)
           })
           .catch((error) => {
             console.error(error.message);
@@ -83,7 +86,8 @@ const SearchBar = () => {
             let results: any;
             if (tag_string != null) {
             results = SplitNames(tag_string);
-            setParams(results)
+            const results_parsed = JSON.parse(results)
+            setParams(results_parsed)
             }
             return results;
             }
@@ -108,9 +112,7 @@ const SearchBar = () => {
         <div className="searchbar">
             <h4>Tell Us in Detail What You'd Like Us To Build</h4>
             <div className="tagBox">
-              <textarea onKeyDown={(event) => {
-              event.key === "Enter" && handleAPICall();
-              }} className="tag_box" rows={12} cols={4} value={inputData} onChange={handleInputChangeData}>
+              <textarea  className="tag_box" rows={12} cols={4} defaultValue={inputData} onChange={handleInputChangeData}>
               </textarea>
               <div className="home_btn">
                 <button onClick={handleAPICall} className="search">
@@ -130,8 +132,8 @@ const SearchBar = () => {
                 </div>
             </div>
         </div>
-        <Link  to='/projects' style={{ width: "100%" }}>
-        <div className="home_btn tagspage">
+        <Link  to='/projects' style={{ width: "100%" }} className="home_btn">
+        <div className="tagspage">
           <motion.button variants={buttonVariants} whileHover="hover">
             Next
           </motion.button>
