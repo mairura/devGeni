@@ -67,21 +67,7 @@ const SearchBar = () => {
     const names_split = names.split(",");
     return names_split;
     };
-
-    function checkLocalStorage() {
-    if (!localStorage.length) {
-        return null;
-    } else {
-        let tag_string: any = localStorage.getItem("dataParams");
-        let results: any;
-        if (tag_string != null) {
-        results = SplitNames(tag_string);
-        setParams(results)
-        }
-        return results;
-        }
-    }
-
+    
      //Function to clear stack in localStorage
         const clearStack = () => {
             localStorage.clear();
@@ -89,6 +75,20 @@ const SearchBar = () => {
         };
 
     useEffect(() => {
+      function checkLocalStorage() {
+        if (!localStorage.length) {
+            return null;
+        } else {
+            let tag_string: any = localStorage.getItem("dataParams");
+            let results: any;
+            if (tag_string != null) {
+            results = SplitNames(tag_string);
+            setParams(results)
+            }
+            return results;
+            }
+        }
+    
       checkLocalStorage();
     }, []);
 
@@ -108,9 +108,15 @@ const SearchBar = () => {
         <div className="searchbar">
             <h4>Tell Us in Detail What You'd Like Us To Build</h4>
             <div className="tagBox">
-            <textarea onKeyDown={(event) => {
-            event.key === "Enter" && handleAPICall();
-            }} className="tag_box" rows={12} cols={4} value={inputData} onChange={handleInputChangeData}></textarea>
+              <textarea onKeyDown={(event) => {
+              event.key === "Enter" && handleAPICall();
+              }} className="tag_box" rows={12} cols={4} value={inputData} onChange={handleInputChangeData}>
+              </textarea>
+              <div className="home_btn">
+                <button onClick={handleAPICall} className="search">
+                  Click to search
+                </button>
+              </div>
             </div>
             <div className="searchAttrBox">
                 <div className="search_box">
@@ -119,8 +125,8 @@ const SearchBar = () => {
                     {params.map((param: any, index: any) => {
                       return <p key={index}>{param}</p>;
                     })}
-                    <img src={close} alt="close" onClick={clearStack} />
                   </div>
+                  <img src={close} alt="close" onClick={clearStack} />
                 </div>
             </div>
         </div>

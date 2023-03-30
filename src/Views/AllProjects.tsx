@@ -33,25 +33,25 @@ const AllProjects = () => {
   const [projects, setProjects] = useState<Array<IProjects>>([]);
   const [numProjects, setNumProjects] = useState("0");
 
-    let url = Config.URL;
-    //Function to handle all projects
-    const allProjects = async () => {
-        const endpoint: string = `${url}/index/projects`;
-        try {
-            const { data } = await axios.get(endpoint);
-            console.log("Projects from All projects:", data)
-            setProjects(data)
-            console.log("Print Params Length:", data.length);
-            setNumProjects(data.length);
-        } catch (error: any) {
-            console.error("Error:", error.message)
-        }
+  let url = Config.URL;
+  //Function to handle all projects
+  const allProjects = async () => {
+      const endpoint: string = `${url}/index/projects`;
+      try {
+          const { data } = await axios.get(endpoint);
+          console.log("Projects from All projects:", data)
+          setProjects(data)
+          console.log("Print Params Length:", data.length);
+          setNumProjects(data.length);
+      } catch (error: any) {
+          console.error("Error:", error.message)
+      }
+  }
 
-    }
+  useEffect(() => {
+    allProjects()
+  }, []);
 
-    useEffect(() => {
-      allProjects()
-    })
   return (
     <>
     <TopBar />
@@ -90,6 +90,7 @@ const AllProjects = () => {
               exit="exit"
               whileHover={{ scale: 1.03, originX: 0, color: "#f8e112" }}
               transition={{ type: "spring", stiffness: 500 }}
+              key={index}
             >
               <Link
                 to={`/projectDetails/?projectId=${project._id}&projectDesc=${desc}&projectTeam=${team}`}

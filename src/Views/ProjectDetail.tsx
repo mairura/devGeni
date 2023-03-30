@@ -69,6 +69,23 @@ function ProjectDetail() {
   const proj_team = urlParams.get("projectTeam");
   let url = Config.URL;
 
+  let proj_name_get: String | undefined = projectData?.proj_name;
+
+  useEffect(() => {
+  //Getting single project
+  const singleProject = async () => {
+    try {
+      const data: any = await axios.get(`${url}/index/projects/${proj_name}`);
+      setProjectData(data.data);
+    } catch (error: any) {
+      console.error("Error:", error.message);
+    }
+  };
+
+  singleProject();
+  }, []);
+
+  useEffect(() => {
   //Function to submit choosen stack and find resp projects
   const getDeveloper = async () => {
     const endpoint: string = `${url}/index/devs/names/${proj_team}`;
@@ -80,24 +97,7 @@ function ProjectDetail() {
     }
   };
 
-  //Getting single project
-  const singleProject = async () => {
-    try {
-      const data: any = await axios.get(`${url}/index/projects/${proj_name}`);
-      setProjectData(data.data);
-    } catch (error: any) {
-      console.error("Error:", error.message);
-    }
-  };
-
-  let proj_name_get: String | undefined = projectData?.proj_name;
-
-  useEffect(() => {
-    singleProject();
-  }, []);
-
-  useEffect(() => {
-    getDeveloper();
+  getDeveloper();
   }, []);
 
   return (
@@ -144,7 +144,7 @@ function ProjectDetail() {
               showStatus={false}
             > */}
               {devs?.map((member: any, index: any) => (
-                <TeamMember dev={member} className="member_carousel" />
+                <TeamMember dev={member} className="member_carousel" key={index} />
               ))}
               {/* </Carousel> */}
             </div>

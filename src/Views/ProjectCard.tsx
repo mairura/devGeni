@@ -47,9 +47,9 @@ function ProjectCard() {
     <>
         <div
           style={{
-            marginTop: "150px",
+            marginTop: "200px",
             display: "grid",
-            gridTemplateColumns: "1fr 1fr",
+            gridTemplateColumns: "1fr",
           }}
         >
           {projects_only.map((project: any, index: any) => {
@@ -96,16 +96,6 @@ function ProjectCard() {
                   >
                     <div className="more">
                       <div key={project.id}>
-                        <Link
-                          to={`/projectDetails/?projectId=${project._id}&projectDesc=${desc}&projectTeam=${team}`}
-                        >
-                          {/* <div>
-                            <p className="card_devs">
-                              {team?.slice(0, 3).map((member: any) => (
-                                <TeamMember dev={member} className="developer" />
-                              ))}
-                            </p>
-                          </div> */}
                           <div className="card_details">
                               <motion.p
                                 className="card_title"
@@ -146,7 +136,6 @@ function ProjectCard() {
                               <p className="lengths">{stackLength}</p>
                             </div>
                           </div>
-                        </Link>
                       </div>
                     </div>
                   </Link>
