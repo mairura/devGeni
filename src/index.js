@@ -40,7 +40,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <React.StrictMode>
-      <ReactPwa
+      {/* <ReactPwa
         test //is to install in localhost, not required
         suspense={<></>}
         config={{
@@ -67,7 +67,7 @@ root.render(
           },
         }}
       >
-        <ErrorBoundary>
+        <ErrorBoundary> */}
           <App />
           <PWAPrompt
             promptOnVisit={2}
@@ -76,8 +76,8 @@ root.render(
             permanentlyHideOnDismiss={false}
             delay={1000}
           />
-        </ErrorBoundary>
-      </ReactPwa>
+        {/* </ErrorBoundary>
+      </ReactPwa> */}
     </React.StrictMode>
   </BrowserRouter>
 );

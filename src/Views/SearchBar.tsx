@@ -98,6 +98,7 @@ const SearchBar = (props: any) => {
 
   return (
     <div className='searchbar_container'>
+      <div>
       <div className="searchbar_menu">
         <div className='tags_header'><img src={Logo} alt="logo" /><p>DEVGENI</p></div>
           <div className="hambuger">
@@ -109,6 +110,8 @@ const SearchBar = (props: any) => {
           </div>
       </div>
       {isOpen && <ContactUs />}
+
+      </div>
         <div className="searchbar">
             <h4>Tell Us in Detail What You'd Like Us To Build</h4>
             <div className="tagBox">

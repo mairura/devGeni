@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Logo from "../assets/Logo.png"
-import { useState } from "react";
 
 const buttonVariants = {
     hover: {
@@ -17,7 +16,6 @@ const buttonVariants = {
 
 const TagsPage = (props: any) => {
   const requests = ["App Development", "Design me a Web3 App", "Build me a trading bot for...", "Create me a Web3 Wallet", "Build me an NFT Marketplace", "Design me a Web3 Social App for...", "Create a DAO...", "Build AI Chatbot that...", "I want a Gateways/CEX that...", "Build a DEFI", "I need a Gaming App that..."];
-  // const [message, setMessage] = useState("");
 
   return (
     <div className='tags_container'>

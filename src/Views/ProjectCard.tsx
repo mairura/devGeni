@@ -1,13 +1,19 @@
 import "./css/style.css";
 import "./css/card.css";
 import "./css/home.css"
-import { useEffect, useState } from "react";
-// import TeamMember from "./Components/TeamMember";
 import linkPay from "../assets/linkpay.png";
 import { languages, teams } from "../icons";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import TopBar from "./Components/TopBar";
+import HashLoader from "react-spinners/HashLoader";
+import { useState, useEffect, CSSProperties } from "react";
+
+const override: CSSProperties = {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "gray",
+};
 
 const containerVariants = {
   hidden: {
@@ -55,9 +61,26 @@ function ProjectCard() {
   return (
     <>
     {loading ? (
-      <div style={{ color: "#fff" }}>
-        Fetching Project Data...
-      </div>
+      <>
+       <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              width: "100vw",
+              height: "100vh",
+              backgroundColor: " #031926",
+            }}
+          >
+            <HashLoader
+              color="#52f2e2"
+              cssOverride={override}
+              size={100}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+          </div>
+      </>
     ) : (
       <>
       <div
