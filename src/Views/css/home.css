@@ -1,12 +1,13 @@
 .home_container {
   height: 100vh;
   background: #031926;
-  animation: slide-up 1.5s ease-in-out;
+  /* animation: 1.5s ease-in-out; */
+  overflow-y: hidden;
 }
-@keyframes slide-up {
-  from { transform: translateY(100%); }
-  to { transform: translateY(0); }
-}
+/* @keyframes slide-up {
+  from { transform: translateY(100%); overflow: scroll;overflow-y: hidden; }
+  to { transform: translateY(0);overflow: scroll;overflow-y: hidden; }
+} */
 .main_logo {
   height: 30vh;
   display: flex;
@@ -172,7 +173,7 @@ select.mySelectArrow {
   opacity: 1;
   transition: opacity 1s ease-in-out;
 }
-.screen-container .fade-out {
+/* .screen-container .fade-out {
   opacity: 0;
 }
 @keyframes fade-out {
@@ -190,7 +191,7 @@ select.mySelectArrow {
   to {
     opacity: 1;
   }
-}
+} */
 /* Tags Page */
 .tags_container, .searchbar_container, .searchAtt_container{
   font-family: "Orbitron", sans-serif;

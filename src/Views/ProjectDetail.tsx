@@ -10,6 +10,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 // import { Carousel } from "react-responsive-carousel";
 import { motion } from "framer-motion";
 import TopBar from "./Components/TopBar";
+import TeamMember from "./Components/TeamMember";
 
 const containerVariants = {
   hidden: {
@@ -144,9 +145,9 @@ function ProjectDetail() {
               interval={4000}
               showStatus={false}
             > */}
-              {/* {devs?.map((member: any, index: any) => (
+              {devs?.map((member: any, index: any) => (
                 <TeamMember dev={member} className="member_carousel" key={index} />
-              ))} */}
+              ))}
               {/* </Carousel> */}
             {/* </div> */}
           </div>

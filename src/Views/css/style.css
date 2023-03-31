@@ -67,17 +67,6 @@ body {
   flex-wrap: wrap;
   color: #989898;
 }
-/* .tag {
-  color: #fff;
-  padding: 1px 9px;
-  width: auto;
-  border: 0.01em ridge #52f2e2;
-  border-radius: 30px;
-  margin-top: 2px;
-  font-style: normal;
-  font-size: 10px;
-  font-family: "Poppins", sans-serif;
-} */
 .more-btn {
   background: #090909;
   border: 0.2px solid #d9d9d9;
