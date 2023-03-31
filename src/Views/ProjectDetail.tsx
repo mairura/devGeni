@@ -145,9 +145,11 @@ function ProjectDetail() {
               interval={4000}
               showStatus={false}
             > */}
+            <div style={{margin:"auto"}}>
               {devs?.map((member: any, index: any) => (
                 <TeamMember dev={member} className="member_carousel" key={index} />
               ))}
+              </div>
               {/* </Carousel> */}
             {/* </div> */}
           </div>

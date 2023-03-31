@@ -61,9 +61,8 @@
   padding: 10px;
 }
 .memberContainer {
-  width: 100vw;
+  width: 100%;
   display: flex;
-  margin-left: 60px;
   /* justify-content: space-around; */
   /* padding: 7px; */
   gap: 0.2rem;
