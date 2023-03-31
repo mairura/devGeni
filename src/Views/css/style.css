@@ -15,7 +15,7 @@ body {
 .main_container {
   max-height: 100vh;
   background-color: #031926;
-  position: absolute;
+  position: absolute; 
   width: 100%;
   max-width: 400px;
   display: flex;

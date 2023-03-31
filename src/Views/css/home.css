@@ -1,13 +1,8 @@
 .home_container {
   height: 100vh;
   background: #031926;
-  /* animation: 1.5s ease-in-out; */
   overflow-y: hidden;
 }
-/* @keyframes slide-up {
-  from { transform: translateY(100%); overflow: scroll;overflow-y: hidden; }
-  to { transform: translateY(0);overflow: scroll;overflow-y: hidden; }
-} */
 .main_logo {
   height: 30vh;
   display: flex;
@@ -98,7 +93,7 @@ select.mySelectArrow {
 .carousel_data p {
   font-style: normal;
   font-weight: 200;
-  font-size: 11px;
+  font-size: 14px;
   line-height: 19px;
   text-align: center;
   font-family: "Poppins", sans-serif;
@@ -155,6 +150,7 @@ select.mySelectArrow {
 .explore p{
   padding-top: 2px;
   padding-right: 2px;
+  font-size: 10px;
 }
 .loader {
   width: 10px;

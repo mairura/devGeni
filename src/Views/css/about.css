@@ -2,8 +2,10 @@
   color: #fff;
   margin-top: 10%;
 }
+.aboutLogo{
+  width: 100%;
+}
 .aboutPage {
-  position: fixed;
   width: 380px;
 }
 .aboutContainer h4 {
@@ -47,9 +49,6 @@
   background: transparent;
   color: #fff;
   margin-top: 10%;
-}
-.contact_page {
-  position: fixed;
 }
 .contactPage h5 {
   font-size: 24px;
@@ -113,7 +112,6 @@
   height: 100vh;
 }
 .faqsData {
-  position: fixed;
   width: 370px;
 }
 .faqsHeader {
