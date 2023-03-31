@@ -35,6 +35,7 @@
   overflow: scroll;
   overflow-y: hidden;
   overflow-x: hidden;
+  font-size: 15px;
 }
 .card_title {
   font-family: "Orbitron", sans-serif;

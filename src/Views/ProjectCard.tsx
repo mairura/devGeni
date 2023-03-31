@@ -153,7 +153,7 @@ function ProjectCard() {
                                 paddingRight: 4,
                               }}
                             />
-                            {trimDesc(proj_title, 20)}
+                            {trimDesc(proj_title, 23)}
                           </motion.p>
                           <p className="card_desc">{desc}</p>
                         <div className="rate">
