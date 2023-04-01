@@ -91,10 +91,10 @@ select.mySelectArrow {
   margin-bottom: 5vh;
 }
 .carousel_data p {
+  font-size: 16px;
+  line-height: 19px;
   font-style: normal;
   font-weight: 200;
-  font-size: 14px;
-  line-height: 19px;
   text-align: center;
   font-family: "Poppins", sans-serif;
   color: #ffffff;
@@ -169,25 +169,6 @@ select.mySelectArrow {
   opacity: 1;
   transition: opacity 1s ease-in-out;
 }
-/* .screen-container .fade-out {
-  opacity: 0;
-}
-@keyframes fade-out {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-} */
 /* Tags Page */
 .tags_container, .searchbar_container, .searchAtt_container{
   font-family: "Orbitron", sans-serif;

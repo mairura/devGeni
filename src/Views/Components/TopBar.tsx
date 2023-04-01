@@ -29,7 +29,7 @@ const TopBar = () => {
   return (
     <div className="top_bar">
       <div className="search_barTop">
-        <div>
+        <div className="previous">
           <button onClick={() => navigate(-1)} className="btn_navigate">
             {" "}
             {prev}{" "}

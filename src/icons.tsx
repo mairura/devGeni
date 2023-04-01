@@ -58,8 +58,8 @@ export const logo = (
 );
 export const prev = (
   <svg
-    width="13"
-    height="10"
+    width="15"
+    height="15"
     viewBox="0 0 13 20"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -127,8 +127,8 @@ export const verified = (
 );
 export const teams = (
   <svg
-    width="12"
-    height="12"
+    width="15"
+    height="15"
     viewBox="0 0 12 12"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

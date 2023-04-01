@@ -85,7 +85,7 @@ function ProjectCard() {
       <>
       <div
       style={{
-        marginTop: "200px",
+        marginTop: "250px",
         display: "grid",
         gridTemplateColumns: "1fr",
       }}
@@ -149,29 +149,32 @@ function ProjectCard() {
                               alt="linkpay logo"
                               style={{
                                 textAlign: "left",
-                                height: 15,
+                                height: 20,
                                 paddingRight: 4,
+                                paddingBottom: 2,
                               }}
                             />
-                            {trimDesc(proj_title, 23)}
+                            {trimDesc(proj_title, 50)}
                           </motion.p>
                           <p className="card_desc">{desc}</p>
                         <div className="rate">
                           <span
                             className="lengths"
                             style={{
-                              fontSize: 8,
-                              paddingTop: 7,
+                              fontSize: 10,
+                              paddingTop: 10,
                               color: "#fff",
                               paddingRight: 10,
                             }}
                           >
-                            {match_rate}%{" "}
+                            {match_rate}%{" "}match rate
                           </span>
-                          <span>{teams}</span>
-                          <p className="lengths">{teamLength}</p>
-                          <span>{languages}</span>
-                          <p className="lengths">{stackLength}</p>
+                          <div className="teamLanguages">
+                            <span>{teams}</span>
+                            <p className="lengths">{teamLength}</p>
+                            <span>{languages}</span>
+                            <p className="lengths">{stackLength}</p>
+                          </div>
                         </div>
                       </div>
                   </div>

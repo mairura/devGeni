@@ -13,6 +13,7 @@ body {
   height: 100%;
 }
 .main_container {
+  position: relative;
   max-height: 100vh;
   background-color: #031926;
   position: absolute; 
@@ -20,6 +21,7 @@ body {
   max-width: 400px;
   display: flex;
   justify-content: center;
+  border: 1px solid red;
 }
 .main_search {
   height: 30px;
@@ -35,7 +37,7 @@ body {
   margin: 25px 20px;
 }
 .search-bar {
-  padding-top: 1%;
+  padding-top: 2%;
   width: 100%;
   max-width: 400px;
   position: fixed;
@@ -57,6 +59,7 @@ body {
 .matchRateData p {
   margin-top: 10px;
   font-size: 14px;
+  margin-left: 34px;
 }
 .current-tags {
   width: 80%;
