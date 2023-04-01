@@ -21,7 +21,6 @@ body {
   max-width: 400px;
   display: flex;
   justify-content: center;
-  border: 1px solid red;
 }
 .main_search {
   height: 30px;
