@@ -10,6 +10,7 @@
   text-align: left;
   margin: 8px;
   width: 350px;
+  height: 282px;
 }
 .card-main * {
   color: #fff;
@@ -35,7 +36,8 @@
   overflow: scroll;
   overflow-y: hidden;
   overflow-x: hidden;
-  font-size: 15px;
+  font-size: 18px;
+  padding: 2px;
 }
 .card_title {
   font-family: "Orbitron", sans-serif;
@@ -48,7 +50,7 @@
 }
 .card_desc {
   width: 100%;
-  height: 95px;
+  height: 180px;
   text-align: left;
   font-size: 12px;
   font-family: "Poppins", sans-serif;
@@ -67,6 +69,11 @@
 .rate span {
   padding-right: 5px;
   font-size: 20px;
+}
+.teamLanguages{
+  display: flex;
+  flex-direction: row;
+  padding-top: 3px;
 }
 .rate p {
   padding: 7px 10px 0 0;
