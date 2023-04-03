@@ -42,7 +42,7 @@ function ProjectCard() {
   if(localStorage.getItem('data_projects_searched')){
     const data_projects_searched:any = localStorage.getItem('data_projects_searched')
     projects_only = JSON.parse(data_projects_searched).projects_data
-    // console.log("projects_only:", data_projects_searched)
+    console.log("projects_only:", data_projects_searched)
   }
   const projectLength = projects_only.length;
  

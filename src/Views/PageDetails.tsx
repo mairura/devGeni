@@ -79,7 +79,7 @@ const PageDetails = () => {
                                 <p>{dev.name}</p>
                                 <small>{dev.short_name}</small>
                             </div>
-                            <Link to={`/profile/?name=${dev?.name}&shortName=${dev?.short_name}&profilePic=${dev?.profile_img_link}&profileLink=${dev?.profile_link}&devStack=${dev?.tech_stack}`} className='profile_links'>
+                            <Link to={`/profile/?shortName=${dev?.short_name}`} className='profile_links'>
                                 <button>
                                     See Profile
                                 </button>

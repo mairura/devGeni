@@ -39,7 +39,7 @@ const AllProjects = () => {
       const endpoint: string = `${url}/index/projects`;
       try {
           const { data } = await axios.get(endpoint);
-          console.log("Print All data:", data)
+          // console.log("Print All data:", data)
           setProjects(data);
           setNumProjects(data.length);
       } catch (error: any) {
@@ -80,8 +80,6 @@ const AllProjects = () => {
             ? string.substring(0, length) + "..."
             : string;
         };
-
-        console.log("Print Rateeeee:", match_rate)
 
         return (
           <>
