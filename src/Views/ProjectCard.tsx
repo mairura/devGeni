@@ -37,10 +37,12 @@ const containerVariants = {
 
 function ProjectCard() {
   const  [loading, setLoading] =useState(true);
+
   let projects_only:any[] = []
   if(localStorage.getItem('data_projects_searched')){
     const data_projects_searched:any = localStorage.getItem('data_projects_searched')
     projects_only = JSON.parse(data_projects_searched).projects_data
+    // console.log("projects_only:", data_projects_searched)
   }
   const projectLength = projects_only.length;
  
@@ -50,7 +52,6 @@ function ProjectCard() {
     const dataParams:any = localStorage.getItem('dataParams')
     params_only = JSON.parse(dataParams);
   }
-  console.log("Print All Projects Data", params_only)
 
   useEffect(() => {
     setTimeout(() => {
@@ -130,7 +131,7 @@ function ProjectCard() {
               transition={{ type: "spring", stiffness: 500 }}
             >
               <Link
-                to={`/projectDetails/?projectId=${project._id}&projectDesc=${desc}&projectTeam=${team}`}
+                to={`/page-details/?projectId=${project._id}&projectDesc=${desc}&projectTeam=${team}&projectTitle=${proj_title}&projectStacks=${stack}`}
               >
                 <div className="more">
                   <div key={project.id}>
@@ -156,7 +157,7 @@ function ProjectCard() {
                             />
                             {trimDesc(proj_title, 50)}
                           </motion.p>
-                          <p className="card_desc">{desc}</p>
+                          <p className="card_desc">{trimDesc(desc, 300)}</p>
                         <div className="rate">
                           <span
                             className="lengths"
