@@ -59,16 +59,20 @@ const PageDetails = () => {
                 <Tab className="class_tabs">Stats</Tab>
             </TabList>
             <TabPanel>
-                <div className='stacks_box'>
-                    <h4>Technologies</h4>
-                    <div className='stacks_title'>
-                        {stacks.map((stack: any, index: any) => {
-                            return <button key={index}>{stack}</button>    
-                        })} 
+                <div  className="class_tabPanel">
+                    <div className='stacks_box'>
+                        <h4>Technologies</h4>
+                        <div className='stacks_title'>
+                            {stacks.map((stack: any, index: any) => {
+                                return <button key={index}>{stack}</button>    
+                            })} 
+                        </div>
                     </div>
+    border: 1px solid red;
                 </div>
             </TabPanel>
-            <TabPanel>    
+            <TabPanel>  
+                <div className='class_tabPanel'>
                 {projDetails.map((dev: any, index: any) => {
                     return (
                         <div className='teams_data' key={index}>
@@ -87,6 +91,7 @@ const PageDetails = () => {
                         </div>
                     )
                 })}   
+                </div>  
                            
             </TabPanel>
         </Tabs>

@@ -53,106 +53,108 @@ const AllProjects = () => {
 
   return (
     <>
-    <div style={{ marginTop:"1em"}}>
-      <TopBar />
-    </div>
-    <div className="matchRateData">
-        <p>We found {numProjects} projects matching your search</p>
-    </div>
-    <div
-      style={{
-        marginTop: "15px",
-        display: "grid",
-        gridTemplateColumns: "1fr",
-      }}
-    >
-      {projects.map((project: any, index: any) => {
-        let team: {}[] | undefined = project?.team;
-        let stack: String[] | undefined = project?.tech_stack;
-        let desc: String[] | undefined = project?.description;
-        let match_rate: string | undefined = project?.match_rate;
-        let proj_title: string | undefined = project?.proj_name;
-        let teamLength: number | undefined = team?.length;
-        let stackLength: number | undefined = stack?.length;
+    <div className='allProjects_container'>
+      <div style={{ marginTop:"1em"}}>
+        <TopBar />
+      </div>
+      <div className="matchRateData">
+          <p>We found {numProjects} projects matching your search</p>
+      </div>
+      <div
+        style={{
+          marginTop: "15px",
+          display: "grid",
+          gridTemplateColumns: "1fr",
+        }}
+      >
+        {projects.map((project: any, index: any) => {
+          let team: {}[] | undefined = project?.team;
+          let stack: String[] | undefined = project?.tech_stack;
+          let desc: String[] | undefined = project?.description;
+          let match_rate: string | undefined = project?.match_rate;
+          let proj_title: string | undefined = project?.proj_name;
+          let teamLength: number | undefined = team?.length;
+          let stackLength: number | undefined = stack?.length;
 
-        let trimDesc = function (string: any, length: any) {
-          return string.length > length
-            ? string.substring(0, length) + "..."
-            : string;
-        };
+          let trimDesc = function (string: any, length: any) {
+            return string.length > length
+              ? string.substring(0, length) + "..."
+              : string;
+          };
 
-        return (
-          <>
-            <motion.div
-              className="card-main"
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              whileHover={{ scale: 1.03, originX: 0, color: "#f8e112" }}
-              transition={{ type: "spring", stiffness: 500 }}
-              key={index}
-            >
-              <Link
-                to={`/page-details/?projectId=${project._id}&projectDesc=${desc}&projectTeam=${team}&projectTitle=${proj_title}&projectStacks=${stack}`}
+          return (
+            <>
+              <motion.div
+                className="card-main"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                whileHover={{ scale: 1.03, originX: 0, color: "#f8e112" }}
+                transition={{ type: "spring", stiffness: 500 }}
+                key={index}
               >
-                <div className="more">
-                  <div key={project.id}>
-                      <div>
-                        {/* <p className="card_devs">
-                          {dev_data?.slice(0, 3).map((member: any) => (
-                            <TeamMember dev={member} className="developer" />
-                          ))}
-                          <span className="main-member">+{diff}</span>
-                        </p> */}
-                      </div>
-                      <div className="card_details">
-                        <motion.p
-                          className="card_title"
-                          whileHover={{
-                            scale: 1.05,
-                            originX: 0,
-                            color: "#52f2e2",
-                          }}
-                          transition={{ type: "spring", stiffness: 500 }}
-                        >
-                          <img
-                            src={linkPay}
-                            alt="linkpay logo"
-                            style={{
-                              textAlign: "left",
-                              height: 15,
-                              paddingRight: 4,
-                            }}
-                          />
-                          {trimDesc(proj_title, 20)}
-                        </motion.p>
-                        <p className="card_desc">{desc}</p>
-                        <div className="rate">
-                          {/* <span
-                            className="lengths"
-                            style={{
-                              fontSize: 8,
-                              paddingTop: 7,
-                              color: "#fff",
-                              paddingRight: 10,
-                            }}
-                          >
-                            {match_rate}%{" "}match rate
-                          </span> */}
-                          <span>{teams}</span>
-                          <p className="lengths">{teamLength}</p>
-                          <span>{languages}</span>
-                          <p className="lengths">{stackLength}</p>
+                <Link
+                  to={`/page-details/?projectId=${project._id}&projectDesc=${desc}&projectTeam=${team}&projectTitle=${proj_title}&projectStacks=${stack}`}
+                >
+                  <div className="more">
+                    <div key={project.id}>
+                        <div>
+                          {/* <p className="card_devs">
+                            {dev_data?.slice(0, 3).map((member: any) => (
+                              <TeamMember dev={member} className="developer" />
+                            ))}
+                            <span className="main-member">+{diff}</span>
+                          </p> */}
                         </div>
-                      </div>
+                        <div className="card_details">
+                          <motion.p
+                            className="card_title"
+                            whileHover={{
+                              scale: 1.05,
+                              originX: 0,
+                              color: "#52f2e2",
+                            }}
+                            transition={{ type: "spring", stiffness: 500 }}
+                          >
+                            <img
+                              src={linkPay}
+                              alt="linkpay logo"
+                              style={{
+                                textAlign: "left",
+                                height: 15,
+                                paddingRight: 4,
+                              }}
+                            />
+                            {trimDesc(proj_title, 20)}
+                          </motion.p>
+                          <p className="card_desc">{desc}</p>
+                          <div className="rate">
+                            {/* <span
+                              className="lengths"
+                              style={{
+                                fontSize: 8,
+                                paddingTop: 7,
+                                color: "#fff",
+                                paddingRight: 10,
+                              }}
+                            >
+                              {match_rate}%{" "}match rate
+                            </span> */}
+                            <span>{teams}</span>
+                            <p className="lengths">{teamLength}</p>
+                            <span>{languages}</span>
+                            <p className="lengths">{stackLength}</p>
+                          </div>
+                        </div>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            </motion.div>
-          </>
-        );
-      })}
+                </Link>
+              </motion.div>
+            </>
+          );
+        })}
+      </div>
     </div>
   </>
   )

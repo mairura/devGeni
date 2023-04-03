@@ -23,19 +23,12 @@ const Profile = () => {
 
   let url = Config.URL;
 
-  // useEffect(() => {
-  //   const dev_stack: any = params.get("devStack");
-  //   const itemsArray: any = dev_stack.split(",");
-  //   setStacks(itemsArray);
-  // }, []);
-
   const getDeveloper = async () => {
     const dev: any = await axios.get(`${url}/index/dev/${shortName}`);
     setDev([dev.data])
     setStacks(dev.data.tech_stack)
   }
-  console.log("Print Each developer:", devData);
-
+  
   useEffect(() => {
     getDeveloper();
   }, []);

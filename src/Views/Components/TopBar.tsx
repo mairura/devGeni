@@ -2,9 +2,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/topBar.css";
 import Logo from "../../assets/Logo.png";
-import Hambuger from "../../assets/ham.svg";
-import close from "../../assets/close.svg";
-import { prev } from "../../icons";
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { AiOutlineLeft } from 'react-icons/ai';
+import { AiFillCloseCircle } from 'react-icons/ai';
 import ContactUs from "./ContactUs";
 import { IParams } from "../Context";
 
@@ -30,10 +30,8 @@ const TopBar = () => {
     <div className="top_bar">
       <div className="search_barTop">
         <div className="previous">
-          <button onClick={() => navigate(-1)} className="btn_navigate">
+            {" "}<AiOutlineLeft onClick={() => navigate(-1)} className="btn_navigate" />
             {" "}
-            {prev}{" "}
-          </button>
         </div>
 
         <div className="top_logo">
@@ -41,9 +39,9 @@ const TopBar = () => {
         </div>
         <div className="hambuger">
           {isOpen ? (
-            <img src={close} alt="close" onClick={closeMenu} />
+            <AiFillCloseCircle onClick={closeMenu} className="close_btn" />
           ) : (
-            <img src={Hambuger} alt="logo" onClick={toggleIcon} />
+            <GiHamburgerMenu onClick={toggleIcon} className="hamburger" />
           )}
         </div>
       </div>

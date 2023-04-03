@@ -42,7 +42,6 @@ function ProjectCard() {
   if(localStorage.getItem('data_projects_searched')){
     const data_projects_searched:any = localStorage.getItem('data_projects_searched')
     projects_only = JSON.parse(data_projects_searched).projects_data
-    console.log("projects_only:", data_projects_searched)
   }
   const projectLength = projects_only.length;
  
@@ -68,6 +67,7 @@ function ProjectCard() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              alignContent: "center",
               width: "100vw",
               height: "100vh",
               backgroundColor: " #031926",
@@ -108,7 +108,7 @@ function ProjectCard() {
 
         return (
           <>
-            <div className="main_container" key={index}>
+            <div className="main_contain" key={index}>
               <div className="search-bar">
                 <TopBar />
                   <div className="tag_boxData">
@@ -145,17 +145,18 @@ function ProjectCard() {
                             }}
                             transition={{ type: "spring", stiffness: 500 }}
                             >
+                            <div className="card_titleData">
                             <img
                               src={linkPay}
                               alt="linkpay logo"
                               style={{
                                 textAlign: "left",
                                 height: 20,
-                                paddingRight: 4,
-                                paddingBottom: 2,
+                          
                               }}
                             />
                             {trimDesc(proj_title, 50)}
+                            </div>
                           </motion.p>
                           <p className="card_desc">{trimDesc(desc, 300)}</p>
                         <div className="rate">

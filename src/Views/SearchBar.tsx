@@ -6,7 +6,8 @@ import { Config } from "../config/config";
 import { IParams } from "./Context";
 import close from "../assets/close.svg";
 import ContactUs from "./Components/ContactUs";
-import Hambuger from "../assets/ham.svg";
+import { AiFillCloseCircle } from 'react-icons/ai';
+import { GiHamburgerMenu } from 'react-icons/gi';
 import "./css/home.css";
 
 const buttonVariants = {
@@ -59,7 +60,6 @@ const SearchBar = (props: any) => {
             const projectParams = data.params;
             setParams(projectParams);
             localStorage.setItem("dataParams", JSON.stringify(projectParams));
-            console.log("Print Params:", data)
           })
           .catch((error) => {
             console.error(error.message);
@@ -101,12 +101,12 @@ const SearchBar = (props: any) => {
       <div>
         <div className="searchbar_menu">
           <div className='tags_header'><img src={Logo} alt="logo" /><p>DEVGENI</p></div>
-            <div className="hambuger">
-              {isOpen ? (
-                <img src={close} alt="close" onClick={closeMenu} />
-              ) : (
-                <img src={Hambuger} alt="logo" onClick={toggleIcon} />
-              )}
+            <div className="hambuger_menu">
+            {isOpen ? (
+            <AiFillCloseCircle onClick={closeMenu} className="_btn" />
+          ) : (
+            <GiHamburgerMenu onClick={toggleIcon} className="_btn" />
+          )}
             </div>
           </div>
           {isOpen && <ContactUs />}
@@ -125,12 +125,16 @@ const SearchBar = (props: any) => {
             <div className="searchAttrBox">
                 <div className="search_box">
                   <p>Tags</p>
-                  <div className="tag_boxData">
-                    {params.map((param: any, index: any) => {
-                      return <p key={index}>{param}</p>;
-                    })}
+                  <div className="tag_Box">
+                    <div className="tag_boxData">
+                      {params.map((param: any, index: any) => {
+                        return <p key={index}>{param}</p>;
+                      })}
+                    </div>
+                    <div>
+                      <AiFillCloseCircle onClick={clearStack} className="_img" />
+                    </div>
                   </div>
-                  <img src={close} alt="close" onClick={clearStack} />
                 </div>
             </div>
         </div>
