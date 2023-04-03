@@ -99,19 +99,18 @@ const SearchBar = (props: any) => {
   return (
     <div className='searchbar_container'>
       <div>
-      <div className="searchbar_menu">
-        <div className='tags_header'><img src={Logo} alt="logo" /><p>DEVGENI</p></div>
-          <div className="hambuger">
-            {isOpen ? (
-              <img src={close} alt="close" onClick={closeMenu} />
-            ) : (
-              <img src={Hambuger} alt="logo" onClick={toggleIcon} />
-            )}
+        <div className="searchbar_menu">
+          <div className='tags_header'><img src={Logo} alt="logo" /><p>DEVGENI</p></div>
+            <div className="hambuger">
+              {isOpen ? (
+                <img src={close} alt="close" onClick={closeMenu} />
+              ) : (
+                <img src={Hambuger} alt="logo" onClick={toggleIcon} />
+              )}
+            </div>
           </div>
-      </div>
-      {isOpen && <ContactUs />}
-
-      </div>
+          {isOpen && <ContactUs />}
+        </div>
         <div className="searchbar">
             <h4>Tell Us in Detail What You'd Like Us To Build</h4>
             <div className="tagBox">
