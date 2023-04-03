@@ -59,7 +59,7 @@ const SearchBar = (props: any) => {
             const projectParams = data.params;
             setParams(projectParams);
             localStorage.setItem("dataParams", JSON.stringify(projectParams));
-            console.log("Print Params:", projectParams)
+            console.log("Print Params:", data)
           })
           .catch((error) => {
             console.error(error.message);
