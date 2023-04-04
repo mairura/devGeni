@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Logo from "../assets/Logo.png"
 import { Config } from "../config/config";
@@ -22,18 +22,19 @@ const buttonVariants = {
   },
 };
 
+
 let previousSeperator: any = "";
 const wordSeperators = [" ", ",", ";", ":", ".", "?", "!", "/", "\\", "(", ")", "[", "]", "{", "}", "<", ">", "|", "`", "~", "@", "#", "$", "%", "^", "&", "*", "-", "_", "+", "=", "'", '"'];
 
 const SearchBar = (props: any) => {
   const localParams: any = localStorage.getItem("params");
   const [inputData, setInputData] = useState(localParams);
-  const [params, setParams] = useState<Array<IParams>>([]);
   const [tags, setTags] = useState<string[]>([]);
   const [matchedTags, setMatchedTags] = useState<string[]>([]);
 
   let url = Config.URL;
 
+  const navigate = useNavigate()
 
   // REVIEW: Display tags that match the input, as the user types
   /**
@@ -80,13 +81,6 @@ const SearchBar = (props: any) => {
 
   const closeMenu = () => {
     setIsOpen(false);
-  };
-
-
-
-  const SplitNames = (names: string) => {
-    const names_split = names.split(",");
-    return names_split;
   };
 
   //Function to clear the selected tags 
@@ -139,6 +133,11 @@ const SearchBar = (props: any) => {
 
   }, []);
 
+  const navigateToProjects = () => {
+
+    navigate('/projects', { state: { tags: matchedTags } });
+  }
+
   return (
     <div className='searchbar_container'>
       <div>
@@ -179,13 +178,13 @@ const SearchBar = (props: any) => {
           </div>
         </div>
       </div>
-      <Link to='/projects' style={{ width: "100%" }} className="home_btn">
+      <a onClick={() => navigateToProjects()} style={{ width: "100%" }} className="home_btn">
         <div className="tagspage">
           <motion.button variants={buttonVariants} whileHover="hover">
             Next
           </motion.button>
         </div>
-      </Link>
+      </a>
     </div>
   )
 }
