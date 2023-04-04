@@ -136,22 +136,19 @@ select.mySelectArrow {
   text-decoration: none;
 }
 .explore{
-  margin: 20px;
   color: #fff;
   display: flex;
   justify-content: flex-end;
   font-family: "Orbitron", sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 8px;
   line-height: 10px;
-  width: 354px;
   margin: 50px auto;
 }
 .explore p{
   padding-top: 2px;
   padding-right: 2px;
-  font-size: 10px;
+  font-size: 11px;
 }
 .loader {
   width: 10px;
@@ -160,7 +157,6 @@ select.mySelectArrow {
   border-radius: 50%;
   background: #fff;
 }
-
 /* Screen View Page */
 .screen_container{
   display: flex;
@@ -203,7 +199,9 @@ select.mySelectArrow {
 }
 .category, .actions, .searchbar, .search_attr h4{
   color: #fff;
-  text-align: left;
+}
+.searchbar{
+  width: 100%;
 }
 @media (max-width: 768px){
   .searchbar h4 {
@@ -228,25 +226,29 @@ select.mySelectArrow {
   cursor: pointer;
 }
 .main_request button:hover {
-  background-color: #52f2e2;
+  background: #009E8E;
   font-weight: 500;
 }
 .tagspage{
   margin-top: 5em;
 }
 /* Search Bar Page */
-.search_box img{
-  display: flex;
-  flex-direction: column-reverse;
-}
 .tag_box{
-  max-width: 354px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
   background: #0F3F46;
   border: 0.5px solid #52F2E2;
   border-radius: 10px;
   max-height: 350px;
-  min-width: 300px;
   min-height: 155px;
+}
+@media (max-width: 768px){
+  .tag_box{
+    max-width: 95vw;
+    width: 100%;
+  }
 }
 .btnSearch {
   background: transparent;
@@ -264,7 +266,14 @@ select.mySelectArrow {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 20px;
+  align-items: center;
+  margin-top: 20px;
+}
+@media (max-width: 768px){
+  .tagBox{
+    width: 95vw;
+    width: 100%;
+  }
 }
 .tag_boxData p {
   text-decoration: none !important;
@@ -321,23 +330,20 @@ select.mySelectArrow {
   padding: 7px 5px;
   cursor: pointer;
 }
-.searchAttrBox {
-  margin: 20px;
+.searchAttrBox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95vw;
 }
 .search_box{
-  width: 354px;
+  width: 380px;
   background: #0F3F46;
   border: 0.5px solid #52F2E2;
   border-radius: 10px;
   max-height: 250px;
   min-height: 100px;
   padding: 6px 0;
-}
-.tag_Box{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
 }
 .search_box p{
   font-size: 12px;
@@ -346,6 +352,17 @@ select.mySelectArrow {
   color: #FFFFFF;
   padding: 6px;
   text-align: left;
+}
+.searchData{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tag_Box{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 @media (max-width: 768px){
   .searchAttrBox{
@@ -362,11 +379,14 @@ select.mySelectArrow {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 0;
+  margin: auto;
+  margin-bottom: 4%;
+  width: 400px;
 }
 @media (max-width: 768px){
   .searchbar_menu{
-    padding: 20px;
+    width: 100%;
+    max-width: 95vw;
   }
 }
 ._btn{

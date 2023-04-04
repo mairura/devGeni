@@ -55,10 +55,11 @@
     border: none;
 }
 .class_tabPanel{
-    height: 35vh;
+    height: 33vh;
     overflow: scroll;
     overflow-y: hidden;
     overflow-x: hidden;
+    /* border: 1px solid blue; */
 }
 .class_tabs:hover::after{
     content: '';
@@ -111,9 +112,9 @@
     color: #fff;
     font-size: 13px;
 }
-.class_panel{
+/* .class_panel{
     border: 1px solid greenyellow;
-}
+} */
 .teams_data{
     margin: 10px auto;
     width: 318px;
@@ -177,3 +178,6 @@
     border: none;
     cursor: pointer;
 }
+/* .stats_container{
+    border: 1px solid red;
+} */

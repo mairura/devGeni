@@ -3,7 +3,7 @@ import { Config } from "../config/config";
 import { IProjects } from "./Context";
 import axios from "axios"
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import linkPay from "../assets/linkpay.png";
 import TopBar from './Components/TopBar';
 import { languages, teams } from "../icons";
@@ -32,6 +32,8 @@ const containerVariants = {
 const AllProjects = () => {
   const [projects, setProjects] = useState<Array<IProjects>>([]);
   const [numProjects, setNumProjects] = useState("0");
+
+  const navigate = useNavigate()
 
   let url = Config.URL;
   //Function to handle all projects
@@ -82,6 +84,10 @@ const AllProjects = () => {
               : string;
           };
 
+          const navigateToProjectDetails = () => {
+            navigate('/project-details', { state: { tagList: project } });
+          }
+
           return (
             <>
               <motion.div
@@ -94,9 +100,7 @@ const AllProjects = () => {
                 transition={{ type: "spring", stiffness: 500 }}
                 key={index}
               >
-                <Link
-                  to={`/page-details/?projectId=${project._id}&projectDesc=${desc}&projectTeam=${team}&projectTitle=${proj_title}&projectStacks=${stack}`}
-                >
+                  <a onClick={() => navigateToProjectDetails()}>
                   <div className="more">
                     <div key={project.id}>
                         <div>
@@ -130,17 +134,6 @@ const AllProjects = () => {
                           </motion.p>
                           <p className="card_desc">{desc}</p>
                           <div className="rate">
-                            {/* <span
-                              className="lengths"
-                              style={{
-                                fontSize: 8,
-                                paddingTop: 7,
-                                color: "#fff",
-                                paddingRight: 10,
-                              }}
-                            >
-                              {match_rate}%{" "}match rate
-                            </span> */}
                             <span>{teams}</span>
                             <p className="lengths">{teamLength}</p>
                             <span>{languages}</span>
@@ -149,7 +142,7 @@ const AllProjects = () => {
                         </div>
                     </div>
                   </div>
-                </Link>
+                </a>
               </motion.div>
             </>
           );
