@@ -3,7 +3,7 @@ import "./css/card.css";
 import "./css/home.css"
 import linkPay from "../assets/linkpay.png";
 import { languages, teams } from "../icons";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import TopBar from "./Components/TopBar";
 import HashLoader from "react-spinners/HashLoader";
@@ -45,12 +45,17 @@ function ProjectCard(props: any) {
 
   const location = useLocation();
   const tags = location.state.tags // Access tags from the search page
-  const querryTags = tags.join(" ")
+
+  // TODO: Display the tags provided did not yield any results, provide a link to the search page
+  // if (!tags || tags.length < 1) {
+  // }
+
+  const querryTags = tags.join(",")
 
   const fetchProjects = useCallback(async () => {
     axios.post(endpoint, { description: querryTags }).then(
       (response) => {
-        const projects = response.data.projects_data
+        const projects = response.data.projects
         console.log(projects)
         setProjects(projects)
       }
@@ -63,11 +68,9 @@ function ProjectCard(props: any) {
     fetchProjects()
   }, [fetchProjects])
 
-
-
   return (
     <>
-      {projects.length < 1 ? (
+      {!projects || projects.length < 1 ? (
         <>
           <div
             style={{
@@ -123,7 +126,7 @@ function ProjectCard(props: any) {
                   let team: {}[] | undefined = project?.team;
                   let stack: String[] | undefined = project?.tech_stack;
                   let desc: String[] | undefined = project?.description;
-                  let match_rate: string | undefined = project?.match_rate;
+                  let match_rate: string | undefined = project?.matchRate;
                   let proj_title: string | undefined = project?.proj_name;
                   let teamLength: number | undefined = team?.length;
                   let stackLength: number | undefined = stack?.length;
