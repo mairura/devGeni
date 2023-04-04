@@ -1,11 +1,9 @@
 .aboutContainer {
   color: #fff;
+  overflow-y: hidden;
 }
 .aboutLogo{
   width: 100%;
-}
-.aboutPage {
-  width: 380px;
 }
 .aboutContainer h4 {
   font-size: 25px;
@@ -19,6 +17,7 @@
   text-align: left;
   font-size: 15px;
   font-family: "Poppins", sans-serif;
+  padding: 10px;
 }
 .aboutContainer h5 {
   color: #52f2e2;
