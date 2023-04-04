@@ -45,7 +45,6 @@ function ProjectCard() {
   }
   const projectLength = projects_only.length;
  
-
   let params_only: any[] = []
   if(localStorage.getItem('dataParams')){
     const dataParams:any = localStorage.getItem('dataParams')
@@ -108,9 +107,11 @@ function ProjectCard() {
 
         return (
           <>
+          <div className="_card">
+
             <div className="main_contain" key={index}>
               <div className="search-bar">
-                <TopBar />
+            <TopBar />
                   <div className="tag_boxData">
                     {params_only.map((param: any, index: any) => {
                       return <p key={index} style={{ color: "white"}}>{param}</p>;
@@ -163,7 +164,7 @@ function ProjectCard() {
                           <span
                             className="lengths"
                             style={{
-                              fontSize: 10,
+                              fontSize: 11,
                               paddingTop: 10,
                               color: "#fff",
                               paddingRight: 10,
@@ -183,6 +184,7 @@ function ProjectCard() {
                 </div>
               </Link>
             </motion.div>
+          </div>
           </>
         );
       })} 

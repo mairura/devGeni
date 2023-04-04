@@ -1,6 +1,6 @@
 .top_bar{
   width: 100%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 .search_barTop {
   display: grid;
@@ -27,12 +27,6 @@
   align-items: center;
   justify-content: center;
   color: #fff;
-}
-.searchTitle {
-  color: #fff;
-  font-family: "Poppins", sans-serif;
-  font-size: 10px;
-  padding-bottom: 10px;
 }
 .hambuger {
   color: #fff;

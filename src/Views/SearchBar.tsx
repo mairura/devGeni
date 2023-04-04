@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Logo from "../assets/Logo.png"
 import { Config } from "../config/config";
 import { IParams } from "./Context";
-import close from "../assets/close.svg";
 import ContactUs from "./Components/ContactUs";
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -21,7 +20,6 @@ const buttonVariants = {
       },
     },
   };
-
 
 const SearchBar = (props: any) => {
   const localParams: any = localStorage.getItem("params");

@@ -46,9 +46,6 @@ const TopBar = () => {
         </div>
       </div>
       {isOpen && <ContactUs />}
-      <div className="searchTitle">
-        <p>Project highlights and dev team</p>
-      </div>
     </div>
   );
 };

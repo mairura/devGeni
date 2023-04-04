@@ -1,6 +1,12 @@
 /* .allProjects_container{
   border: 1px solid blue;
 } */
+/* .main_contain{
+  border: 1px solid violet;
+} */
+/* ._card{
+  border: 1px solid blue;
+} */
 .card-main {
   background: radial-gradient(
     99.25% 97.25% at 80.14% 22.75%,
@@ -73,6 +79,7 @@
 .rate {
   display: flex;
   padding-left: 10px;
+  margin: 15px 0;
 }
 .rate span {
   padding-right: 5px;
