@@ -1,10 +1,11 @@
 .top_bar{
   width: 100%;
+  border: 1px solid red;
 }
 .search_barTop {
   display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr; */
-  grid-template-columns: 40px 300px 70px;
+  grid-template-columns: auto 1fr auto;
+  grid-gap: 10px;
   justify-content: center;
   align-items: center;
 }
