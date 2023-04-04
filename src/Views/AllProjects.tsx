@@ -39,9 +39,8 @@ const AllProjects = () => {
       const endpoint: string = `${url}/index/projects`;
       try {
           const { data } = await axios.get(endpoint);
-          console.log("Projects from All projects:", data)
-          setProjects(data)
-          console.log("Print Params Length:", data.length);
+          // console.log("Print All data:", data)
+          setProjects(data);
           setNumProjects(data.length);
       } catch (error: any) {
           console.error("Error:", error.message)
@@ -54,7 +53,9 @@ const AllProjects = () => {
 
   return (
     <>
-    <TopBar />
+    <div style={{ marginTop:"1em"}}>
+      <TopBar />
+    </div>
     <div className="matchRateData">
         <p>We found {numProjects} projects matching your search</p>
     </div>
@@ -93,7 +94,7 @@ const AllProjects = () => {
               key={index}
             >
               <Link
-                to={`/projectDetails/?projectId=${project._id}&projectDesc=${desc}&projectTeam=${team}`}
+                to={`/page-details/?projectId=${project._id}&projectDesc=${desc}&projectTeam=${team}&projectTitle=${proj_title}&projectStacks=${stack}`}
               >
                 <div className="more">
                   <div key={project.id}>
@@ -128,7 +129,7 @@ const AllProjects = () => {
                         </motion.p>
                         <p className="card_desc">{desc}</p>
                         <div className="rate">
-                          <span
+                          {/* <span
                             className="lengths"
                             style={{
                               fontSize: 8,
@@ -137,8 +138,8 @@ const AllProjects = () => {
                               paddingRight: 10,
                             }}
                           >
-                            {match_rate}%{" "}
-                          </span>
+                            {match_rate}%{" "}match rate
+                          </span> */}
                           <span>{teams}</span>
                           <p className="lengths">{teamLength}</p>
                           <span>{languages}</span>
