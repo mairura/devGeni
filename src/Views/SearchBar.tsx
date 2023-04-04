@@ -152,7 +152,6 @@ const SearchBar = (props: any) => {
           )}
             </div>
 
-          </div>
         </div>
         {isOpen && <ContactUs />}
 
@@ -176,9 +175,8 @@ const SearchBar = (props: any) => {
               {matchedTags.map((tag: any, index: any) => {
                 return <p key={index}>{tag}</p>;
               })}
-
             </div>
-            <img src={close} alt="close" onClick={clearStack} />
+            <AiFillCloseCircle onClick={clearStack} />
           </div>
         </div>
       </div>
