@@ -23,18 +23,11 @@ const Profile = () => {
 
   let url = Config.URL;
 
-  // useEffect(() => {
-  //   const dev_stack: any = params.get("devStack");
-  //   const itemsArray: any = dev_stack.split(",");
-  //   setStacks(itemsArray);
-  // }, []);
-
   const getDeveloper = async () => {
     const dev: any = await axios.get(`${url}/index/dev/${shortName}`);
     setDev([dev.data])
     setStacks(dev.data.tech_stack)
   }
-  console.log("Print Each developer:", devData);
 
   useEffect(() => {
     getDeveloper();
@@ -98,23 +91,31 @@ const Profile = () => {
                 </div>
                 <div className="profile_data">
                   <div className="profile_links">
-                    <a href={profileLink}>
+                    <div className="profile_link">
                       <BsGithub />
-                      &nbsp;&nbsp;
-                      {dev.profile_link}
-                    </a>
-                    <a href="https://www.linkedin.com/company/ngenilabs/mycompany/">
+                      <a href={dev.profile_link}>
+                        &nbsp;&nbsp;
+                        {dev.profile_link}
+                      </a>
+                    </div>
+                    <div className="profile_link">
                       <BsLinkedin />
-                      &nbsp;&nbsp; nGeni Labs LinkedIn
-                    </a>
-                    <a href="https://ngeni.io/">
+                      <a href="https://www.linkedin.com/company/ngenilabs/mycompany/">
+                        &nbsp;&nbsp; nGeni Labs LinkedIn
+                      </a>
+                    </div>
+                    <div className="profile_link">
                       <img src={Logo} alt="logo" />
-                      &nbsp;&nbsp;nGeni Labs Website
-                    </a>
-                    <a href="https://twitter.com/ngenilabs">
+                      <a href="https://ngeni.io/">
+                        &nbsp;&nbsp;nGeni Labs Website
+                      </a>
+                    </div>
+                    <div className="profile_link">
                       <BsTwitter />
-                      &nbsp;&nbsp; nGeni Labs Twitter
-                    </a>
+                      <a href="https://twitter.com/ngenilabs">
+                        &nbsp;&nbsp; nGeni Labs Twitter
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

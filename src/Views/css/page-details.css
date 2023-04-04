@@ -3,7 +3,6 @@
     overflow: scroll;
     overflow-y: hidden;
     overflow-x: hidden;
-    margin-top: 3%;
 }
 .page_title{
     font-family: "Orbitron", sans-serif;
@@ -26,7 +25,7 @@
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     font-size: 12px;
-    line-height: 12px;
+    line-height: 15px;
     width: 315px;
     color: #989898;
     margin: 10px auto;
@@ -51,6 +50,15 @@
     font-size: 14px;
     line-height: 17px;
     letter-spacing: 0.18em;
+}
+.react-tabs__tab--selected {
+    border: none;
+}
+.class_tabPanel{
+    height: 35vh;
+    overflow: scroll;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 .class_tabs:hover::after{
     content: '';
@@ -118,7 +126,7 @@
 .teams_profile img{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;    
     color: #fff;
     border-radius: 50%;
     height: 40px;
@@ -140,7 +148,7 @@
     font-style: normal;
     font-weight: 600;
     font-size: 13px;
-    line-height: 10px;
+    line-height: 15px;
     letter-spacing: 0.18em;
     padding-bottom: 10px;
 }

@@ -2,6 +2,7 @@
   height: 100vh;
   background: #031926;
   overflow-y: hidden;
+  width: 400px;
 }
 .main_logo {
   height: 30vh;
@@ -173,6 +174,9 @@ select.mySelectArrow {
 .tags_container, .searchbar_container, .searchAtt_container{
   font-family: "Orbitron", sans-serif;
 }
+.tags_container{
+  width: 400px;
+}
 .tags_header{
   display: flex;
   flex-direction: row;
@@ -181,7 +185,6 @@ select.mySelectArrow {
   font-weight: 600;
   font-size: 12px;
   line-height: 14px;
-  margin-top: 20px;
 }
 .tags_header img{
   width: 40px;
@@ -330,6 +333,12 @@ select.mySelectArrow {
   min-height: 100px;
   padding: 6px 0;
 }
+.tag_Box{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 .search_box p{
   font-size: 12px;
   line-height: 12px;
@@ -349,22 +358,17 @@ select.mySelectArrow {
     padding: 2px;
   }
 }
-.search_box img{
-  padding-left: 20em;
-  height: 15px;
-}
 .searchbar_menu{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 0;
+  margin: 20px 0;
 }
 @media (max-width: 768px){
   .searchbar_menu{
     padding: 20px;
   }
 }
-.hambuger img {
-  display: flex;
-  justify-content: flex-end;
+._btn{
+  color: #fff;
 }

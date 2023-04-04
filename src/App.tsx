@@ -25,7 +25,7 @@ function App() {
         <>
           <div className="container">
             <div className="main_container">
-              <div className="main">
+              {/* <div className="main"> */}
                 <Routes>
                   <Route path="/" element={<StarterPage />} />
                   <Route path='/tagspage' element={<TagsPage />} />
@@ -43,7 +43,7 @@ function App() {
                   <Route path="/faqs" element={<FAQsPage />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
-              </div>
+              {/* </div> */}
             </div>
             <Footer />
           </div>

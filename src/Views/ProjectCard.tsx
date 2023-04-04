@@ -40,7 +40,6 @@ const containerVariants = {
 let url = Config.URL;
 const endpoint: string = `${url}/index/search_projects`;
 
-
 function ProjectCard(props: any) {
   const [projects, setProjects] = useState<any[]>([]);
 
@@ -75,6 +74,7 @@ function ProjectCard(props: any) {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              alignContent: "center",
               width: "100vw",
               height: "100vh",
               backgroundColor: " #031926",

@@ -1,6 +1,5 @@
 .aboutContainer {
   color: #fff;
-  margin-top: 10%;
 }
 .aboutLogo{
   width: 100%;
@@ -12,8 +11,14 @@
   font-size: 25px;
   text-transform: uppercase;
   padding-bottom: 5px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Orbitron", sans-serif;
   color: #52f2e2;
+}
+.content{
+  display: flex;
+  text-align: left;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
 }
 .aboutContainer h5 {
   color: #52f2e2;
@@ -48,7 +53,6 @@
 .contactPage {
   background: transparent;
   color: #fff;
-  margin-top: 10%;
 }
 .contactPage h5 {
   font-size: 24px;
