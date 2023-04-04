@@ -99,8 +99,6 @@ function ProjectCard(props: any) {
                 gridTemplateColumns: "1fr",
               }}
             >
-
-
               return (
               <>
                 <div className="main_container" >
