@@ -7,7 +7,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import TopBar from "./Components/TopBar";
 import HashLoader from "react-spinners/HashLoader";
-import { useState, useEffect, CSSProperties } from "react";
+import { useState, useEffect, CSSProperties, useCallback } from "react";
 import { Config } from "../config/config";
 import axios from "axios";
 
@@ -42,44 +42,27 @@ const endpoint: string = `${url}/index/search_projects`;
 
 
 function ProjectCard(props: any) {
-  const [loading, setLoading] = useState(true);
   const [projects, setProjects] = useState<any[]>([]);
 
   const location = useLocation();
   const tags = location.state.tags // Access tags from the search page
   const querryTags = tags.join(" ")
 
-  axios.post(endpoint, { description: querryTags }).then(
-    (response) => {
-      const projects = response.data.projects_data
-      console.log(projects)
-      setProjects(projects)
-    }
-  ).catch((error) => {
-    console.error(error.message);
-  })
-
-  // let projects_only: any[] = []
-  // if (localStorage.getItem('data_projects_searched')) {
-  //   const data_projects_searched: any = localStorage.getItem('data_projects_searched')
-  //   projects_only = JSON.parse(data_projects_searched).projects_data
-  // }
-  // const projectLength = projects_only.length;
-
-
-  // let params_only: any[] = []
-  // if (localStorage.getItem('dataParams')) {
-  //   const dataParams: any = localStorage.getItem('dataParams')
-  //   params_only = JSON.parse(dataParams);
-  // }
-  // console.log("Print All Projects Data", params_only)
+  const fetchProjects = useCallback(async () => {
+    axios.post(endpoint, { description: querryTags }).then(
+      (response) => {
+        const projects = response.data.projects_data
+        console.log(projects)
+        setProjects(projects)
+      }
+    ).catch((error) => {
+      console.error(error.message);
+    })
+  }, [])
 
   useEffect(() => {
-    console.log(projects, projects.length)
-    // setTimeout(() => {
-    //   setLoading(false)
-    // }, 3000);
-  })
+    fetchProjects()
+  }, [fetchProjects])
 
 
 
@@ -116,38 +99,44 @@ function ProjectCard(props: any) {
                 gridTemplateColumns: "1fr",
               }}
             >
-              {projects.map((project: any, index: any) => {
-                let team: {}[] | undefined = project?.team;
-                let stack: String[] | undefined = project?.tech_stack;
-                let desc: String[] | undefined = project?.description;
-                let match_rate: string | undefined = project?.match_rate;
-                let proj_title: string | undefined = project?.proj_name;
-                let teamLength: number | undefined = team?.length;
-                let stackLength: number | undefined = stack?.length;
 
-                let trimDesc = function (string: any, length: any) {
-                  return string.length > length
-                    ? string.substring(0, length) + "..."
-                    : string;
-                };
 
-                return (
-                  <>
-                    <div className="main_container" key={index}>
-                      <div className="search-bar">
-                        <TopBar />
-                        <div className="tag_boxData">
-                          {projects.map((param: any, project_index: any) => {
-                            console.log("index", index)
-                            return <p key={index} style={{ color: "white" }}>{param}</p>;
-                          })}
-                        </div>
-                        <div className="matchRateData">
-                          <p>We found {projects.length} projects matching your search</p>
-                        </div>
-                      </div>
+              return (
+              <>
+                <div className="main_container" >
+                  <div className="search-bar">
+                    <TopBar />
+                    <div className="tag_boxData">
+                      {tags.map((param: any, index: any) => {
+                        console.log("index", index, tags.length)
+                        return <p key={index} style={{ color: "white" }}>{param}</p>;
+                      })}
                     </div>
+                    <div className="matchRateData">
+                      <p>We found {projects.length} projects matching your search</p>
+                    </div>
+                  </div>
+                </div>
+
+
+                {projects.map((project: any, index: any) => {
+                  let team: {}[] | undefined = project?.team;
+                  let stack: String[] | undefined = project?.tech_stack;
+                  let desc: String[] | undefined = project?.description;
+                  let match_rate: string | undefined = project?.match_rate;
+                  let proj_title: string | undefined = project?.proj_name;
+                  let teamLength: number | undefined = team?.length;
+                  let stackLength: number | undefined = stack?.length;
+
+                  let trimDesc = function (string: any, length: any) {
+                    return string.length > length
+                      ? string.substring(0, length) + "..."
+                      : string;
+                  };
+
+                  return (
                     <motion.div
+                      key={index}
                       className="card-main"
                       variants={containerVariants}
                       initial="hidden"
@@ -159,8 +148,8 @@ function ProjectCard(props: any) {
                       <Link
                         to={`/projectDetails/?projectId=${project._id}&projectDesc=${desc}&projectTeam=${team}`}
                       >
-                        <div className="more">
-                          <div key={project.id}>
+                        <div className="more" >
+                          <div >
                             <div className="card_details">
                               <motion.p
                                 className="card_title"
@@ -208,9 +197,12 @@ function ProjectCard(props: any) {
                         </div>
                       </Link>
                     </motion.div>
-                  </>
-                );
-              })}
+                  )
+
+                })}
+              </>
+              );
+
             </div>
           </>
         )}
