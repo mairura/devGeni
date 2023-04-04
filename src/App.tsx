@@ -31,7 +31,7 @@ function App() {
                   <Route path='/tagspage' element={<TagsPage />} />
                   <Route path="/searchbar" element={<SearchBar />} />
                   <Route path="/projects" element={<ProjectCard />} />
-                  <Route path="/page-details" element={<PageDetails />} />
+                  <Route path="/project-details" element={<PageDetails />} />
                   <Route path="/book-now" element={<BookNow />} />
                   <Route path="/details" element={<Details />} />
                   <Route path="/profile" element={<Profile />} />

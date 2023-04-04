@@ -3,7 +3,7 @@ import "./css/card.css";
 import "./css/home.css"
 import linkPay from "../assets/linkpay.png";
 import { languages, teams } from "../icons";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import TopBar from "./Components/TopBar";
 import HashLoader from "react-spinners/HashLoader";
@@ -63,7 +63,7 @@ function ProjectCard(props: any) {
     fetchProjects()
   }, [fetchProjects])
 
-
+  const navigate = useNavigate()
 
   return (
     <>
@@ -99,7 +99,6 @@ function ProjectCard(props: any) {
                 gridTemplateColumns: "1fr",
               }}
             >
-              return (
               <>
                 <div className="main_container" >
                   <div className="search-bar">
@@ -116,7 +115,6 @@ function ProjectCard(props: any) {
                   </div>
                 </div>
 
-
                 {projects.map((project: any, index: any) => {
                   let team: {}[] | undefined = project?.team;
                   let stack: String[] | undefined = project?.tech_stack;
@@ -132,6 +130,10 @@ function ProjectCard(props: any) {
                       : string;
                   };
 
+                  const navigateToProjectDetails = () => {
+                    navigate('/project-details', { state: { tagList: project } });
+                  }
+
                   return (
                     <motion.div
                       key={index}
@@ -143,9 +145,7 @@ function ProjectCard(props: any) {
                       whileHover={{ scale: 1.03, originX: 0, color: "#f8e112" }}
                       transition={{ type: "spring", stiffness: 500 }}
                     >
-                      <Link
-                        to={`/projectDetails/?projectId=${project._id}&projectDesc=${desc}&projectTeam=${team}`}
-                      >
+                        <a onClick={() => navigateToProjectDetails()}>
                         <div className="more" >
                           <div >
                             <div className="card_details">
@@ -193,10 +193,9 @@ function ProjectCard(props: any) {
                             </div>
                           </div>
                         </div>
-                      </Link>
+                        </a>
                     </motion.div>
                   )
-
                 })}
               </>
               );

@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Logo from "../assets/Logo.png"
 import { Config } from "../config/config";
-import { IParams } from "./Context";
 import ContactUs from "./Components/ContactUs";
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -21,8 +20,6 @@ const buttonVariants = {
     },
   },
 };
-
-
 
 let previousSeperator: any = "";
 const wordSeperators = [" ", ",", ";", ":", ".", "?", "!", "/", "\\", "(", ")", "[", "]", "{", "}", "<", ">", "|", "`", "~", "@", "#", "$", "%", "^", "&", "*", "-", "_", "+", "=", "'", '"'];
@@ -135,13 +132,12 @@ const SearchBar = (props: any) => {
   }, []);
 
   const navigateToProjects = () => {
-
     navigate('/projects', { state: { tags: matchedTags } });
   }
 
   return (
     <div className='searchbar_container'>
-      <div>
+      <div className="search_details">
         <div className="searchbar_menu">
           <div className='tags_header'><img src={Logo} alt="logo" /><p>DEVGENI</p></div>
             <div className="hambuger_menu">
@@ -171,12 +167,14 @@ const SearchBar = (props: any) => {
         <div className="searchAttrBox">
           <div className="search_box">
             <p>Tags</p>
-            <div className="tag_boxData">
-              {matchedTags.map((tag: any, index: any) => {
-                return <p key={index}>{tag}</p>;
-              })}
+            <div className="searchData">
+              <div className="tag_boxData">
+                {matchedTags.map((tag: any, index: any) => {
+                  return <p key={index}>{tag}</p>;
+                })}
+              </div>
+              <AiFillCloseCircle onClick={clearStack} />
             </div>
-            <AiFillCloseCircle onClick={clearStack} />
           </div>
         </div>
       </div>
