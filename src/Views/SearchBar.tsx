@@ -35,6 +35,8 @@ const SearchBar = (props: any) => {
 
   const navigate = useNavigate()
 
+  console.log("data ", inputData)
+
   // Check if the word a user types in is in the list of tags 
   const matchTags = (word: string) => {
     word = word.toLowerCase().trim()
@@ -70,19 +72,6 @@ const SearchBar = (props: any) => {
       }
 
       matchTags(word)
-
-      // Cater for the case where the user deletes a word that was already a matched tag
-      matchedTags.map((tag: string) => {
-        if (!inputData.toLowerCase().includes(tag.toLowerCase())) {
-
-          const index = matchedTags.indexOf(tag);
-          if (index > -1) {
-            matchedTags.splice(index, 1);
-          }
-
-          setMatchedTags([...matchedTags])
-        }
-      })
 
       previousSeperator = input;
     }
@@ -131,8 +120,7 @@ const SearchBar = (props: any) => {
 
   return (
     <div className='searchbar_container'>
-      <div className="search_details">
-        <div className="searchbar_menu">
+        {/* <div className="searchbar_menu">
           <div className='tags_header'><img src={Logo} alt="logo" /><p>DEVGENI</p></div>
           <div className="hambuger_menu">
             {isOpen ? (
@@ -141,11 +129,8 @@ const SearchBar = (props: any) => {
               <GiHamburgerMenu onClick={toggleIcon} className="_btn" />
             )}
           </div>
-
-        </div>
         {isOpen && <ContactUs />}
-
-      </div>
+      </div> */}
       <div className="searchbar">
         <h4>Tell Us in Detail What You'd Like Us To Build</h4>
         <div className="tagBox">

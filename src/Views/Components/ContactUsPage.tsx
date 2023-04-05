@@ -5,14 +5,10 @@ import { BsTelephoneOutboundFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { BsTwitter } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
-import TopBar from "./TopBar";
 
 const ContactUsPage = () => {
   return (
     <div className="contactPage">
-      <div>
-        <TopBar />
-      </div>
       <div className="contact_page">
         <h5>NGENI TECHNOLOGIES LTD</h5>
         <div className="contactPageData">

@@ -31,7 +31,7 @@ const TagsPage = (props: any) => {
   
   return (
     <div className='tags_container'>
-        <div className='tags_header'><img src={Logo} alt="logo"/><p>DEVGENI</p></div>
+        {/* <div className='tags_header'><img src={Logo} alt="logo"/><p>DEVGENI</p></div> */}
         <div className='category'>
             <h4>Choose what you're interested in.</h4>
             <div className="main_request">

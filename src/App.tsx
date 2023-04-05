@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import "./Views/css/style.css";
 import Footer from "./Views/Components/Footer";
 import BookNow from "./Views/BookNow";
@@ -8,7 +8,6 @@ import Profile from "./Views/Profile";
 import Devdata from "./Views/Devdata";
 import NotFound from "./Views/Components/NotFound";
 import StarterPage from "./Views/StarterPage";
-// import { useWallet } from "react-binance-wallet";
 import ContactUs from "./Views/Components/ContactUs";
 import AboutPage from "./Views/Components/AboutPage";
 import FAQsPage from "./Views/Components/FAQsPage";
@@ -18,14 +17,17 @@ import TagsPage from "./Views/TagsPage";
 import SearchBar from "./Views/SearchBar";
 import ProjectCard from "./Views/ProjectCard";
 import PageDetails from "./Views/PageDetails";
+import TopBar from "./Views/Components/TopBar";
 
 function App() {
+  const location = useLocation();
 
   return (   
         <>
           <div className="container">
             <div className="main_container">
               {/* <div className="main"> */}
+              {location.pathname !== '/' && <TopBar />}
                 <Routes>
                   <Route path="/" element={<StarterPage />} />
                   <Route path='/tagspage' element={<TagsPage />} />
@@ -42,6 +44,7 @@ function App() {
                   <Route path="/about" element={<AboutPage />} />
                   <Route path="/faqs" element={<FAQsPage />} />
                   <Route path="*" element={<NotFound />} />
+                  <Route path="/topbar" element={<TopBar />} />
                 </Routes>
               {/* </div> */}
             </div>

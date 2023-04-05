@@ -1,13 +1,10 @@
 .home_container {
-  height: 100vh;
   background: #031926;
   overflow-y: hidden;
   overflow-x: hidden;
-  width: 400px;
 }
 
 .main_logo {
-  height: 30vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,7 +53,7 @@
 
 .gradient {
   position: absolute;
-  width: 316px;
+  /* width: 316px; */
   height: 316px;
   left: -57px;
   top: 134px;
@@ -175,7 +172,6 @@ select.mySelectArrow {
 
 /* Screen View Page */
 .screen_container {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100vh;
@@ -191,7 +187,7 @@ select.mySelectArrow {
 }
 
 .tags_container {
-  width: 400px;
+  margin-top: 20px;
 }
 
 .tags_header {
@@ -232,7 +228,7 @@ select.mySelectArrow {
 
 .searchbar {
   width: 100%;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 @media (max-width: 768px) {
@@ -385,7 +381,6 @@ select.mySelectArrow {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 95vw;
 }
 
 .search_box {
@@ -434,15 +429,15 @@ select.mySelectArrow {
     padding: 2px;
   }
 }
-
 .searchbar_menu {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   margin: auto;
   margin-bottom: 4%;
-  margin-top: 4%;
-  width: 400px;
+  z-index: 1000;
+  /* border: 1px solid red; */
 }
 
 @media (max-width: 768px) {

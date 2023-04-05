@@ -12,15 +12,18 @@ body {
   width: 100%;
   height: 100%;
 }
+.projectCards{
+  height: 83vh;
+  overflow-y: scroll;
+}
 .main_container {
   position: relative;
   background-color: #031926;
-  display: flex;
   justify-content: center;
   overflow: scroll;
   overflow-y: hidden;
   overflow-x: hidden;
-  z-index: 2;
+  z-index: 1;margin-bottom: 20px;
 }
 .main_search {
   height: 30px;
@@ -37,19 +40,13 @@ body {
 }
 .search-bar {
   padding-top: 2%;
-  width: 100%;
-  max-width: 400px;
-  position: fixed;
   background-color: #031926;
-  /* z-index: 1000; */
-  top: 0;
 }
 .matchRateData {
   color: #fff;
   font-family: "Poppins";
   font-weight: 400;
   font-size: 10px;
-  line-height: 12px;
 }
 .matchRateData p {
   margin-top: 16px;
@@ -105,12 +102,10 @@ body {
   position: fixed;
   bottom: 0;
   background-color: #031926;
-  padding-bottom: 10px;
   padding-top: 20px;
   font-style: normal;
   font-weight: 300;
   font-size: 12px;
-  line-height: 12px;
   color: #ffffff;
   font-family: "Poppins", sans-serif;
   width: 100%;
@@ -146,12 +141,11 @@ body {
 }
 /*---------Contact Us Page---------*/
 .contactUsContainer {
+  bottom:0;
+  left: 0;
   height: 100vh;
-  width: 100%;
-  background: #031926;
   color: #fff;
   font-family: "Orbitron", sans-serif;
-  overflow-y: hidden;
 }
 .contactUsContainer ul {
   display: block;
@@ -159,7 +153,6 @@ body {
 .my_links {
   padding-left: 40px;
   top: 30px;
-  width: 390px;
   height: 57px;
   border-top: 0.1rem solid #52f2e2;
   border-bottom: 0.1rem solid #52f2e2;

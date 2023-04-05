@@ -35,9 +35,6 @@ const Profile = () => {
 
   return (
     <div className="profile_container">
-      <div className="optionsProfile">
-        <TopBar />
-      </div>
         {devData.map((dev: any, index: any) => {
           return (
             <div className="dev_data" key={index}>

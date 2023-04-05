@@ -5,7 +5,6 @@ import linkPay from "../assets/linkpay.png";
 import { languages, teams } from "../icons";
 import {  useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import TopBar from "./Components/TopBar";
 import HashLoader from "react-spinners/HashLoader";
 import { useState, useEffect, CSSProperties, useCallback } from "react";
 import { Config } from "../config/config";
@@ -80,7 +79,6 @@ function ProjectCard(props: any) {
               justifyContent: "center",
               alignItems: "center",
               alignContent: "center",
-              width: "100vw",
               height: "100vh",
               backgroundColor: " #031926",
             }}
@@ -98,19 +96,11 @@ function ProjectCard(props: any) {
         (
           <>
             <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr",
-                position:"fixed",
-                top:"18vh",
-                height:"72vh",
-                overflowY:"scroll",
-              }}
+            className="projectCards"
             >
               <>
                 <div className="main_container" >
                   <div className="search-bar">
-                    <TopBar />
                     <div className="tag_boxData">
                       {tags.map((param: any, index: any) => {
                         console.log("index", index, tags.length)
@@ -150,7 +140,7 @@ function ProjectCard(props: any) {
                       initial="hidden"
                       animate="visible"
                       exit="exit"
-                      whileHover={{ scale: 1.03, originX: 0, color: "#f8e112" }}
+                      whileHover={{ scale: 1.01, originX: 0, color: "#f8e112" }}
                       transition={{ type: "spring", stiffness: 500 }}
                     >
                       <a onClick={() => navigateToProjectDetails()}>
@@ -178,7 +168,7 @@ function ProjectCard(props: any) {
                                 />
                                 {trimDesc(proj_title, 50)}
                               </motion.p>
-                              <p className="card_desc">{trimDesc(desc, 250)}</p>
+                              <p className="card_desc">{trimDesc(desc, 300)}</p>
                               <div className="rate">
                                 <span
                                   className="lengths"
