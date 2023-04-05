@@ -35,7 +35,6 @@ const override: CSSProperties = {
   borderColor: "gray",
 };
 
-
 const AllProjects = () => {
   const [projects, setProjects] = useState<Array<IProjects>>([]);
   const [numProjects, setNumProjects] = useState("0");
@@ -109,6 +108,7 @@ const AllProjects = () => {
                   let proj_title: string | undefined = project?.proj_name;
                   let teamLength: number | undefined = team?.length;
                   let stackLength: number | undefined = stack?.length;
+
 
                   let trimDesc = function (string: any, length: any) {
                     return string.length > length

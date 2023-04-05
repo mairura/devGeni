@@ -1,8 +1,10 @@
 .page_container{
     width: 400px;
     overflow: scroll;
+}
+.consider_page{
+    height: 85vh;
     overflow-y: hidden;
-    overflow-x: hidden;
 }
 .page_title{
     font-family: "Orbitron", sans-serif;
@@ -11,7 +13,7 @@
     font-size: 20px;
     line-height: 24px;
     color: #FFFFFF;
-    margin: 1px  30px;
+    margin-top: 15px;
 }
 .page_carousel{
     width: 318px;
@@ -32,11 +34,12 @@
     display: flex;
     text-align: left;
     padding: 0 5px;
+    overflow-y: hidden;
 }
 .class_tablist{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     list-style: none;
 }
 .class_tabs{
@@ -51,21 +54,17 @@
     line-height: 17px;
     letter-spacing: 0.18em;
 }
-.react-tabs__tab--selected {
-    border: none;
-}
 .class_tabPanel{
     height: 33vh;
     overflow: scroll;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    /* border: 1px solid blue; */
+    margin: 5px 0;
 }
 .class_tabs:hover::after{
     content: '';
     height: 7px; 
     width: 7px; 
     position: absolute;
+    margin: 3px;
     display: block;
     border-radius: 50%;
     background: #52F2E2;
@@ -178,6 +177,18 @@
     border: none;
     cursor: pointer;
 }
-/* .stats_container{
-    border: 1px solid red;
-} */
+.stats_container{
+    width: 318px;
+    height: 56px;
+    background: rgba(82, 242, 226, 0.1);
+    border: 0.5px solid rgba(82, 242, 226, 0.35);
+    margin: 10px auto;
+    color: #fff;
+    text-align: left;
+    padding: 5px 10px;
+    font-family: "Orbitron", sans-serif;
+}
+.stats_container p {
+    font-size: 13px;
+    padding: 10px 0;
+}

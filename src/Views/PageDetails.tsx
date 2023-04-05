@@ -42,6 +42,7 @@ const PageDetails = () => {
   return (
     <div className='page_container'>
         <TopBar/>
+        <div className='consider_page'>
         <div className='page_title'>
             {projectDetail.proj_name}
         </div>
@@ -91,16 +92,19 @@ const PageDetails = () => {
                 </div>  
                            
             </TabPanel>
-            {/* <TabPanel>
+            <TabPanel>
                 <div className='class_tabPanel'>
                     <div className='stats_container'>
                         <h4>Version Control</h4>
                         <p>Github</p>
                     </div>
                 </div>
-            </TabPanel> */}
+            </TabPanel>
         </Tabs>
         <BookBtn />
+
+        </div>
+       
     </div>
   )
 }

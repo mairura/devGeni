@@ -59,8 +59,7 @@ function ProjectCard(props: any) {
   const fetchProjects = useCallback(async () => {
     axios.post(endpoint, { description: querryTags }).then(
       (response) => {
-        const projects = response.data.projects
-        console.log(projects)
+        const projects = response.data.projects_data
         setProjects(projects)
       }
     ).catch((error) => {
@@ -101,9 +100,12 @@ function ProjectCard(props: any) {
           <>
             <div
               style={{
-                marginTop: "250px",
                 display: "grid",
                 gridTemplateColumns: "1fr",
+                position:"fixed",
+                top:"18vh",
+                height:"72vh",
+                overflowY:"scroll",
               }}
             >
               <>
@@ -177,7 +179,7 @@ function ProjectCard(props: any) {
                                 />
                                 {trimDesc(proj_title, 50)}
                               </motion.p>
-                              <p className="card_desc">{desc}</p>
+                              <p className="card_desc">{trimDesc(desc, 250)}</p>
                               <div className="rate">
                                 <span
                                   className="lengths"
