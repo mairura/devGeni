@@ -35,8 +35,6 @@ const SearchBar = (props: any) => {
 
   const navigate = useNavigate()
 
-  console.log("data ", inputData)
-
   // Check if the word a user types in is in the list of tags 
   const matchTags = (word: string) => {
     word = word.toLowerCase().trim()
@@ -72,6 +70,19 @@ const SearchBar = (props: any) => {
       }
 
       matchTags(word)
+
+      // Cater for the case where the user deletes a word that was already a matched tag
+      matchedTags.map((tag: string) => {
+        if (!inputData.toLowerCase().includes(tag.toLowerCase())) {
+
+          const index = matchedTags.indexOf(tag);
+          if (index > -1) {
+            matchedTags.splice(index, 1);
+          }
+
+          setMatchedTags([...matchedTags])
+        }
+      })
 
       previousSeperator = input;
     }
