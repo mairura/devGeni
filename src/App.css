@@ -8,9 +8,9 @@
   text-align: center;
   justify-content: center;
 }
-*{
+/* *{
   overflow-x: hidden;
-}
+} */
 body::-webkit-scrollbar{
   display: none;
 }
