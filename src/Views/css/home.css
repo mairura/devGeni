@@ -30,7 +30,6 @@
 }
 
 .home_header p {
-  width: 139px;
   height: 29px;
   font-family: "Orbitron", sans-serif;
   font-style: normal;
@@ -97,8 +96,11 @@ select.mySelectArrow {
   justify-content: center;
   text-align: left;
   margin-bottom: 5vh;
+  overflow-x: scroll;
 }
-
+.carousel_data{
+  overflow-x: scroll;
+}
 .carousel_data p {
   font-size: 16px;
   line-height: 19px;

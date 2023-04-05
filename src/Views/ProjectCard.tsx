@@ -3,7 +3,7 @@ import "./css/card.css";
 import "./css/home.css"
 import linkPay from "../assets/linkpay.png";
 import { languages, teams } from "../icons";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import {  useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import TopBar from "./Components/TopBar";
 import HashLoader from "react-spinners/HashLoader";
@@ -54,12 +54,12 @@ function ProjectCard(props: any) {
   }
 
   const tags = state.tags
-  const querryTags = tags.join(",")
+  console.log("====>",tags)
 
   const fetchProjects = useCallback(async () => {
-    axios.post(endpoint, { description: querryTags }).then(
+    axios.post(endpoint, { description: tags }).then(
       (response) => {
-        const projects = response.data.projects_data
+        const projects = response.data.projects
         setProjects(projects)
       }
     ).catch((error) => {
