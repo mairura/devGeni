@@ -4,7 +4,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import { motion } from "framer-motion";
 import Logo from "../assets/Logo.png";
-import LeftChevron from "../assets/LeftChevron.svg"
+import { FiChevronRight  } from 'react-icons/fi';
+
 
 const buttonVariants = {
   hover: {
@@ -72,7 +73,7 @@ const StarterPage = () => {
         </div>
       </Link>
       <Link to="/allprojects" style={{ width: "100%" }} className="rightChevron">
-        <div className="explore"><p>Explore All Projects</p><img src={LeftChevron} alt="leftchevron" /></div>
+        <div className="explore"><p>Explore All Projects</p><FiChevronRight /></div>
       </Link>
     </div>
   );

@@ -1,3 +1,21 @@
+.allProjects_container{
+  overflow-y: hidden;
+  width: 400px;
+  /* border: 1px solid blue; */
+}
+/* .allProjects_topBar{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+} */
+/* .main_contain{
+  border: 1px solid violet;
+} */
+/* ._card{
+  border: 1px solid blue;
+} */
 .card-main {
   background: radial-gradient(
     99.25% 97.25% at 80.14% 22.75%,
@@ -8,16 +26,23 @@
   border-radius: 15px;
   padding: 5px 10px;
   text-align: left;
-  margin: 8px;
-  width: 350px;
-  /* height: 282px; */
+  width: 100%;
+  margin: auto;
+  /* min-height: 300px; */
+  margin-bottom:30px;
+  overflow-y: hidden;
 }
 .card-main * {
   color: #fff;
   text-decoration: none;
 }
+@media (max-width: 768px){
+  .card-main{
+    width: 90%;
+  }
+}
 .card_devs {
-  display: flex;
+  display: flex;  
   align-items: center;
   font-size: 12px;
   padding-top: 5px;
@@ -37,7 +62,7 @@
   overflow-y: hidden;
   overflow-x: hidden;
   font-size: 15px;
-  padding: 2px;
+  padding: 7px;
 }
 .card_title {
   font-family: "Orbitron", sans-serif;
@@ -46,7 +71,13 @@
   line-height: 17px;
   text-align: left;
   text-transform: uppercase;
-  padding: 2;
+  padding: 2px;
+}
+.card_titleData{
+  display: grid;
+  grid-template-columns: 0.5fr 5fr;
+  justify-content: center;
+  align-items: center;
 }
 .card_desc {
   width: 100%;
@@ -65,6 +96,7 @@
 .rate {
   display: flex;
   padding-left: 10px;
+  margin: 15px 0;
 }
 .rate span {
   padding-right: 5px;

@@ -3,21 +3,19 @@ import './css/page-details.css'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import BookBtn from './Components/BookBtn'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import { Config } from '../config/config';
 import { ISingleDev } from "./Context";
 import axios from "axios";
 
 const PageDetails = () => {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const proj_name: any = urlParams.get("projectTitle");
-    const proj_desc = urlParams.get("projectDesc");
-    const proj_team: any = urlParams.get("projectTeam");
-    const stack: any = urlParams.get("projectStacks");
-    const stacks = stack.split(",");
-    const teams = proj_team.split(",");
+
+    const location = useLocation();
+    const projectDetail = location.state.tagList // Access projectDetail from card page
+
+    const stacks: any = projectDetail.tech_stack;
+    const teams: any = projectDetail.team;
     let url = Config.URL;
 
     const[projDetails, setProjectDetails ]=useState<Array<ISingleDev>>([]);
@@ -44,13 +42,14 @@ const PageDetails = () => {
   return (
     <div className='page_container'>
         <TopBar/>
+        <div className='consider_page'>
         <div className='page_title'>
-            {proj_name}
+            {projectDetail.proj_name}
         </div>
         <div className='page_carousel'>
         </div>
         <div className='page_desc'>
-            {proj_desc}
+            {projectDetail.description}
         </div>
         <Tabs>
             <TabList className="class_tablist">
@@ -59,16 +58,19 @@ const PageDetails = () => {
                 <Tab className="class_tabs">Stats</Tab>
             </TabList>
             <TabPanel>
-                <div className='stacks_box'>
-                    <h4>Technologies</h4>
-                    <div className='stacks_title'>
-                        {stacks.map((stack: any, index: any) => {
-                            return <button key={index}>{stack}</button>    
-                        })} 
+                <div  className="class_tabPanel">
+                    <div className='stacks_box'>
+                        <h4>Technologies</h4>
+                        <div className='stacks_title'>
+                            {stacks.map((stack: any, index: any) => {
+                                return <button key={index}>{stack}</button>    
+                            })} 
+                        </div>
                     </div>
                 </div>
             </TabPanel>
-            <TabPanel>    
+            <TabPanel>  
+                <div className='class_tabPanel'>
                 {projDetails.map((dev: any, index: any) => {
                     return (
                         <div className='teams_data' key={index}>
@@ -79,7 +81,7 @@ const PageDetails = () => {
                                 <p>{dev.name}</p>
                                 <small>{dev.short_name}</small>
                             </div>
-                            <Link to={`/profile/?name=${dev?.name}&shortName=${dev?.short_name}&profilePic=${dev?.profile_img_link}&profileLink=${dev?.profile_link}&devStack=${dev?.tech_stack}`} className='profile_links'>
+                            <Link to={`/profile/?shortName=${dev?.short_name}`} className='profile_links'>
                                 <button>
                                     See Profile
                                 </button>
@@ -87,10 +89,22 @@ const PageDetails = () => {
                         </div>
                     )
                 })}   
+                </div>  
                            
+            </TabPanel>
+            <TabPanel>
+                <div className='class_tabPanel'>
+                    <div className='stats_container'>
+                        <h4>Version Control</h4>
+                        <p>Github</p>
+                    </div>
+                </div>
             </TabPanel>
         </Tabs>
         <BookBtn />
+
+        </div>
+       
     </div>
   )
 }

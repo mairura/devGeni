@@ -6,9 +6,6 @@ const ContactUs = () => {
     <div className="contactUsContainer">
       <nav>
         <ul>
-          <Link to="/projects" className="my_links">
-            <li>Menu</li>
-          </Link>
           <Link to="/about" className="my_links">
             <li>About</li>
           </Link>

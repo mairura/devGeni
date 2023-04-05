@@ -2,28 +2,35 @@
   height: 100vh;
   background: #031926;
   overflow-y: hidden;
+  overflow-x: hidden;
+  width: 100vw;
+  max-width: 600px;
 }
+
 .main_logo {
   height: 30vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .main_logo img {
   height: 200px;
   margin-top: 20%;
 }
+
 .homeHead {
   height: auto;
 }
+
 .home_header {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
+
 .home_header p {
-  width: 139px;
   height: 29px;
   font-family: "Orbitron", sans-serif;
   font-style: normal;
@@ -33,6 +40,7 @@
   color: #fff;
   letter-spacing: 4px;
 }
+
 .home_subheader {
   margin-top: 30px;
   height: 8vh;
@@ -46,28 +54,26 @@
   text-align: center;
   width: 100%;
 }
+
 .gradient {
   position: absolute;
   width: 316px;
   height: 316px;
   left: -57px;
   top: 134px;
-  background: linear-gradient(
-    180deg,
-    #52f2e2 0%,
-    rgba(82, 242, 226, 0.35) 100%
-  );
+  background: linear-gradient(180deg,
+      #52f2e2 0%,
+      rgba(82, 242, 226, 0.35) 100%);
   filter: blur(125px);
 }
+
 select.mySelectArrow {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: linear-gradient(
-    180deg,
-    rgba(82, 242, 226, 0.1) 0%,
-    rgba(65, 191, 179, 0.1) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(82, 242, 226, 0.1) 0%,
+      rgba(65, 191, 179, 0.1) 100%);
   color: white;
   width: 100%;
   padding: 10px 20px;
@@ -76,10 +82,12 @@ select.mySelectArrow {
   font-style: normal;
   outline: none;
 }
+
 .all_items {
   background: #031926;
   height: auto;
 }
+
 .carousel_page {
   height: auto;
   color: #fff;
@@ -89,6 +97,10 @@ select.mySelectArrow {
   justify-content: center;
   text-align: left;
   margin-bottom: 5vh;
+  overflow-x: scroll;
+}
+.carousel_data{
+  overflow-x: scroll;
 }
 .carousel_data p {
   font-size: 16px;
@@ -99,16 +111,15 @@ select.mySelectArrow {
   font-family: "Poppins", sans-serif;
   color: #ffffff;
 }
+
 .home_btn button {
   box-sizing: border-box;
   width: 354px;
   height: 45px;
   margin: auto;
-  background: linear-gradient(
-    180deg,
-    rgba(82, 242, 226, 0.1) 0%,
-    rgba(65, 191, 179, 0.1) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(82, 242, 226, 0.1) 0%,
+      rgba(65, 191, 179, 0.1) 100%);
   border: 1px solid #52f2e2;
   box-shadow: 0px 1px 10px rgba(82, 242, 226, 0.35);
   border-radius: 10px;
@@ -119,39 +130,42 @@ select.mySelectArrow {
   font-size: 16px;
   line-height: 19px;
 }
-@media (max-width: 768px){
-  .home_btn{
+
+@media (max-width: 768px) {
+  .home_btn {
     display: flex;
     justify-content: center;
     margin: 0;
   }
-  .home_btn .search{
+
+  .home_btn .search {
     width: 100px;
     font-size: 8px;
     height: 30px;
   }
 }
-.rightChevron{
+
+.rightChevron {
   text-decoration: none;
 }
-.explore{
-  margin: 20px;
+
+.explore {
   color: #fff;
   display: flex;
   justify-content: flex-end;
   font-family: "Orbitron", sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 8px;
   line-height: 10px;
-  width: 354px;
   margin: 50px auto;
 }
-.explore p{
+
+.explore p {
   padding-top: 2px;
   padding-right: 2px;
-  font-size: 10px;
+  font-size: 11px;
 }
+
 .loader {
   width: 10px;
   height: 10px;
@@ -161,7 +175,7 @@ select.mySelectArrow {
 }
 
 /* Screen View Page */
-.screen_container{
+.screen_container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -169,11 +183,19 @@ select.mySelectArrow {
   opacity: 1;
   transition: opacity 1s ease-in-out;
 }
+
 /* Tags Page */
-.tags_container, .searchbar_container, .searchAtt_container{
+.tags_container,
+.searchbar_container,
+.searchAtt_container {
   font-family: "Orbitron", sans-serif;
 }
-.tags_header{
+
+.tags_container {
+  width: 400px;
+}
+
+.tags_header {
   display: flex;
   flex-direction: row;
   color: #fff;
@@ -181,38 +203,52 @@ select.mySelectArrow {
   font-weight: 600;
   font-size: 12px;
   line-height: 14px;
-  margin-top: 20px;
 }
-.tags_header img{
+
+.tags_header img {
   width: 40px;
 }
+
 .tags_header p {
   padding-top: 12px;
   font-size: 14px;
 }
-.category{
+
+.category {
   margin-top: 10px;
 }
-@media (max-width: 768px){
+
+@media (max-width: 768px) {
   .category {
     padding: 10px;
   }
 }
-.category, .actions, .searchbar, .search_attr h4{
+
+.category,
+.actions,
+.searchbar,
+.search_attr h4 {
   color: #fff;
-  text-align: left;
 }
-@media (max-width: 768px){
+
+.searchbar {
+  width: 100%;
+  margin-top: 5%;
+}
+
+@media (max-width: 768px) {
   .searchbar h4 {
     font-size: 10px;
     text-align: center;
   }
 }
+
 .main_request {
   margin: 20px 0;
   display: flex;
   flex-wrap: wrap;
 }
+
 .main_request button {
   border: 0.2px solid #52f2e2;
   border-radius: 30px;
@@ -224,45 +260,67 @@ select.mySelectArrow {
   font-size: 12px;
   cursor: pointer;
 }
+
 .main_request button:hover {
-  background-color: #52f2e2;
+  background: #009E8E;
   font-weight: 500;
 }
-.tagspage{
+
+.tagspage {
   margin-top: 5em;
 }
+
 /* Search Bar Page */
-.search_box img{
+.tag_box {
   display: flex;
-  flex-direction: column-reverse;
-}
-.tag_box{
-  max-width: 354px;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
   background: #0F3F46;
   border: 0.5px solid #52F2E2;
   border-radius: 10px;
   max-height: 350px;
-  min-width: 300px;
   min-height: 155px;
 }
+
+@media (max-width: 768px) {
+  .tag_box {
+    max-width: 95vw;
+    width: 100%;
+  }
+}
+
 .btnSearch {
   background: transparent;
   color: #fff;
   font-size: 10px;
   height: 204px;
 }
+
 .tag_boxData {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
+  overflow-x: scroll;
+  height: 50px;
 }
+
 .tagBox {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 20px;
+  align-items: center;
+  margin-top: 20px;
 }
+
+@media (max-width: 768px) {
+  .tagBox {
+    width: 95vw;
+    width: 100%;
+  }
+}
+
 .tag_boxData p {
   text-decoration: none !important;
   text-transform: capitalize;
@@ -275,21 +333,24 @@ select.mySelectArrow {
   line-height: 12px;
   font-family: "Poppins";
 }
-@media (max-width: 768px){
-  .tag_boxData p{
+
+@media (max-width: 768px) {
+  .tag_boxData p {
     padding: 1px;
     margin: 2px;
     font-size: 5px;
   }
 }
+
 /* Search Attributes */
-.search_attr{
+.search_attr {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.chooseTags{
+
+.chooseTags {
   width: 354px;
   height: 138px;
   left: 22px;
@@ -299,6 +360,7 @@ select.mySelectArrow {
   border-radius: 10px;
   text-align: left;
 }
+
 .chooseTags p {
   font-size: 10px;
   line-height: 12px;
@@ -306,6 +368,7 @@ select.mySelectArrow {
   color: #FFFFFF;
   padding: 6px;
 }
+
 .searchAttributes button {
   display: flex;
   justify-content: space-between;
@@ -318,11 +381,16 @@ select.mySelectArrow {
   padding: 7px 5px;
   cursor: pointer;
 }
+
 .searchAttrBox {
-  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95vw;
 }
-.search_box{
-  width: 354px;
+
+.search_box {
+  width: 380px;
   background: #0F3F46;
   border: 0.5px solid #52F2E2;
   border-radius: 10px;
@@ -330,7 +398,8 @@ select.mySelectArrow {
   min-height: 100px;
   padding: 6px 0;
 }
-.search_box p{
+
+.search_box p {
   font-size: 12px;
   line-height: 12px;
   text-decoration-line: underline;
@@ -338,33 +407,54 @@ select.mySelectArrow {
   padding: 6px;
   text-align: left;
 }
-@media (max-width: 768px){
-  .searchAttrBox{
-    margin: 0 20px;
-  }
-  .search_box{
-    min-height: 90px;
-  }
-  .search_box p{
-    padding: 2px;
-  }
-}
-.search_box img{
-  padding-left: 20em;
-  height: 15px;
-}
-.searchbar_menu{
+
+.searchData {
+  margin: 3% 2% 3% 2%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 0;
 }
-@media (max-width: 768px){
-  .searchbar_menu{
-    padding: 20px;
+
+.tag_Box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .searchAttrBox {
+    margin: 0 20px;
+  }
+
+  .search_box {
+    min-height: 90px;
+  }
+
+  .search_box p {
+    padding: 2px;
   }
 }
-.hambuger img {
+.searchbar_menu {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  margin-bottom: 4%;
+  /* margin-top: 4%; */
+  width: 400px;
+  z-index: 1000;
+  border: 1px solid red;
+}
+
+@media (max-width: 768px) {
+  .searchbar_menu {
+    width: 100%;
+    max-width: 95vw;
+  }
+}
+
+._btn {
+  color: #fff;
 }

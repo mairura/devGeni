@@ -1,37 +1,42 @@
-.search_barTop {
-  display: flex;
-  justify-content: space-between;
+.top_bar{
+  width: 100%;
+  height: 5vh;
+  overflow: hidden;
+  position:fixed;
 }
-.previous{
-  padding: 1% 6%;
+/* .top_bar *{
+  border:1px solid yellow;
+} */
+.search_barTop {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-gap: 6px;
+  justify-content: center;
+  align-items: center;
+}
+.third-element {
+  grid-column: 2;
+}
+.search_barTop *{
+  width: auto;
 }
 .btn_navigate {
   border: none;
   background-color: transparent;
+  color: #fff;
 }
 .search_barTop img {
-  height: 30px;
+  max-height: 50px;
 }
-.top_logo {
-  width: 70px;
-  height: 50px;
-}
-
 .hambuger{
   padding-top: 2%;
   padding-right: 12%;
-}
-.hambuger img {
-  height: 15px;
-  cursor: pointer;
-}
-.searchTitle {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
   color: #fff;
-  font-family: "Poppins", sans-serif;
-  font-size: 10px;
-  padding-bottom: 10px;
 }
-.top_bar{
-  margin: 0;
-  width: 100%;
+.hambuger {
+  color: #fff;
 }
+

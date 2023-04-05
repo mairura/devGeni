@@ -25,13 +25,13 @@ function App() {
         <>
           <div className="container">
             <div className="main_container">
-              <div className="main">
+              {/* <div className="main"> */}
                 <Routes>
                   <Route path="/" element={<StarterPage />} />
                   <Route path='/tagspage' element={<TagsPage />} />
                   <Route path="/searchbar" element={<SearchBar />} />
                   <Route path="/projects" element={<ProjectCard />} />
-                  <Route path="/page-details" element={<PageDetails />} />
+                  <Route path="/project-details" element={<PageDetails />} />
                   <Route path="/book-now" element={<BookNow />} />
                   <Route path="/details" element={<Details />} />
                   <Route path="/profile" element={<Profile />} />
@@ -43,7 +43,7 @@ function App() {
                   <Route path="/faqs" element={<FAQsPage />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
-              </div>
+              {/* </div> */}
             </div>
             <Footer />
           </div>
