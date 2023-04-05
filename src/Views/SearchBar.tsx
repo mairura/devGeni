@@ -67,7 +67,7 @@ const SearchBar = (props: any) => {
   // Check if the word a user types in is in the list of tags 
   const matchTags = (word: string) => {
     if (tags.includes(word) && !matchedTags.includes(word)) {
-      setMatchedTags([...matchedTags, word])
+      setMatchedTags([...matchedTags, word.trim()])
     }
   }
 
@@ -140,13 +140,13 @@ const SearchBar = (props: any) => {
       <div className="search_details">
         <div className="searchbar_menu">
           <div className='tags_header'><img src={Logo} alt="logo" /><p>DEVGENI</p></div>
-            <div className="hambuger_menu">
+          <div className="hambuger_menu">
             {isOpen ? (
-            <AiFillCloseCircle onClick={closeMenu} className="_btn" />
-          ) : (
-            <GiHamburgerMenu onClick={toggleIcon} className="_btn" />
-          )}
-            </div>
+              <AiFillCloseCircle onClick={closeMenu} className="_btn" />
+            ) : (
+              <GiHamburgerMenu onClick={toggleIcon} className="_btn" />
+            )}
+          </div>
 
         </div>
         {isOpen && <ContactUs />}
