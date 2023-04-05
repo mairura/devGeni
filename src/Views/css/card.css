@@ -28,6 +28,8 @@
   text-align: left;
   margin: 8px;
   width: 380px;
+  min-height: 40vh;
+  overflow-y: hidden;
 }
 .card-main * {
   color: #fff;

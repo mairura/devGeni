@@ -260,8 +260,10 @@ select.mySelectArrow {
 .tag_boxData {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
+  overflow-x: scroll;
+  height: 50px;
 }
 .tagBox {
   display: flex;

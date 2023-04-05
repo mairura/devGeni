@@ -116,6 +116,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
+  height: 10vh;
 }
 .footer_italic {
   font-size: 10px;
@@ -176,7 +177,6 @@ body {
   border: 1px solid #52f2e2;
 }
 .forTopbar{
-  border: 1px solid red;
   width: 50vw;
   display: flex;
   flex-direction: column;

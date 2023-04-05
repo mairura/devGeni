@@ -42,6 +42,7 @@ const PageDetails = () => {
   return (
     <div className='page_container'>
         <TopBar/>
+        <div className='consider_page'>
         <div className='page_title'>
             {projectDetail.proj_name}
         </div>
@@ -101,6 +102,9 @@ const PageDetails = () => {
             </TabPanel>
         </Tabs>
         <BookBtn />
+
+        </div>
+       
     </div>
   )
 }
