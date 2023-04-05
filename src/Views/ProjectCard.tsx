@@ -44,12 +44,16 @@ function ProjectCard(props: any) {
   const [projects, setProjects] = useState<any[]>([]);
 
   const location = useLocation();
-  const tags = location.state.tags // Access tags from the search page
+  const navigate = useNavigate();
+
+  const state = location.state // Access tags from the search page
 
   // TODO: Display the tags provided did not yield any results, provide a link to the search page
-  // if (!tags || tags.length < 1) {
-  // }
+  if (!state || !state.tags || state.tags.length < 1) {
+    window.location.replace("/allprojects")
+  }
 
+  const tags = state.tags
   const querryTags = tags.join(",")
 
   const fetchProjects = useCallback(async () => {
@@ -67,8 +71,6 @@ function ProjectCard(props: any) {
   useEffect(() => {
     fetchProjects()
   }, [fetchProjects])
-
-  const navigate = useNavigate()
 
   return (
     <>
@@ -150,7 +152,7 @@ function ProjectCard(props: any) {
                       whileHover={{ scale: 1.03, originX: 0, color: "#f8e112" }}
                       transition={{ type: "spring", stiffness: 500 }}
                     >
-                        <a onClick={() => navigateToProjectDetails()}>
+                      <a onClick={() => navigateToProjectDetails()}>
                         <div className="more" >
                           <div >
                             <div className="card_details">
@@ -198,7 +200,7 @@ function ProjectCard(props: any) {
                             </div>
                           </div>
                         </div>
-                        </a>
+                      </a>
                     </motion.div>
                   )
                 })}
