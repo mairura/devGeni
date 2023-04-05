@@ -36,7 +36,7 @@
 .class_tablist{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     list-style: none;
 }
 .class_tabs{
@@ -50,9 +50,6 @@
     font-size: 14px;
     line-height: 17px;
     letter-spacing: 0.18em;
-}
-.react-tabs__tab--selected {
-    border: none;
 }
 .class_tabPanel{
     height: 33vh;
@@ -178,6 +175,19 @@
     border: none;
     cursor: pointer;
 }
-/* .stats_container{
+.stats_container{
     border: 1px solid red;
-} */
+    width: 318px;
+    height: 56px;
+    background: rgba(82, 242, 226, 0.1);
+    border: 0.5px solid rgba(82, 242, 226, 0.35);
+    margin: 10px auto;
+    color: #fff;
+    text-align: left;
+    padding: 5px 10px;
+    font-family: "Orbitron", sans-serif;
+}
+.stats_container p {
+    font-size: 13px;
+    padding: 10px 0;
+}

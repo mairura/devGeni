@@ -4,9 +4,21 @@
 .search_barTop {
   display: grid;
   grid-template-columns: auto 1fr auto;
-  grid-gap: 10px;
+  grid-gap: 6px;
   justify-content: center;
   align-items: center;
+}
+/* .first-element {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.second-element {
+  grid-column-start: 3;
+  grid-column-end: 4;
+} */
+
+.third-element {
+  grid-column: 2;
 }
 .search_barTop *{
   width: auto;

@@ -28,7 +28,6 @@ const containerVariants = {
   },
 };
 
-
 const AllProjects = () => {
   const [projects, setProjects] = useState<Array<IProjects>>([]);
   const [numProjects, setNumProjects] = useState("0");
@@ -56,11 +55,13 @@ const AllProjects = () => {
   return (
     <>
     <div className='allProjects_container'>
-      <div style={{ marginTop:"1em"}}>
-        <TopBar />
-      </div>
-      <div className="matchRateData">
-          <p>We found {numProjects} projects matching your search</p>
+      <div className="allProjects_topBar">
+        <div style={{ marginTop:"1em"}}  >
+          <TopBar />
+        </div>
+        <div className="matchRateData">
+            <p>We found {numProjects} projects matching your search</p>
+        </div>
       </div>
       <div
         style={{

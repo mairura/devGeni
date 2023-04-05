@@ -1,5 +1,14 @@
-/* .allProjects_container{
-  border: 1px solid blue;
+.allProjects_container{
+  overflow-y: hidden;
+  width: 400px;
+  /* border: 1px solid blue; */
+}
+/* .allProjects_topBar{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
 } */
 /* .main_contain{
   border: 1px solid violet;
@@ -23,6 +32,11 @@
 .card-main * {
   color: #fff;
   text-decoration: none;
+}
+@media (max-width: 768px){
+  .card-main{
+    width: 93vw;
+  }
 }
 .card_devs {
   display: flex;  

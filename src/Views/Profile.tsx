@@ -121,7 +121,7 @@ const Profile = () => {
               </div>
 
 
-              <div className="ngeni_labs"></div>
+              {/* <div className="ngeni_labs"></div> */}
             </div>
             </div>
           )

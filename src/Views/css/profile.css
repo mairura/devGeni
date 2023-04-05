@@ -1,5 +1,9 @@
 .profile_container {
   background-color: #031926;
+  overflow: scroll;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  width: 400px;
 }
 .profile_desc img {
   border-radius: 50%;
@@ -58,24 +62,26 @@
   display: flex;
   flex-wrap: wrap;
   margin: 10px 0;
+  max-height: 20vh;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.dev_stack::-webkit-scrollbar {
+  height: 2px;
+  width: 3px;
+  /* margin-top: 5px; */
+}
+.dev_stack::-webkit-scrollbar-track {
+  background-color: #031926;
+  border-radius: 10px;
+}
+.dev_stack::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px #52f2e2;
+  border-radius: 10px;
 }
 .dev_stack_item {
   border: 0.2px solid #52f2e2;
   border-radius: 3px;
-}
-.dev_stack::-webkit-scrollbar {
-  height: 4px;
-  margin-top: 5px;
-}
-.dev_stack::-webkit-scrollbar-track {
-  background-color: #f3efef;
-  border-radius: 10px;
-}
-.dev_stack::-webkit-scrollbar-thumb {
-  box-shadow: inset 0 0 6px #f05e56;
-  border-radius: 10px;
-}
-.dev_stack_item {
   margin-bottom: 10px;
 }
 .profile_stack h5 {
@@ -128,7 +134,7 @@
 .profile_project {
   display: flex;
   justify-content: space-around;
-  margin: 10px 0;
+  margin: 10px;
 }
 .project {
   background: linear-gradient(
@@ -141,6 +147,7 @@
   padding: 25px;
   height:100px;
   cursor: pointer;
+  margin: 1px 5px;
 }
 .project p {
   font-style: normal;
@@ -158,6 +165,7 @@
   width: 30px;
 }
 .profile_media {
+  height: auto;
   background: #1e1e1e;
   margin: 20px 0;
   padding: 10px 15px;
@@ -224,5 +232,5 @@
   font-size: 10px;
 }
 .ngeni_labs {
-  height: 20vh;
+  height: 5vh;
 }

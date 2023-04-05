@@ -51,7 +51,6 @@ function ProjectCard(props: any) {
     axios.post(endpoint, { description: querryTags }).then(
       (response) => {
         const projects = response.data.projects_data
-        console.log(projects)
         setProjects(projects)
       }
     ).catch((error) => {

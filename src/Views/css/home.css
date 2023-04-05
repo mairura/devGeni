@@ -2,6 +2,7 @@
   height: 100vh;
   background: #031926;
   overflow-y: hidden;
+  overflow-x: hidden;
   width: 400px;
 }
 .main_logo {

@@ -91,14 +91,14 @@ const PageDetails = () => {
                 </div>  
                            
             </TabPanel>
-            {/* <TabPanel>
+            <TabPanel>
                 <div className='class_tabPanel'>
                     <div className='stats_container'>
                         <h4>Version Control</h4>
                         <p>Github</p>
                     </div>
                 </div>
-            </TabPanel> */}
+            </TabPanel>
         </Tabs>
         <BookBtn />
     </div>
