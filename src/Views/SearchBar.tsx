@@ -24,6 +24,7 @@ const buttonVariants = {
 let previousSeperator: any = "";
 const wordSeperators = [" ", ",", ";", ":", ".", "?", "!", "/", "\\", "(", ")", "[", "]", "{", "}", "<", ">", "|", "`", "~", "@", "#", "$", "%", "^", "&", "*", "-", "_", "+", "=", "'", '"'];
 
+
 const SearchBar = (props: any) => {
   const localParams: any = localStorage.getItem("params");
   const [inputData, setInputData] = useState(localParams);
@@ -34,6 +35,20 @@ const SearchBar = (props: any) => {
 
   const navigate = useNavigate()
 
+  console.log("data ", inputData)
+
+  // Check if the word a user types in is in the list of tags 
+  const matchTags = (word: string) => {
+    word = word.toLowerCase().trim()
+    if (tags.includes(word) && !matchedTags.includes(word)) {
+      setMatchedTags([...matchedTags, word.trim()])
+    }
+  }
+
+  // Search for tags in the initial phrase
+  const inputParts = inputData.split(" ");
+  inputParts.map((word: string) => matchTags(word))
+
   // REVIEW: Display tags that match the input, as the user types
   /**
    * This is kind of a hack since there is no straight forward way to listen for words typed. You can only capture letters typed.
@@ -42,6 +57,7 @@ const SearchBar = (props: any) => {
    */
   const handleInputChangeData = (event: any) => {
     let input = event.target.value;
+
     input = input[input.length - 1] // get last character typed, instead of all the input 
     // console.log("sep ", JSON.stringify(previousSeperator))
 
@@ -63,13 +79,6 @@ const SearchBar = (props: any) => {
     // Update the user input
     setInputData(event.target.value);
   };
-
-  // Check if the word a user types in is in the list of tags 
-  const matchTags = (word: string) => {
-    if (tags.includes(word) && !matchedTags.includes(word)) {
-      setMatchedTags([...matchedTags, word.trim()])
-    }
-  }
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -102,33 +111,7 @@ const SearchBar = (props: any) => {
   }
 
   useEffect(() => {
-
-    // REVIEW: Remove the implmentation to save tags in local storage
-    /**
-     * This implementation is flawed since it persists the tags even when the user starts a new search with a different started text 
-     * eg the user clicks on I want a website and then navigates back and clicks on I want a mobile app, 
-     * the tags from the website will still be there
-     * 
-     * A better approach is fetch all tags in advance and display the tags on live search 
-     */
-
-    // function checkLocalStorage() {
-    //   if (!localStorage.length) {
-    //     return null;
-    //   } else {
-    //     let tag_string: any = localStorage.getItem("dataParams");
-    //     let results: any;
-    //     if (tag_string != null) {
-    //       results = SplitNames(tag_string);
-    //       const results_parsed = JSON.parse(results)
-    //       setParams(results_parsed)
-    //     }
-    //     return results;
-    //   }
-    // }
-
     fetchAllTags();
-
   }, []);
 
   const navigateToProjects = () => {
@@ -155,14 +138,8 @@ const SearchBar = (props: any) => {
       <div className="searchbar">
         <h4>Tell Us in Detail What You'd Like Us To Build</h4>
         <div className="tagBox">
-          <textarea className="tag_box" rows={12} cols={4} defaultValue={inputData} onChange={handleInputChangeData}>
+          <textarea className="tag_box" id="" rows={12} cols={4} defaultValue={inputData} onChange={handleInputChangeData}>
           </textarea>
-          {/* REVIEW: Get rid of the click to search in favour of on live (on type) search */}
-          {/* <div className="home_btn">
-            <button onClick={handleAPICall} className="search">
-              Click to search
-            </button>
-          </div> */}
         </div>
         <div className="searchAttrBox">
           <div className="search_box">
