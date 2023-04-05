@@ -1,7 +1,6 @@
 .aboutContainer {
   color: #fff;
   overflow-y: hidden;
-  width: 400px;
 }
 .aboutLogo{
   width: 100%;
@@ -60,7 +59,8 @@
 .contactPage {
   background: transparent;
   color: #fff;
-  width: 400px;
+  /* width: 400px; */
+  /* border: 2px solid green; */
 }
 .contact_page{
   display: flex;
@@ -126,7 +126,7 @@
   overflow: scroll;
   overflow-y: hidden;
   overflow-x: hidden;
-  width: 400px;
+  /* width: 400px; */
 }
 .faqsHeader {
   width: 100%;

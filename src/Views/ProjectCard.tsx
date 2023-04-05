@@ -80,7 +80,6 @@ function ProjectCard(props: any) {
               justifyContent: "center",
               alignItems: "center",
               alignContent: "center",
-              width: "100vw",
               height: "100vh",
               backgroundColor: " #031926",
             }}
@@ -97,7 +96,6 @@ function ProjectCard(props: any) {
       ) :
         (
           <>
-            <TopBar />
             <div
             className="projectCards"
             >
@@ -143,7 +141,7 @@ function ProjectCard(props: any) {
                       initial="hidden"
                       animate="visible"
                       exit="exit"
-                      whileHover={{ scale: 1.03, originX: 0, color: "#f8e112" }}
+                      whileHover={{ scale: 1.01, originX: 0, color: "#f8e112" }}
                       transition={{ type: "spring", stiffness: 500 }}
                     >
                       <a onClick={() => navigateToProjectDetails()}>

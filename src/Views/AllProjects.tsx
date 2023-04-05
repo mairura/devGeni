@@ -69,7 +69,6 @@ const AllProjects = () => {
               justifyContent: "center",
               alignItems: "center",
               alignContent: "center",
-              width: "100vw",
               height: "100vh",
               backgroundColor: " #031926",
             }}
@@ -87,9 +86,6 @@ const AllProjects = () => {
         (
           <>
             <div className='allProjects_container'>
-              <div style={{ marginTop: "1em" }}>
-                <TopBar />
-              </div>
               <div className="matchRateData">
                 <p>We found {numProjects} projects matching your search</p>
               </div>

@@ -42,7 +42,7 @@ const TopBar = () => {
           {isOpen ? (
             <AiFillCloseCircle onClick={closeMenu} className="close_btn" />
           ) : (
-            <GiHamburgerMenu onClick={toggleIcon} className="hamburger" />
+            <GiHamburgerMenu onClick={toggleIcon} className="hamburger" /> 
           )}
         </div>
       </div>
