@@ -45,7 +45,7 @@ const BookBtn = () => {
               </button>
             </ExternalLink>
       </div>
-            <div className="empty"></div>
+            {/* <div className="empty"></div> */}
     </div>
     )
 }

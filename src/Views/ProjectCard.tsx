@@ -59,8 +59,7 @@ function ProjectCard(props: any) {
   const fetchProjects = useCallback(async () => {
     axios.post(endpoint, { description: querryTags }).then(
       (response) => {
-        const projects = response.data.projects
-        console.log(projects)
+        const projects = response.data.projects_data
         setProjects(projects)
       }
     ).catch((error) => {

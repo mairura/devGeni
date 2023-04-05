@@ -1,6 +1,7 @@
 .aboutContainer {
   color: #fff;
   overflow-y: hidden;
+  width: 400px;
 }
 .aboutLogo{
   width: 100%;
@@ -18,6 +19,13 @@
   font-size: 15px;
   font-family: "Poppins", sans-serif;
   padding: 10px;
+}
+@media (max-width: 768px){
+  .content{
+    font-size: 15px;
+    height: 80vh;
+    overflow: scroll;
+  }
 }
 .aboutContainer h5 {
   color: #52f2e2;
@@ -52,6 +60,14 @@
 .contactPage {
   background: transparent;
   color: #fff;
+  width: 400px;
+}
+.contact_page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
 }
 .contactPage h5 {
   font-size: 24px;
@@ -106,16 +122,11 @@
 /*---------------------FAQS---------------------*/
 .faqsContainer {
   color: #fff;
-  padding: 10px;
   font-family: "Orbitron", sans-serif;
   overflow: scroll;
   overflow-y: hidden;
-  /* border: 1px solid red; */
   overflow-x: hidden;
-  height: 100vh;
-}
-.faqsData {
-  width: 370px;
+  width: 400px;
 }
 .faqsHeader {
   width: 100%;
@@ -146,7 +157,7 @@ faqsForm {
   font-family: "Orbitron", sans-serif;
 }
 .faqsQuiz p {
-  font-size: 10px;
+  font-size: 13px;
   font-family: "Poppins";
   padding: 2px 15px;
   display: flex;
