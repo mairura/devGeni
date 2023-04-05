@@ -102,33 +102,7 @@ const SearchBar = (props: any) => {
   }
 
   useEffect(() => {
-
-    // REVIEW: Remove the implmentation to save tags in local storage
-    /**
-     * This implementation is flawed since it persists the tags even when the user starts a new search with a different started text 
-     * eg the user clicks on I want a website and then navigates back and clicks on I want a mobile app, 
-     * the tags from the website will still be there
-     * 
-     * A better approach is fetch all tags in advance and display the tags on live search 
-     */
-
-    // function checkLocalStorage() {
-    //   if (!localStorage.length) {
-    //     return null;
-    //   } else {
-    //     let tag_string: any = localStorage.getItem("dataParams");
-    //     let results: any;
-    //     if (tag_string != null) {
-    //       results = SplitNames(tag_string);
-    //       const results_parsed = JSON.parse(results)
-    //       setParams(results_parsed)
-    //     }
-    //     return results;
-    //   }
-    // }
-
     fetchAllTags();
-
   }, []);
 
   const navigateToProjects = () => {
@@ -157,12 +131,6 @@ const SearchBar = (props: any) => {
         <div className="tagBox">
           <textarea className="tag_box" rows={12} cols={4} defaultValue={inputData} onChange={handleInputChangeData}>
           </textarea>
-          {/* REVIEW: Get rid of the click to search in favour of on live (on type) search */}
-          {/* <div className="home_btn">
-            <button onClick={handleAPICall} className="search">
-              Click to search
-            </button>
-          </div> */}
         </div>
         <div className="searchAttrBox">
           <div className="search_box">
