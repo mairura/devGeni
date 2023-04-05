@@ -5,7 +5,6 @@ import linkPay from "../assets/linkpay.png";
 import { languages, teams } from "../icons";
 import {  useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import TopBar from "./Components/TopBar";
 import HashLoader from "react-spinners/HashLoader";
 import { useState, useEffect, CSSProperties, useCallback } from "react";
 import { Config } from "../config/config";

@@ -19,6 +19,11 @@
   color: #fff;
   text-decoration: none
 }
+@media (max-width: 768px){
+  .card-main{
+    width: 93vw;
+  }
+}
 .card_devs {
   display: flex;  
   align-items: center;

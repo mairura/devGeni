@@ -111,6 +111,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   overflow-y: hidden;
+  height: 10vh;
 }
 .footer_italic {
   font-size: 10px;

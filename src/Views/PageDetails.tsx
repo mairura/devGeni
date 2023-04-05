@@ -41,7 +41,11 @@ const PageDetails = () => {
 
   return (
     <div className='page_container'>
+<<<<<<< HEAD
         {/* <TopBar/> */}
+=======
+        <TopBar/>
+>>>>>>> 087ee897995e427ead0cb0fe71280759fbd1190a
         <div className='consider_page'>
         <div className='page_title'>
             {projectDetail.proj_name}

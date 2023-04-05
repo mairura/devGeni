@@ -37,7 +37,11 @@ const Profile = () => {
     <div className="profile_container">
       {/* <div className="optionsProfile">
         <TopBar />
+<<<<<<< HEAD
       </div> */}
+=======
+      </div>
+>>>>>>> 087ee897995e427ead0cb0fe71280759fbd1190a
         {devData.map((dev: any, index: any) => {
           return (
             <div className="dev_data" key={index}>

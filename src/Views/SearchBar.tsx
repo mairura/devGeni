@@ -34,6 +34,7 @@ const SearchBar = (props: any) => {
   let url = Config.URL;
 
   const navigate = useNavigate()
+<<<<<<< HEAD
 
   console.log("data ", inputData)
 
@@ -95,6 +96,80 @@ const SearchBar = (props: any) => {
     setMatchedTags([]);
   };
 
+=======
+
+  // Check if the word a user types in is in the list of tags 
+  const matchTags = (word: string) => {
+    word = word.toLowerCase().trim()
+    if (tags.includes(word) && !matchedTags.includes(word)) {
+      setMatchedTags([...matchedTags, word.trim()])
+    }
+  }
+
+  // Search for tags in the initial phrase
+  const inputParts = inputData.split(" ");
+  inputParts.map((word: string) => matchTags(word))
+
+  // REVIEW: Display tags that match the input, as the user types
+  /**
+   * This is kind of a hack since there is no straight forward way to listen for words typed. You can only capture letters typed.
+   * Have common word seperates like space, comma, etc. and check whenever the user types any of the word seperators, if any, then
+   * get the new word typed and check it against the tags list.  
+   */
+  const handleInputChangeData = (event: any) => {
+    let input = event.target.value;
+
+    input = input[input.length - 1] // get last character typed, instead of all the input 
+    // console.log("sep ", JSON.stringify(previousSeperator))
+
+    if (wordSeperators.includes(input)) {
+      // Get the last phrase
+      let currentInput = inputData.split(input)
+      let word: string = currentInput[currentInput.length - 1]
+
+      if (input !== previousSeperator) {
+        let middlePhrase = word.split(previousSeperator)
+        word = middlePhrase[middlePhrase.length - 1]
+      }
+
+      matchTags(word)
+
+      // Cater for the case where the user deletes a word that was already a matched tag
+      matchedTags.map((tag: string) => {
+        if (!inputData.toLowerCase().includes(tag.toLowerCase())) {
+
+          const index = matchedTags.indexOf(tag);
+          if (index > -1) {
+            matchedTags.splice(index, 1);
+          }
+
+          setMatchedTags([...matchedTags])
+        }
+      })
+
+      previousSeperator = input;
+    }
+
+    // Update the user input
+    setInputData(event.target.value);
+  };
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleIcon = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
+  //Function to clear the selected tags 
+  const clearStack = () => {
+    setMatchedTags([]);
+  };
+
+>>>>>>> 087ee897995e427ead0cb0fe71280759fbd1190a
   const fetchAllTags = async () => {
     // TODO: Implement a cahcing mechanism that will save all tags to prevent making a request everytime the user navigates to search page
 
@@ -120,7 +195,12 @@ const SearchBar = (props: any) => {
 
   return (
     <div className='searchbar_container'>
+<<<<<<< HEAD
         {/* <div className="searchbar_menu">
+=======
+      <div className="search_details">
+        <div className="searchbar_menu">
+>>>>>>> 087ee897995e427ead0cb0fe71280759fbd1190a
           <div className='tags_header'><img src={Logo} alt="logo" /><p>DEVGENI</p></div>
           <div className="hambuger_menu">
             {isOpen ? (
@@ -129,8 +209,16 @@ const SearchBar = (props: any) => {
               <GiHamburgerMenu onClick={toggleIcon} className="_btn" />
             )}
           </div>
+<<<<<<< HEAD
         {isOpen && <ContactUs />}
       </div> */}
+=======
+
+        </div>
+        {isOpen && <ContactUs />}
+
+      </div>
+>>>>>>> 087ee897995e427ead0cb0fe71280759fbd1190a
       <div className="searchbar">
         <h4>Tell Us in Detail What You'd Like Us To Build</h4>
         <div className="tagBox">

@@ -381,7 +381,6 @@ select.mySelectArrow {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* width: 95vw; */
 }
 
 .search_box {
@@ -438,7 +437,7 @@ select.mySelectArrow {
   margin: auto;
   margin-bottom: 4%;
   /* margin-top: 4%; */
-  width: 400px;
+  /* width: 400px; */
   z-index: 1000;
   border: 1px solid red;
 }
