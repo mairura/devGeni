@@ -54,7 +54,6 @@ function ProjectCard(props: any) {
   }
 
   const tags = state.tags
-  console.log("====>",tags)
 
   const fetchProjects = useCallback(async () => {
     axios.post(endpoint, { description: tags }).then(
