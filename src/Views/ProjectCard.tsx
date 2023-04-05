@@ -50,7 +50,7 @@ function ProjectCard(props: any) {
   // if (!tags || tags.length < 1) {
   // }
 
-  const querryTags = tags.join(",")
+  const querryTags = tags.join(" ")
 
   const fetchProjects = useCallback(async () => {
     axios.post(endpoint, { description: querryTags }).then(
