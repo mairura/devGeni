@@ -68,7 +68,6 @@
 .dev_stack::-webkit-scrollbar {
   height: 2px;
   width: 3px;
-  /* margin-top: 5px; */
 }
 .dev_stack::-webkit-scrollbar-track {
   background-color: #031926;

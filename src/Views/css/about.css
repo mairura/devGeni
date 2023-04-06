@@ -17,7 +17,7 @@
   text-align: left;
   font-size: 15px;
   font-family: "Poppins", sans-serif;
-  padding: 10px;
+  padding: 10px;margin-top: 4vh;
 }
 @media (max-width: 768px){
   .content{
@@ -59,17 +59,24 @@
 .contactPage {
   background: transparent;
   color: #fff;
-}
+}.contact_data{padding: 10px;}
+.contact_data h4{font-family: "Orbitron", sans-serif;font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  color: #FFFFFF;padding-top: 20px;}.contact_data p{font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    font-family: "Poppins";
+    color: #FFFFFF;padding: 2.4em 2.4em 0 2.4em}
 .contact_page{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 70vh;
 }
 .contactPage h5 {
   font-size: 24px;
-  color: #52f2e2;
+  color: #fff;
   font-family: "Orbitron", sans-serif;
   padding: 20px;
   margin-top: 10%;
@@ -79,10 +86,13 @@
   font-weight: 300;
 }
 .contactPageData {
-  margin-top: 10px;
+  margin-top: 50px;
   cursor: pointer;
-  height: 50px;
-}
+}.locate_us{display: grid;grid-template-columns: 2fr 8fr; align-items: center;background: rgba(15, 63, 70, 0.1);
+  border: 0.5px solid #52F2E2;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;padding: 10px;}
+@media (max-width: 768px){.locate_us{margin: 1px 20px;}}
 .contactPage p:hover {
   color: #52f2e2;
 }
@@ -122,31 +132,29 @@
   color: #fff;
   font-family: "Orbitron", sans-serif;
   overflow: scroll;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  margin-top: 8vh;
+
 }
 .faqsHeader {
   width: 100%;
-  height: 230px;
   position: relative;
-}
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+  margin-bottom: 4rem;
 }
 .faqsHeader h4 {
   padding-top: 20px;
+  font-size: 20px;
 }
 .faqsBox {
   margin-top: 20%;
+  border: 1px solid #52f2e2;
+  border-radius: 10px;
+  margin: 15px;
+  background: #0F3F46;
 }
 .faqsQuiz {
-  border-bottom: 1px solid #52f2e2;
   font-family: "Poppins";
   margin-top: 25px;
+  padding: 10px;
 }
 faqsForm {
   display: flex;
@@ -160,3 +168,37 @@ faqsForm {
   display: flex;
   text-align: left;
 }
+.more_info{font-style: normal;
+  margin: 5rem 0;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  font-family: "Poppins";
+  color: #FFFFFF;
+  }
+  .more_info a{color: #fff;}
+  summary{display: flex;flex-direction: row;justify-content: space-between;font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: left;
+    color: #FFFFFF;
+    }
+summary:after{ 
+  display: flex;
+  content: "+";
+  color: #52F2E2;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 0;
+  text-align: center;
+  width: 20px;}
+  details[open] summary:after {
+    content: '-';
+}
+.gradient{width: 316px;
+  height: 316px;
+  left: -85px;
+  top: 118px;
+  background: linear-gradient(180deg, #52F2E2 0%, rgba(82, 242, 226, 0.35) 100%);
+  filter: blur(125px);}

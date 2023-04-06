@@ -1,187 +1,205 @@
-.page_container{
-    overflow: scroll;
+.page_container {
+  overflow: scroll;
+  margin-top: 7vh;
 }
-.consider_page{
-    overflow-y: hidden;padding: 10px;
+.consider_page {
+  overflow-y: hidden;
+  padding: 10px;
 }
-.page_title{
-    font-family: "Orbitron", sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 24px;
-    color: #FFFFFF;
-    margin-top: 15px;
+.page_title {
+  font-family: "Orbitron", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #ffffff;
+  margin-top: 15px;
 }
-.page_carousel{
-    height: 210px;
-    top: 118px;
-    background: #52F2E2;
-    border-radius: 10px;
-    margin: 10px auto;
+.page_carousel {
+  overflow: hidden;
+  height: 210px;
+  top: 118px;
+  border-radius: 10px;
+  margin: 10px auto;
 }
-.page_desc{
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 15px;
-    color: #989898;
-    margin: 10px auto;
-    display: flex;
-    text-align: left;
-    padding: 0 5px;
-    overflow-y: hidden;
+.page_carousel img {
+  width: 100%;
+  height: 100%;
 }
-.class_tablist{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    list-style: none;
+
+.page_desc {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  color: #fff;
+  margin: 10px auto;
+  display: flex;
+  text-align: left;
+  padding: 0 5px;
+  height: 15vh;
+  overflow-x: hidden;
 }
-.class_tabs{
-    position: relative;
-    color: #fff;
-    background: transparent;
-    padding: 10px;
-    cursor: pointer;
-    font-family: "Orbitron", sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 17px;
-    letter-spacing: 0.18em;
+.page_desc::-webkit-scrollbar {
+  height: 1px;
+  width: 3px;
+  display: block;
 }
-.class_tabPanel{
-    height: 33vh;
-    overflow: scroll;
-    margin: 5px 0;
+.page_desc::-webkit-scrollbar-thumb {
+  display: block;
+  background: #52f2e2;
+  border-radius: 20px;
 }
-.class_tabs:hover::after{
-    content: '';
-    height: 7px; 
-    width: 7px; 
-    position: absolute;
-    margin: 3px;
-    display: block;
-    border-radius: 50%;
-    background: #52F2E2;
-    left: 50%;
-    bottom: -3px;
-    transform: translateX(-50%);
-    
+.page_desc::-webkit-scrollbar-corner {
+  border-radius: 2px;
 }
-.class_tabs:hover{  
-    color: #52F2E2;
+.class_tablist {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
 }
-.stacks_box{
-    left: 36px;
-    top: 490px;
-    background: rgba(82, 242, 226, 0.1);
-    border: 0.5px solid rgba(82, 242, 226, 0.35);
-    margin: 10px auto;
+.class_tabs {
+  position: relative;
+  color: #fff;
+  background: transparent;
+  padding: 10px;
+  cursor: pointer;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.18em;
 }
-.stacks_box h4{
-    font-family: "Orbitron", sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 14px;
-    letter-spacing: 0.18em;  
-    color: #FFFFFF;
-    text-align: left;
-    padding:  5px 10px;
+.class_tabPanel {
+  overflow: scroll;
+  margin: 5px 0;
 }
-.stacks_title{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 12px;
+.class_tabs:hover::after {
+  content: "";
+  height: 7px;
+  width: 7px;
+  position: absolute;
+  margin: 3px;
+  display: block;
+  border-radius: 50%;
+  background: #52f2e2;
+  left: 50%;
+  bottom: -3px;
+  transform: translateX(-50%);
 }
-.stacks_title button{
-    display: inline-block;
-    font-family: "Poppins";
-    padding: 6px 12px;
-    margin: 5px;
-    border: 0.4px solid #52F2E2;
-    border-radius: 3px;
-    background-color: transparent;
-    color: #fff;
-    font-size: 13px;
+.class_tabs:hover {
+  color: #52f2e2;
+}
+.stacks_box {
+  left: 36px;
+  top: 490px;
+  background: rgba(82, 242, 226, 0.1);
+  border: 0.5px solid rgba(82, 242, 226, 0.35);
+  margin: 10px auto;
+}
+.stacks_box h4 {
+  font-family: "Orbitron", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.18em;
+  color: #ffffff;
+  text-align: left;
+  padding: 5px 10px;
+}
+.stacks_title {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 12px;
+}
+.stacks_title button {
+  display: inline-block;
+  font-family: "Poppins";
+  padding: 6px 12px;
+  margin: 5px;
+  border: 0.4px solid #52f2e2;
+  border-radius: 3px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 13px;
 }
 /* .class_panel{
     border: 1px solid greenyellow;
 } */
-.teams_data{
-    margin: 10px auto;
-    background: rgba(82, 242, 226, 0.1);
-    border: 0.5px solid rgba(82, 242, 226, 0.35);
-    display: grid;
-    grid-template-columns: 1fr 8fr 3fr;
-    height: 66px;
+.teams_data {
+  margin: 10px auto;
+  background: rgba(82, 242, 226, 0.1);
+  border: 0.5px solid rgba(82, 242, 226, 0.35);
+  display: grid;
+  grid-template-columns: 1fr 8fr 3fr;
+  height: 66px;
 }
-.teams_profile img{
-    display: flex;
-    justify-content: center;
-    align-items: center;    
-    color: #fff;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    margin: 8px;
-    border: 2px solid #25D366;
-    filter: drop-shadow(0px 0px 7px #7593CB);
+.teams_profile img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  margin: 8px;
+  border: 2px solid #25d366;
+  filter: drop-shadow(0px 0px 7px #7593cb);
 }
-.profile_names{
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    /* padding: 10px 3px; */
-    margin: auto 7px;
-    color: #fff;
+.profile_names {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  /* padding: 10px 3px; */
+  margin: auto 7px;
+  color: #fff;
 }
-.profile_names p{
-    font-family: "Orbitron", sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 13px;
-    line-height: 15px;
-    letter-spacing: 0.18em;
-    padding-bottom: 10px;
+.profile_names p {
+  font-family: "Orbitron", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.18em;
+  padding-bottom: 10px;
 }
-.profile_names small{
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 300;
-    font-size: 8px;
-    line-height: 10px;
-    letter-spacing: 0.18em;
+.profile_names small {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 8px;
+  line-height: 10px;
+  letter-spacing: 0.18em;
 }
-.profile_links{
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    text-decoration: none;
+.profile_links {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  text-decoration: none;
 }
-.profile_links button{
-    font-family: "Poppins";
-    background-color: transparent;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    color: #FFFFFF;
-    border: none;
-    cursor: pointer;
+.profile_links button {
+  font-family: "Poppins";
+  background-color: transparent;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
 }
-.stats_container{
-    height: 56px;
-    background: rgba(82, 242, 226, 0.1);
-    border: 0.5px solid rgba(82, 242, 226, 0.35);
-    margin: 10px auto;
-    color: #fff;
-    text-align: left;
-    padding: 5px 10px;
-    font-family: "Orbitron", sans-serif;
+.stats_container {
+  height: 56px;
+  background: rgba(82, 242, 226, 0.1);
+  border: 0.5px solid rgba(82, 242, 226, 0.35);
+  margin: 10px auto;
+  color: #fff;
+  text-align: left;
+  padding: 5px 10px;
+  font-family: "Orbitron", sans-serif;
 }
 .stats_container p {
-    font-size: 13px;
-    padding: 10px 0;
+  font-size: 13px;
+  padding: 10px 0;
 }

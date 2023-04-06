@@ -5,7 +5,6 @@ import axios from "axios"
 import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import linkPay from "../assets/linkpay.png";
-import TopBar from './Components/TopBar';
 import { languages, teams } from "../icons";
 import HashLoader from 'react-spinners/HashLoader';
 
@@ -47,7 +46,6 @@ const AllProjects = () => {
     const endpoint: string = `${url}/index/projects`;
     try {
       const { data } = await axios.get(endpoint);
-      // console.log("Print All data:", data)
       setProjects(data);
       setNumProjects(data.length);
     } catch (error: any) {
@@ -124,7 +122,7 @@ const AllProjects = () => {
                         initial="hidden"
                         animate="visible"
                         exit="exit"
-                        whileHover={{ scale: 1.03, originX: 0, color: "#f8e112" }}
+                        whileHover={{ scale: 1.01, originX: 0, color: "#f8e112" }}
                         transition={{ type: "spring", stiffness: 500 }}
                         key={index}
                       >
