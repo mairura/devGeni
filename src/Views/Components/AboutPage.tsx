@@ -4,9 +4,6 @@ import TopBar from "./TopBar";
 const AboutPage = () => {
   return (
     <div className="aboutContainer">
-      {/* <div className="aboutLogo">
-        <TopBar />
-      </div> */}
       <div className="aboutPage">
         <h4>About Us</h4>
         <div className="content">

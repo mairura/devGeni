@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../css/topBar.css";
 import Logo from "../../assets/Logo.png";
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -36,7 +36,7 @@ const TopBar = () => {
         </div>
 
         <div className="top_logo">
-          <img src={Logo} alt="logo" />
+          <Link to="/"><img src={Logo} alt="logo" /></Link>
         </div>
         <div className="hambuger">
           {isOpen ? (
