@@ -45,7 +45,7 @@ const PageDetails = () => {
             {projectDetail.proj_name}
         </div>
         <div className='page_carousel'>
-            <img src="https://source.unsplash.com/480x200/?blockchain" alt="project-image" />
+            <img src={projectDetail.imagelink} alt="project-image" />
         </div>
         <div className='page_desc'>
             {projectDetail.description}
@@ -78,7 +78,7 @@ const PageDetails = () => {
                             </div>
                             <div className='profile_names'>
                                 <p>{dev.name}</p>
-                                <small>{dev.short_name}</small>
+                                <small>Role: <i>Software Engineer</i></small>
                             </div>
                             <Link to={`/profile/?shortName=${dev?.short_name}`} className='profile_links'>
                                 <button>

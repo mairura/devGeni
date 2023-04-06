@@ -57,9 +57,11 @@
   height: 316px;
   left: -57px;
   top: 134px;
-  background: linear-gradient(180deg,
-      #52f2e2 0%,
-      rgba(82, 242, 226, 0.35) 100%);
+  background: linear-gradient(
+    180deg,
+    #52f2e2 0%,
+    rgba(82, 242, 226, 0.35) 100%
+  );
   filter: blur(125px);
 }
 
@@ -67,9 +69,11 @@ select.mySelectArrow {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: linear-gradient(180deg,
-      rgba(82, 242, 226, 0.1) 0%,
-      rgba(65, 191, 179, 0.1) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(82, 242, 226, 0.1) 0%,
+    rgba(65, 191, 179, 0.1) 100%
+  );
   color: white;
   width: 100%;
   padding: 10px 20px;
@@ -95,7 +99,7 @@ select.mySelectArrow {
   margin-bottom: 5vh;
   overflow-x: scroll;
 }
-.carousel_data{
+.carousel_data {
   overflow-x: scroll;
 }
 .carousel_data p {
@@ -107,15 +111,16 @@ select.mySelectArrow {
   font-family: "Poppins", sans-serif;
   color: #ffffff;
 }
-
 .home_btn button {
   box-sizing: border-box;
   width: 354px;
   height: 45px;
   margin: auto;
-  background: linear-gradient(180deg,
-      rgba(82, 242, 226, 0.1) 0%,
-      rgba(65, 191, 179, 0.1) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(82, 242, 226, 0.1) 0%,
+    rgba(65, 191, 179, 0.1) 100%
+  );
   border: 1px solid #52f2e2;
   box-shadow: 0px 1px 10px rgba(82, 242, 226, 0.35);
   border-radius: 10px;
@@ -139,12 +144,15 @@ select.mySelectArrow {
     font-size: 8px;
     height: 30px;
   }
+
+  .home_btn button {
+    width: 80vw;
+  }
 }
 
 .rightChevron {
   text-decoration: none;
 }
-
 .explore {
   color: #fff;
   display: flex;
@@ -154,6 +162,12 @@ select.mySelectArrow {
   font-weight: 600;
   line-height: 10px;
   margin: 50px auto;
+  width: 70%;
+}
+@media (max-width: 768px) {
+  .explore {
+    width: 80%;
+  }
 }
 
 .explore p {
@@ -185,7 +199,9 @@ select.mySelectArrow {
 .searchAtt_container {
   font-family: "Orbitron", sans-serif;
 }
-.searchbar_container{margin-top: 8vh;}
+.searchbar_container {
+  margin-top: 8vh;
+}
 .tags_container {
   margin-top: 8vh;
 }
@@ -228,7 +244,8 @@ select.mySelectArrow {
 
 .searchbar {
   width: 100%;
-  margin-top: 5%;padding: 15px;
+  margin-top: 5%;
+  padding: 15px;
 }
 
 @media (max-width: 768px) {
@@ -257,7 +274,7 @@ select.mySelectArrow {
 }
 
 .main_request button:hover {
-  background: #009E8E;
+  background: #009e8e;
   font-weight: 500;
 }
 
@@ -271,8 +288,8 @@ select.mySelectArrow {
   align-items: center;
   justify-content: center;
   width: 400px;
-  background: #0F3F46;
-  border: 0.5px solid #52F2E2;
+  background: #0f3f46;
+  border: 0.5px solid #52f2e2;
   border-radius: 10px;
   max-height: 350px;
   min-height: 155px;
@@ -350,8 +367,8 @@ select.mySelectArrow {
   height: 138px;
   left: 22px;
   top: 172px;
-  background: #0F3F46;
-  border: 1px solid #52F2E2;
+  background: #0f3f46;
+  border: 1px solid #52f2e2;
   border-radius: 10px;
   text-align: left;
 }
@@ -360,7 +377,7 @@ select.mySelectArrow {
   font-size: 10px;
   line-height: 12px;
   text-decoration-line: underline;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 6px;
 }
 
@@ -385,8 +402,8 @@ select.mySelectArrow {
 
 .search_box {
   width: 380px;
-  background: #0F3F46;
-  border: 0.5px solid #52F2E2;
+  background: #0f3f46;
+  border: 0.5px solid #52f2e2;
   border-radius: 10px;
   max-height: 250px;
   min-height: 100px;
@@ -397,7 +414,7 @@ select.mySelectArrow {
   font-size: 12px;
   line-height: 12px;
   text-decoration-line: underline;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 6px;
   text-align: left;
 }

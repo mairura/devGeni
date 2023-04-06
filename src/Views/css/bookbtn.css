@@ -1,6 +1,9 @@
-.bookbtn_container{
-    margin: 10px auto;
+.bookbtn_container {
+  margin: 10px auto;
 }
-.empty{
-    margin-top: 100px;
+.bookbtn_container button {
+  border: none;
+}
+.empty {
+  margin-top: 100px;
 }
