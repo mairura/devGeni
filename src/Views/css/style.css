@@ -13,7 +13,7 @@ body {
   height: 100%;
 }
 .projectCards{
-  height: 83vh;
+  height: 95vh;
   overflow-y: scroll;
 }
 .main_container {
@@ -24,6 +24,7 @@ body {
   overflow-y: hidden;
   overflow-x: hidden;
   z-index: 1;margin-bottom: 20px;
+  width: 100%;
 }
 .main_search {
   height: 30px;
@@ -141,11 +142,13 @@ body {
 }
 /*---------Contact Us Page---------*/
 .contactUsContainer {
+  display: block; right: 0; top: 0;
   bottom:0;
   left: 0;
-  height: 100vh;
+  height: max-content;
   color: #fff;
   font-family: "Orbitron", sans-serif;
+  /* margin-top: 10vh; */
 }
 .contactUsContainer ul {
   display: block;

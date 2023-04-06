@@ -1,6 +1,6 @@
 .top_bar{
   width: 100%;
-  padding: 10px 0px;
+  padding: 10px 0px;position: absolute; background-color: #031926;
   z-index: 1000;}
 /* .top_bar *{
   border:1px solid yellow;

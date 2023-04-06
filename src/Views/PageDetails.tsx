@@ -1,4 +1,3 @@
-import TopBar from './Components/TopBar'
 import './css/page-details.css'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
@@ -41,12 +40,12 @@ const PageDetails = () => {
 
   return (
     <div className='page_container'>
-        {/* <TopBar/> */}
         <div className='consider_page'>
         <div className='page_title'>
             {projectDetail.proj_name}
         </div>
         <div className='page_carousel'>
+            <img src={projectDetail.imagelink} alt="project-image" />
         </div>
         <div className='page_desc'>
             {projectDetail.description}
@@ -102,7 +101,6 @@ const PageDetails = () => {
             </TabPanel>
         </Tabs>
         <BookBtn />
-
         </div>
        
     </div>

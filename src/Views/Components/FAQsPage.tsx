@@ -1,29 +1,15 @@
 import "../css/about.css";
-import Collapsible from "react-collapsible";
-// @ts-ignore
-import pic from "../../assets/unsplash1.jpg";
-import TopBar from "./TopBar";
 
 const FAQsPage = () => {
   return (
     <div className="faqsContainer">
-      <TopBar />
       <div className="faqsData">
         <div className="faqsHeader">
-          <div className="overlay"></div>
-
-          <img src={pic} alt="bgImg" height="200px" width="100%" />
-          <h4>Faqs</h4>
+          <h4>Frequently Asked Questions</h4>
         </div>
         <div className="faqsBox">
           <div className="faqsQuiz">
-            <Collapsible
-              trigger={"How Does DevGeni work?"}
-              triggerTagName="faqsForm"
-              transitionTime={500}
-              easing="ease-in-out"
-            >
-              <p>
+            <details><summary>How does nGeni Work?</summary><p>
                 Finding the right software developer for your project can be
                 strenuous. What if there was a platform that allowed you to
                 choose from a large pool of experts and allow you to have a look
@@ -36,15 +22,10 @@ const FAQsPage = () => {
                 include their tech stack outlining the programming languages,
                 frameworks and tools they use as well as links to their GitHub
                 profiles.
-              </p>
-            </Collapsible>
+              </p></details>
           </div>
           <div className="faqsQuiz">
-            <Collapsible
-              trigger="What Kind of Developers Can I Find on DevGeni?"
-              triggerTagName="faqsForm"
-            >
-              <p>
+          <details><summary>What Kind of Developers Can I Find on DevGeni?</summary><p>
                 DevGeni is a one-stop shop for software developers with
                 expertise in various programming languages, frameworks and
                 technologies. The platform links you to front-end developers who
@@ -59,45 +40,28 @@ const FAQsPage = () => {
                 you&rsquo;ll also grow fond of the pool of developers
                 experienced in building native and hybrid mobile apps for
                 Android and iOS platforms.
-              </p>
-            </Collapsible>
+              </p></details>
           </div>
           <div className="faqsQuiz">
-            <Collapsible
-              trigger="Can I Trust the Quality of Developers on DevGeni?"
-              triggerTagName="faqsForm"
-            >
-              <p>
-                Simple straightforward answer. Proof of Work! Once DevGeni
+          <details><summary>Can I Trust the Quality of Developers on DevGeni?</summary><p>
+              Simple straightforward answer. Proof of Work! Once DevGeni
                 matches you with potential developers, you can view their past
                 projects and have a peek at their catalog allowing you to
                 pinpoint the right fit(s) for your project.
-              </p>
-            </Collapsible>
+              </p></details>   
           </div>
           <div className="faqsQuiz">
-            <Collapsible
-              trigger="What Is The Expected Timeline for Completing a Project on DevGeni?"
-              triggerTagName="faqsForm"
-            >
-              <p>
-                DevGeni is specifically developed to be intuitive and
+          <details><summary>What Is The Expected Timeline for Completing a Project on DevGeni?</summary><p>
+              DevGeni is specifically developed to be intuitive and
                 client-centric. However, the amount of time it takes to complete
                 a project varies from assignment to assignment depending on the
                 specifications, tweaks and the amount of time it takes until the
                 client is happy with the final product.
-              </p>
-            </Collapsible>
+              </p></details>
           </div>
+          <div className="more_info">Can’t find an answer to your question? Feel free to <a href="/contactus">contact us</a> at ask@devgeni.ai</div>
         </div>
       </div>
-
-      {/* <div className="btn_contactPage">
-        <Link to="/contact">
-          {" "}
-          <div className="button">{<BiChevronLeft color="#52f2e2" />}</div>{" "}
-        </Link>
-      </div> */}
     </div>
   );
 };
