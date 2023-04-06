@@ -45,7 +45,7 @@ const PageDetails = () => {
             {projectDetail.proj_name}
         </div>
         <div className='page_carousel'>
-            <img src={projectDetail.imagelink} alt="project-image" />
+            <img src="https://source.unsplash.com/480x200/?blockchain" alt="project-image" />
         </div>
         <div className='page_desc'>
             {projectDetail.description}

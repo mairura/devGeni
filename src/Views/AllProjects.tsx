@@ -46,7 +46,6 @@ const AllProjects = () => {
     const endpoint: string = `${url}/index/projects`;
     try {
       const { data } = await axios.get(endpoint);
-      console.log("Print All data:", data)
       setProjects(data);
       setNumProjects(data.length);
     } catch (error: any) {
