@@ -22,16 +22,11 @@ const TagsPage = (props: any) => {
 
   // Function to handle button click
   const handleClick = (e: any) => {
-    if (activeButton === e.target.id) {
-      setActiveButton(null);
-    } else {
-      setActiveButton(e.target.id);
-    }
+    setActiveButton(e)
   };
   
   return (
     <div className='tags_container'>
-        {/* <div className='tags_header'><img src={Logo} alt="logo"/><p>DEVGENI</p></div> */}
         <div className='category'>
             <h4>Choose what you're interested in.</h4>
             <div className="main_request">
@@ -41,7 +36,7 @@ const TagsPage = (props: any) => {
                     setActiveButton(index1);
                   }
                   return (
-                    <button id={props.id} className={activeButton === props.id ? 'active' : ''} key={index} onClick={clickEvent}>
+                    <button key={index} onClick={clickEvent}   >
                       {request}
                     </button>
                   );
