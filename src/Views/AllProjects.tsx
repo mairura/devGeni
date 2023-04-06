@@ -46,6 +46,7 @@ const AllProjects = () => {
     const endpoint: string = `${url}/index/projects`;
     try {
       const { data } = await axios.get(endpoint);
+      console.log("all data:", data)
       setProjects(data);
       setNumProjects(data.length);
     } catch (error: any) {
@@ -98,11 +99,9 @@ const AllProjects = () => {
                   let team: {}[] | undefined = project?.team;
                   let stack: String[] | undefined = project?.tech_stack;
                   let desc: String[] | undefined = project?.description;
-                  let match_rate: string | undefined = project?.match_rate;
                   let proj_title: string | undefined = project?.proj_name;
                   let teamLength: number | undefined = team?.length;
                   let stackLength: number | undefined = stack?.length;
-
 
                   let trimDesc = function (string: any, length: any) {
                     return string.length > length
@@ -115,7 +114,6 @@ const AllProjects = () => {
                   }
 
                   return (
-                    <>
                       <motion.div
                         className="card-main"
                         variants={containerVariants}
@@ -130,12 +128,6 @@ const AllProjects = () => {
                           <div className="more">
                             <div key={project.id}>
                               <div>
-                                {/* <p className="card_devs">
-                            {dev_data?.slice(0, 3).map((member: any) => (
-                              <TeamMember dev={member} className="developer" />
-                            ))}
-                            <span className="main-member">+{diff}</span>
-                          </p> */}
                               </div>
                               <div className="card_details">
                                 <motion.p
@@ -160,17 +152,29 @@ const AllProjects = () => {
                                 </motion.p>
                                 <p className="card_desc">{trimDesc(desc, 300)}</p>
                                 <div className="rate">
-                                  <span>{teams}</span>
+                                  <span
+                                    className="lengths"
+                                    style={{
+                                      fontSize: 10,
+                                      paddingTop: 10,
+                                      color: "#fff",
+                                      paddingRight: 10,
+                                    }}
+                                  >
+                                    {100}%{" "}match rate
+                                  </span>
+                                  <div className="teamLanguages"><span>{teams}</span>
                                   <p className="lengths">{teamLength}</p>
                                   <span>{languages}</span>
-                                  <p className="lengths">{stackLength}</p>
+                                  <p className="lengths">{stackLength}</p></div>
+
+                                  
                                 </div>
                               </div>
                             </div>
                           </div>
                         </a>
                       </motion.div>
-                    </>
                   );
                 })}
               </div>
