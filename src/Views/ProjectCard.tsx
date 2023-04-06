@@ -5,10 +5,10 @@ import linkPay from "../assets/linkpay.png";
 import { languages, teams } from "../icons";
 import {  useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import HashLoader from "react-spinners/HashLoader";
 import { useState, useEffect, CSSProperties, useCallback } from "react";
 import { Config } from "../config/config";
 import axios from "axios";
+import loader from "../assets/logo 200.gif"
 
 const override: CSSProperties = {
   display: "block",
@@ -83,13 +83,7 @@ function ProjectCard(props: any) {
               backgroundColor: " #031926",
             }}
           >
-            <HashLoader
-              color="#52f2e2"
-              cssOverride={override}
-              size={100}
-              aria-label="Loading Spinner"
-              data-testid="loader"
-            />
+           <img src={loader} alt="loading..." style={{ width: "600px"}} />
           </div>
         </>
       ) :

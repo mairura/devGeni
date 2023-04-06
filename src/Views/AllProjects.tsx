@@ -3,10 +3,10 @@ import { Config } from "../config/config";
 import { IProjects } from "./Context";
 import axios from "axios"
 import { motion } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import linkPay from "../assets/linkpay.png";
 import { languages, teams } from "../icons";
-import HashLoader from 'react-spinners/HashLoader';
+import loader from "../assets/logo 200.gif"
 
 const containerVariants = {
   hidden: {
@@ -46,7 +46,6 @@ const AllProjects = () => {
     const endpoint: string = `${url}/index/projects`;
     try {
       const { data } = await axios.get(endpoint);
-      console.log("all data:", data)
       setProjects(data);
       setNumProjects(data.length);
     } catch (error: any) {
@@ -72,13 +71,7 @@ const AllProjects = () => {
               backgroundColor: " #031926",
             }}
           >
-            <HashLoader
-              color="#52f2e2"
-              cssOverride={override}
-              size={100}
-              aria-label="Loading Spinner"
-              data-testid="loader"
-            />
+           <img src={loader} alt="loading..." style={{ width: "600px"}} />
           </div>
         </>
       ) :

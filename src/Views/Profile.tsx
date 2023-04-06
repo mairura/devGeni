@@ -47,11 +47,11 @@ const Profile = () => {
               <div className="prof">
                 <div className="profile_stack">
                   <h5>Tech Stack</h5>
-                  <p className="dev_stack">
+                  <div className="dev_stack">
                     {stacks.map((item: any, index: any) => {
                       return <div className="dev_stack_item" key={index}>{item}</div>;
                     })}
-                  </p>
+                  </div>
                 </div>
                 <div className="profile_projects">
                   <div className="profile_title">
