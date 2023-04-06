@@ -48,7 +48,9 @@ function App() {
                 </Routes>
               {/* </div> */}
             </div>
+            <div>
             <Footer />
+            </div>
           </div>
         </>
   );

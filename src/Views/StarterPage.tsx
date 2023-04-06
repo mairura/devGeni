@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import "./css/home.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
 import { motion } from "framer-motion";
 import Logo from "../assets/Logo.png";
 import { FiChevronRight  } from 'react-icons/fi';
@@ -35,34 +34,7 @@ const StarterPage = () => {
       </div>
 
       <div className="carousel_page">
-        <Carousel
-          autoPlay={true}
-          showArrows={false}
-          transitionTime={1000}
-          infiniteLoop={true}
-          interval={4000}
-          showStatus={false}
-          showThumbs={false} 
-        >
-          <div className="carousel_data">
-            <p>
-              {" "}
-              Searching for a skilled developer or team to work on your next
-              software project?
-            </p>
-            <br />
-            <br />
-          </div>
-          <div className="carousel_data">
-            <p>
-              Empower your project with experienced DevGeni software developers
-              specializing in front-end to back-end, Web3, and blockchain
-              technologies.
-            </p>
-            <br />
-            <br />
-          </div>
-        </Carousel>
+      <p>Access individual talent, dedicated teams, and all-inclusive technology services from innovative developers who specialize in modern solutions that can scale to meet your specific needs</p>
       </div>
       <Link to="/tagspage" style={{ width: "100%" }} className="home_btn">
         <div>

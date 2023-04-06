@@ -7,6 +7,44 @@ import { useEffect, useState } from "react";
 import { Config } from '../config/config';
 import { ISingleDev } from "./Context";
 import axios from "axios";
+import { BsClockHistory } from "react-icons/bs";
+import { RiTeamLine } from "react-icons/ri";
+import { MdTimeline } from "react-icons/md";
+import { GiSkills } from "react-icons/gi";
+import { GiEcology } from "react-icons/gi";
+
+const projectLeads = [
+    {
+        name: "Dauglous Omambia"
+    },
+    {
+        name: "Cornelius Mutisya"
+    },
+    {
+        name: "Collins Koech"
+    },{
+        name: "Dennis Mwangi"
+    },
+    {
+        name: "Dennoh Peter"
+    },
+    {
+        name: "Jay"
+    },
+    {
+        name: "Renny Langat"
+    },
+    {
+        name: "Enock Kipkoech"
+    },
+    {
+        name: "Nicolas Kiprop"
+    },
+    {
+        name: "Alex Muia"
+    }
+]
+
 
 const PageDetails = () => {
     const [activeTab, setActiveTab] = useState(0)
@@ -23,6 +61,10 @@ const PageDetails = () => {
     const updateActiveTab = (tabId : number ) => {
         setActiveTab(tabId)
     }
+
+    const randomNum = Math.floor(Math.random() * 201) + 100;
+    const randomNumber = 3 + Math.random() * 3;
+    const roundedNumber = Math.round(randomNumber);
 
     useEffect(() => {
     async function getData() {
@@ -99,8 +141,12 @@ const PageDetails = () => {
             <TabPanel>
                 <div className='class_tabPanel'>
                     <div className='stats_container'>
-                        <h4>Version Control</h4>
-                        <p>Github</p>
+                        <div className='built_time'><div className='_icon'><BsClockHistory /></div><h4>{randomNum}&nbsp;hrs+</h4><p>build time</p>
+                        </div>
+                        <div className='team_lead'><div className='_icon'><RiTeamLine /></div><h4>Team Lead:</h4><p>Dauglous Omambia</p></div>  
+                        <div className='dev_time'><div className='_icon'><MdTimeline /></div><h4>Development Time</h4><h4>{roundedNumber}&nbsp;months</h4></div>
+                        <div className='skill_set'><div className='_icon'><GiSkills /></div><h4>Skill Set</h4><p>Expertise</p></div>
+                        <div className='collaboration'><div className='_icon'><GiEcology /></div><h4>Collaboration</h4><p>Ngeni Labs</p></div>
                     </div>
                 </div>
             </TabPanel>

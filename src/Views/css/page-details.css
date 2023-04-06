@@ -234,16 +234,19 @@
   cursor: pointer;
 }
 .stats_container {
-  height: 56px;
-  background: rgba(82, 242, 226, 0.1);
-  border: 0.5px solid rgba(82, 242, 226, 0.35);
-  margin: 10px auto;
+  border: 1px solid #52f2e2;
+  border-radius: 10px;
   color: #fff;
-  text-align: left;
-  padding: 5px 10px;
-  font-family: "Orbitron", sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px;
+  font-family: "Poppins";
+  font-size: 14px;
+  margin: 25px;
 }
-.stats_container p {
-  font-size: 13px;
-  padding: 10px 0;
+._icon {
+  color: #52f2e2;
+}
+.built_time {
+  margin: 12px 1px;
 }
