@@ -89,15 +89,13 @@ select.mySelectArrow {
 }
 
 .carousel_page {
-  height: auto;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
   color: #fff;
-  width: 90%;
-  margin: auto;
+  padding: 0px 10px 20px 10px;
   display: flex;
   justify-content: center;
-  text-align: left;
-  margin-bottom: 5vh;
-  overflow-x: scroll;
+  align-items: center;
 }
 .carousel_data {
   overflow-x: scroll;
@@ -113,7 +111,7 @@ select.mySelectArrow {
 }
 .home_btn button {
   box-sizing: border-box;
-  width: 354px;
+  width: 330px;
   height: 45px;
   margin: auto;
   background: linear-gradient(
@@ -146,7 +144,7 @@ select.mySelectArrow {
   }
 
   .home_btn button {
-    width: 80vw;
+    width: 250px;
   }
 }
 
