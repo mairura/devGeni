@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import Logo from "../assets/Logo.png"
 import { Config } from "../config/config";
-import ContactUs from "./Components/ContactUs";
 import { AiFillCloseCircle } from 'react-icons/ai';
-import { GiHamburgerMenu } from 'react-icons/gi';
 import "./css/home.css";
 import axios from "axios";
 import { Tooltip } from 'react-tooltip'
@@ -37,7 +34,7 @@ const SearchBar = (props: any) => {
 
   const navigate = useNavigate()
 
-  console.log("data ", inputData)
+  // console.log("data ", inputData)
 
   // Check if the word a user types in is in the list of tags 
   const matchTags = (word: string) => {

@@ -9,6 +9,7 @@ import { ISingleDev } from "./Context";
 import axios from "axios";
 
 const PageDetails = () => {
+    const [activeTab, setActiveTab] = useState(0)
 
     const location = useLocation();
     const projectDetail = location.state.tagList // Access projectDetail from card page
@@ -18,6 +19,10 @@ const PageDetails = () => {
     let url = Config.URL;
 
     const[projDetails, setProjectDetails ]=useState<Array<ISingleDev>>([]);
+
+    const updateActiveTab = (tabId : number ) => {
+        setActiveTab(tabId)
+    }
 
     useEffect(() => {
     async function getData() {
@@ -52,9 +57,9 @@ const PageDetails = () => {
         </div>
         <Tabs>
             <TabList className="class_tablist">
-                <Tab className="class_tabs">Stack</Tab>
-                <Tab className="class_tabs">Teams</Tab>
-                <Tab className="class_tabs">Stats</Tab>
+                <Tab onClick={() => updateActiveTab(0)} className={activeTab == 0 ? "class_tabs class_tabPanel_active" : "class_tabs" }>Stack</Tab>
+                <Tab onClick={() => updateActiveTab(1)} className={activeTab == 1 ? "class_tabs class_tabPanel_active" : "class_tabs" }>Teams</Tab>
+                <Tab onClick={() => updateActiveTab(2)} className={activeTab == 2 ? "class_tabs class_tabPanel_active" : "class_tabs" }>Stats</Tab>
             </TabList>
             <TabPanel>
                 <div  className="class_tabPanel">
@@ -78,7 +83,7 @@ const PageDetails = () => {
                             </div>
                             <div className='profile_names'>
                                 <p>{dev.name}</p>
-                                <small>Role: <i>Software Engineer</i></small>
+                                <small><i>Software Engineer</i></small>
                             </div>
                             <Link to={`/profile/?shortName=${dev?.short_name}`} className='profile_links'>
                                 <button>
