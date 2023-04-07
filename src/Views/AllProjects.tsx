@@ -145,17 +145,7 @@ const AllProjects = () => {
                                 </motion.p>
                                 <p className="card_desc">{trimDesc(desc, 300)}</p>
                                 <div className="rate">
-                                  <span
-                                    className="lengths"
-                                    style={{
-                                      fontSize: 10,
-                                      paddingTop: 10,
-                                      color: "#fff",
-                                      paddingRight: 10,
-                                    }}
-                                  >
-                                    {100}%{" "}match rate
-                                  </span>
+                  
                                   <div className="teamLanguages"><span>{teams}</span>
                                   <p className="lengths">{teamLength}</p>
                                   <span>{languages}</span>

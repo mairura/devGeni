@@ -1,8 +1,9 @@
 .aboutContainer {
   color: #fff;
-  overflow-y: hidden;margin-top: 10vh;
+  overflow-y: hidden;
+  margin-top: 10vh;
 }
-.aboutLogo{
+.aboutLogo {
   width: 100%;
 }
 .aboutContainer h4 {
@@ -12,15 +13,16 @@
   font-family: "Orbitron", sans-serif;
   color: #52f2e2;
 }
-.content{
+.content {
   display: flex;
   text-align: left;
   font-size: 15px;
   font-family: "Poppins", sans-serif;
-  padding: 10px;margin-top: 2vh;
+  padding: 10px;
+  margin-top: 2vh;
 }
-@media (max-width: 768px){
-  .content{
+@media (max-width: 768px) {
+  .content {
     font-size: 15px;
     height: 80vh;
     overflow: scroll;
@@ -59,17 +61,29 @@
 .contactPage {
   background: transparent;
   color: #fff;
-}.contact_data{padding: 10px;}
-.contact_data h4{font-family: "Orbitron", sans-serif;font-style: normal;
+  margin-top: 8vh;
+}
+.contact_data {
+  padding: 10px;
+}
+.contact_data h4 {
+  font-family: "Orbitron", sans-serif;
+  font-style: normal;
   font-weight: 600;
   font-size: 20px;
-  color: #FFFFFF;padding-top: 20px;}.contact_data p{font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    text-align: center;
-    font-family: "Poppins";
-    color: #FFFFFF;padding: 2.4em 2.4em 0 2.4em}
-.contact_page{
+  color: #ffffff;
+  padding-top: 20px;
+}
+.contact_data p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  font-family: "Poppins";
+  color: #ffffff;
+  padding: 2.4em 2.4em 0 2.4em;
+}
+.contact_page {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -88,11 +102,22 @@
 .contactPageData {
   margin-top: 50px;
   cursor: pointer;
-}.locate_us{display: grid;grid-template-columns: 2fr 8fr; align-items: center;background: rgba(15, 63, 70, 0.1);
-  border: 0.5px solid #52F2E2;
+}
+.locate_us {
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+  align-items: center;
+  background: rgba(15, 63, 70, 0.1);
+  border: 0.5px solid #52f2e2;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
-  border-radius: 5px;padding: 10px;}
-@media (max-width: 768px){.locate_us{margin: 1px 20px;}}
+  border-radius: 5px;
+  padding: 10px;
+}
+@media (max-width: 768px) {
+  .locate_us {
+    margin: 1px 20px;
+  }
+}
 .contactPage p:hover {
   color: #52f2e2;
 }
@@ -133,7 +158,6 @@
   font-family: "Orbitron", sans-serif;
   overflow: scroll;
   margin-top: 8vh;
-
 }
 .faqsHeader {
   width: 100%;
@@ -149,7 +173,7 @@
   border: 1px solid #52f2e2;
   border-radius: 10px;
   margin: 15px;
-  background: #0F3F46;
+  background: #0f3f46;
 }
 .faqsQuiz {
   font-family: "Poppins";
@@ -168,37 +192,51 @@ faqsForm {
   display: flex;
   text-align: left;
 }
-.more_info{font-style: normal;
+.more_info {
+  font-style: normal;
   margin: 5rem 0;
   font-weight: 300;
   font-size: 12px;
   line-height: 14px;
   font-family: "Poppins";
-  color: #FFFFFF;
-  }
-  .more_info a{color: #fff;}
-  summary{display: flex;flex-direction: row;justify-content: space-between;font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: left;
-    color: #FFFFFF;
-    }
-summary:after{ 
+  color: #ffffff;
+}
+.more_info a {
+  color: #fff;
+}
+summary {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: left;
+  color: #ffffff;
+}
+summary:after {
   display: flex;
   content: "+";
-  color: #52F2E2;
+  color: #52f2e2;
   font-size: 1.5em;
   font-weight: bold;
   padding: 0;
   text-align: center;
-  width: 20px;}
-  details[open] summary:after {
-    content: '-';
+  width: 20px;
 }
-.gradient{width: 316px;
+details[open] summary:after {
+  content: "-";
+}
+.gradient {
+  width: 316px;
   height: 316px;
   left: -85px;
   top: 118px;
-  background: linear-gradient(180deg, #52F2E2 0%, rgba(82, 242, 226, 0.35) 100%);
-  filter: blur(125px);}
+  background: linear-gradient(
+    180deg,
+    #52f2e2 0%,
+    rgba(82, 242, 226, 0.35) 100%
+  );
+  filter: blur(125px);
+}
