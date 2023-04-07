@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Config } from "../config/config";
 import { AiFillCloseCircle } from 'react-icons/ai';
@@ -26,7 +26,10 @@ const wordSeperators = [" ", ",", ";", ":", ".", "?", "!", "/", "\\", "(", ")", 
 
 const SearchBar = (props: any) => {
   // const localParams: any = localStorage.getItem("params");
-  const [inputData, setInputData] = useState("");
+  const location = useLocation()
+  const initialDesc = location.state
+
+  const [inputData, setInputData] = useState(initialDesc && initialDesc.hasOwnProperty("data") ? initialDesc.data : "");
   const [tags, setTags] = useState<string[]>([]);
   const [matchedTags, setMatchedTags] = useState<string[]>([]);
 
@@ -34,7 +37,6 @@ const SearchBar = (props: any) => {
 
   const navigate = useNavigate()
 
-  // console.log("data ", inputData)
 
   // Check if the word a user types in is in the list of tags 
   const matchTags = (word: string) => {
@@ -42,6 +44,17 @@ const SearchBar = (props: any) => {
     if (tags.includes(word) && !matchedTags.includes(word)) {
       setMatchedTags([...matchedTags, word.trim()])
     }
+  }
+
+  console.log("data ", initialDesc)
+
+  if (initialDesc && initialDesc.hasOwnProperty("data")) {
+    const initialPrompt = initialDesc.data;
+    console.log("initial ", initialPrompt)
+
+    // searchInitialPrompt(_initialPrompt)
+    const initialPromptParts = initialPrompt.split(" ");
+    initialPromptParts.map((word: string) => matchTags(word))
   }
 
   // Search for tags in the initial phrase
@@ -96,21 +109,22 @@ const SearchBar = (props: any) => {
 
   const fetchAllTags = async () => {
     // TODO: Implement a cahcing mechanism that will save all tags to prevent making a request everytime the user navigates to search page
-
     const endpoint = `${url}/index/tags`;
 
-    try {
-      const { data } = await axios.get(endpoint);
-      const formattedTags = data.map((tag: { name: string }) => tag.name)
+    await axios.get(endpoint).then((_tags) => {
+      const formattedTags = _tags.data.map((tag: { name: string }) => tag.name)
+      setTags(formattedTags)
+    }).catch(err => console.log("error ", err))
 
-      setTags(formattedTags);
-    } catch (error: any) {
-      console.error("Error:", error.message);
-    }
+
   }
 
   useEffect(() => {
     fetchAllTags();
+
+    console.log("set tags ", tags)
+
+
   }, []);
 
   const navigateToProjects = () => {
