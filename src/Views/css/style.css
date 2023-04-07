@@ -11,6 +11,9 @@ body {
 .container {
   display: flex;
   flex-direction: column;
+  max-width: 500px;
+  justify-content: center;
+  align-items: center;
 }
 
 .main_header {
@@ -108,7 +111,6 @@ body {
   position: fixed;
   bottom: 0;
   background-color: #031926;
-  /* padding-top: 20px; */
   font-style: normal;
   font-weight: 300;
   font-size: 12px;
@@ -117,11 +119,13 @@ body {
   width: 100%;
 }
 .footer_italic {
-  font-size: 10px;
+  font-size: 12px;
   color: #52f2e2;
 }
 .footer-text {
   color: #fff;
+  font-size: 13px;
+  letter-spacing: 1px;
 }
 .footer-text i {
   font-size: 10px;

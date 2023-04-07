@@ -111,7 +111,7 @@ select.mySelectArrow {
 }
 .home_btn button {
   box-sizing: border-box;
-  width: 354px;
+  width: 330px;
   height: 45px;
   margin: auto;
   background: linear-gradient(
@@ -144,7 +144,7 @@ select.mySelectArrow {
   }
 
   .home_btn button {
-    width: 80vw;
+    width: 250px;
   }
 }
 

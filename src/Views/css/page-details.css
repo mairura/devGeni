@@ -135,11 +135,13 @@
   color: #52f2e2;
 }
 .stacks_box {
-  left: 36px;
-  top: 490px;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: "Poppins";
+  font-size: 14px;
+  margin: 10px auto;
   background: rgba(82, 242, 226, 0.1);
   border: 0.5px solid rgba(82, 242, 226, 0.35);
-  margin: 10px auto;
 }
 .stacks_box h4 {
   font-family: "Orbitron", sans-serif;
@@ -178,6 +180,12 @@
   display: grid;
   grid-template-columns: 1fr 8fr 3fr;
   height: 66px;
+  border-radius: 10px;
+  font-family: "Poppins";
+  font-size: 14px;
+}
+.teams_data button:hover {
+  color: #52f2e2;
 }
 .teams_profile img {
   display: flex;
@@ -234,15 +242,15 @@
   cursor: pointer;
 }
 .stats_container {
-  border: 1px solid #52f2e2;
-  border-radius: 10px;
+  border: 0.5px solid rgba(82, 242, 226, 0.35);
   color: #fff;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 10px;
+  padding: 10px 1px;
+  border-radius: 10px;
   font-family: "Poppins";
   font-size: 14px;
-  margin: 25px;
+  margin: 10px auto;
 }
 ._icon {
   color: #52f2e2;
