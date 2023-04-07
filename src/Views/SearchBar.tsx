@@ -5,6 +5,8 @@ import { Config } from "../config/config";
 import { AiFillCloseCircle } from 'react-icons/ai';
 import "./css/home.css";
 import axios from "axios";
+import { Tooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
 
 const buttonVariants = {
   hover: {
@@ -23,8 +25,8 @@ const wordSeperators = [" ", ",", ";", ":", ".", "?", "!", "/", "\\", "(", ")", 
 
 
 const SearchBar = (props: any) => {
-  const localParams: any = localStorage.getItem("params");
-  const [inputData, setInputData] = useState(localParams);
+  // const localParams: any = localStorage.getItem("params");
+  const [inputData, setInputData] = useState("");
   const [tags, setTags] = useState<string[]>([]);
   const [matchedTags, setMatchedTags] = useState<string[]>([]);
 
@@ -137,13 +139,27 @@ const SearchBar = (props: any) => {
           </div>
         </div>
       </div>
-      <a onClick={() => navigateToProjects()} style={{ width: "100%" }} className="home_btn">
+
+      {inputData.length == 0 ? <div style={{ width: "100%" }} className="home_btn">
         <div className="tagspage">
-          <motion.button variants={buttonVariants} whileHover="hover">
+          <Tooltip
+            anchorId="inputData"
+            place="top"
+            content="Project description is required "
+          />
+          <motion.button id="inputData" variants={buttonVariants} whileHover="hover">
             Next
           </motion.button>
         </div>
-      </a>
+      </div> :
+        <a onClick={() => navigateToProjects()} style={{ width: "100%" }} className="home_btn">
+          <div className="tagspage">
+            <motion.button variants={buttonVariants} whileHover="hover">
+              Next
+            </motion.button>
+          </div>
+        </a>
+      }
     </div>
   )
 }
