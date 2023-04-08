@@ -24,7 +24,7 @@
 @media (max-width: 768px) {
   .content {
     font-size: 15px;
-    height: 80vh;
+    height: 100vh;
     overflow: scroll;
   }
 }
