@@ -141,10 +141,6 @@ const SearchBar = (props: any) => {
 
   useEffect(() => {
     fetchAllTags();
-
-    // Search for tags in the initial phrase
-    // const inputParts = inputData.split(" ");
-    // inputParts.map((word: string) => matchTags(word))
   }, []);
 
   const navigateToProjects = () => {
@@ -155,8 +151,6 @@ const SearchBar = (props: any) => {
     <div className='searchbar_container'>
       <div className="searchbar">
         <h4>Tell Us in Detail What You'd Like Us To Build</h4>
-        <div>{JSON.stringify(matchedTags)} </div>
-
         <div className="tagBox">
           <textarea className="tag_box" id="" rows={12} cols={4} defaultValue={inputData} onChange={handleInputChangeData}>
           </textarea>
