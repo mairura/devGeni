@@ -258,3 +258,6 @@
 .built_time {
   margin: 12px 1px;
 }
+.stats_container h4 {
+  font-family: "Orbitron", sans-serif;
+}
