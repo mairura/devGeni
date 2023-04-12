@@ -85,7 +85,6 @@ const PageDetails = () => {
         getData();
     }, [])
 
-
   return (
     <div className='page_container'>
         <div className='consider_page'>
@@ -145,7 +144,6 @@ const PageDetails = () => {
                         <div className='built_time'><div className='_icon'><BsClockHistory /></div><h4>{randomNum}&nbsp;hrs+</h4><p>build time</p>
                         </div>
                         <div className='team_lead'><div className='_icon'><RiTeamLine /></div><h4>Team Lead:</h4><p>Dauglous Omambia</p></div>  
-                        <div className='dev_time'><div className='_icon'><MdTimeline /></div><h4>Development Time</h4><h4>{roundedNumber}&nbsp;months</h4></div>
                         <div className='skill_set'><div className='_icon'><GiSkills /></div><h4>Skill Set</h4><p>Expertise</p></div>
                         <div className='collaboration'><div className='_icon'><GiEcology /></div><h4>Collaboration</h4><p>Ngeni Labs</p></div>
                     </div>

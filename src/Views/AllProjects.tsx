@@ -84,12 +84,15 @@ const AllProjects = () => {
                 }}
               >
                 {projects.map((project: any, index: any) => {
-                  let team: {}[] | undefined = project?.team;
+                  let team: {}[] = project?.team;
                   let stack: String[] | undefined = project?.tech_stack;
                   let desc: String[] | undefined = project?.description;
                   let proj_title: string | undefined = project?.proj_name;
-                  let teamLength: number | undefined = team?.length;
+                  let teamLength: number = team.length;
                   let stackLength: number | undefined = stack?.length;
+                  let teamSlice: {}[] | undefined = team?.slice(0, 3);
+                  let teamDevs: number = teamLength > 3 ? teamLength - 3 : 0;
+                  let restDevs: number | any = teamDevs > 0 ? teamDevs : "";
 
                   let trimDesc = function (string: any, length: any) {
                     return string.length > length
@@ -137,9 +140,12 @@ const AllProjects = () => {
                                     <p>
                                       {trimDesc(proj_title, 40)}
                                     </p>
-                                    {/* <div>
-                                      <img src={linkPay} alt="devProfile" />
-                                    </div> */}
+                                    <p className="main-member">
+                                      {teamSlice?.map((dev: any, index: any) => {
+                                      return <img src={dev} alt="devProf" />
+                                      })}
+                                      {restDevs}
+                                    </p> 
                                   </motion.p>
                                 <p className="card_desc">{trimDesc(desc, 300)}</p>
                                 <div className="rate">
