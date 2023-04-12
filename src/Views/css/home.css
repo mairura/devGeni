@@ -2,6 +2,7 @@
   background: #031926;
   overflow-y: hidden;
   overflow-x: hidden;
+  height: 100vh;
 }
 
 .main_logo {
@@ -202,6 +203,7 @@ select.mySelectArrow {
 }
 .tags_container {
   margin-top: 8vh;
+  height: 100vh;
 }
 
 .tags_header {

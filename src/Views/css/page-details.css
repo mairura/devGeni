@@ -246,17 +246,20 @@
   color: #fff;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 10px 1px;
   border-radius: 10px;
   font-family: "Poppins";
   font-size: 14px;
   margin: 10px auto;
+  padding: 15px 0px;
+}
+.built_time,
+.team_lead,
+.skill_set,
+.collaboration {
+  padding: 15px 0px;
 }
 ._icon {
   color: #52f2e2;
-}
-.built_time {
-  margin: 12px 1px;
 }
 .stats_container h4 {
   font-family: "Orbitron", sans-serif;
