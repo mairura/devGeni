@@ -100,9 +100,9 @@ const PageDetails = () => {
         </div>
         <Tabs>
             <TabList className="class_tablist">
-                <Tab onClick={() => updateActiveTab(0)} className={activeTab === 0 ? "class_tabs class_tabPanel_active" : "class_tabs" }>Stack</Tab>
-                <Tab onClick={() => updateActiveTab(1)} className={activeTab === 1 ? "class_tabs class_tabPanel_active" : "class_tabs" }>Teams</Tab>
-                <Tab onClick={() => updateActiveTab(2)} className={activeTab === 2 ? "class_tabs class_tabPanel_active" : "class_tabs" }>Stats</Tab>
+                <Tab onClick={() => updateActiveTab(0)} className={activeTab == 0 ? "class_tabs class_tabPanel_active" : "class_tabs" }>Stack</Tab>
+                <Tab onClick={() => updateActiveTab(1)} className={activeTab == 1 ? "class_tabs class_tabPanel_active" : "class_tabs" }>Teams</Tab>
+                <Tab onClick={() => updateActiveTab(2)} className={activeTab == 2 ? "class_tabs class_tabPanel_active" : "class_tabs" }>Stats</Tab>
             </TabList>
             <TabPanel>
                 <div  className="class_tabPanel">
