@@ -28,7 +28,7 @@ const TagsPage = (props: any) => {
                     localStorage.setItem("params", request);
                   }
                   return (
-                    <button key={index} onClick={clickEvent}   >
+                    <button key={index} onClick={clickEvent}>
                       {request}
                     </button>
                   );
