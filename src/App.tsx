@@ -5,7 +5,6 @@ import Footer from "./Views/Components/Footer";
 import BookNow from "./Views/BookNow";
 import Details from "./Views/Details";
 import Profile from "./Views/Profile";
-import Devdata from "./Views/Devdata";
 import NotFound from "./Views/Components/NotFound";
 import StarterPage from "./Views/StarterPage";
 import ContactUs from "./Views/Components/ContactUs";
@@ -37,7 +36,6 @@ function App() {
                   <Route path="/book-now" element={<BookNow />} />
                   <Route path="/details" element={<Details />} />
                   <Route path="/profile" element={<Profile />} />
-                  <Route path="/devdata" element={<Devdata />} />
                   <Route path="/allprojects" element={<AllProjects />} />
                   <Route path="/contact" element={<ContactUs />} />
                   <Route path="/contactus" element={<ContactUsPage />} />
