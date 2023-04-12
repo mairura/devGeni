@@ -10,6 +10,21 @@ import { useState, useEffect, useCallback } from "react";
 import { Config } from "../config/config";
 import axios from "axios";
 import loader from "../assets/logo 200.gif"
+import dev1 from "../assets/dev1.jpeg";
+import dev3 from "../assets/dev3.png";
+import dev4 from "../assets/dev4.jpeg"
+
+const devProfiles = [ 
+  {
+    image: dev1,
+  },
+  {
+    image: dev3,
+  },
+  {
+    image: dev4,
+  }
+]
 
 const containerVariants = {
   hidden: {
@@ -162,8 +177,8 @@ function ProjectCard(props: any) {
                                  {trimDesc(proj_title, 50)}
                                 </p>
                                 <p className="main-member">
-                                  {teamSlice?.map((dev: any, index: any) => {
-                                  return <img src={dev} alt="devProf" />
+                                  {devProfiles?.map((dev: any, index: any) => {
+                                  return <img src={dev.image} alt="devProf" key={index}/>
                                   })}
                                   {restDevs}
                                 </p>   

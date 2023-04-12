@@ -1,19 +1,26 @@
 import { Link } from "react-router-dom";
 import "../css/style.css";
+import { useState } from "react";
 
 const ContactUs = () => {
+  const [menuVisible, setMenuVisible] = useState(true);
+
+  function handleMenuClick() {
+    setMenuVisible(false);
+  }
+
   return (
     <div className="contactUsContainer">
-      <nav>
+      <nav style={{ display: menuVisible ? "block" : "none" }}>
         <ul>
           <Link to="/about" className="my_links">
-            <li>About</li>
+            <li onClick={handleMenuClick}>About</li>
           </Link>
           <Link to="/faqs" className="my_links">
-            <li>FAQS</li>
+            <li onClick={handleMenuClick}>FAQS</li>
           </Link>
           <Link to="/contactus" className="my_links">
-            <li>CONTACT US</li>
+            <li onClick={handleMenuClick}>CONTACT US</li>
           </Link>
         </ul>
       </nav>
