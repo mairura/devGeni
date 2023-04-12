@@ -1,10 +1,10 @@
-.top_bar{
+.top_bar {
   width: 100%;
-  padding: 10px 0px;position: absolute; background-color: #031926;
-  z-index: 1000;}
-/* .top_bar *{
-  border:1px solid yellow;
-} */
+  padding: 10px 0px;
+  position: absolute;
+  background-color: #031926;
+  z-index: 1000;
+}
 .search_barTop {
   display: grid;
   grid-template-columns: 1fr 8fr 1fr;
@@ -12,8 +12,13 @@
   justify-content: center;
   align-items: center;
 }
-.search_barTop *{
+.search_barTop * {
   width: auto;
+}
+.previous,
+.top_logo,
+.hambuger {
+  cursor: pointer;
 }
 .btn_navigate {
   border: none;
@@ -23,7 +28,7 @@
 .search_barTop img {
   max-height: 50px;
 }
-.hambuger{
+.hambuger {
   padding-top: 2%;
   padding-right: 12%;
   text-align: center;
@@ -34,4 +39,3 @@
 .hambuger {
   color: #fff;
 }
-
