@@ -3,18 +3,22 @@
   z-index: 1;
 }
 .card-main {
-  background: radial-gradient(
+  /* background: radial-gradient(
     99.25% 97.25% at 80.14% 22.75%,
     rgba(65, 191, 179, 0.6) 0%,
     hsl(202, 81%, 8%) 92.13%
   );
-  box-shadow: 0px 0px 15px rgba(67, 117, 217, 0.15);
-  border-radius: 15px;
+  box-shadow: 0px 0px 15px rgba(67, 117, 217, 0.15); */
+  background: rgba(82, 242, 226, 0.1);
+  border: 1px solid rgba(82, 242, 226, 0.35);
   padding: 5px 10px;
   text-align: left;
   margin: auto;
   margin-bottom: 30px;
   overflow-y: hidden;
+}
+.card-main:hover {
+  background: #009e8e;
 }
 .card-main * {
   color: #fff;
@@ -56,6 +60,9 @@
   text-align: left;
   text-transform: uppercase;
   padding: 2px;
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+  align-items: center;
 }
 .card_titleData {
   display: grid;
@@ -78,12 +85,14 @@
 }
 .rate {
   display: flex;
+  flex-direction: row-reverse;
   padding-left: 10px;
   margin: 15px 0;
 }
 .rate span {
   padding-right: 5px;
   font-size: 20px;
+  color: #fff;
 }
 .teamLanguages {
   display: flex;
@@ -93,7 +102,7 @@
 .rate p {
   padding: 7px 10px 0 0;
   font-size: 10px;
-  color: #a5a5a5;
+  color: #fff;
 }
 .tag_boxData {
   display: flex;
