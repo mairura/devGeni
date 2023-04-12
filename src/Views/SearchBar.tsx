@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Config } from "../config/config";
 import { AiFillCloseCircle } from 'react-icons/ai';
 import "./css/home.css";
 import axios from "axios";
+import { Tooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
 
 const buttonVariants = {
   hover: {
@@ -23,28 +25,39 @@ const wordSeperators = [" ", ",", ";", ":", ".", "?", "!", "/", "\\", "(", ")", 
 
 
 const SearchBar = (props: any) => {
-  const localParams: any = localStorage.getItem("params");
-  const [inputData, setInputData] = useState(localParams);
+  // const localParams: any = localStorage.getItem("params");
+  const location = useLocation()
+  const initialDesc = location.state
+
+  const [inputData, setInputData] = useState(initialDesc && initialDesc.hasOwnProperty("data") ? initialDesc.data : "");
   const [tags, setTags] = useState<string[]>([]);
+  const [initialUpdate, setInitialUpdate] = useState(false);
   const [matchedTags, setMatchedTags] = useState<string[]>([]);
 
   let url = Config.URL;
-
   const navigate = useNavigate()
 
-  // console.log("data ", inputData)
 
   // Check if the word a user types in is in the list of tags 
   const matchTags = (word: string) => {
-    word = word.toLowerCase().trim()
-    if (tags.includes(word) && !matchedTags.includes(word)) {
-      setMatchedTags([...matchedTags, word.trim()])
+    if (word) {
+      word = word.toLowerCase().trim()
+
+      if (tags.includes(word) && !matchedTags.includes(word)) {
+        setMatchedTags([...matchedTags, word.trim()])
+      }
     }
   }
 
-  // Search for tags in the initial phrase
-  const inputParts = inputData.split(" ");
-  inputParts.map((word: string) => matchTags(word))
+  // Only runs if the initialUpdate has not been set, meaning that it will only match the initial tags once, solving the 
+  // bug of tags not getting deleted as user delete description that had matched it. Explanation at handleInputChangeData()
+  if (initialDesc && initialDesc.hasOwnProperty("data") && !initialUpdate) {
+    const initialPrompt = initialDesc.data;
+    const initialPromptParts = initialPrompt.split(" ");
+
+    initialPromptParts.map((word: string) => matchTags(word))
+  }
+
 
   // REVIEW: Display tags that match the input, as the user types
   /**
@@ -53,15 +66,26 @@ const SearchBar = (props: any) => {
    * get the new word typed and check it against the tags list.  
    */
   const handleInputChangeData = (event: any) => {
-    let input = event.target.value;
+    let rawInput = event.target.value;
 
-    input = input[input.length - 1] // get last character typed, instead of all the input 
-    // console.log("sep ", JSON.stringify(previousSeperator))
+    // REVIEW: This is a hack, need to find a better way to solve this 
+    // Issue: When user deletes description of a tag we need to delete the tag, but since we have a function that also save  
+    // tags from the initial description, the tags that were matched from the initial description never get deleted. 
+    // Current Solution: have a state initialUpdate that is updated when we think that the initial tags have already been matched,
+    // Now thats another hack since we are not sure when that state is updated but we know it waits for all tags to be fetched ,
+    // so we can waits for tags to be fetched and also set the initialUpdate. If the initialUpdate is at TRUE that means the 
+    // initial tags have been matched already and the component wont try to match it as we delete    
+    if (!initialUpdate && tags.length > 0) {
+      setInitialUpdate(true)
+    }
+
+    const input = rawInput[rawInput.length - 1] // get last character typed, instead of all the input 
 
     if (wordSeperators.includes(input)) {
       // Get the last phrase
       let currentInput = inputData.split(input)
       let word: string = currentInput[currentInput.length - 1]
+
 
       if (input !== previousSeperator) {
         let middlePhrase = word.split(previousSeperator)
@@ -73,18 +97,29 @@ const SearchBar = (props: any) => {
       previousSeperator = input;
     }
 
+    // Cater for the case where the user deletes a word that was already a matched tag
+    // if the previous string (inputData ) is longer than the current string, it means the users input resulted in the 
+    // reduction of the previous string length (delete) 
+    if (inputData.length > rawInput.length) {
+      matchedTags.map((tag: string) => {
+
+        if (!rawInput.toLowerCase().includes(tag.toLowerCase())) {
+          const holder = matchedTags
+          const rem = holder.filter(_tag => _tag !== tag)
+
+          setMatchedTags([...rem])
+
+        }
+      })
+    }
+
+    // Remove all tags if the description is blank
+    if (rawInput.length < 1) {
+      setMatchedTags([])
+    }
+
     // Update the user input
     setInputData(event.target.value);
-  };
-
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleIcon = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const closeMenu = () => {
-    setIsOpen(false);
   };
 
   //Function to clear the selected tags 
@@ -94,17 +129,14 @@ const SearchBar = (props: any) => {
 
   const fetchAllTags = async () => {
     // TODO: Implement a cahcing mechanism that will save all tags to prevent making a request everytime the user navigates to search page
-
     const endpoint = `${url}/index/tags`;
 
-    try {
-      const { data } = await axios.get(endpoint);
-      const formattedTags = data.map((tag: { name: string }) => tag.name)
+    await axios.get(endpoint).then((_tags) => {
+      const formattedTags = _tags.data.map((tag: { name: string }) => tag.name)
+      setTags(formattedTags)
+    }).catch(err => console.log("error ", err))
 
-      setTags(formattedTags);
-    } catch (error: any) {
-      console.error("Error:", error.message);
-    }
+
   }
 
   useEffect(() => {
@@ -137,13 +169,27 @@ const SearchBar = (props: any) => {
           </div>
         </div>
       </div>
-      <a onClick={() => navigateToProjects()} style={{ width: "100%" }} className="home_btn">
+
+      {inputData.length === 0 ? <div style={{ width: "100%" }} className="home_btn">
         <div className="tagspage">
-          <motion.button variants={buttonVariants} whileHover="hover">
+          <Tooltip
+            anchorId="inputData"
+            place="top"
+            content="Project description is required "
+          />
+          <motion.button id="inputData" variants={buttonVariants} whileHover="hover">
             Next
           </motion.button>
         </div>
-      </a>
+      </div> :
+        <a onClick={() => navigateToProjects()} style={{ width: "100%" }} className="home_btn">
+          <div className="tagspage">
+            <motion.button variants={buttonVariants} whileHover="hover">
+              Next
+            </motion.button>
+          </div>
+        </a>
+      }
     </div>
   )
 }
