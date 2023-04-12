@@ -6,12 +6,12 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineLeft } from 'react-icons/ai';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import ContactUs from "./ContactUs";
-import { IParams } from "../Context";
+// import { IParams } from "../Context";
 
 const TopBar = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
-  const [params, setParams] = useState<Array<IParams>>([]);
+  // const [params, setParams] = useState<Array<IParams>>([]);
 
   const toggleIcon = () => {
     setIsOpen(!isOpen);
@@ -22,10 +22,10 @@ const TopBar = () => {
   };
 
   //Function to clear stack in localStorage
-  const clearStack = () => {
-    localStorage.clear();
-    setParams([]);
-  };
+  // const clearStack = () => {
+  //   localStorage.clear();
+  //   setParams([]);
+  // };
 
   return (
     <div className="top_bar">

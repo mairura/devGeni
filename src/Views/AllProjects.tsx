@@ -28,12 +28,6 @@ const containerVariants = {
   },
 };
 
-const override: CSSProperties = {
-  display: "block",
-  margin: "0 auto",
-  borderColor: "gray",
-};
-
 const AllProjects = () => {
   const [projects, setProjects] = useState<Array<IProjects>>([]);
   const [numProjects, setNumProjects] = useState("0");
@@ -55,7 +49,7 @@ const AllProjects = () => {
   }
 
   useEffect(() => {
-    allProjects()
+    allProjects();
   }, []);
 
   return (

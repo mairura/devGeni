@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Logo from "../assets/Logo.png"
-import { useState } from "react";
 import "./css/home.css"
 
 const buttonVariants = {
@@ -18,12 +16,7 @@ const buttonVariants = {
 
 const TagsPage = (props: any) => {
   const requests = ["App Development", "Design me a Web3 App", "Build me a trading bot for...", "Create me a Web3 Wallet", "Build me an NFT Marketplace", "Design me a Web3 Social App for...", "Create a DAO...", "Build AI Chatbot that...", "I want a Gateways/CEX that...", "Build a DEFI", "I need a Gaming App that..."];
-  const [activeButton, setActiveButton] = useState(null);
 
-  // Function to handle button click
-  const handleClick = (e: any) => {
-    setActiveButton(e)
-  };
   
   return (
     <div className='tags_container'>
@@ -33,7 +26,6 @@ const TagsPage = (props: any) => {
                 {requests.map((request: any, index: any) => {
                   const clickEvent = (index1: any) => {
                     localStorage.setItem("params", request);
-                    setActiveButton(index1);
                   }
                   return (
                     <button key={index} onClick={clickEvent}   >

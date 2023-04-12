@@ -14,38 +14,38 @@ import { GiSkills } from "react-icons/gi";
 import { GiEcology } from "react-icons/gi";
 
 //Project Leads
-const projectLeads = [
-    {
-        name: "Dauglous Omambia"
-    },
-    {
-        name: "Cornelius Mutisya"
-    },
-    {
-        name: "Collins Koech"
-    },
-    {
-        name: "Dennis Mwangi"
-    },
-    {
-        name: "Dennoh Peter"
-    },
-    {
-        name: "Jay"
-    },
-    {
-        name: "Renny Langat"
-    },
-    {
-        name: "Enock Kipkoech"
-    },
-    {
-        name: "Nicolas Kiprop"
-    },
-    {
-        name: "Alex Muia"
-    }
-]
+// const projectLeads = [
+//     {
+//         name: "Dauglous Omambia"
+//     },
+//     {
+//         name: "Cornelius Mutisya"
+//     },
+//     {
+//         name: "Collins Koech"
+//     },
+//     {
+//         name: "Dennis Mwangi"
+//     },
+//     {
+//         name: "Dennoh Peter"
+//     },
+//     {
+//         name: "Jay"
+//     },
+//     {
+//         name: "Renny Langat"
+//     },
+//     {
+//         name: "Enock Kipkoech"
+//     },
+//     {
+//         name: "Nicolas Kiprop"
+//     },
+//     {
+//         name: "Alex Muia"
+//     }
+// ]
 
 const PageDetails = () => {
     const [activeTab, setActiveTab] = useState(0)
@@ -93,16 +93,16 @@ const PageDetails = () => {
             {projectDetail.proj_name}
         </div>
         <div className='page_carousel'>
-            <img src={projectDetail.imagelink} alt="project-image" />
+            <img src={projectDetail.imagelink} alt="projectProf" />
         </div>
         <div className='page_desc'>
             {projectDetail.description}
         </div>
         <Tabs>
             <TabList className="class_tablist">
-                <Tab onClick={() => updateActiveTab(0)} className={activeTab == 0 ? "class_tabs class_tabPanel_active" : "class_tabs" }>Stack</Tab>
-                <Tab onClick={() => updateActiveTab(1)} className={activeTab == 1 ? "class_tabs class_tabPanel_active" : "class_tabs" }>Teams</Tab>
-                <Tab onClick={() => updateActiveTab(2)} className={activeTab == 2 ? "class_tabs class_tabPanel_active" : "class_tabs" }>Stats</Tab>
+                <Tab onClick={() => updateActiveTab(0)} className={activeTab === 0 ? "class_tabs class_tabPanel_active" : "class_tabs" }>Stack</Tab>
+                <Tab onClick={() => updateActiveTab(1)} className={activeTab === 1 ? "class_tabs class_tabPanel_active" : "class_tabs" }>Teams</Tab>
+                <Tab onClick={() => updateActiveTab(2)} className={activeTab === 2 ? "class_tabs class_tabPanel_active" : "class_tabs" }>Stats</Tab>
             </TabList>
             <TabPanel>
                 <div  className="class_tabPanel">
