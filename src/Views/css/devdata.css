@@ -1,6 +1,4 @@
-.link {
-  text-decoration: none;
-}
+
 .devdata_container {
   color: #fff;
 }
@@ -80,9 +78,4 @@
 .devdata_link {
   text-decoration: none;
   width: 100%;
-}
-.link {
-  text-decoration: none;
-  padding: 6px 17px;
-  color: #fff;
 }

@@ -62,6 +62,7 @@
   background: transparent;
   color: #fff;
   margin-top: 8vh;
+  height: 100vh;
 }
 .contact_data {
   padding: 10px;
@@ -102,6 +103,10 @@
 .contactPageData {
   margin-top: 50px;
   cursor: pointer;
+}
+._link {
+  text-decoration: none;
+  color: #fff;
 }
 .locate_us {
   display: grid;

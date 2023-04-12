@@ -7,6 +7,21 @@ import { useNavigate } from "react-router-dom";
 import linkPay from "../assets/linkpay.png";
 import { languages, teams } from "../icons";
 import loader from "../assets/logo 200.gif"
+import dev1 from "../assets/dev1.jpeg";
+import dev3 from "../assets/dev3.png";
+import dev4 from "../assets/dev4.jpeg"
+
+const devProfiles = [ 
+  {
+    image: dev1,
+  },
+  {
+    image: dev3,
+  },
+  {
+    image: dev4,
+  }
+]
 
 const containerVariants = {
   hidden: {
@@ -104,7 +119,6 @@ const AllProjects = () => {
                     navigate('/project-details', { state: { tagList: project } });
                   }
 
-                  console.log("++++", team)
 
                   return (
                       <motion.div
@@ -141,8 +155,8 @@ const AllProjects = () => {
                                       {trimDesc(proj_title, 40)}
                                     </p>
                                     <p className="main-member">
-                                      {teamSlice?.map((dev: any, index: any) => {
-                                      return <img src={dev} alt="devProf" />
+                                      {devProfiles?.map((dev: any, index: any) => {
+                                      return <img src={dev.image} alt="devProf" key={index}/>
                                       })}
                                       {restDevs}
                                     </p> 
