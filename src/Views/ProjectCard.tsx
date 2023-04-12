@@ -5,16 +5,11 @@ import linkPay from "../assets/linkpay.png";
 import { languages, teams } from "../icons";
 import {  useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useState, useEffect, CSSProperties, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Config } from "../config/config";
 import axios from "axios";
 import loader from "../assets/logo 200.gif"
 
-const override: CSSProperties = {
-  display: "block",
-  margin: "0 auto",
-  borderColor: "gray",
-};
 
 const containerVariants = {
   hidden: {

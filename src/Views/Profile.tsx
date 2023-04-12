@@ -7,7 +7,6 @@ import { BsGithub } from "react-icons/bs";
 import { BsTwitter } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import Logo from "../assets/Logo.png";
-import TopBar from "./Components/TopBar";
 import { ISingleDev } from "./Context";
 import axios from "axios";
 import { Config } from "../config/config";
@@ -17,7 +16,6 @@ const Profile = () => {
   const queryString = window.location.search;
   const params = new URLSearchParams(queryString);
   const shortName: any = params.get("shortName");
-  const profileLink: any = params.get("profileLink");
 
   const[devData, setDev ]=useState<Array<ISingleDev>>([]);
 

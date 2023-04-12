@@ -1,8 +1,7 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import Logo from "../assets/Logo.png"
-import { useState } from "react";
 import "./css/home.css"
+import { useState } from "react";
 
 const buttonVariants = {
   hover: {

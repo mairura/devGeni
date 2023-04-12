@@ -1,5 +1,4 @@
 import "../css/about.css";
-import TopBar from "./TopBar";
 
 const AboutPage = () => {
   return (
