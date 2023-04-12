@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../css/topBar.css";
 import Logo from "../../assets/Logo.png";
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { AiOutlineLeft } from 'react-icons/ai';
-import { AiFillCloseCircle } from 'react-icons/ai';
-import ContactUs from "./ContactUs";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineLeft } from "react-icons/ai";
+import { AiFillCloseCircle } from "react-icons/ai";
+import Menu from "./Menu";
 // import { IParams } from "../Context";
 
 const TopBar = () => {
@@ -15,10 +15,6 @@ const TopBar = () => {
 
   const toggleIcon = () => {
     setIsOpen(!isOpen);
-  };
-
-  const closeMenu = () => {
-    setIsOpen(false);
   };
 
   //Function to clear stack in localStorage
@@ -31,24 +27,29 @@ const TopBar = () => {
     <div className="top_bar">
       <div className="search_barTop">
         <div className="previous">
-            {" "}<AiOutlineLeft onClick={() => navigate(-1)} className="btn_navigate" />
-            {" "}
+          {" "}
+          <AiOutlineLeft
+            onClick={() => navigate(-1)}
+            className="btn_navigate"
+          />{" "}
         </div>
 
         <div className="top_logo">
-          <Link to="/"><img src={Logo} alt="logo" /></Link>
+          <Link to="/">
+            <img src={Logo} alt="logo" />
+          </Link>
         </div>
         <div className="hambuger">
           {isOpen ? (
-            <AiFillCloseCircle onClick={closeMenu} className="close_btn" />
+            <AiFillCloseCircle onClick={toggleIcon} className="close_btn" />
           ) : (
-            <GiHamburgerMenu onClick={toggleIcon} className="hamburger" /> 
+            <GiHamburgerMenu onClick={toggleIcon} className="hamburger" />
           )}
         </div>
       </div>
-      {isOpen && <ContactUs />}
+      {isOpen && <Menu toggleMenu={setIsOpen} menuState={isOpen} />}
     </div>
   );
 };
- 
+
 export default TopBar;
