@@ -61,14 +61,11 @@
   text-transform: uppercase;
   padding: 2px;
   display: grid;
-  grid-template-columns: 1fr 8fr 2fr;
+  grid-template-columns: 8fr 4fr;
   align-items: center;
-  /* border: 1px solid red; */
 }
-.card_titleData {
-  display: grid;
-  grid-template-columns: 0.5fr 5fr;
-  justify-content: center;
+.cardTitle {
+  display: flex;
   align-items: center;
 }
 .card_desc {

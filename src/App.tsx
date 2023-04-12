@@ -7,7 +7,7 @@ import Details from "./Views/Details";
 import Profile from "./Views/Profile";
 import NotFound from "./Views/Components/NotFound";
 import StarterPage from "./Views/StarterPage";
-import ContactUs from "./Views/Components/ContactUs";
+import ContactUs from "./Views/Components/Menu";
 import AboutPage from "./Views/Components/AboutPage";
 import FAQsPage from "./Views/Components/FAQsPage";
 import ContactUsPage from "./Views/Components/ContactUsPage";
@@ -21,34 +21,34 @@ import TopBar from "./Views/Components/TopBar";
 function App() {
   const location = useLocation();
 
-  return (   
-        <>
-          <div className="container">
-            <div className="main_container">
-              {/* <div className="main"> */}
-              {location.pathname !== '/' && <TopBar />}
-                <Routes>
-                  <Route path="/" element={<StarterPage />} />
-                  <Route path='/tagspage' element={<TagsPage />} />
-                  <Route path="/searchbar" element={<SearchBar />} />
-                  <Route path="/projects" element={<ProjectCard />} />
-                  <Route path="/project-details" element={<PageDetails />} />
-                  <Route path="/book-now" element={<BookNow />} />
-                  <Route path="/details" element={<Details />} />
-                  <Route path="/profile" element={<Profile />} />
-                  <Route path="/allprojects" element={<AllProjects />} />
-                  <Route path="/contact" element={<ContactUs />} />
-                  <Route path="/contactus" element={<ContactUsPage />} />
-                  <Route path="/about" element={<AboutPage />} />
-                  <Route path="/faqs" element={<FAQsPage />} />
-                  <Route path="*" element={<NotFound />} />
-                  <Route path="/topbar" element={<TopBar />} />
-                </Routes>
-              {/* </div> */}
-            </div>
-            <Footer />
-          </div>
-        </>
+  return (
+    <>
+      <div className="container">
+        <div className="main_container">
+          {/* <div className="main"> */}
+          {location.pathname !== "/" && <TopBar />}
+          <Routes>
+            <Route path="/" element={<StarterPage />} />
+            <Route path="/tagspage" element={<TagsPage />} />
+            <Route path="/searchbar" element={<SearchBar />} />
+            <Route path="/projects" element={<ProjectCard />} />
+            <Route path="/project-details" element={<PageDetails />} />
+            <Route path="/book-now" element={<BookNow />} />
+            <Route path="/details" element={<Details />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/allprojects" element={<AllProjects />} />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/contactus" element={<ContactUsPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/faqs" element={<FAQsPage />} />
+            <Route path="*" element={<NotFound />} />
+            <Route path="/topbar" element={<TopBar />} />
+          </Routes>
+          {/* </div> */}
+        </div>
+        <Footer />
+      </div>
+    </>
   );
 }
 

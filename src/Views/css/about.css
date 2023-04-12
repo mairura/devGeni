@@ -123,9 +123,6 @@
     margin: 1px 20px;
   }
 }
-.contactPage p:hover {
-  color: #52f2e2;
-}
 .contactUsSocials {
   display: flex;
   justify-content: center;
