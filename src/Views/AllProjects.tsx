@@ -47,6 +47,7 @@ const AllProjects = () => {
     try {
       const { data } = await axios.get(endpoint);
       setProjects(data);
+      console.log("****", data)
       setNumProjects(data.length);
     } catch (error: any) {
       console.error("Error:", error.message)
@@ -106,6 +107,8 @@ const AllProjects = () => {
                     navigate('/project-details', { state: { tagList: project } });
                   }
 
+                  console.log("++++", team)
+
                   return (
                       <motion.div
                         className="card-main"
@@ -120,38 +123,36 @@ const AllProjects = () => {
                         <a onClick={() => navigateToProjectDetails()}>
                           <div className="more">
                             <div key={project.id}>
-                              <div>
-                              </div>
                               <div className="card_details">
-                                <motion.p
-                                  className="card_title"
-                                  whileHover={{
-                                    scale: 1.05,
-                                    originX: 0,
-                                    color: "#52f2e2",
-                                  }}
-                                  transition={{ type: "spring", stiffness: 500 }}
-                                >
-                                  <img
-                                    src={linkPay}
-                                    alt="linkpay logo"
-                                    style={{
-                                      textAlign: "left",
-                                      height: 15,
-                                      paddingRight: 4,
+                                  <motion.p
+                                    className="card_title"
+                                    whileHover={{
+                                      scale: 1.05,
+                                      originX: 0,
+                                      color: "#52f2e2",
                                     }}
-                                  />
-                                  {trimDesc(proj_title, 30)}
-                                </motion.p>
+                                    transition={{ type: "spring", stiffness: 500 }}
+                                  >
+                                    <img
+                                      src={linkPay}
+                                      alt="linkpay logo"
+                                      style={{
+                                        height: 20,
+                                      }}
+                                    />
+                                    <p>
+                                      {trimDesc(proj_title, 40)}
+                                    </p>
+                                    {/* <div>
+                                      <img src={linkPay} alt="devProfile" />
+                                    </div> */}
+                                  </motion.p>
                                 <p className="card_desc">{trimDesc(desc, 300)}</p>
                                 <div className="rate">
-                  
                                   <div className="teamLanguages"><span>{teams}</span>
                                   <p className="lengths">{teamLength}</p>
                                   <span>{languages}</span>
-                                  <p className="lengths">{stackLength}</p></div>
-
-                                  
+                                  <p className="lengths">{stackLength}</p></div> 
                                 </div>
                               </div>
                             </div>

@@ -13,6 +13,7 @@ import { MdTimeline } from "react-icons/md";
 import { GiSkills } from "react-icons/gi";
 import { GiEcology } from "react-icons/gi";
 
+//Project Leads
 const projectLeads = [
     {
         name: "Dauglous Omambia"
@@ -22,7 +23,8 @@ const projectLeads = [
     },
     {
         name: "Collins Koech"
-    },{
+    },
+    {
         name: "Dennis Mwangi"
     },
     {
@@ -44,7 +46,6 @@ const projectLeads = [
         name: "Alex Muia"
     }
 ]
-
 
 const PageDetails = () => {
     const [activeTab, setActiveTab] = useState(0)
