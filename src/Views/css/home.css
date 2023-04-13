@@ -200,6 +200,7 @@ select.mySelectArrow {
 }
 .searchbar_container {
   margin-top: 8vh;
+  height: 100vh;
 }
 .tags_container {
   margin-top: 8vh;
