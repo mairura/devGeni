@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const SearchStack = (props: any) => {
-  console.log(props);
   const [search, setSearch] = useState("");
   return (
     <div className="search-stack">
