@@ -33,7 +33,7 @@ body {
   overflow-x: hidden;
   margin-bottom: 20px;
   width: 100%;
-  /* margin-top: 10vh; */
+  /* height: 100vh; */
 }
 .main_search {
   height: 30px;
