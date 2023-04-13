@@ -105,7 +105,6 @@ function ProjectCard(props: any) {
                 <div className="search-bar">
                   <div className="tag_boxData">
                     {tags.map((param: any, index: any) => {
-                      console.log("index", index, tags.length);
                       return (
                         <p key={index} style={{ color: "white" }}>
                           {param}

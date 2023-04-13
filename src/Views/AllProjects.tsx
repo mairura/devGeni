@@ -57,7 +57,6 @@ const AllProjects = () => {
     try {
       const { data } = await axios.get(endpoint);
       setProjects(data);
-      console.log("****", data);
       setNumProjects(data.length);
     } catch (error: any) {
       console.error("Error:", error.message);
