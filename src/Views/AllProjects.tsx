@@ -65,10 +65,7 @@ const AllProjects = () => {
 
   const fetchDevProfilePhotos = async (alldevs: any) => {
     await axios.post(`${url}/index/devs/image`, { devs: alldevs }).then(({ data }) => {
-      console.log("profiles", data)
-
       setDevProfile(data)
-
     }).catch((err) => {
       console.log("error fethching dev image ", err)
     })

@@ -70,7 +70,6 @@ function ProjectCard(props: any) {
       .post(endpoint, { description: tags })
       .then(({ data }) => {
 
-        console.log("data", data.projects)
         setProjects(data.projects);
 
         const alldevs: string[] = []
@@ -95,10 +94,7 @@ function ProjectCard(props: any) {
 
   const fetchDevProfilePhotos = async (alldevs: any) => {
     await axios.post(`${url}/index/devs/image`, { devs: alldevs }).then(({ data }) => {
-      console.log("profiles", data)
-
       setDevProfile(data)
-
     }).catch((err) => {
       console.log("error fethching dev image ", err)
     })
