@@ -2,6 +2,7 @@
   margin-top: 10vh;
   z-index: 1;
 }
+
 .card-main {
   /* background: radial-gradient(
     99.25% 97.25% at 80.14% 22.75%,
@@ -14,21 +15,26 @@
   padding: 5px 10px;
   text-align: left;
   margin: auto;
+  width: 100%;
   margin-bottom: 30px;
   overflow-y: hidden;
 }
+
 .card-main:hover {
   background: #009e8e;
 }
+
 .card-main * {
   color: #fff;
   text-decoration: none;
 }
+
 @media (max-width: 768px) {
   .card-main {
     width: 93vw;
   }
 }
+
 .card_devs {
   display: flex;
   align-items: center;
@@ -36,15 +42,18 @@
   padding-top: 5px;
   text-align: left;
 }
+
 .card_devs span {
   align-items: center;
   font-family: "Poppins", sans-serif;
   color: #4375d9;
   font-size: 10px;
 }
+
 .card_details {
   padding-top: 10px;
 }
+
 .card_details p {
   overflow: scroll;
   overflow-y: hidden;
@@ -52,6 +61,7 @@
   font-size: 15px;
   padding: 7px;
 }
+
 .card_title {
   font-family: "Orbitron", sans-serif;
   font-style: normal;
@@ -61,13 +71,15 @@
   text-transform: uppercase;
   padding: 2px;
   display: grid;
-  grid-template-columns: 8fr 4fr;
+  grid-template-columns: 8fr 3fr;
   align-items: center;
 }
+
 .cardTitle {
   display: flex;
   align-items: center;
 }
+
 .card_desc {
   width: 100%;
   text-align: left;
@@ -77,36 +89,43 @@
   overflow-y: hidden;
   overflow-x: hidden;
 }
+
 .lengths {
   font-family: "Orbitron", sans-serif;
   color: #fff;
 }
+
 .rate {
   display: flex;
   flex-direction: row-reverse;
   padding-left: 10px;
   margin: 15px 0;
 }
+
 .rate span {
   padding-right: 5px;
   font-size: 20px;
   color: #fff;
 }
+
 .teamLanguages {
   display: flex;
   flex-direction: row;
   padding-top: 3px;
 }
+
 .rate p {
   padding: 7px 10px 0 0;
   font-size: 10px;
   color: #fff;
 }
+
 .tag_boxData {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .tag_boxData p {
   padding: 8px;
   font-size: 12px;
