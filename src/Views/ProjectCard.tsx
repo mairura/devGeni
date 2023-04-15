@@ -51,6 +51,7 @@ const endpoint: string = `${url}/index/search_projects`;
 
 function ProjectCard(props: any) {
   const [projects, setProjects] = useState<any[]>([]);
+  const [devProfile, setDevProfile] = useState<any>()
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -67,18 +68,46 @@ function ProjectCard(props: any) {
   const fetchProjects = useCallback(async () => {
     axios
       .post(endpoint, { description: tags })
-      .then((response) => {
-        const projects = response.data.projects;
-        setProjects(projects);
+      .then(({ data }) => {
+
+        console.log("data", data.projects)
+        setProjects(data.projects);
+
+        const alldevs: string[] = []
+
+        data.projects.map((project: any) => {
+          project.team.map((dev: any) => {
+            if (!alldevs.includes(dev)) {
+              alldevs.push(dev)
+            }
+          })
+        })
+
+        // Save all devs queried, this is later passed to the project details page
+        // setDevs(alldevs)
+
+        fetchDevProfilePhotos(alldevs)
       })
       .catch((error) => {
         console.error(error.message);
       });
   }, []);
 
+  const fetchDevProfilePhotos = async (alldevs: any) => {
+    await axios.post(`${url}/index/devs/image`, { devs: alldevs }).then(({ data }) => {
+      console.log("profiles", data)
+
+      setDevProfile(data)
+
+    }).catch((err) => {
+      console.log("error fethching dev image ", err)
+    })
+  }
+
   useEffect(() => {
     fetchProjects();
-  }, [fetchProjects]);
+  }, []);
+
 
   return (
     <>
@@ -128,7 +157,6 @@ function ProjectCard(props: any) {
                 let proj_title: string | undefined = project?.proj_name;
                 let teamLength: number = team.length;
                 let stackLength: number | undefined = stack?.length;
-                let teamSlice: {}[] | undefined = team?.slice(0, 3);
                 let teamDevs: number = teamLength > 3 ? teamLength - 3 : 0;
                 let restDevs: number | any = teamDevs > 0 ? teamDevs : "";
 
@@ -138,10 +166,12 @@ function ProjectCard(props: any) {
                     : string;
                 };
 
-                const navigateToProjectDetails = () => {
-                  navigate("/project-details", { state: { tagList: project } });
-                };
 
+                const navigateToProjectDetails = (projectDevs: any) => {
+                  if (devProfile) {
+                    navigate("/project-details", { state: { tagList: project, devProfiles: devProfile, projectDevs } });
+                  }
+                };
                 return (
                   <motion.div
                     key={index}
@@ -153,7 +183,7 @@ function ProjectCard(props: any) {
                     whileHover={{ scale: 1.01, originX: 0, color: "#f8e112" }}
                     transition={{ type: "spring", stiffness: 500 }}
                   >
-                    <a onClick={() => navigateToProjectDetails()}>
+                    <a onClick={() => navigateToProjectDetails(team)}>
                       <div className="more">
                         <div>
                           <div className="card_details">
@@ -180,16 +210,24 @@ function ProjectCard(props: any) {
                                 <div>{trimDesc(proj_title, 70)}</div>
                               </motion.div>
                               <p className="main-member">
-                                {devProfiles?.map((dev: any, index: any) => {
+                                {team.length > 3 ? team.slice(0, 3).map((dev: any, index: any) => {
                                   return (
                                     <img
-                                      src={dev.image}
-                                      alt="devProf"
+                                      src={devProfile && devProfile[dev] ? devProfile[dev].profile_img_link : ""}
+                                      alt="devProfile"
+                                      key={index}
+                                    />
+                                  );
+                                }) : team?.map((dev: any, index: any) => {
+                                  return (
+                                    <img
+                                      src={devProfile && devProfile[dev] ? devProfile[dev].profile_img_link : ""}
+                                      alt="devProfile"
                                       key={index}
                                     />
                                   );
                                 })}
-                                {restDevs}
+                                <span style={{ paddingLeft: "4px", fontSize: "12px" }}>{team.length > 3 ? `+${team.length - 3} ` : ""} </span>
                               </p>
                             </div>
                             <p className="card_desc">{trimDesc(desc, 300)}</p>
