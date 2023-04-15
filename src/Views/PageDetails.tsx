@@ -133,9 +133,9 @@ const PageDetails = () => {
                     <TabPanel>
                         <div className='class_tabPanel'>
                             <div className='stats_container'>
-                                <div className='built_time'><div className='_icon'><BsClockHistory /></div><h4>{randomNum}&nbsp;hrs+</h4><p>build time</p>
+                                <div className='built_time'><div className='_icon'><BsClockHistory /></div><h4>{projectDevs ? projectDevs.length * 120 : randomNum}&nbsp;hrs+</h4><p>build time</p>
                                 </div>
-                                <div className='team_lead'><div className='_icon'><RiTeamLine /></div><h4>Team Lead:</h4><p>Dauglous Omambia</p></div>
+                                <div className='team_lead'><div className='_icon'><RiTeamLine /></div><h4>Team Lead:</h4><p>{devsProfiles && projectDevs && projectDevs.length > 0 ? devsProfiles[projectDevs[0]].name : ""}</p></div>
                                 <div className='skill_set'><div className='_icon'><GiSkills /></div><h4>Skill Set</h4><p>Expertise</p></div>
                                 <div className='collaboration'><div className='_icon'><GiEcology /></div><h4>Collaboration</h4><p>Ngeni Labs</p></div>
                             </div>
