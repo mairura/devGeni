@@ -209,7 +209,7 @@ function ProjectCard(props: any) {
                                 {team.length > 3 ? team.slice(0, 3).map((dev: any, index: any) => {
                                   return (
                                     <img
-                                      src={devProfile && devProfile[dev] ? devProfile[dev].profile_img_link : ""}
+                                      src={devProfile && devProfile[dev] ? devProfile[dev].profile_img_link : "https://upload.wikimedia.org/wikipedia/commons/2/2e/Plain_Disc_140%25_grey_or_70%25_black.svg"}
                                       alt="devProfile"
                                       key={index}
                                     />
@@ -217,7 +217,7 @@ function ProjectCard(props: any) {
                                 }) : team?.map((dev: any, index: any) => {
                                   return (
                                     <img
-                                      src={devProfile && devProfile[dev] ? devProfile[dev].profile_img_link : ""}
+                                      src={devProfile && devProfile[dev] ? devProfile[dev].profile_img_link : "https://upload.wikimedia.org/wikipedia/commons/2/2e/Plain_Disc_140%25_grey_or_70%25_black.svg"}
                                       alt="devProfile"
                                       key={index}
                                     />
