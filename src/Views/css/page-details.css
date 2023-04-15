@@ -2,11 +2,13 @@
   overflow: scroll;
   margin-top: 7vh;
 }
+
 .consider_page {
   overflow-y: hidden;
   padding: 15px 10px;
   height: 100vh;
 }
+
 .page_title {
   font-family: "Orbitron", sans-serif;
   font-style: normal;
@@ -16,6 +18,7 @@
   color: #ffffff;
   margin-top: 15px;
 }
+
 .page_carousel {
   overflow: hidden;
   height: 210px;
@@ -23,6 +26,7 @@
   border-radius: 10px;
   margin: 10px auto;
 }
+
 .page_carousel img {
   width: 100%;
   height: 100%;
@@ -30,8 +34,8 @@
 
 .page_desc {
   font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 14px;
+  line-height: 20px;
   color: #fff;
   margin: 10px auto;
   display: flex;
@@ -40,25 +44,30 @@
   height: 15vh;
   overflow-x: hidden;
 }
+
 .page_desc::-webkit-scrollbar {
   height: 1px;
   width: 3px;
   display: block;
 }
+
 .page_desc::-webkit-scrollbar-thumb {
   display: block;
   background: #52f2e2;
   border-radius: 20px;
 }
+
 .page_desc::-webkit-scrollbar-corner {
   border-radius: 2px;
 }
+
 .class_tablist {
   display: flex;
   flex-direction: row;
   justify-content: center;
   list-style: none;
 }
+
 /* .class_tab {
   color: #52f2e2;
   position: relative;
@@ -97,10 +106,12 @@
   line-height: 17px;
   letter-spacing: 0.18em;
 }
+
 .class_tabPanel {
   overflow: scroll;
   margin: 5px 0;
 }
+
 .class_tabPanel_active {
   color: #52f2e2;
 }
@@ -132,9 +143,11 @@
   bottom: -3px;
   transform: translateX(-50%);
 }
+
 .class_tabs:hover {
   color: #52f2e2;
 }
+
 .stacks_box {
   padding: 10px;
   border-radius: 10px;
@@ -144,6 +157,7 @@
   background: rgba(82, 242, 226, 0.1);
   border: 0.5px solid rgba(82, 242, 226, 0.35);
 }
+
 .stacks_box h4 {
   font-family: "Orbitron", sans-serif;
   font-style: normal;
@@ -155,11 +169,13 @@
   text-align: left;
   padding: 5px 10px;
 }
+
 .stacks_title {
   display: flex;
   flex-wrap: wrap;
   margin: 12px;
 }
+
 .stacks_title button {
   display: inline-block;
   font-family: "Poppins";
@@ -171,6 +187,7 @@
   color: #fff;
   font-size: 13px;
 }
+
 /* .class_panel{
     border: 1px solid greenyellow;
 } */
@@ -185,9 +202,11 @@
   font-family: "Poppins";
   font-size: 14px;
 }
+
 .teams_data button:hover {
   color: #52f2e2;
 }
+
 .teams_profile img {
   display: flex;
   justify-content: center;
@@ -200,6 +219,7 @@
   border: 2px solid #25d366;
   filter: drop-shadow(0px 0px 7px #7593cb);
 }
+
 .profile_names {
   display: flex;
   flex-direction: column;
@@ -208,6 +228,7 @@
   margin: auto 7px;
   color: #fff;
 }
+
 .profile_names p {
   font-family: "Orbitron", sans-serif;
   font-style: normal;
@@ -217,6 +238,7 @@
   letter-spacing: 0.18em;
   padding-bottom: 10px;
 }
+
 .profile_names small {
   font-family: "Poppins";
   font-style: normal;
@@ -225,12 +247,14 @@
   line-height: 10px;
   letter-spacing: 0.18em;
 }
+
 .profile_links {
   display: flex;
   justify-content: center;
   padding: 10px;
   text-decoration: none;
 }
+
 .profile_links button {
   font-family: "Poppins";
   background-color: transparent;
@@ -242,6 +266,7 @@
   border: none;
   cursor: pointer;
 }
+
 .stats_container {
   border: 0.5px solid rgba(82, 242, 226, 0.35);
   color: #fff;
@@ -253,15 +278,18 @@
   margin: 10px auto;
   padding: 15px 0px;
 }
+
 .built_time,
 .team_lead,
 .skill_set,
 .collaboration {
   padding: 15px 0px;
 }
+
 ._icon {
   color: #52f2e2;
 }
+
 .stats_container h4 {
   font-family: "Orbitron", sans-serif;
 }
