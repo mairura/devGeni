@@ -16,7 +16,7 @@ const buttonVariants = {
 };
 
 const TagsPage = (props: any) => {
-  const requests = ["App Development", "Design me a Web3 App", "Build me a trading bot for...", "Create me a Web3 Wallet", "Build me an NFT Marketplace", "Design me a Web3 Social App for...", "Create a DAO...", "Build AI Chatbot that...", "I want a Gateways/CEX that...", "Build a DEFI", "I need a Gaming App that..."];
+  const requests = ["App Development ", "Design me a Web3 App ", "Build me a trading bot for ", "Create me a Web3 Wallet", "Build me an NFT Marketplace ", "Design me a Web3 Social App for ", "Create a DAO ", "Build AI Chatbot that ", "I want a Gateways/CEX that ", "Build a DEFI ", "I need a Gaming App that "];
   const [activeButton, setActiveButton] = useState(null);
   const [initialPrompt, setInitialPrompt] = useState(null);
   const navigate = useNavigate()
