@@ -261,8 +261,7 @@ select.mySelectArrow {
   display: flex;
   flex-wrap: wrap;
 }
-
-.main_request button {
+.text_button {
   border: 0.2px solid #52f2e2;
   border-radius: 30px;
   height: 30px;
@@ -273,10 +272,16 @@ select.mySelectArrow {
   font-size: 12px;
   cursor: pointer;
 }
-
-.main_request button:hover {
+.clicked_button {
+  border-radius: 30px;
+  height: 30px;
+  margin: 5px 10px 20px 0;
+  padding: 8px 8px;
   background: #009e8e;
-  font-weight: 500;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  border: none;
 }
 
 .tagspage {

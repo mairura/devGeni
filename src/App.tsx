@@ -25,7 +25,6 @@ function App() {
     <>
       <div className="container">
         <div className="main_container">
-          {/* <div className="main"> */}
           {location.pathname !== "/" && <TopBar />}
           <Routes>
             <Route path="/" element={<StarterPage />} />
@@ -44,7 +43,6 @@ function App() {
             <Route path="*" element={<NotFound />} />
             <Route path="/topbar" element={<TopBar />} />
           </Routes>
-          {/* </div> */}
         </div>
         <Footer />
       </div>
