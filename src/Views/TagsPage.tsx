@@ -62,7 +62,7 @@ const TagsPage = (props: any) => {
       class: "text_button",
     },
     {
-      name: "CUSTOMIZE YOUR SEARCH MESSAGE",
+      name: "Customize Your Search...",
       class: "text_button",
     },
   ]);
