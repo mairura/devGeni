@@ -87,9 +87,10 @@ const SearchBar = (props: any) => {
   // bug of tags not getting deleted as user delete description that had matched it. Explanation at handleInputChangeData()
   if (initialDesc && initialDesc.hasOwnProperty("data") && !initialUpdate) {
     const initialPrompt = initialDesc.data;
-    const initialPromptParts = initialPrompt.split(" ");
-
-    initialPromptParts.map((word: string) => matchTags(word));
+    if (initialPrompt && initialPrompt.includes(" ")) {
+      const initialPromptParts = initialPrompt.split(" ");
+      initialPromptParts.map((word: string) => matchTags(word))
+    }
   }
 
   // REVIEW: Display tags that match the input, as the user types
@@ -114,7 +115,7 @@ const SearchBar = (props: any) => {
 
     const input = rawInput[rawInput.length - 1]; // get last character typed, instead of all the input
 
-    if (wordSeperators.includes(input)) {
+    if (inputData && wordSeperators.includes(input)) {
       // Get the last phrase
       let currentInput = inputData.split(input);
       let word: string = currentInput[currentInput.length - 1];
@@ -130,18 +131,21 @@ const SearchBar = (props: any) => {
     }
 
     // Cater for the case where the user deletes a word that was already a matched tag
-    // if the previous string (inputData ) is longer than the current string, it means the users input resulted in the
-    // reduction of the previous string length (delete)
-    if (inputData.length > rawInput.length) {
-      matchedTags.map((tag: string) => {
-        if (!rawInput.toLowerCase().includes(tag.toLowerCase())) {
-          const holder = matchedTags;
-          const rem = holder.filter((_tag) => _tag !== tag);
+    // if the previous string (inputData ) is longer than the current string, it means the users input resulted in the 
+    // reduction of the previous string length (delete) 
+    if (inputData && rawInput) {
+      if (inputData.length > rawInput.length) {
+        matchedTags.map((tag: string) => {
+          if (!rawInput.toLowerCase().includes(tag.toLowerCase())) {
+            const holder = matchedTags
+            const rem = holder.filter(_tag => _tag !== tag)
 
-          setMatchedTags([...rem]);
-        }
-      });
+            setMatchedTags([...rem])
+          }
+        })
+      }
     }
+
 
     // Remove all tags if the description is blank
     if (rawInput.length < 1) {
@@ -209,22 +213,16 @@ const SearchBar = (props: any) => {
         </div>
       </div>
 
-      {inputData.length === 0 ? (
-        <div style={{ width: "100%" }} className="home_btn">
-          <div className="tagspage">
-            <Tooltip
-              anchorId="inputData"
-              place="top"
-              content="Project description is required "
-            />
-            <motion.button
-              id="inputData"
-              variants={buttonVariants}
-              whileHover="hover"
-            >
-              Next
-            </motion.button>
-          </div>
+      {inputData && inputData.length === 0 ? <div style={{ width: "100%" }} className="home_btn">
+        <div className="tagspage">
+          <Tooltip
+            anchorId="inputData"
+            place="top"
+            content="Project description is required "
+          />
+          <motion.button id="inputData" variants={buttonVariants} whileHover="hover">
+            Next
+          </motion.button>
         </div>
       ) : (
         <a

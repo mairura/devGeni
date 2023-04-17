@@ -52,14 +52,16 @@ const PageDetails = () => {
 
     const location = useLocation();
     const projectDetail = location.state.tagList // Access projectDetail from card page
+    const devsProfiles = location.state.devProfiles
+    const projectDevs = location.state.projectDevs
 
     const stacks: any = projectDetail.tech_stack;
     const teams: any = projectDetail.team;
     let url = Config.URL;
 
-    const[projDetails, setProjectDetails ]=useState<Array<ISingleDev>>([]);
+    const [projDetails, setProjectDetails] = useState<Array<ISingleDev>>([]);
 
-    const updateActiveTab = (tabId : number ) => {
+    const updateActiveTab = (tabId: number) => {
         setActiveTab(tabId)
     }
 
@@ -68,93 +70,83 @@ const PageDetails = () => {
     const roundedNumber = Math.round(randomNumber);
 
     useEffect(() => {
-    async function getData() {
-        const items:any = await Promise.all(
-            teams.map(async (index:any)=>{
-            const data: any = await axios.get(`${url}/index/dev/${index}`);
-        let item:any={
-            name:data.data.name,
-            profile_img_link:data.data.profile_img_link,  
-            short_name:data.data.short_name     
-        }    
-        return item
-    })
-    )
-        setProjectDetails(items)
-    }
-        getData();
     }, [])
 
-  return (
-    <div className='page_container'>
-        <div className='consider_page'>
-        <div className='page_title'>
-            {projectDetail.proj_name}
-        </div>
-        <div className='page_carousel'>
-            <img src={projectDetail.imagelink} alt="projectProf" />
-        </div>
-        <div className='page_desc'>
-            {projectDetail.description}
-        </div>
-        <Tabs>
-            <TabList className="class_tablist">
-                <Tab onClick={() => updateActiveTab(0)} className={activeTab == 0 ? "class_tabs class_tabPanel_active" : "class_tabs" }>Stack</Tab>
-                <Tab onClick={() => updateActiveTab(1)} className={activeTab == 1 ? "class_tabs class_tabPanel_active" : "class_tabs" }>Teams</Tab>
-                <Tab onClick={() => updateActiveTab(2)} className={activeTab == 2 ? "class_tabs class_tabPanel_active" : "class_tabs" }>Stats</Tab>
-            </TabList>
-            <TabPanel>
-                <div  className="class_tabPanel">
-                    <div className='stacks_box'>
-                        <h4>Technologies</h4>
-                        <div className='stacks_title'>
-                            {stacks.map((stack: any, index: any) => {
-                                return <button key={index}>{stack}</button>    
-                            })} 
-                        </div>
-                    </div>
+    return (
+        <div className='page_container'>
+            <div className='consider_page'>
+                <div className='page_title'>
+                    {projectDetail.proj_name}
                 </div>
-            </TabPanel>
-            <TabPanel>  
-                <div className='class_tabPanel'>
-                {projDetails.map((dev: any, index: any) => {
-                    return (
-                        <div className='teams_data' key={index}>
-                            <div className='teams_profile'>
-                                <img src={dev.profile_img_link} alt="profile" />
-                            </div>
-                            <div className='profile_names'>
-                                <p>{dev.name}</p>
-                                <small><i>Software Engineer</i></small>
-                            </div>
-                            <Link to={`/profile/?shortName=${dev?.short_name}`} className='profile_links'>
-                                <button>
-                                    See Profile
-                                </button>
-                            </Link>
-                        </div>
-                    )
-                })}   
-                </div>  
-                           
-            </TabPanel>
-            <TabPanel>
-                <div className='class_tabPanel'>
-                    <div className='stats_container'>
-                        <div className='built_time'><div className='_icon'><BsClockHistory /></div><h4>{randomNum}&nbsp;hrs+</h4><p>build time</p>
-                        </div>
-                        <div className='team_lead'><div className='_icon'><RiTeamLine /></div><h4>Team Lead:</h4><p>Dauglous Omambia</p></div>  
-                        <div className='skill_set'><div className='_icon'><GiSkills /></div><h4>Skill Set</h4><p>Expertise</p></div>
-                        <div className='collaboration'><div className='_icon'><GiEcology /></div><h4>Collaboration</h4><p>Ngeni Labs</p></div>
-                    </div>
+                <div className='page_carousel'>
+                    <img src={projectDetail.imagelink} alt="projectProf" />
                 </div>
-            </TabPanel>
-        </Tabs>
-        <BookBtn />
+                <div className='page_desc'>
+                    {projectDetail.description}
+                </div>
+                <Tabs>
+                    <TabList className="class_tablist">
+                        <Tab onClick={() => updateActiveTab(0)} className={activeTab == 0 ? "class_tabs class_tabPanel_active" : "class_tabs"}>Stack</Tab>
+                        <Tab onClick={() => updateActiveTab(1)} className={activeTab == 1 ? "class_tabs class_tabPanel_active" : "class_tabs"}>Teams</Tab>
+                        <Tab onClick={() => updateActiveTab(2)} className={activeTab == 2 ? "class_tabs class_tabPanel_active" : "class_tabs"}>Stats</Tab>
+                    </TabList>
+                    <TabPanel>
+                        <div className="class_tabPanel">
+                            <div className='stacks_box'>
+                                <h4>Technologies</h4>
+                                <div className='stacks_title'>
+                                    {stacks.map((stack: any, index: any) => {
+                                        return <button key={index}>{stack}</button>
+                                    })}
+                                </div>
+                            </div>
+                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <div className='class_tabPanel'>
+                            {projectDevs.map((dev: any, index: any) => {
+                                if (devsProfiles && devsProfiles[dev]) {
+                                    return (
+                                        <div className='teams_data' key={index}>
+                                            {/* <span>{JSON.stringify(devsProfiles[dev])}</span> */}
+                                            <div className='teams_profile'>
+                                                <img src={devsProfiles[dev].profile_img_link} alt="profile" />
+                                            </div>
+                                            <div className='profile_names'>
+                                                <p>{devsProfiles[dev].name}</p>
+                                                <small><i>Software Engineer</i></small>
+                                            </div>
+                                            <Link to={`/profile/?shortName=${devsProfiles[dev]?.short_name}`} className='profile_links'>
+                                                <button>
+                                                    See Profile
+                                                </button>
+                                            </Link>
+                                        </div>
+                                    )
+                                }
+
+
+                            })}
+                        </div>
+
+                    </TabPanel>
+                    <TabPanel>
+                        <div className='class_tabPanel'>
+                            <div className='stats_container'>
+                                <div className='built_time'><div className='_icon'><BsClockHistory /></div><h4>{projectDevs ? projectDevs.length * 120 : randomNum}&nbsp;hrs+</h4><p>build time</p>
+                                </div>
+                                <div className='team_lead'><div className='_icon'><RiTeamLine /></div><h4>Team Lead:</h4><p>{devsProfiles && projectDevs && projectDevs.length > 0 ? devsProfiles[projectDevs[0]].name : ""}</p></div>
+                                <div className='skill_set'><div className='_icon'><GiSkills /></div><h4>Skill Set</h4><p>Expertise</p></div>
+                                <div className='collaboration'><div className='_icon'><GiEcology /></div><h4>Collaboration</h4><p>Ngeni Labs</p></div>
+                            </div>
+                        </div>
+                    </TabPanel>
+                </Tabs>
+                <BookBtn />
+            </div>
+
         </div>
-       
-    </div>
-  )
+    )
 }
 
 export default PageDetails
