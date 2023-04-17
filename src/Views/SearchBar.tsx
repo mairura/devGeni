@@ -131,8 +131,8 @@ const SearchBar = (props: any) => {
     }
 
     // Cater for the case where the user deletes a word that was already a matched tag
-    // if the previous string (inputData ) is longer than the current string, it means the users input resulted in the
-    // reduction of the previous string length (delete)
+    // if the previous string (inputData ) is longer than the current string, it means the users input resulted in the 
+    // reduction of the previous string length (delete) 
     if (inputData && rawInput) {
       if (inputData.length > rawInput.length) {
         matchedTags.map((tag: string) => {
