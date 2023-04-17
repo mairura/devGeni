@@ -89,7 +89,7 @@ const SearchBar = (props: any) => {
     const initialPrompt = initialDesc.data;
     if (initialPrompt && initialPrompt.includes(" ")) {
       const initialPromptParts = initialPrompt.split(" ");
-      initialPromptParts.map((word: string) => matchTags(word))
+      initialPromptParts.map((word: string) => matchTags(word));
     }
   }
 
@@ -131,21 +131,20 @@ const SearchBar = (props: any) => {
     }
 
     // Cater for the case where the user deletes a word that was already a matched tag
-    // if the previous string (inputData ) is longer than the current string, it means the users input resulted in the 
-    // reduction of the previous string length (delete) 
+    // if the previous string (inputData ) is longer than the current string, it means the users input resulted in the
+    // reduction of the previous string length (delete)
     if (inputData && rawInput) {
       if (inputData.length > rawInput.length) {
         matchedTags.map((tag: string) => {
           if (!rawInput.toLowerCase().includes(tag.toLowerCase())) {
-            const holder = matchedTags
-            const rem = holder.filter(_tag => _tag !== tag)
+            const holder = matchedTags;
+            const rem = holder.filter((_tag) => _tag !== tag);
 
-            setMatchedTags([...rem])
+            setMatchedTags([...rem]);
           }
-        })
+        });
       }
     }
-
 
     // Remove all tags if the description is blank
     if (rawInput.length < 1) {
@@ -213,16 +212,23 @@ const SearchBar = (props: any) => {
         </div>
       </div>
 
-      {inputData && inputData.length === 0 ? <div style={{ width: "100%" }} className="home_btn">
-        <div className="tagspage">
-          <Tooltip
-            anchorId="inputData"
-            place="top"
-            content="Project description is required "
-          />
-          <motion.button id="inputData" variants={buttonVariants} whileHover="hover">
-            Next
-          </motion.button>
+      {inputData && inputData.length === 0 ? (
+        <div style={{ width: "100%" }} className="home_btn">
+          {" "}
+          <div className="tagspage">
+            <Tooltip
+              anchorId="inputData"
+              place="top"
+              content="Project description is required "
+            />
+            <motion.button
+              id="inputData"
+              variants={buttonVariants}
+              whileHover="hover"
+            >
+              Next
+            </motion.button>
+          </div>
         </div>
       ) : (
         <a

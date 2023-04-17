@@ -16,7 +16,6 @@ const buttonVariants = {
 };
 
 const TagsPage = (props: any) => {
-<<<<<<< HEAD
   const [requests, setREquests] = useState([
     {
       name: "App Development...",
@@ -62,13 +61,11 @@ const TagsPage = (props: any) => {
       name: "I need a Gaming App that...",
       class: "text_button",
     },
+    {
+      name: "CUSTOMIZE YOUR SEARCH MESSAGE",
+      class: "text_button",
+    },
   ]);
-=======
-  const requests = ["App Development ", "Design me a Web3 App ", "Build me a trading bot for ", "Create me a Web3 Wallet", "Build me an NFT Marketplace ", "Design me a Web3 Social App for ", "Create a DAO ", "Build AI Chatbot that ", "I want a Gateways/CEX that ", "Build a DEFI ", "I need a Gaming App that "];
-  const [activeButton, setActiveButton] = useState(null);
-  const [initialPrompt, setInitialPrompt] = useState(null);
-  const navigate = useNavigate()
->>>>>>> c8c4006a09e0e2a50c2a54319e4ecee10975bcd4
 
   const navigate = useNavigate();
 
