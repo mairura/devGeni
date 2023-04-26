@@ -212,7 +212,7 @@
 
 .faqsQuiz {
   font-family: "Poppins";
-  margin-top: 25px;
+  margin-top: 20px;
   padding: 10px;
 }
 
@@ -251,7 +251,7 @@ summary {
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 25px;
   text-align: left;
   color: #ffffff;
 }
@@ -276,8 +276,10 @@ details[open] summary:after {
   height: 316px;
   left: -85px;
   top: 118px;
-  background: linear-gradient(180deg,
-      #52f2e2 0%,
-      rgba(82, 242, 226, 0.35) 100%);
+  background: linear-gradient(
+    180deg,
+    #52f2e2 0%,
+    rgba(82, 242, 226, 0.35) 100%
+  );
   filter: blur(125px);
 }
