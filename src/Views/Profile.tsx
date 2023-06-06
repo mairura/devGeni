@@ -47,7 +47,11 @@ const Profile = () => {
                   <h5>Tech Stack</h5>
                   <div className="dev_stack">
                     {stacks.map((item: any, index: any) => {
-                      return <div className="dev_stack_item" key={index}>{item}</div>;
+                      return (
+                        <div className="dev_stack_item" key={index}>
+                          {item}
+                        </div>
+                      );
                     })}
                   </div>
                 </div>
@@ -58,7 +62,7 @@ const Profile = () => {
                   <div className="profile_project">
                     <div className="project">
                       <img src={minitrade} alt="logo" />
-                      <p>Minitrade</p>
+                      <p>MiniTrader</p>
                     </div>
                     <div className="project">
                       <ExternalLink
@@ -79,47 +83,44 @@ const Profile = () => {
                       </ExternalLink>
                     </div>
                   </div>
-              </div>
-              <div className="profile_media">
-                <div className="profile_title">
-                  <h5>Media and Links</h5>
                 </div>
-                <div className="profile_data">
-                  <div className="profile_links">
-                    <div className="profile_link">
-                      <BsGithub />
-                      <a href={dev.profile_link}>
-                        &nbsp;&nbsp;
-                        {dev.profile_link}
-                      </a>
-                    </div>
-                    <div className="profile_link">
-                      <BsLinkedin />
-                      <a href="https://www.linkedin.com/company/ngenilabs/mycompany/">
-                        &nbsp;&nbsp; nGeni Labs LinkedIn
-                      </a>
-                    </div>
-                    <div className="profile_link">
-                      <img src={Logo} alt="logo" />
-                      <a href="https://ngeni.io/">
-                        &nbsp;&nbsp;nGeni Labs Website
-                      </a>
-                    </div>
-                    <div className="profile_link">
-                      <BsTwitter />
-                      <a href="https://twitter.com/ngenilabs">
-                        &nbsp;&nbsp; nGeni Labs Twitter
-                      </a>
+                <div className="profile_media">
+                  <div className="profile_title">
+                    <h5>Media and Links</h5>
+                  </div>
+                  <div className="profile_data">
+                    <div className="profile_links">
+                      <div className="profile_link">
+                        <BsGithub />
+                        <a href={dev.profile_link}>
+                          &nbsp;&nbsp;
+                          {dev.profile_link}
+                        </a>
+                      </div>
+                      <div className="profile_link">
+                        <BsLinkedin />
+                        <a href="https://www.linkedin.com/company/ngenilabs/mycompany/">
+                          &nbsp;&nbsp; nGeni Labs LinkedIn
+                        </a>
+                      </div>
+                      <div className="profile_link">
+                        <img src={Logo} alt="logo" />
+                        <a href="https://ngeni.io/">
+                          &nbsp;&nbsp;nGeni Labs Website
+                        </a>
+                      </div>
+                      <div className="profile_link">
+                        <BsTwitter />
+                        <a href="https://twitter.com/ngenilabs">
+                          &nbsp;&nbsp; nGeni Labs Twitter
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-
-
-              {/* <div className="ngeni_labs"></div> */}
             </div>
-            </div>
-          )
+          );
         })}
 
     </div>

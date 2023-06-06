@@ -58,7 +58,6 @@ const wordSeperators = [
 ];
 
 const SearchBar = (props: any) => {
-  // const localParams: any = localStorage.getItem("params");
   const location = useLocation();
   const initialDesc = location.state;
 
@@ -167,7 +166,6 @@ const SearchBar = (props: any) => {
     await axios
       .get(endpoint)
       .then((_tags) => {
-        console.log("****", _tags);
         const formattedTags = _tags.data.map(
           (tag: { name: string }) => tag.name
         );
